@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Inspection Générale de la Territoriale</title>
+
+<style>
+
+/* =========================
+STYLE GENERAL
+========================= */
+
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:#f4f6f9;
+line-height:1.5;
+}
+
+/* =========================
+TOP BAR
+========================= */
+
+.topbar{
+background:#ffffff;
+padding:10px 5%;
+display:flex;
+flex-wrap:wrap;
+justify-content:space-between;
+align-items:center;
+gap:10px;
+border-bottom:1px solid #ddd;
+}
+
+.logo-container{
+display:flex;
+align-items:center;
+flex-wrap:wrap;
+}
+
+.logo-img{
+width:55px;
+margin-right:10px;
+}
+
+.logo-text div{
+line-height:1.2;
+}
+
+.country{
+font-size:14px;
+font-weight:bold;
+color:#d21034;
+}
+
+.institution{
+font-size:16px;
+font-weight:bold;
+color:#003366;
+}
+
+.slogan{
+font-size:12px;
+font-weight:bold;
+color:#ffcc00;
+}
+
+.flag{
+width:40px;
+}
+
+.top-right{
+display:flex;
+align-items:center;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.top-contact{
+font-size:13px;
+}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Inspection Générale de la Territoriale</title>
+
+<style>
+
+/* =========================
+STYLE GENERAL
+========================= */
+
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:#f4f6f9;
+line-height:1.5;
+}
+
+/* =========================
+TOP BAR
+========================= */
+
+.topbar{
+background:#ffffff;
+padding:10px 5%;
+display:flex;
+flex-wrap:wrap;
+justify-content:space-between;
+align-items:center;
+gap:10px;
+border-bottom:1px solid #ddd;
+}
+
+.logo-container{
+display:flex;
+align-items:center;
+flex-wrap:wrap;
+}
+
+.logo-img{
+width:55px;
+margin-right:10px;
+}
+
+.logo-text div{
+line-height:1.2;
+}
+
+.country{
+font-size:14px;
+font-weight:bold;
+color:#d21034;
+}
+
+.institution{
+font-size:16px;
+font-weight:bold;
+color:#003366;
+}
+
+.slogan{
+font-size:12px;
+font-weight:bold;
+color:#ffcc00;
+}
+
+.flag{
+width:40px;
+}
+
+.top-right{
+display:flex;
+align-items:center;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.top-contact{
+font-size:13px;
+}
+
+/* =========================
+NAVBAR
+========================= */
+
+.navbar{
+background:#003366;
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+margin-bottom:0;
+padding:8px 5%;
+}
+
+.menu-center{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:10px;
+}
+
+.menu-center a{
+color:white;
+text-decoration:none;
+font-size:13px;
+font-weight:600;
+display:flex;
+align-items:center;
+gap:5px;
+padding:5px 8px;
+transition:0.3s;
+}
+
+.menu-center a:hover{
+color:#ffcc00;
+background:rgba(255,255,255,0.08);
+border-radius:4px;
+}
+
+/* SECTION PRÉSENTATION IGTER */
+
+.presentation-igter{
+padding:50px 8%;          /* espace vertical + horizontal */
+background:#f9fafb;       /* fond clair, pas agressif */
+color:#111;                /* texte sombre pour lisibilité */
+line-height:1.8;           /* espace entre les lignes pour confort */
+font-size:16px;
+border-radius:8px;
+margin:30px 8%;            /* marge autour pour séparation */
+box-shadow:0 4px 12px rgba(0,0,0,0.05); /* léger relief */
+}
+
+/* responsive */
+@media (max-width:768px){
+.presentation-igter{
+padding:30px 5%;
+font-size:15px;
+}
+}
+
+.titre-centre {
+    text-align: center;       /* Centre le texte */
+    font-size: 24px;          /* Taille du titre */
+    font-weight: bold;        /* Met le titre en gras */
+    margin-bottom: 15px;      /* Espace sous le titre */
+    color: #2c3e50;           /* Couleur du texte (optionnel) */
+  }
+
+/* =========================
+FOOTER
+========================= */
+
+footer{
+background:#003366;
+color:white;
+padding:30px 5%;
+text-align:center;
+font-size:14px;
+}
+
+/* =========================
+RESPONSIVE TABLETTE
+========================= */
+
+@media (max-width:900px){
+
+.section-text h1{
+font-size:28px;
+}
+
+.section-text p{
+font-size:14px;
+}
+
+.buttons{
+justify-content:center;
+}
+
+}
+
+/* =========================
+RESPONSIVE MOBILE
+========================= */
+
+@media (max-width:600px){
+
+.topbar{
+flex-direction:column;
+align-items:flex-start;
+}
+
+.section{
+flex-direction:column;
+text-align:center;
+}
+
+.section-text h1{
+font-size:24px;
+}
+
+.section-text p{
+font-size:14px;
+}
+
+.buttons{
+flex-direction:column;
+align-items:center;
+}
+
+.btn{
+width:80%;
+}
+
+.menu-center{
+flex-direction:column;
+align-items:center;
+}
+
+.search-box input{
+width:120px;
+}
+
+.stat{
+flex:1 1 100%;
+}
+
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+
+<div class="logo-container">
+
+<img src="images/logo.png" alt="Logo IGTER" class="logo-img">
+
+<div class="logo-text">
+
+<div class="country">
+République Démocratique du Congo
+</div>
+
+<div class="institution">
+INSPECTION GÉNÉRALE DE LA TERRITORIALE
+</div>
+
+<div class="slogan">
+Contrôle – Enquête – Encadrement – Suivi – Evaluation 
+</div>
+</div>
+</div>
+
+<div class="top-right">
+
+<div class="top-contact">
+📞 +243 83 177 500 7 | ✉ contact@igter.cd
+</div>
+
+<!-- Drapeau RDC -->
+<img src="images/drapeau rdc.png" alt="Drapeau RDC" class="flag">
+
+</div></div>
+
+<!-- MENU -->
+<nav class="navbar">
+<div class="menu-center">
+<a href="index.html"><i class="fa-solid fa-house"></i> Accueil</a>
+<a href="province.html"><i class="fa-solid fa-map"></i> Provinces/ETD</a>
+<a href="actualite.html"><i class="fa-solid fa-newspaper"></i> Actualités</a>
+<a href="document.html"><i class="fa-solid fa-folder-open"></i> Documents officiels</a>
+<a href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a>
+</div>
+</nav>
+
+<!-- ZONE DE PRÉSENTATION DE L'IGTER -->
+<section class="presentation-igter">
+  <div class="container">
+  	<h2 class="titre-centre">Aperçu général et historique</h2>
+    <p>
+      En 1998, il existait un Décret-loi n° 081 du 02 Juillet 1998 portant Organisation Territoriale et Administrative de la République démocratique du Congo, signé dans un contexte de transition politique et de réforme de l'État, en vue de répondre à des besoins spécifiques liés à la réforme administrative et territoriale du pays. Ce décret a été adopté pour établir une structure administrative claire et une organisation territoriale cohérente permettant de mieux gérer les affaires publiques et d'améliorer la gouvernance.</p>
+
+      <p>Toujours en cette date du 02 Juillet 1998, un autre Décret-loi n°083 portant organisation et fonctionnement du Corps des Inspecteurs de la Territoriale en République Démocratique du Congo, a été signé pour accompagner le Décret-loi n° 081.</p> 
+
+      <p>Ce corps était chargé de contrôler, évaluer et suivre les activités des Autorités des Entités Administratives et des Services du Ministère des Affaires Intérieures. Il veillait à la bonne administration des entités administratives, formulait des avis pour améliorer la gestion territoriale, évaluait les performances des entités administratives et surveillait l’utilisation des ressources affectées aux services de la Territoriale. Le rôle initial de ce Corps était principalement axé sur le contrôle de la décentralisation et de la gestion des ressources publiques au niveau local.</p>
+
+      <p>Aujourd'hui, le Décret-loi n°083 du 02 Juillet 1998, est remplacé par le Décret n° 19/13 du 16 Mai 2019 portant Création, Organisation et Fonctionnament d'un Service Public, dénommé : « Inspection Générale de la Territoriale, IGTER en sigle », mis en vigueur.</p>
+
+      <p>L’Inspection Générale de la Territoriale est donc un service public à caractère administratif doté de l’autonomie administrative et financière. Elle est un outil du Gouvernement central placé sous l’autorité directe du Ministre ayant l’intérieur dans ses attributions et a pour mission générale : le contrôle, l’encadrement, le suivi et l’évaluation des activités des Autorités des entités administratives et des services centraux et déconcentrés du Ministère ayant l’intérieur dans ses attributions.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer id="contact">
+
+<p>Inspection Générale de la Territoriale</p>
+
+<p>Kinshasa - République Démocratique du Congo</p>
+
+<p>contact@igter.cd</p>
+
+<p>© 2026 Tous droits réservés</p>
+
+</footer>
+
+</html>

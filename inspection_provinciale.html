@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Inspection Générale de la Territoriale</title>
+
+<style>
+
+/* =========================
+STYLE GENERAL
+========================= */
+
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:#f4f6f9;
+line-height:1.5;
+}
+
+/* =========================
+TOP BAR
+========================= */
+
+.topbar{
+background:#ffffff;
+padding:10px 5%;
+display:flex;
+flex-wrap:wrap;
+justify-content:space-between;
+align-items:center;
+gap:10px;
+border-bottom:1px solid #ddd;
+}
+
+.logo-container{
+display:flex;
+align-items:center;
+flex-wrap:wrap;
+}
+
+.logo-img{
+width:55px;
+margin-right:10px;
+}
+
+.logo-text div{
+line-height:1.2;
+}
+
+.country{
+font-size:14px;
+font-weight:bold;
+color:#d21034;
+}
+
+.institution{
+font-size:16px;
+font-weight:bold;
+color:#003366;
+}
+
+.slogan{
+font-size:12px;
+font-weight:bold;
+color:#ffcc00;
+}
+
+.flag{
+width:40px;
+}
+
+.top-right{
+display:flex;
+align-items:center;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.top-contact{
+font-size:13px;
+}
+
+/* =========================
+NAVBAR
+========================= */
+
+.navbar{
+background:#003366;
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+margin-bottom:0;
+padding:8px 5%;
+}
+
+.menu-center{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:10px;
+}
+
+.menu-center a{
+color:white;
+text-decoration:none;
+font-size:13px;
+font-weight:600;
+display:flex;
+align-items:center;
+gap:5px;
+padding:5px 8px;
+transition:0.3s;
+}
+
+.menu-center a:hover{
+color:#ffcc00;
+background:rgba(255,255,255,0.08);
+border-radius:4px;
+}
+
+/* SECTION STRUCTURE ADMIN */
+
+.structure-admin{
+    padding:30px 20px;
+    background:#f4f7fa;
+    text-align:center;
+}
+
+.titre-section{
+    font-size:30px;
+    margin-bottom:50px;
+    color:#003366;
+    font-weight:700;
+}
+
+/* grille */
+
+.admin-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:35px;
+    max-width:1200px;
+    margin:auto;
+}
+
+/* cartes */
+
+.admin-card{
+    background:#ffffff;
+    padding:15px 15px;
+    border-radius:12px;
+    box-shadow:0 5px 18px rgba(0,0,0,0.08);
+    transition:all 0.35s ease;
+    position:relative;
+    text-align:left;
+}
+
+/* ligne décorative en haut */
+
+.admin-card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:5px;
+    background:linear-gradient(90deg,#00796b,#00bfa5);
+    border-top-left-radius:12px;
+    border-top-right-radius:12px;
+}
+
+/* icone */
+
+.admin-card i{
+    font-size:22px;
+    color:white;
+    background:#00796b;
+    padding:14px;
+    border-radius:50%;
+    margin-bottom:15px;
+    display:inline-block;
+}
+
+/* titre */
+
+.admin-card h3{
+    font-size:18px;
+    color:#003366;
+    margin-bottom:15px;
+}
+
+/* paragraphes */
+
+.admin-card p{
+    font-size:14px;
+    color:#444;
+    margin:6px 0;
+    padding-left:15px;
+    position:relative;
+}
+
+/* petite puce avant chaque ligne */
+
+.admin-card p::before{
+    content:"•";
+    position:absolute;
+    left:0;
+    color:#00796b;
+    font-weight:bold;
+}
+
+/* effet hover */
+
+.admin-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Responsive : réduire la taille sur mobile */
+@media (max-width: 768px) {
+  .admin-card {
+    width: 50px;
+    height: 50px;
+  }
+  .adm-card h3 {
+    font-size: 16px;
+  }
+  .adm-card i {
+    font-size: 16px;
+  }
+}
+
+/* =========================
+FOOTER
+========================= */
+
+footer{
+background:#003366;
+color:white;
+padding:30px 5%;
+text-align:center;
+font-size:14px;
+}
+
+.footer-container{
+max-width:1200px;
+margin:auto;
+display:flex;
+flex-wrap:wrap;
+justify-content:space-between;
+gap:15px;
+}
+
+.footer-col{
+flex:1;
+min-width:180px;
+}
+
+.footer-col h3{
+margin-bottom:8px;
+color:#f1c40f;
+font-size:15px;
+}
+
+.footer-col p{
+margin:4px 0;
+font-size:13px;
+}
+
+.footer-col a{
+color:white;
+text-decoration:none;
+font-size:13px;
+display:block;
+margin:3px 0;
+}
+
+.footer-col a:hover{
+color:#f1c40f;
+}
+
+.footer-col i{
+color:#f1c40f;
+margin-right:6px;
+}
+
+.social-icons a{
+display:block;
+margin:3px 0;
+}
+
+.footer-col iframe{
+height:100px;
+}
+
+.footer-bottom{
+text-align:center;
+margin-top:10px;
+border-top:1px solid rgba(255,255,255,0.2);
+padding-top:8px;
+font-size:12px;
+}
+
+/* =========================
+RESPONSIVE TABLETTE
+========================= */
+
+@media (max-width:900px){
+
+.hero-text h1{
+font-size:28px;
+}
+
+.hero-text p{
+font-size:14px;
+}
+
+.buttons{
+justify-content:center;
+}
+
+}
+
+/* =========================
+RESPONSIVE MOBILE
+========================= */
+
+@media (max-width:600px){
+
+.topbar{
+flex-direction:column;
+align-items:flex-start;
+}
+
+.hero{
+flex-direction:column;
+text-align:center;
+}
+
+.hero-text h1{
+font-size:24px;
+}
+
+.hero-text p{
+font-size:14px;
+}
+
+.buttons{
+flex-direction:column;
+align-items:center;
+}
+
+.btn{
+width:80%;
+}
+
+.menu-center{
+flex-direction:column;
+align-items:center;
+}
+
+.search-box input{
+width:120px;
+}
+
+.stat{
+flex:1 1 100%;
+}
+
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+
+<div class="logo-container">
+
+<img src="images/logo.png" alt="Logo IGTER" class="logo-img">
+
+<div class="logo-text">
+
+<div class="country">
+République Démocratique du Congo
+</div>
+
+<div class="institution">
+INSPECTION GÉNÉRALE DE LA TERRITORIALE
+</div>
+
+<div class="slogan">
+Contrôle – Enquête – Encadrement – Suivi – Evaluation 
+</div>
+</div>
+</div>
+
+<div class="top-right">
+
+<div class="top-contact">
+📞 +243 83 17 75 007 | ✉ igteradmcentrale2014@gmail.com
+</div>
+
+<!-- Drapeau RDC -->
+<img src="images/drapeau rdc.png" alt="Drapeau RDC" class="flag">
+
+</div></div>
+
+<!-- MENU -->
+<nav class="navbar">
+<div class="menu-center">
+<a href="index.html"><i class="fa-solid fa-house"></i> Accueil</a>
+<a href="province.html"><i class="fa-solid fa-map"></i> Provinces/ETD</a>
+<a href="actualite.html"><i class="fa-solid fa-newspaper"></i> Actualités</a>
+<a href="document.html"><i class="fa-solid fa-folder-open"></i> Documents officiels</a>
+<a href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a>
+</div>
+</nav>
+
+<!-- SECTION STRUCTURE ADMINISTRATIVE -->
+
+<section class="structure-admin">
+
+  <h2 class="titre-section">STRUCTURES INSPECTIONS PROVINCIALES</h2>
+
+  <div class="admin-grid">
+
+    <div class="admin-card">
+      <i class="fa-solid fa-sitemap"></i>
+      <h3>Inspection Provinciale de Kinshasa</h3>
+      <p>Antenne de la Tshangu</p>
+      <p>Antenne de la Mont-Amba</p>
+      <p>Antenne de la Funa</p> 
+      <p>Antenne de Lukunga</p>
+    </div>
+
+    <div class="admin-card">
+      <i class="fa-solid fa-sitemap"></i>
+      <h3>Inspection Provinciale du Kongo-Central</h3>
+     
+    </div>
+
+    <div class="admin-card">
+      <i class="fa-solid fa-sitemap"></i>
+      <h3>Inspection Provinciale du Kwango</h3>
+    
+    </div>
+
+    <div class="admin-card">
+      <i class="fa-solid fa-sitemap"></i>
+      <h3>Inspection Provinciale du Kwilu</h3>
+      
+    </div>
+
+    <div class="admin-card">
+      <i class="fa-solid fa-sitemap"></i>
+      <h3>Inspection Provinciale de Mai-Ndombe </h3>
+   
+    </div>
+
+    <div class="admin-card">
+      <i class="fa-solid fa-sitemap"></i>
+      <h3>Inspection Provinciale de l'Équateur</h3>
+   
+    </div>
+
+    <div class="admin-card">
+      <i class="fa-solid fa-sitemap"></i>
+      <h3>Inspection Provinciale de la Mongala</h3>
+      
+    </div>
+
+    <div class="admin-card">
+      <i class="fa-solid fa-sitemap"></i>
+      <h3>Inspection Provinciale du Nord-Ubangi</h3>
+      
+    </div>
+
+    <div class="admin-card">
+      <i class="fa-solid fa-sitemap"></i>
+      <h3>Inspection Provinciale du Sud-Ubangi</h3>
+      
+    </div>
+
+    <div class="admin-card">
+      <i class="fa-solid fa-sitemap"></i>
+      <h3>Inspection Provinciale de la Tshuapa</h3>
+      
+    </div> 
+
+    <div class="admin-card">
+      <i class="fa-solid fa-sitemap"></i>
+      <h3>Inspection Provinciale du Kasaï</h3>
+      
+    </div> 
+
+    <div class="admin-card">
+      <i class="fa-solid fa-sitemap"></i>
+      <h3>Inspection Provinciale du Kasaï-central</h3>
+      
+    </div> 
+
+     <div class="admin-card">
+      <i class="fa-solid fa-sitemap"></i>
+      <h3>Inspection Provinciale du Kasaï Oriental</h3>
+      
+    </div> 
+
+    <div class="admin-card">
+      <i class="fa-solid fa-sitemap"></i>
+      <h3>Inspection Provinciale de Lomami</h3>
+      
+    </div> 
+
+    <div class="admin-card">
+      <i class="fa-solid fa-sitemap"></i>
+      <h3>Inspection Provinciale du Sankuru</h3>
+      
+    </div> 
+
+    <div class="admin-card">
+      <i class="fa-solid fa-sitemap"></i>
+      <h3>Inspection Provinciale du Haut-Katanga</h3>
+      
+    </div> 
+
+    <div class="admin-card">
+      <i class="fa-solid fa-sitemap"></i>
+      <h3>Inspection Provinciale du Haut-Lomami</h3>
+      
+    </div> 
+
+    <div class="admin-card">
+      <i class="fa-solid fa-sitemap"></i>
+      <h3>Inspection Provinciale du Lualaba</h3>
+      
+    </div> 
+
+    <div class="admin-card">
+      <i class="fa-solid fa-sitemap"></i>
+      <h3>Inspection Provinciale du Tanganyika</h3>
+      
+    </div> 
+
+    <div class="admin-card">
+      <i class="fa-solid fa-sitemap"></i>
+      <h3>Inspection Provinciale du Bas-Uélé</h3>
+      
+    </div> 
+
+    <div class="admin-card">
+      <i class="fa-solid fa-sitemap"></i>
+      <h3>Inspection Provinciale du Haut-Uélé</h3>
+      
+    </div> 
+
+    <div class="admin-card">
+      <i class="fa-solid fa-sitemap"></i>
+      <h3>Inspection Provinciale de l'Ituri</h3>
+      
+    </div> 
+
+    <div class="admin-card">
+      <i class="fa-solid fa-sitemap"></i>
+      <h3>Inspection Provinciale de la Tshopo</h3>
+      
+    </div>
+
+    <div class="admin-card">
+      <i class="fa-solid fa-sitemap"></i>
+      <h3>Inspection Provinciale du Maniema</h3>
+      
+    </div> 
+
+    <div class="admin-card">
+      <i class="fa-solid fa-sitemap"></i>
+      <h3>Inspection Provinciale du Nord-Kivu</h3>
+      
+    </div> 
+
+    <div class="admin-card">
+      <i class="fa-solid fa-sitemap"></i>
+      <h3>Inspection Provinciale du Sud-Kivu</h3>
+      
+    </div>  
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+
+<div class="footer-container">
+
+<!-- Colonne 1 : Logo + Réseaux -->
+<div class="footer-col">
+<h3>Inspection Générale de la Territoriale</h3>
+
+<p>Organe de contrôle et d'encadrement de l'administration territoriale en RDC.</p>
+
+<div class="social-icons">
+<a href="#"><i class="fa-brands fa-facebook"></i> Facebook</a>
+<a href="#"><i class="fa-brands fa-x-twitter"></i> X (Twitter)</a>
+<a href="#"><i class="fa-brands fa-youtube"></i> YouTube</a>
+<a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
+</div>
+
+</div>
+
+<!-- Colonne 2 : Contact -->
+<div class="footer-col">
+<h3>Contact</h3>
+
+<p><i class="fa-solid fa-location-dot"></i> Immeuble Semois<br>
+Royal / Kinshasa-Gombe</p>
+
+<p><i class="fa-solid fa-envelope"></i> igteradmcentrale2014@gmail.com</p>
+
+<p><i class="fa-solid fa-phone"></i> +243 83 17 75 007</p>
+
+</div>
+
+<!-- Colonne 3 : Liens rapides -->
+<div class="footer-col">
+<h3>Liens institutionnels</h3>
+
+<p>
+<a href="https://presidence.cd" target="_blank">
+<i class="fa-solid fa-landmark"></i> Présidence de la République
+</a>
+</p>
+
+<p>
+<a href="https://primature.cd" target="_blank">
+<i class="fa-solid fa-building"></i> Primature
+</a>
+</p>
+
+<p>
+<a href="https://interieur.gouv.cd" target="_blank">
+<i class="fa-solid fa-shield-halved"></i> Ministère de l'Intérieur
+</a>
+</p>
+
+</div>
+
+<!-- Colonne 4 : Carte -->
+<div class="footer-col">
+<h3>Localisation</h3>
+
+<iframe 
+src="https://maps.google.com/maps?q=Kinshasa%20Gombe&t=&z=13&ie=UTF8&iwloc=&output=embed"
+width="100%" 
+height="150" 
+style="border:0;">
+</iframe>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+<p>© 2026 Inspection Générale de la Territoriale — Tous droits réservés</p>
+</div>
+
+</footer>
+</html>
