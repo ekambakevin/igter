@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inspection Générale de la Territoriale</title>
+<link rel="icon" type="image/png" href="images/logo.png">  
+
+<style>
+
+/* =========================
+STYLE GENERAL
+========================= */
+
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:#f4f6f9;
+line-height:1.5;
+}
+
+/* =========================
+TOP BAR
+========================= */
+
+.topbar{
+background:#ffffff;
+padding:10px 5%;
+display:flex;
+flex-wrap:wrap;
+justify-content:space-between;
+align-items:center;
+gap:10px;
+border-bottom:1px solid #ddd;
+}
+
+.logo-container{
+display:flex;
+align-items:center;
+flex-wrap:wrap;
+}
+
+.logo-img{
+width:55px;
+margin-right:10px;
+}
+
+.logo-text div{
+line-height:1.2;
+}
+
+.country{
+font-size:14px;
+font-weight:bold;
+color:#d21034;
+}
+
+.institution{
+font-size:16px;
+font-weight:bold;
+color:#003366;
+}
+
+.slogan{
+font-size:12px;
+font-weight:bold;
+color:#ffcc00;
+}
+
+.flag{
+width:40px;
+}
+
+.top-right{
+display:flex;
+align-items:center;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.top-contact{
+font-size:13px;
+}
+
+/* =========================
+NAVBAR
+========================= */
+
+.navbar{
+background:#003366;
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+margin-bottom:0;
+padding:8px 5%;
+}
+
+.menu-center{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:10px;
+}
+
+.menu-center a{
+color:white;
+text-decoration:none;
+font-size:13px;
+font-weight:600;
+display:flex;
+align-items:center;
+gap:5px;
+padding:5px 8px;
+transition:0.3s;
+}
+
+.menu-center a:hover{
+color:#ffcc00;
+background:rgba(255,255,255,0.08);
+border-radius:4px;
+}
+
+/* =========================
+PAGE EN CONSTRUCTION
+========================= */
+
+.construction-section{
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:60vh;
+background:#f4f6f9;
+padding:40px 20px;
+}
+
+.construction-box{
+background:white;
+padding:40px;
+text-align:center;
+border-radius:10px;
+max-width:500px;
+box-shadow:0 8px 25px rgba(0,0,0,0.1);
+}
+
+.construction-icon{
+font-size:50px;
+color:#f2b705;
+margin-bottom:15px;
+}
+
+.construction-box h1{
+font-size:26px;
+color:#003366;
+margin-bottom:10px;
+}
+
+.construction-box p{
+font-size:15px;
+color:#555;
+margin-bottom:25px;
+line-height:1.6;
+}
+
+/* bouton retour */
+
+.btn-retour{
+display:inline-block;
+padding:10px 20px;
+background:#003366;
+color:white;
+text-decoration:none;
+border-radius:6px;
+font-size:14px;
+font-weight:600;
+transition:0.3s;
+}
+
+.btn-retour:hover{
+background:#0052a3;
+transform:translateY(-2px);
+}
+
+/* =========================
+FOOTER
+========================= */
+
+footer{
+background:#003366;
+color:white;
+padding:30px 5%;
+text-align:center;
+font-size:14px;
+}
+
+.footer-container{
+max-width:1200px;
+margin:auto;
+display:flex;
+flex-wrap:wrap;
+justify-content:space-between;
+gap:15px;
+}
+
+.footer-col{
+flex:1;
+min-width:180px;
+}
+
+.footer-col h3{
+margin-bottom:8px;
+color:#f1c40f;
+font-size:15px;
+}
+
+.footer-col p{
+margin:4px 0;
+font-size:13px;
+}
+
+.footer-col a{
+color:white;
+text-decoration:none;
+font-size:13px;
+display:block;
+margin:3px 0;
+}
+
+.footer-col a:hover{
+color:#f1c40f;
+}
+
+.footer-col i{
+color:#f1c40f;
+margin-right:6px;
+}
+
+.social-icons a{
+display:block;
+margin:3px 0;
+}
+
+.footer-col iframe{
+height:100px;
+}
+
+.footer-bottom{
+text-align:center;
+margin-top:10px;
+border-top:1px solid rgba(255,255,255,0.2);
+padding-top:8px;
+font-size:12px;
+}
+
+/* =========================
+RESPONSIVE TABLETTE
+========================= */
+
+@media (max-width:900px){
+
+.hero-text h1{
+font-size:28px;
+}
+
+.hero-text p{
+font-size:14px;
+}
+
+.buttons{
+justify-content:center;
+}
+
+}
+
+/* =========================
+RESPONSIVE MOBILE
+========================= */
+
+@media (max-width:600px){
+
+.topbar{
+flex-direction:column;
+align-items:flex-start;
+}
+
+.hero{
+flex-direction:column;
+text-align:center;
+}
+
+.hero-text h1{
+font-size:24px;
+}
+
+.hero-text p{
+font-size:14px;
+}
+
+.buttons{
+flex-direction:column;
+align-items:center;
+}
+
+.btn{
+width:80%;
+}
+
+.menu-center{
+flex-direction:column;
+align-items:center;
+}
+
+.search-box input{
+width:120px;
+}
+
+.stat{
+flex:1 1 100%;
+}
+
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+
+<div class="logo-container">
+
+<img src="images/logo.png" alt="Logo IGTER" class="logo-img">
+
+<div class="logo-text">
+
+<div class="country">
+République Démocratique du Congo
+</div>
+
+<div class="institution">
+INSPECTION GÉNÉRALE DE LA TERRITORIALE
+</div>
+
+<div class="slogan">
+Contrôle – Enquête – Encadrement – Suivi – Evaluation 
+</div>
+</div>
+</div>
+
+<div class="top-right">
+
+<div class="top-contact">
+📞 +243 83 17 75 007 | ✉ igteradmcentrale2014@gmail.com
+</div>
+
+<!-- Drapeau RDC -->
+<img src="images/drapeau rdc.png" alt="Drapeau RDC" class="flag">
+
+</div></div>
+
+<!-- MENU -->
+<nav class="navbar">
+<div class="menu-center">
+<a href="index.html"><i class="fa-solid fa-house"></i> Accueil</a>
+<a href="province.html"><i class="fa-solid fa-map"></i> Provinces/ETD</a>
+<a href="actualite.html"><i class="fa-solid fa-newspaper"></i> Actualités</a>
+<a href="document.html"><i class="fa-solid fa-folder-open"></i> Documents officiels</a>
+<a href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a>
+</div>
+</nav>
+
+<!-- PAGE EN CONSTRUCTION -->
+<section class="construction-section">
+
+<div class="construction-box">
+
+<div class="construction-icon">
+<i class="fa-solid fa-person-digging"></i>
+</div>
+
+<h1>Page en cours de conception</h1>
+
+<p>
+Cette page est actuellement en cours de développement.  
+Nous travaillons pour vous proposer prochainement un contenu complet et exhaustif. 
+</p>
+
+<a href="index.html" class="btn-retour">
+<i class="fa-solid fa-arrow-left"></i> Retour à l'accueil
+</a>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+
+<div class="footer-container">
+
+<!-- Colonne 1 : Logo + Réseaux -->
+<div class="footer-col">
+<h3>Inspection Générale de la Territoriale</h3>
+
+<p>Organe de contrôle et d'encadrement de l'administration territoriale en RDC.</p>
+
+<div class="social-icons">
+<a href="#"><i class="fa-brands fa-facebook"></i> Facebook</a>
+<a href="#"><i class="fa-brands fa-x-twitter"></i> X (Twitter)</a>
+<a href="#"><i class="fa-brands fa-youtube"></i> YouTube</a>
+<a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
+</div>
+
+</div>
+
+<!-- Colonne 2 : Contact -->
+<div class="footer-col">
+<h3>Contact</h3>
+
+<p><i class="fa-solid fa-location-dot"></i> Immeuble Semois<br>
+Royal / Kinshasa-Gombe</p>
+
+<p><i class="fa-solid fa-envelope"></i> igteradmcentrale2014@gmail.com</p>
+
+<p><i class="fa-solid fa-phone"></i> +243 83 17 75 007</p>
+
+</div>
+
+<!-- Colonne 3 : Liens rapides -->
+<div class="footer-col">
+<h3>Liens institutionnels</h3>
+
+<p>
+<a href="https://presidence.cd" target="_blank">
+<i class="fa-solid fa-landmark"></i> Présidence de la République
+</a>
+</p>
+
+<p>
+<a href="https://primature.cd" target="_blank">
+<i class="fa-solid fa-building"></i> Primature
+</a>
+</p>
+
+<p>
+<a href="https://interieur.gouv.cd" target="_blank">
+<i class="fa-solid fa-shield-halved"></i> Ministère de l'Intérieur
+</a>
+</p>
+
+</div>
+
+<!-- Colonne 4 : Carte -->
+<div class="footer-col">
+<h3>Localisation</h3>
+
+<iframe 
+src="https://maps.google.com/maps?q=Kinshasa%20Gombe&t=&z=13&ie=UTF8&iwloc=&output=embed"
+width="100%" 
+height="150" 
+style="border:0;">
+</iframe>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+<p>© 2026 Inspection Générale de la Territoriale — Tous droits réservés</p>
+</div>
+
+</footer>
+
+</html>
