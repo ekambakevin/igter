@@ -205,44 +205,14 @@ transition:0.3s;
 transform:translateY(-2px);
 box-shadow:0 4px 10px rgba(0,0,0,0.2);
 }
-.btn{
-  padding:12px 25px;
-  border-radius:6px;
-  text-decoration:none;
-  font-weight:bold;
-}
 
 .btn-yellow{
-  background:#f1c40f;
-  color:white;
+background:#ffcc00;
 }
 
 .btn-blue{
-  background:#0066cc;
-  color:white;
-}
-
-.btn-red{
-  background:#e74c3c;
-  color:black;
-}
-  
-/* Bouton jaune */
-.btn-yellow a{
-  color: white;
-  text-decoration: none;
-}
-
-/* Bouton bleu */
-.btn-blue a{
-  color: white;
-  text-decoration: none;
-}
-
-/* Bouton rouge */
-.btn-red a{
-  color: black;
-  text-decoration: none;
+background:#1e73be;
+color:white;
 }
 
 /* =========================
@@ -599,23 +569,16 @@ height:140px;
   padding-left:20px;
 }
 
-/* Menu horizontal même sur mobile */
+/* pour mobile, menu vertical */
 @media(max-width:768px){
-
-  .navbar{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-  }
-
   .dropdown-menu{
-    position:absolute;
-    transform:translateX(-50%);
-    opacity:0;
-    visibility:hidden;
+    position: static;
+    transform:none;
+    opacity:1;
+    visibility:visible;
+    box-shadow:none;
+    border-radius:0;
   }
-
-}
   .submenu-content{
     position: static;
     box-shadow:none;
@@ -968,17 +931,17 @@ Veiller au respect et à l'application correcte des lois, encadrer et accompagne
 
 <div class="buttons">
 
-<a href="mission.html" class="btn btn-yellow">
-Découvrir nos missions réalisées
-</a>
+<button class="btn btn-yellow">
+Découvrir nos missions effectuées
+</button>
 
-<a href="rapport.html" class="btn btn-blue">
-Envoyer et consulter les rapports de missions
-</a>
+<button class="btn btn-blue">
+Consulter les rapports
+</button>
 
-<a href="saisie.html" class="btn btn-red">
-Nous saisir en matière de gouvernance territoriale
-</a>
+<button class="btn btn-red">
+Nous saisir en matière d'Administration Terrtitoriale
+</button>
 </div>
 
 </div>
@@ -1277,4 +1240,3 @@ style="border:0;">
 </footer>
 </body>
 </html>
-
