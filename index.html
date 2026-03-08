@@ -2,11 +2,12 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Inspection Générale de la Territoriale</title>
 <link rel="icon" type="image/png" href="images/logo.png">
-<style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+<style>
 /* =========================
 STYLE GENERAL
 ========================= */
@@ -102,9 +103,10 @@ padding:8px 5%;
 display:flex;
 flex-wrap:wrap;
 justify-content:center;
-gap:10px;
+align-items:center;
+gap:20px;
 }
-
+  
 .menu-center a{
 color:white;
 text-decoration:none;
@@ -213,6 +215,24 @@ background:#1e73be;
 color:white;
 }
 
+/* Bouton jaune */
+.btn-yellow a{
+  color: black;
+  text-decoration: none;
+}
+
+/* Bouton bleu */
+.btn-blue a{
+  color: white;
+  text-decoration: none;
+}
+
+/* Bouton rouge */
+.btn-red a{
+  color: black;
+  text-decoration: none;
+}
+  
 /* =========================
 STATS
 ========================= */
@@ -567,16 +587,23 @@ height:140px;
   padding-left:20px;
 }
 
-/* pour mobile, menu vertical */
+/* Menu horizontal même sur mobile */
 @media(max-width:768px){
-  .dropdown-menu{
-    position: static;
-    transform:none;
-    opacity:1;
-    visibility:visible;
-    box-shadow:none;
-    border-radius:0;
+
+  .navbar{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
   }
+
+  .dropdown-menu{
+    position:absolute;
+    transform:translateX(-50%);
+    opacity:0;
+    visibility:hidden;
+  }
+
+}
   .submenu-content{
     position: static;
     box-shadow:none;
@@ -588,12 +615,12 @@ height:140px;
 }
 
 /* SECTION VIDEOS */
-
 .videos-section{
-padding:50px 8%;
+padding:30px 10px;
 background:#f4f6f9;
+max-width:1100px;
+margin:auto;
 }
-
 .videos-header{
 display:flex;
 justify-content:space-between;
@@ -612,16 +639,12 @@ font-weight:600;
 font-size:14px;
 }
 
-.videos-header .voir-tout:hover{
-text-decoration:underline;
-}
-
 /* GRID VIDEOS */
 
 .videos-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:20px;
+grid-template-columns:repeat(auto-fit,minmax(100px,1fr));
+gap:10px;
 }
 
 /* CARTE VIDEO */
@@ -665,7 +688,6 @@ line-height:1.4;
 height:150px;
 }
 }
-
 /* =========================
 FOOTER
 ========================= */
@@ -808,19 +830,12 @@ flex:1 1 100%;
 html{
 scroll-behavior:smooth;
 }
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 </style>
-
 </head>
-
+  
 <body>
-
 <div class="topbar">
-
 <div class="logo-container">
-
 <img src="images/logo.png" alt="Logo IGTER" class="logo-img">
 
 <div class="logo-text">
@@ -929,17 +944,17 @@ Veiller au respect et à l'application correcte des lois, encadrer et accompagne
 
 <div class="buttons">
 
-<button class="btn btn-yellow">
-Découvrir nos missions effectuées
-</button>
+<button class="btn btn-yellow"><a href="mission.html">
+Découvrir nos missions réalisées
+</button></a>
 
-<button class="btn btn-blue">
-Consulter les rapports
-</button>
+<button class="btn btn-blue"><a href="rapport.html">
+Envoyer et consulter les rapports de missions
+</button></a>
 
-<button class="btn btn-red">
-Nous saisir en matière d'Administration Terrtitoriale
-</button>
+<button class="btn btn-red"><a href="saisie.html">
+Nous saisir en matière de gouvernance territoriale
+</button></a>
 </div>
 
 </div>
@@ -964,25 +979,25 @@ Inspecteur Général de la Territoriale a.i
 
   <div class="stat stat-blue">
     <span class="icon">📅</span>
-    <h3>44</h3>
+    <h3>28</h3>
     <p>ANS D'EXISTENCE</p>
   </div>
 
   <div class="stat stat-green">
-    <span class="icon">👮‍♂️</span>
-    <h3>2.000</h3>
+    <span class="icon">👮♂️</span>
+    <h3>0</h3>
     <p>INSPECTEURS</p>
   </div>
 
   <div class="stat stat-orange">
     <span class="icon">✅</span>
-    <h3>1.500</h3>
+    <h3>0</h3>
     <p>MISSIONS REALISEES</p>
   </div>
 
   <div class="stat stat-purple">
     <span class="icon">🌍</span>
-    <h3>26</h3>
+    <h3>28</h3>
     <p>PROVINCES</p>
   </div>
 
@@ -1135,27 +1150,27 @@ Formation des inspecteurs sur l’audit interne
 <!-- VIDEOS -->
 <section class="videos-section">
   <div class="videos-header">
-    <h2>Vidéos récentes</h2>
+    <h2>Nos vidéos</h2>
     <a href="videos.html" class="voir-tout">Voir tout</a>
   </div>
 
   <div class="videos-grid">
-
+    
     <div class="video-card">
-      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Vidéo IGTER 1" frameborder="0" allowfullscreen></iframe>
-      <div class="video-title">Présentation des missions de l'IGTER</div>
+      <iframe src=" https://www.youtube.com/embed/YjShT1hdsIs" title="Vidéo IGTER 2" frameborder="0" allowfullscreen></iframe>
+      <div class="video-title">Réhabilitation de Monsieur LUMBILA FEKEY Roger, Inspecteur Général de la Territoriale a.i</div> 
     </div>
 
     <div class="video-card">
-      <iframe src="https://www.youtube.com/embed/9bZkp7q19f0" title="Vidéo IGTER 2" frameborder="0" allowfullscreen></iframe>
-      <div class="video-title">Inspection dans 5 provinces</div>
+      <iframe src="VD1" title="Vidéo IGTER 3" frameborder="0" allowfullscreen></iframe>
+      <div class="video-title">Cérémonie de remise et reprise entre l'Inspecteur Général de la Territoriale a.i sortant, Monsieur BEYA MULUMBA Alidor, et l'Inspecteur Général a.i entrant et réhabilité, Monsieur LUMBILA FEKEY Roger</div>
     </div>
-
-    <div class="video-card">
-      <iframe src="https://www.youtube.com/embed/3JZ_D3ELwOQ" title="Vidéo IGTER 3" frameborder="0" allowfullscreen></iframe>
-      <div class="video-title">Réunion stratégique annuelle</div>
+    
+<div class="video-card">
+      <<iframe width="560" height="315" src="https://www.youtube.com/embed/pRgTeC9DVVw?si=7nNS_7YkIwhkZRwL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>></iframe>
+      <div class="video-title">Prestation de serment des Premiers Dirigeants de l'IGTER en 2014</div>
     </div>
-
+    
   </div>
 </section>
 
@@ -1237,4 +1252,34 @@ style="border:0;">
 
 </footer>
 </body>
+
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
