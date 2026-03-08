@@ -569,23 +569,16 @@ height:140px;
   padding-left:20px;
 }
 
-/* Menu horizontal même sur mobile */
+/* pour mobile, menu vertical */
 @media(max-width:768px){
-
-  .navbar{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-  }
-
   .dropdown-menu{
-    position:absolute;
-    transform:translateX(-50%);
-    opacity:0;
-    visibility:hidden;
+    position: static;
+    transform:none;
+    opacity:1;
+    visibility:visible;
+    box-shadow:none;
+    border-radius:0;
   }
-
-}
   .submenu-content{
     position: static;
     box-shadow:none;
@@ -1247,4 +1240,3 @@ style="border:0;">
 </footer>
 </body>
 </html>
-
