@@ -613,85 +613,7 @@ height:140px;
     display:block;
   }
 }
-/* SECTION VIDEOS */
-
-.videos-section{
-padding:50px 8%;
-background:#f4f6f9;
-}
-
-.videos-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-margin-bottom:25px;
-}
-
-.videos-header h2{
-color:#003366;
-}
-
-.videos-header .voir-tout{
-text-decoration:none;
-color:#2563eb;
-font-weight:600;
-font-size:14px;
-}
-
-.videos-header .voir-tout:hover{
-text-decoration:underline;
-}
-
-/* GRID VIDEOS */
-
-.videos-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:20px;
-}
-
-/* CARTE VIDEO */
-
-.video-card{
-background:white;
-border-radius:8px;
-overflow:hidden;
-box-shadow:0 4px 12px rgba(0,0,0,0.08);
-transition:0.3s;
-}
-
-.video-card:hover{
-transform:translateY(-3px);
-box-shadow:0 8px 20px rgba(0,0,0,0.12);
-}
-
-/* IFRAME RESPONSIVE */
-
-.video-card iframe{
-width:100%;
-height:180px;
-border:none;
-border-bottom:1px solid #eee;
-}
-
-/* TITRE VIDEO */
-
-.video-title{
-padding:10px 15px;
-font-size:14px;
-color:#111;
-font-weight:500;
-line-height:1.4;
-}
-
-/* RESPONSIVE MOBILE */
-
-@media (max-width:768px){
-.video-card iframe{
-height:150px;
-}
-}
-
+  
 /* =========================
 FOOTER
 ========================= */
@@ -1150,32 +1072,6 @@ Formation des inspecteurs sur l’audit interne
 </section>
 
 </div>
-<!-- VIDEOS -->
-<section class="videos-section">
-  <div class="videos-header">
-    <h2>Vidéos récentes</h2>
-    <a href="videos.html" class="voir-tout">Voir tout</a>
-  </div>
-
-  <div class="videos-grid">
-
-    <div class="video-card">
-      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Vidéo IGTER 1" frameborder="0" allowfullscreen></iframe>
-      <div class="video-title">Présentation des missions de l'IGTER</div>
-    </div>
-
-    <div class="video-card">
-      <iframe src="https://www.youtube.com/embed/9bZkp7q19f0" title="Vidéo IGTER 2" frameborder="0" allowfullscreen></iframe>
-      <div class="video-title">Inspection dans 5 provinces</div>
-    </div>
-
-    <div class="video-card">
-      <iframe src="https://www.youtube.com/embed/3JZ_D3ELwOQ" title="Vidéo IGTER 3" frameborder="0" allowfullscreen></iframe>
-      <div class="video-title">Réunion stratégique annuelle</div>
-    </div>
-
-  </div>
-</section>
   
 <!-- FOOTER -->
 <footer id="contact">
@@ -1257,6 +1153,7 @@ style="border:0;">
 </body>
 
 </html>
+
 
 
 
