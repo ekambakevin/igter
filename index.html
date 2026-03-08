@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Inspection Générale de la Territoriale</title>
-<link rel="icon" type="image/png" href="images/logo.png">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
+
 /* =========================
 STYLE GENERAL
 ========================= */
@@ -103,10 +104,9 @@ padding:8px 5%;
 display:flex;
 flex-wrap:wrap;
 justify-content:center;
-align-items:center;
-gap:20px;
+gap:10px;
 }
-  
+
 .menu-center a{
 color:white;
 text-decoration:none;
@@ -215,24 +215,6 @@ background:#1e73be;
 color:white;
 }
 
-/* Bouton jaune */
-.btn-yellow a{
-  color: black;
-  text-decoration: none;
-}
-
-/* Bouton bleu */
-.btn-blue a{
-  color: white;
-  text-decoration: none;
-}
-
-/* Bouton rouge */
-.btn-red a{
-  color: black;
-  text-decoration: none;
-}
-  
 /* =========================
 STATS
 ========================= */
@@ -587,23 +569,16 @@ height:140px;
   padding-left:20px;
 }
 
-/* Menu horizontal même sur mobile */
+/* pour mobile, menu vertical */
 @media(max-width:768px){
-
-  .navbar{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-  }
-
   .dropdown-menu{
-    position:absolute;
-    transform:translateX(-50%);
-    opacity:0;
-    visibility:hidden;
+    position: static;
+    transform:none;
+    opacity:1;
+    visibility:visible;
+    box-shadow:none;
+    border-radius:0;
   }
-
-}
   .submenu-content{
     position: static;
     box-shadow:none;
@@ -613,7 +588,86 @@ height:140px;
     display:block;
   }
 }
-  
+
+/* SECTION VIDEOS */
+
+.videos-section{
+padding:50px 8%;
+background:#f4f6f9;
+}
+
+.videos-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:25px;
+}
+
+.videos-header h2{
+color:#003366;
+}
+
+.videos-header .voir-tout{
+text-decoration:none;
+color:#2563eb;
+font-weight:600;
+font-size:14px;
+}
+
+.videos-header .voir-tout:hover{
+text-decoration:underline;
+}
+
+/* GRID VIDEOS */
+
+.videos-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:20px;
+}
+
+/* CARTE VIDEO */
+
+.video-card{
+background:white;
+border-radius:8px;
+overflow:hidden;
+box-shadow:0 4px 12px rgba(0,0,0,0.08);
+transition:0.3s;
+}
+
+.video-card:hover{
+transform:translateY(-3px);
+box-shadow:0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* IFRAME RESPONSIVE */
+
+.video-card iframe{
+width:100%;
+height:180px;
+border:none;
+border-bottom:1px solid #eee;
+}
+
+/* TITRE VIDEO */
+
+.video-title{
+padding:10px 15px;
+font-size:14px;
+color:#111;
+font-weight:500;
+line-height:1.4;
+}
+
+/* RESPONSIVE MOBILE */
+
+@media (max-width:768px){
+.video-card iframe{
+height:150px;
+}
+}
+
 /* =========================
 FOOTER
 ========================= */
@@ -756,12 +810,19 @@ flex:1 1 100%;
 html{
 scroll-behavior:smooth;
 }
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </style>
+
 </head>
-  
+
 <body>
+
 <div class="topbar">
+
 <div class="logo-container">
+
 <img src="images/logo.png" alt="Logo IGTER" class="logo-img">
 
 <div class="logo-text">
@@ -870,17 +931,17 @@ Veiller au respect et à l'application correcte des lois, encadrer et accompagne
 
 <div class="buttons">
 
-<button class="btn btn-yellow"><a href="mission.html">
-Découvrir nos missions réalisées
-</button></a>
+<button class="btn btn-yellow">
+Découvrir nos missions effectuées
+</button>
 
-<button class="btn btn-blue"><a href="rapport.html">
-Envoyer et consulter les rapports de missions
-</button></a>
+<button class="btn btn-blue">
+Consulter les rapports
+</button>
 
-<button class="btn btn-red"><a href="saisie.html">
-Nous saisir en matière de gouvernance territoriale
-</button></a>
+<button class="btn btn-red">
+Nous saisir en matière d'Administration Terrtitoriale
+</button>
 </div>
 
 </div>
@@ -905,25 +966,25 @@ Inspecteur Général de la Territoriale a.i
 
   <div class="stat stat-blue">
     <span class="icon">📅</span>
-    <h3>28</h3>
+    <h3>44</h3>
     <p>ANS D'EXISTENCE</p>
   </div>
 
   <div class="stat stat-green">
     <span class="icon">👮‍♂️</span>
-    <h3>0</h3>
+    <h3>2.000</h3>
     <p>INSPECTEURS</p>
   </div>
 
   <div class="stat stat-orange">
     <span class="icon">✅</span>
-    <h3>0</h3>
+    <h3>1.500</h3>
     <p>MISSIONS REALISEES</p>
   </div>
 
   <div class="stat stat-purple">
     <span class="icon">🌍</span>
-    <h3>28</h3>
+    <h3>26</h3>
     <p>PROVINCES</p>
   </div>
 
@@ -1073,6 +1134,33 @@ Formation des inspecteurs sur l’audit interne
 
 </div>
 
+<!-- VIDEOS -->
+<section class="videos-section">
+  <div class="videos-header">
+    <h2>Vidéos récentes</h2>
+    <a href="videos.html" class="voir-tout">Voir tout</a>
+  </div>
+
+  <div class="videos-grid">
+
+    <div class="video-card">
+      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Vidéo IGTER 1" frameborder="0" allowfullscreen></iframe>
+      <div class="video-title">Présentation des missions de l'IGTER</div>
+    </div>
+
+    <div class="video-card">
+      <iframe src="https://www.youtube.com/embed/9bZkp7q19f0" title="Vidéo IGTER 2" frameborder="0" allowfullscreen></iframe>
+      <div class="video-title">Inspection dans 5 provinces</div>
+    </div>
+
+    <div class="video-card">
+      <iframe src="https://www.youtube.com/embed/3JZ_D3ELwOQ" title="Vidéo IGTER 3" frameborder="0" allowfullscreen></iframe>
+      <div class="video-title">Réunion stratégique annuelle</div>
+    </div>
+
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer id="contact">
 
@@ -1102,7 +1190,7 @@ Royal / Kinshasa-Gombe</p>
 
 <p><i class="fa-solid fa-envelope"></i> igteradmcentrale2014@gmail.com</p>
 
-<p><i class="fa-solid fa-phone"></i> +243 83 17 75 007</p>
+<p><i class="fa-solid fa-phone"></i>  +243 83 17 75 007 </p>
 
 </div>
 
@@ -1150,32 +1238,5 @@ style="border:0;">
 </div>
 
 </footer>
-
+</body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
