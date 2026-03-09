@@ -18,18 +18,11 @@ box-sizing:border-box;
 
 body{
 margin:0;
-font-family:'Poppins', sans-serif;
+font-family:Arial, Helvetica, sans-serif;
 background:#f4f6f9;
-line-height:1.6;
-color:#333;
+line-height:1.5;
 }
 
-.container{
-max-width:1200px;
-margin:auto;
-padding:0 20px;
-}
-  
 /* =========================
 TOP BAR
 ========================= */
@@ -100,12 +93,9 @@ NAVBAR
 background:#003366;
 display:flex;
 justify-content:center;
-align-items:center;
-padding:12px 5%;
-box-shadow:0 3px 10px rgba(0,0,0,0.15);
-position:sticky;
-top:0;
-z-index:1000;
+flex-wrap:wrap;
+margin-bottom:0;
+padding:8px 5%;
 }
 
 .menu-center{
@@ -190,28 +180,6 @@ font-size:16px;
 display:block;
 }
 
-.hero{
-display:flex;
-flex-wrap:wrap;
-align-items:center;
-justify-content:space-between;
-padding:60px 6%;
-background:linear-gradient(135deg,#003366,#0056b3);
-color:white;
-gap:40px;
-}
-
-.hero-text h1{
-font-size:38px;
-font-weight:700;
-margin-bottom:15px;
-}
-
-.hero-text p{
-font-size:16px;
-opacity:0.95;
-}
-  
 /* =========================
 BOUTONS
 ========================= */
@@ -224,18 +192,17 @@ gap:10px;
 }
 
 .btn{
-padding:12px 24px;
+padding:10px 22px;
 border:none;
-border-radius:6px;
+border-radius:5px;
 font-weight:600;
 cursor:pointer;
-transition:all 0.3s ease;
-font-size:14px;
+transition:0.3s;
 }
 
 .btn:hover{
-transform:translateY(-3px);
-box-shadow:0 6px 15px rgba(0,0,0,0.2);
+transform:translateY(-2px);
+box-shadow:0 4px 10px rgba(0,0,0,0.2);
 }
 
 .btn-yellow{
@@ -416,20 +383,7 @@ font-size:14px;
 color:#555;
 }
 
-.card{
-background:white;
-padding:20px;
-border-radius:10px;
-box-shadow:0 4px 12px rgba(0,0,0,0.08);
-transition:all 0.3s ease;
-border-top:4px solid #003366;
-}
 
-.card:hover{
-transform:translateY(-6px);
-box-shadow:0 10px 25px rgba(0,0,0,0.15);
-}
-  
 /* ENTETE ACTUALITES */
 
 .news-header{
@@ -530,22 +484,7 @@ height:140px;
 }
 
 }
-.news-row{
-display:flex;
-align-items:center;
-gap:15px;
-padding:18px;
-border-bottom:1px solid #eee;
-text-decoration:none;
-color:black;
-transition:all 0.25s ease;
-}
 
-.news-row:hover{
-background:#f4f6f9;
-transform:translateX(5px);
-}
-  
 /* DROPDOWN PRINCIPAL */
 .dropdown{
   position: relative;
@@ -719,15 +658,15 @@ gap:20px;
 
 .video-card{
 background:white;
-border-radius:10px;
+border-radius:8px;
 overflow:hidden;
-box-shadow:0 5px 15px rgba(0,0,0,0.08);
+box-shadow:0 4px 12px rgba(0,0,0,0.08);
 transition:0.3s;
 }
 
 .video-card:hover{
-transform:translateY(-6px);
-box-shadow:0 10px 25px rgba(0,0,0,0.15);
+transform:translateY(-3px);
+box-shadow:0 8px 20px rgba(0,0,0,0.12);
 }
 
 /* IFRAME RESPONSIVE */
@@ -761,20 +700,11 @@ FOOTER
 ========================= */
 
 footer{
-background:#002244;
+background:#003366;
 color:white;
-padding:40px 5%;
+padding:30px 5%;
+text-align:center;
 font-size:14px;
-}
-
-.footer-col h3{
-color:#ffcc00;
-margin-bottom:10px;
-}
-
-.footer-col a:hover{
-color:#ffcc00;
-padding-left:3px;
 }
 
 .footer-container{
@@ -904,68 +834,6 @@ flex:1 1 100%;
 
 html{
 scroll-behavior:smooth;
-}
-@media (max-width:1024px){
-
-.hero{
-flex-direction:column;
-text-align:center;
-}
-
-.hero-image img{
-width:260px;
-}
-
-.missions{
-grid-template-columns:1fr;
-}
-
-.home-sections{
-flex-direction:column;
-}
-
-}
-
-@media (max-width:768px){
-
-.navbar{
-flex-direction:column;
-}
-
-.menu-center{
-flex-direction:column;
-gap:10px;
-}
-
-.hero-text h1{
-font-size:26px;
-}
-
-.hero-text p{
-font-size:14px;
-}
-
-.video-card iframe{
-height:160px;
-}
-
-}
-
-@media (max-width:480px){
-
-.hero-text h1{
-font-size:22px;
-}
-
-.btn{
-width:100%;
-}
-
-.news-img{
-width:100%;
-height:150px;
-}
-
 }
 </style>
 </head>
@@ -1192,7 +1060,6 @@ Inspecteur Général de la Territoriale a.i
 <div class="home-sections">
 
 <!-- MISSIONS -->
-<div class="container">
 <section class="missions-section">
 
 <h2>Nos missions</h2>
@@ -1225,12 +1092,11 @@ Inspecteur Général de la Territoriale a.i
 </div>
 
 </div>
-</div>
+
 </section>
 
 
 <!-- ACTUALITES -->
-<div class="container">
 <section class="news-section">
 
 <div class="news-header" id="actualite">
@@ -1282,13 +1148,12 @@ Formation des inspecteurs sur l’audit interne
 </a>
 
 </div>
-</div>
+
 </section>
 
 </div>
 
 <!-- VIDEOS -->
-<div class="container">
 <section class="videos-section">
   <div class="videos-header">
     <h2>Nos vidéos</h2>
@@ -1308,7 +1173,6 @@ Formation des inspecteurs sur l’audit interne
     </div>
     
   </div>
-</div>
 </section>
 
 <!-- FOOTER -->
