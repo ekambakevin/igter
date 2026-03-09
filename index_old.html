@@ -838,41 +838,75 @@ flex:1 1 100%;
 html{
 scroll-behavior:smooth;
 }
+
+/* ======== VERSION MOBILE ET TABLETTE ======== */
+
+@media (max-width: 992px){
+
+.top-header{
+display:flex;
+align-items:center;
+justify-content:flex-start;
+gap:10px;
+}
+
+/* logo + texte sur la même ligne */
+
+.logo-container{
+flex-shrink:0;
+}
+
+.logo-img{
+height:55px;
+}
+
+/* texte à côté du logo */
+
+.logo-text{
+line-height:1.2;
+}
+
+/* masquer contact et drapeau */
+
+.top-right{
+display:none;
+}
+
+}
 </style>
 </head>
   
 <body>
 <div class="topbar">
-<div class="logo-container">
-<img src="images/logo.png" alt="Logo IGTER" class="logo-img">
+<div class="top-header">
 
-<div class="logo-text">
+  <div class="logo-container">
+    <img src="images/logo.png" alt="Logo IGTER" class="logo-img">
+  </div>
 
-<div class="country">
-République Démocratique du Congo
+  <div class="logo-text">
+    <div class="country">
+      République Démocratique du Congo
+    </div>
+
+    <div class="institution">
+      INSPECTION GÉNÉRALE DE LA TERRITORIALE
+    </div>
+
+    <div class="slogan">
+      Contrôle – Enquête – Encadrement – Suivi – Evaluation
+    </div>
+  </div>
+
+  <div class="top-right">
+    <div class="top-contact">
+      📞 +243 83 17 75 007 | ✉ igteradmcentrale2014@gmail.com
+    </div>
+
+    <img src="images/drapeau rdc.png" alt="Drapeau RDC" class="flag">
+  </div>
+
 </div>
-
-<div class="institution">
-INSPECTION GÉNÉRALE DE LA TERRITORIALE
-</div>
-
-<div class="slogan">
-Contrôle – Enquête – Encadrement – Suivi – Evaluation 
-</div>
-</div>
-</div>
-
-<div class="top-right">
-
-<div class="top-contact">
-📞 +243 83 17 75 007 | ✉ igteradmcentrale2014@gmail.com
-</div>
-
-<!-- Drapeau RDC -->
-<img src="images/drapeau rdc.png" alt="Drapeau RDC" class="flag">
-
-</div></div>
-
 
 <!-- MENU -->
 <nav class="navbar">
@@ -1257,6 +1291,7 @@ style="border:0;">
 </body>
 
 </html>
+
 
 
 
