@@ -606,7 +606,42 @@ display:block;
 }
 
 }
+/* MENU MOBILE */
 
+.menu-toggle{
+display:none;
+font-size:22px;
+color:white;
+cursor:pointer;
+}
+
+@media (max-width:768px){
+
+.menu-toggle{
+display:block;
+position:absolute;
+right:20px;
+top:10px;
+}
+
+.menu-center{
+display:none;
+flex-direction:column;
+width:100%;
+background:#003366;
+margin-top:10px;
+}
+
+.menu-center.active{
+display:flex;
+}
+
+.menu-center a{
+padding:10px;
+border-top:1px solid rgba(255,255,255,0.2);
+}
+
+}
 /* SECTION VIDEOS */
 .videos-section{
 padding:50px 20px;
@@ -946,6 +981,11 @@ Contrôle – Enquête – Encadrement – Suivi – Evaluation
 
 <!-- MENU -->
 <nav class="navbar">
+  
+<div class="menu-toggle">
+<i class="fa-solid fa-bars"></i>
+</div>
+  
 <div class="menu-center">
 <a href="index.html"><i class="fa-solid fa-house"></i> Accueil</a>
 
@@ -1007,7 +1047,7 @@ Contrôle – Enquête – Encadrement – Suivi – Evaluation
 <a href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a>
 </div>
 </nav>
-
+  
 <!-- HERO -->
 
 <div class="hero">
@@ -1324,9 +1364,20 @@ style="border:0;">
 </div>
 
 </footer>
+<script>
+
+const toggle = document.querySelector(".menu-toggle");
+const menu = document.querySelector(".menu-center");
+
+toggle.onclick = () => {
+menu.classList.toggle("active");
+}
+
+</script>
 </body>
 
 </html>
+
 
 
 
