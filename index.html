@@ -72,41 +72,53 @@ transform:translateX(-100%);
 
 }
 
-/* MINI BARRE GOUVERNEMENTALE */
+/* BARRE GOUVERNEMENTALE */
 
 .gov-bar{
-width:100%;
-height:28px;
-background:#002855;
-color:white;
-font-size:13px;
-font-weight:600;
 display:flex;
 align-items:center;
+background:#002855;
+color:white;
+height:30px;
+overflow:hidden;
+font-size:13px;
+font-weight:600;
+padding:0 10px;
+}
+
+/* Drapeau */
+
+.gov-flag{
+height:18px;
+margin-right:10px;
+}
+
+/* zone défilante */
+
+.gov-marquee{
+flex:1;
 overflow:hidden;
 position:relative;
-padding-left:10px;
 }
 
-.gov-slide{
-position:absolute;
+/* piste du texte */
+
+.gov-track{
+display:flex;
+gap:80px;
 white-space:nowrap;
-animation:govScroll 15s linear infinite;
+animation:scrollGov 15s linear infinite;
 }
 
-.slide-a{
-animation-delay:0s;
+/* pause au survol */
+
+.gov-marquee:hover .gov-track{
+animation-play-state:paused;
 }
 
-.slide-b{
-animation-delay:5s;
-}
+/* animation */
 
-.slide-c{
-animation-delay:10s;
-}
-
-@keyframes govScroll{
+@keyframes scrollGov{
 
 0%{
 transform:translateX(100%);
@@ -117,8 +129,6 @@ transform:translateX(-100%);
 }
 
 }
-
-
 
 /* MISSIONS */
 
@@ -760,17 +770,17 @@ grid-template-columns:1fr;
 
 <div class="gov-bar">
 
-<div class="gov-slide slide-a">
-République Démocratique du Congo
-</div>
+<img src="images/drapeau rdc.png" class="gov-flag" alt="Drapeau RDC">
 
-<div class="gov-slide slide-b">
-Gouvernement Central
-</div>
+<div class="gov-marquee">
 
-<div class="gov-slide slide-c">
-Ministère de l'Intérieur, Sécurité, Décentralisation & Affaires Coutumières
-</div>
+<div class="gov-track">
+
+<span>République Démocratique du Congo</span>
+
+<span>Gouvernement Central</span>
+
+<span>Ministère de l'Intérieur, Sécurité, Décentralisation & Affaires Coutumières</span>
 
 </div>
   
@@ -999,6 +1009,7 @@ menu.classList.toggle("active");
 </body>
 
 </html>
+
 
 
 
