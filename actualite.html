@@ -4,18 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Inspection Générale de la Territoriale</title>
-<link rel="icon" type="image/png" href="images/logo.png">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="images/logo.png">  
+
 <style>
+
 /* =========================
 STYLE GENERAL
 ========================= */
 
 *{
 box-sizing:border-box;
-margin:0;
-padding:0;
 }
 
 body{
@@ -28,6 +26,7 @@ line-height:1.5;
 /* =========================
 TOP BAR
 ========================= */
+
 .topbar{
 background:#ffffff;
 padding:10px 5%;
@@ -42,9 +41,9 @@ border-bottom:1px solid #ddd;
 .logo-container{
 display:flex;
 align-items:center;
-gap:10px;
+flex-wrap:wrap;
 }
-  
+
 .logo-img{
 width:55px;
 margin-right:10px;
@@ -104,10 +103,9 @@ padding:8px 5%;
 display:flex;
 flex-wrap:wrap;
 justify-content:center;
-align-items:center;
-gap:20px;
+gap:10px;
 }
-  
+
 .menu-center a{
 color:white;
 text-decoration:none;
@@ -126,107 +124,72 @@ background:rgba(255,255,255,0.08);
 border-radius:4px;
 }
 
+/* =========================
+PAGE EN CONSTRUCTION
+========================= */
 
-/* DROPDOWN PRINCIPAL */
-.dropdown{
-  position: relative;
-  display: inline-block;
+.construction-section{
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:60vh;
+background:#f4f6f9;
+padding:40px 20px;
 }
 
-.dropbtn{
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  padding: 8px 12px;
-  color: white;
-  background: #003366;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 4px;
-  cursor: pointer;
+.construction-box{
+background:white;
+padding:40px;
+text-align:center;
+border-radius:10px;
+max-width:500px;
+box-shadow:0 8px 25px rgba(0,0,0,0.1);
 }
 
-/* MENU PRINCIPAL */
-.dropdown-menu{
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background:white;
-  min-width:260px;
-  border-radius:6px;
-  box-shadow:0 10px 25px rgba(0,0,0,0.2);
-  opacity:0;
-  visibility:hidden;
-  transform: translateY(10px);
-  transition: all 0.3s ease;
-  z-index:999;
+.construction-icon{
+font-size:50px;
+color:#f2b705;
+margin-bottom:15px;
 }
 
-.dropdown:hover .dropdown-menu{
-  opacity:1;
-  visibility:visible;
-  transform: translateY(0);
+.construction-box h1{
+font-size:26px;
+color:#003366;
+margin-bottom:10px;
 }
 
-.dropdown-menu a{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  padding:10px 15px;
-  color:#003366;
-  text-decoration:none;
-  font-size:14px;
-  border-bottom:1px solid #eee;
-  transition:0.2s;
+.construction-box h2{
+font-size:26px;
+color:#003366;
+margin-bottom:10px;
 }
 
-.dropdown-menu a:hover{
-  background:#f4f6f9;
-  padding-left:20px;
+.construction-box p{
+font-size:15px;
+color:#555;
+margin-bottom:25px;
+line-height:1.6;
 }
 
-/* SUBMENU Organisation */
-.submenu{
-  position: relative;
+/* bouton retour */
+
+.btn-retour{
+display:inline-block;
+padding:10px 20px;
+background:#003366;
+color:white;
+text-decoration:none;
+border-radius:6px;
+font-size:14px;
+font-weight:600;
+transition:0.3s;
 }
 
-/* cacher sous-menu */
-.submenu-content{
-  display:none;
-  position:absolute;
-  top:0;
-  left:100%;
-  background:white;
-  min-width:240px;
-  box-shadow:0 8px 20px rgba(0,0,0,0.2);
-  border-radius:6px;
-  z-index:999;
-  transition:0.3s;
+.btn-retour:hover{
+background:#0052a3;
+transform:translateY(-2px);
 }
 
-/* afficher sous-menu au hover */
-.submenu:hover > .submenu-content{
-  display:block;
-}
-
-/* liens sous-menu */
-.submenu-content a{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  padding:10px 12px;
-  text-decoration:none;
-  color:#003366;
-  font-size:14px;
-  border-bottom:1px solid #eee;
-  transition:0.2s;
-}
-
-.submenu-content a:hover{
-  background:#f4f6f9;
-  padding-left:20px;
-}
-  
 /* =========================
 FOOTER
 ========================= */
@@ -321,6 +284,7 @@ justify-content:center;
 /* =========================
 RESPONSIVE MOBILE
 ========================= */
+
 @media (max-width:600px){
 
 .topbar{
@@ -363,165 +327,15 @@ width:120px;
 flex:1 1 100%;
 }
 
+}
+
 html{
 scroll-behavior:smooth;
 }
 
-}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-/* LOGO + TEXTE SUR UNE MEME LIGNE (mobile et tablette) */
-
-@media (max-width:900px){
-
-.logo-container{
-flex-wrap:nowrap;
-align-items:center;
-}
-
-.logo-img{
-width:45px;
-margin-right:8px;
-}
-
-.logo-text div{
-font-size:11px;
-line-height:1.2;
-}
-
-.country{
-font-size:11px;
-}
-
-.institution{
-font-size:12px;
-}
-
-.slogan{
-font-size:10px;
-}
-
-}
-
-/* =========================
-TOPBAR RESPONSIVE AMELIOREE
-========================= */
-
-@media (max-width:900px){
-
-.topbar{
-flex-direction:column;
-align-items:center;
-text-align:center;
-gap:8px;
-}
-
-.logo-container{
-display:flex;
-align-items:center;
-justify-content:center;
-flex-wrap:nowrap;
-}
-
-.logo-img{
-width:45px;
-}
-
-.logo-text{
-text-align:left;
-}
-
-.country{
-font-size:11px;
-}
-
-.institution{
-font-size:12px;
-font-weight:700;
-}
-
-.slogan{
-font-size:10px;
-}
-
-.top-right{
-justify-content:center;
-font-size:12px;
-}
-
-.flag{
-width:30px;
-}
-
-}
-
-/* BOUTON MENU MOBILE */
-
-.menu-toggle{
-display:none;
-font-size:22px;
-color:white;
-cursor:pointer;
-}
-
-/* MENU MOBILE */
-
-@media (max-width:768px){
-
-.menu-toggle{
-display:block;
-position:absolute;
-right:20px;
-top:12px;
-}
-
-.navbar{
-position:relative;
-}
-
-.menu-center{
-display:none;
-flex-direction:column;
-width:100%;
-background:#003366;
-margin-top:10px;
-}
-
-.menu-center.active{
-display:flex;
-}
-
-.menu-center a,
-.dropbtn{
-padding:12px;
-border-top:1px solid rgba(255,255,255,0.2);
-}
-
-.dropdown-menu{
-position:static;
-box-shadow:none;
-opacity:1;
-visibility:visible;
-transform:none;
-display:none;
-}
-
-.dropdown:hover .dropdown-menu{
-display:block;
-}
-
-.submenu-content{
-position:static;
-display:none;
-box-shadow:none;
-}
-
-.submenu:hover .submenu-content{
-display:block;
-}
-
-}
-
-
+</style>
 </head>
 
 <body>
@@ -551,7 +365,7 @@ Contrôle – Enquête – Encadrement – Suivi – Evaluation
 <div class="top-right">
 
 <div class="top-contact">
-📞 +243 83 17 75 007 | ✉ contact@igter.cd
+📞 +243 83 17 75 007 | ✉ igteradmcentrale2014@gmail.com
 </div>
 
 <!-- Drapeau RDC -->
@@ -579,7 +393,8 @@ Contrôle – Enquête – Encadrement – Suivi – Evaluation
 <i class="fa-solid fa-person-digging"></i>
 </div>
   
-<h1> Page : "Page en maintenance"<h1>
+<h1> Page : "Document"<h1>
+<h2>En cours de conception</h2>
 <p>
 Cette page est actuellement en cours de développement.  
 Nous travaillons pour vous proposer prochainement un contenu complet et exhaustif. 
@@ -672,5 +487,4 @@ style="border:0;">
 </footer>
 
 </html>
-
 
