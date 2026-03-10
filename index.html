@@ -14,6 +14,8 @@ STYLE GENERAL
 
 *{
 box-sizing:border-box;
+margin:0;
+padding:0;
 }
 
 body{
@@ -291,19 +293,14 @@ margin:0;
 font-size:12px;
 }
 
-
-/* ICONE */
-
-.icon{
+.stat .icon{
 font-size:16px;
 }
 
-/* COULEURS */
-
-.stat-blue{background:#007bff;}
-.stat-green{background:#28a745;}
-.stat-orange{background:#fd7e14;}
-.stat-purple{background:#6f42c1;}
+.card .icon{
+font-size:28px;
+margin-bottom:10px;
+}
 
 /* ANIMATION */
 
@@ -366,11 +363,6 @@ transition:0.3s;
 .card:hover{
 transform:translateY(-5px);
 box-shadow:0 6px 14px rgba(0,0,0,0.15);
-}
-
-.icon{
-font-size:28px;
-margin-bottom:10px;
 }
 
 .card h3{
@@ -588,37 +580,31 @@ height:140px;
 /* Menu horizontal même sur mobile */
 @media(max-width:768px){
 
-  .navbar{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-  }
-
-  .dropdown-menu{
-    position:absolute;
-    transform:translateX(-50%);
-    opacity:0;
-    visibility:hidden;
-  }
-  
-@media(max-width:768px){
-  .dropdown-menu{
-    position: static;
-    transform:none;
-    opacity:1;
-    visibility:visible;
-    box-shadow:none;
-    border-radius:0;
-  }
+.navbar{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
 }
-  .submenu-content{
-    position: static;
-    box-shadow:none;
-    display:none;
-  }
-  .submenu:hover > .submenu-content{
-    display:block;
-  }
+
+.dropdown-menu{
+position:static;
+transform:none;
+opacity:1;
+visibility:visible;
+box-shadow:none;
+border-radius:0;
+}
+
+.submenu-content{
+position:static;
+box-shadow:none;
+display:none;
+}
+
+.submenu:hover > .submenu-content{
+display:block;
+}
+
 }
 
 /* SECTION VIDEOS */
@@ -789,7 +775,6 @@ justify-content:center;
 /* =========================
 RESPONSIVE MOBILE
 ========================= */
-
 @media (max-width:600px){
 
 .topbar{
@@ -834,6 +819,8 @@ flex:1 1 100%;
 
 html{
 scroll-behavior:smooth;
+}
+
 }
 </style>
 </head>
@@ -1255,6 +1242,7 @@ style="border:0;">
 </body>
 
 </html>
+
 
 
 
