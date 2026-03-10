@@ -354,10 +354,13 @@ gap:20px;
 
 .card{
 background:white;
-padding:8px;
-border-radius:8px;
-box-shadow:0 3px 8px rgba(0,0,0,0.08);
+padding:20px;
+border-radius:10px;
+box-shadow:0 4px 15px rgba(0,0,0,0.08);
 transition:0.3s;
+border-top:4px solid #003366;
+position:relative;
+overflow:hidden;
 }
 
 .card:hover{
@@ -375,7 +378,21 @@ font-size:14px;
 color:#555;
 }
 
+.card::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:0;
+height:100%;
+background:rgba(0,51,102,0.05);
+transition:0.3s;
+}
 
+.card:hover::before{
+width:100%;
+}
+  
 /* ENTETE ACTUALITES */
 
 .news-header{
@@ -973,7 +990,7 @@ Contrôle – Enquête – Encadrement – Suivi – Evaluation
 <div class="top-right">
 
 <div class="top-contact">
-📞 +243 83 17 75 007 | ✉ igteradmcentrale2014@gmail.com
+📞 +243 83 17 75 007 | ✉ contact@igter.cd
 </div>
 
 <!-- Drapeau RDC -->
@@ -1391,6 +1408,7 @@ menu.classList.toggle("active");
 </body>
 
 </html>
+
 
 
 
