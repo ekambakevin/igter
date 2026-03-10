@@ -86,9 +86,15 @@ display:flex;
 white-space:nowrap;
 font-family:"Times New Roman", serif;
 font-size:16px;
-animation:defilement 10s linear infinite;
+animation:defilement 8s linear infinite;
 }
-
+  
+@media screen and (min-width: 1024px) { /* écran large */
+  .scroll-texte {
+    animation-duration: 5s; /* plus rapide sur ordinateur */
+  }
+}
+  
 .scroll-container:hover .scroll-text{
 animation-play-state:paused;
 }
@@ -1305,6 +1311,7 @@ document.querySelectorAll('.submenu-btn').forEach(btn=>{
 </script>
 </body>
 </html>
+
 
 
 
