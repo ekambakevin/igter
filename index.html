@@ -24,7 +24,99 @@ font-family:Arial, Helvetica, sans-serif;
 background:#f4f6f9;
 line-height:1.5;
 }
+/* BARRE INFO DEFILANTE */
 
+.info-bar{
+position:relative;
+width:100%;
+height:50px;
+background:#003366;
+overflow:hidden;
+display:flex;
+align-items:center;
+color:white;
+font-weight:600;
+font-size:16px;
+}
+
+.info-slide{
+position:absolute;
+white-space:nowrap;
+display:flex;
+align-items:center;
+gap:15px;
+animation:scrollText 20s linear infinite;
+}
+
+.info-logo{
+height:30px;
+}
+
+.slide1{
+animation-delay:0s;
+}
+
+.slide2{
+animation-delay:10s;
+}
+
+@keyframes scrollText{
+
+0%{
+transform:translateX(100%);
+}
+
+100%{
+transform:translateX(-100%);
+}
+
+}
+
+/* MINI BARRE GOUVERNEMENTALE */
+
+.gov-bar{
+width:100%;
+height:28px;
+background:#002855;
+color:white;
+font-size:13px;
+font-weight:600;
+display:flex;
+align-items:center;
+overflow:hidden;
+position:relative;
+padding-left:10px;
+}
+
+.gov-slide{
+position:absolute;
+white-space:nowrap;
+animation:govScroll 15s linear infinite;
+}
+
+.slide-a{
+animation-delay:0s;
+}
+
+.slide-b{
+animation-delay:5s;
+}
+
+.slide-c{
+animation-delay:10s;
+}
+
+@keyframes govScroll{
+
+0%{
+transform:translateX(100%);
+}
+
+100%{
+transform:translateX(-100%);
+}
+
+}
 /* =========================
 TOP BAR
 ========================= */
@@ -980,38 +1072,23 @@ grid-template-columns:1fr;
 </head>
   
 <body>
-<div class="topbar">
+<!-- MINI BARRE INSTITUTIONNELLE -->
 
-<div class="logo-container">
+<div class="gov-bar">
 
-<img src="images/logo.png" alt="Logo IGTER" class="logo-img">
-
-<div class="logo-text">
-
-<div class="country">
+<div class="gov-slide slide-a">
 République Démocratique du Congo
 </div>
 
-<div class="institution">
-INSPECTION GÉNÉRALE DE LA TERRITORIALE
+<div class="gov-slide slide-b">
+Gouvernement Central
 </div>
 
-<div class="slogan">
-Contrôle – Enquête – Encadrement – Suivi – Evaluation 
-</div>
-</div>
+<div class="gov-slide slide-c">
+Ministère de l'Intérieur, Sécurité, Décentralisation & Affaires Coutumières
 </div>
 
-<div class="top-right">
-
-<div class="top-contact">
-📞 +243 83 17 75 007 | ✉ contact@igter.cd
 </div>
-
-<!-- Drapeau RDC -->
-<img src="images/drapeau rdc.png" alt="Drapeau RDC" class="flag">
-
-</div></div>
 
 <!-- MENU -->
 <nav class="navbar">
@@ -1094,44 +1171,17 @@ Contrôle – Enquête – Encadrement – Suivi – Evaluation
 
 </nav>
   
-<!-- HERO -->
+<!-- BARRE D'INFORMATION DEFILANTE -->
 
-<div class="hero">
+<div class="info-bar">
 
-<div class="hero-text">
-
-<h1>Inspection Générale de la Territoriale - IGTER</h1>
-
-<p>
-Veiller au respect et à l'application correcte des lois, encadrer et accompagner les Autorités Territoriales pour une bonne Gouvernance Territoriale en République Démocratique du Congo. 
-</p>
-
-<div class="buttons">
-
-<button class="btn btn-yellow"><a href="mission.html">
-Découvrir nos missions réalisées
-</button></a>
-
-<button class="btn btn-blue"><a href="rapport.html">
-Envoyer et consulter les rapports de missions
-</button></a>
-
-<button class="btn btn-red"><a href="saisie.html">
-Nous saisir en matière de gouvernance territoriale
-</button></a>
+<div class="info-slide slide1">
+<img src="images/logo.png" class="info-logo">
+<span>Inspection Générale de la Territoriale</span>
 </div>
 
-</div>
-
-<div class="hero-image">
-
-<img src="images/ig3.jpg" alt="Inspecteur Général">
-<!-- Texte sous l'image -->
-    <div class="hero-caption">
-<strong>LUMBILA FEKEY Roger</strong>
-Inspecteur Général de la Territoriale a.i
-</div>
-
+<div class="info-slide slide2">
+<span>Contrôle, Encadrement, Suivi et Evaluation des actes administratifs posés par les Autorités Territoriales</span>
 </div>
 
 </div>
@@ -1425,4 +1475,5 @@ menu.classList.toggle("active");
 </body>
 
 </html>
+
 
