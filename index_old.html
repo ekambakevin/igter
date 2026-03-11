@@ -29,17 +29,61 @@ line-height:1.5;
 
 /* ------------------ BARRE SUPERIEURE ------------------ */
 .top-menu{
-display:flex;
-align-items:center;
-background:#003366; /* bleu institutionnel */
-height:50px;
-padding:0 15px;
-border-bottom:2px solid #002244;
-color:white;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:10px 20px;
+  background:#003366;
+  color:white;
+  font-family:Arial, sans-serif;
+  box-shadow:0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Côté gauche */
+.menu-left{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.site-title{
+  font-size:18px;
+  font-weight:bold;
+}
+
+/* Côté droit */
+.menu-right{
+  display:flex;
+  align-items:center;
+  gap:20px;
+  font-size:14px;
+}
+
+.menu-right a{
+  color:white;
+  text-decoration:none;
+  transition:0.2s;
+}
+
+.menu-right a:hover{
+  text-decoration:underline;
+}
+
+/* Icône menu */
+.menu-icon{
+  font-size:22px;
+  cursor:pointer;
+}
+
+/* RESPONSIVE TABLETTE/MOBILE */
+@media(max-width:768px){
+  .menu-right{
+    display:none; /* masque le téléphone et email sur petit écran */
+  }
 }
 
 .menu-icon{
-font-size:24px;
+font-size:32px;
 cursor:pointer;
 margin-right:15px;
 color:white;
@@ -61,6 +105,24 @@ width:80px; /* taille réduite du logo */
 height:auto;
 }
 
+.menu-left{
+  display:flex;
+  align-items:center;
+  gap:15px; /* espace entre l'icône et le titre */
+}
+
+.menu-right{
+  display:flex;
+  align-items:center;
+  gap:20px; /* espace entre téléphone et email */
+  font-size:14px;
+}
+
+/* Optionnel : changer style des liens */
+.menu-right .email{
+  text-decoration:none;
+  color:white;
+}
 /* ------------------ LIGNE DÉFILANTE ------------------ */
 .institution-bar{
 display:flex;
@@ -115,7 +177,7 @@ padding-right:60px;
   
 /* Couleurs */
 .val1{color:#ce1126; font-weight:bold;}
-.val2{color:#f7d116; font-weight:bold;}
+.val2{color:#000000; font-weight:bold;}
 .val3{color:#007fff; font-weight:bold;}
 .val4{color:#000000; font-weight:bold;}
 .separator{margin:0 25px; color:#555;}
@@ -306,95 +368,22 @@ background:#1e73be;
 color:white;
 }
 
-/* =========================
-STATS
-========================= */
-
-/* CONTENEUR */
-.stats-container{
-width:100%;
-overflow:hidden;
-background:#f4f6f9;
-padding:15px 0;
+/* Bouton jaune */
+.btn-yellow a{
+  color: black;
+  text-decoration: none;
 }
 
-/* LIGNE QUI DEFILE */
-.stats-track{
-display:flex;
-gap:15px;
-width:max-content;
-animation:scrollStats 18s linear infinite;
+/* Bouton bleu */
+.btn-blue a{
+  color: white;
+  text-decoration: none;
 }
 
-.stats{
-display:flex;
-flex-wrap:wrap;
-gap:20px;
-justify-content:center;
-margin:40px 5%;
-}
-
-/* BOUTONS STAT */
-
-.stat{
-display:flex;
-align-items:center;
-gap:8px;
-padding:8px 14px;
-border-radius:8px;
-color:white;
-font-size:13px;
-white-space:nowrap;
-box-shadow:0 3px 8px rgba(0,0,0,0.2);
-}
-
-  /* COULEURS */
-.stat-blue{background:#007bff;}
-.stat-green{background:#28a745;}
-.stat-orange{background:#fd7e14;}
-.stat-purple{background:#6f42c1;}
-
-/* NOMBRE */
-.stat h2{
-margin:0;
-font-size:16px;
-}
-
-/* TEXTE */
-.stat p{
-margin:0;
-font-size:12px;
-}
-
-
-/* ICONE */
-
-.stat .icon{
-font-size:16px;
-}
-
-.card .icon{
-font-size:28px;
-margin-bottom:10px;
-}
-
-/* ANIMATION */
-
-@keyframes scrollStats{
-
-0%{
-transform:translateX(100%);
-}
-
-100%{
-transform:translateX(-100%);
-}
-
-}
-
-.stat:hover{
-transform:translateY(-5px);
-box-shadow:0 8px 20px rgba(0,0,0,0.25);
+/* Bouton rouge */
+.btn-red a{
+  color: black;
+  text-decoration: none;
 }
 
 /* CONTENEUR GENERAL */
@@ -424,19 +413,23 @@ padding-left:10px;
 .missions{
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:20px;
+gap:15px;
 }
+
+/* CARTE */
 
 .card{
 background:white;
 padding:20px;
-border-radius:10px;
-box-shadow:0 4px 15px rgba(0,0,0,0.08);
+border-radius:50px;
+box-shadow:0 3px 10px rgba(0,0,0,0.08);
 transition:0.3s;
-border-top:4px solid #003366;
+border-left:4px solid #003366;
 position:relative;
 overflow:hidden;
 }
+
+/* effet léger au survol */
 
 .card::before{
 content:"";
@@ -452,22 +445,33 @@ transition:0.3s;
 .card:hover::before{
 width:100%;
 }
-  
+
 .card:hover{
-transform:translateY(-5px);
-box-shadow:0 6px 14px rgba(0,0,0,0.15);
+transform:translateY(-3px);
+box-shadow:0 5px 12px rgba(0,0,0,0.12);
 }
+
+/* TITRE */
 
 .card h3{
-font-size:17px;
-margin-bottom:8px;
+font-size:15px;
+margin-bottom:6px;
+color:#003366;
+font-weight:600;
 }
+
+/* TEXTE */
 
 .card p{
-font-size:14px;
+font-size:13px;
 color:#555;
+line-height:1.4;
 }
 
+.icon{
+font-size:24px;
+font-weight:bold;
+}
 
 /* ENTETE ACTUALITES */
 
@@ -504,56 +508,111 @@ overflow:hidden;
 }
 
 
-/* LIGNE ACTUALITE */
+/* =========================
+SECTION ACTUALITES - STYLE PROFESSIONNEL
+========================= */
+
+.news-table{
+background:#ffffff;
+border-radius:10px;
+box-shadow:0 6px 18px rgba(0,0,0,0.08);
+overflow:hidden;
+padding:5px 0;
+transition:0.3s;
+}
 
 .news-row{
 display:flex;
 align-items:center;
 gap:15px;
-padding:15px;
+padding:15px 20px;
 border-bottom:1px solid #eee;
 text-decoration:none;
-color:black;
-transition:0.3s;
+color:#111;
+transition:0.3s, transform 0.3s;
+border-left:4px solid transparent;
+border-radius:6px;
+background:#fff;
 }
 
 .news-row:hover{
-background:#f9f9f9;
+background:#f4f6f9;
+transform:translateX(3px);
+border-left:4px solid #1d4ed8; /* accent bleu */
+box-shadow:0 6px 12px rgba(0,0,0,0.05);
 }
 
 .news-row:last-child{
 border-bottom:none;
 }
 
-
-/* IMAGE */
-
+/* IMAGE MINIATURE */
 .news-img{
-width:70px;
-height:60px;
+width:90px;
+height:70px;
 object-fit:cover;
-border-radius:5px;
+border-radius:6px;
+flex-shrink:0;
+transition:0.3s;
 }
 
+.news-row:hover .news-img{
+transform:scale(1.05);
+}
 
 /* CONTENU */
-
 .news-content{
 display:flex;
 flex-direction:column;
+justify-content:center;
 }
 
 .news-date{
 font-size:13px;
-color:#888;
-margin-bottom:5px;
+color:#555;
+margin-bottom:6px;
 }
 
 .news-title{
-font-size:15px;
-font-weight:500;
+font-size:13px;
+font-weight:600;
+color:#003366;
+line-height:1.4;
 }
 
+/* RESPONSIVE TABLETTE/MOBILE */
+@media (max-width:768px){
+
+.news-row{
+flex-direction:column;
+align-items:flex-start;
+gap:10px;
+padding:12px 15px;
+border-left:none;
+border-radius:8px;
+}
+
+.news-img{
+width:100%;
+height:150px;
+}
+
+.news-title{
+font-size:14px;
+}
+
+.news-date{
+font-size:11px;
+}
+
+.news-row:hover{
+transform:none;
+box-shadow:0 4px 10px rgba(0,0,0,0.08);
+border-left:none;
+background:#f9f9f9;
+}
+
+}
 
 /* RESPONSIVE */
 
@@ -571,125 +630,6 @@ height:140px;
 
 }
 
-/* DROPDOWN PRINCIPAL */
-.dropdown{
-  position: relative;
-  display: inline-block;
-}
-
-.dropbtn{
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  padding: 8px 12px;
-  color: white;
-  background: #003366;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-/* MENU PRINCIPAL */
-.dropdown-menu{
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background:white;
-  min-width:260px;
-  border-radius:6px;
-  box-shadow:0 10px 25px rgba(0,0,0,0.2);
-  opacity:0;
-  visibility:hidden;
-  transform: translateY(10px);
-  transition: all 0.3s ease;
-  z-index:999;
-}
-
-.dropdown:hover .dropdown-menu{
-  opacity:1;
-  visibility:visible;
-  transform: translateY(0);
-}
-
-.dropdown-menu a{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  padding:10px 15px;
-  color:#003366;
-  text-decoration:none;
-  font-size:14px;
-  border-bottom:1px solid #eee;
-  transition:0.2s;
-}
-
-.dropdown-menu a:hover{
-  background:#f4f6f9;
-  padding-left:20px;
-}
-
-/* SUBMENU Organisation */
-.submenu{
-  position: relative;
-}
-
-/* cacher sous-menu */
-.submenu-content{
-  display:none;
-  position:absolute;
-  top:0;
-  left:100%;
-  background:white;
-  min-width:240px;
-  box-shadow:0 8px 20px rgba(0,0,0,0.2);
-  border-radius:6px;
-  z-index:999;
-  transition:0.3s;
-}
-
-/* afficher sous-menu au hover */
-.submenu:hover > .submenu-content{
-  display:block;
-}
-
-/* liens sous-menu */
-.submenu-content a{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  padding:10px 12px;
-  text-decoration:none;
-  color:#003366;
-  font-size:14px;
-  border-bottom:1px solid #eee;
-  transition:0.2s;
-}
-
-.submenu-content a:hover{
-  background:#f4f6f9;
-  padding-left:20px;
-}
-
-/* pour mobile, menu vertical */
-@media(max-width:768px){
-  .dropdown-menu{
-    position: static;
-    transform:none;
-    opacity:1;
-    visibility:visible;
-    box-shadow:none;
-    border-radius:0;
-  }
-  .submenu-content{
-    position: static;
-    box-shadow:none;
-    display:none;
-  }
-  .submenu:hover > .submenu-content{
-    display:block;
-  }
-}
 
 /* SECTION MISSIONS + ACTUALITES RESPONSIVE */
 
@@ -706,154 +646,367 @@ grid-template-columns:1fr;
 
 }
   
-/* SECTION VIDEOS */
+/* =========================
+SECTION VIDEOS - STYLE PROFESSIONNEL
+========================= */
 
 .videos-section{
 padding:50px 8%;
-background:#f4f6f9;
+background:#f9f9f9; /* fond légèrement plus clair pour professionnalisme */
 }
 
 .videos-header{
 display:flex;
 justify-content:space-between;
 align-items:center;
-margin-bottom:25px;
+margin-bottom:30px;
 }
 
 .videos-header h2{
 color:#003366;
+font-size:22px;
+font-weight:700;
+margin:0;
 }
 
 .videos-header .voir-tout{
 text-decoration:none;
-color:#2563eb;
+color:#1d4ed8;
 font-weight:600;
 font-size:14px;
+transition:0.3s;
 }
 
 .videos-header .voir-tout:hover{
 text-decoration:underline;
+color:#003366;
 }
 
 /* GRID VIDEOS */
 
 .videos-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* avant 280px → maintenant 220px */
+  gap: 25px;
 }
 
 /* CARTE VIDEO */
 
 .video-card{
 background:white;
-border-radius:8px;
+border-radius:10px;
 overflow:hidden;
-box-shadow:0 4px 12px rgba(0,0,0,0.08);
-transition:0.3s;
+box-shadow:0 6px 18px rgba(0,0,0,0.08);
+transition:0.3s, transform 0.3s;
+border-top:4px solid #003366; /* accent officiel */
+position:relative;
+display:flex;
+flex-direction:column;
 }
 
 .video-card:hover{
-transform:translateY(-3px);
-box-shadow:0 8px 20px rgba(0,0,0,0.12);
+transform:translateY(-5px);
+box-shadow:0 12px 25px rgba(0,0,0,0.12);
 }
 
-/* IFRAME RESPONSIVE */
-
+/* IFRAME RESPONSIVE - 16:9 */
 .video-card iframe{
-width:100%;
-height:180px;
-border:none;
-border-bottom:1px solid #eee;
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 16/9;
+  height: 160px; /* avant auto → maintenant fixe plus petit */
+  border: none;
+  transition: 0.3s;
+}
+
+.video-card:hover iframe{
+  transform: scale(1.01);
 }
 
 /* TITRE VIDEO */
 
 .video-title{
-padding:10px 15px;
+padding:12px 15px;
 font-size:14px;
-color:#111;
-font-weight:500;
+color:#003366;
+font-weight:600;
 line-height:1.4;
+background:#f4f6f9;
+border-top:1px solid #eee;
+transition:0.3s;
 }
+
+.video-card:hover .video-title{
+background:#e5ecf8;
+}
+
+/* RESPONSIVE TABLETTE */
+
+@media (max-width:900px){
+  .videos-grid{
+    grid-template-columns: repeat(2,1fr);
+    gap: 15px;
+  }
+  .video-card iframe{
+    height: 140px;
+  }
+}
+
 
 /* RESPONSIVE MOBILE */
 
-@media (max-width:768px){
-.video-card iframe{
-height:150px;
-}
+@media (max-width:600px){
+  .videos-grid{
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .video-card iframe{
+    height: 120px;
+  }
+  .video-title{
+    font-size: 12px;
+    padding: 8px 10px;
+  }
 }
 
 /* =========================
-FOOTER
+FOOTER INSTITUTIONNEL AVANCE
 ========================= */
 
 footer{
-background:#003366;
+background:#00264d;
 color:white;
-padding:30px 5%;
-text-align:center;
+padding:35px 7% 20px;
+font-size:13px;
+border-top:4px solid #f1c40f;
+}
+
+/* CONTAINER */
+
+.footer-container{
+max-width:1300px;
+margin:auto;
+display:grid;
+grid-template-columns:2fr 1fr 1fr 1fr 1.5fr;
+gap:30px;
+}
+
+/* LOGO + DESCRIPTION */
+
+.footer-logo{
+display:flex;
+align-items:center;
+gap:10px;
+margin-bottom:10px;
+}
+
+.footer-logo img{
+width:40px;
+height:40px;
+}
+.footer-logo span{
+font-size:16px;
+font-weight:600;
+}
+
+/* TITRES */
+
+.footer-col h3{
+color:#f1c40f;
 font-size:14px;
+margin-bottom:10px;
+position:relative;
+}
+
+.footer-col h3::after{
+content:"";
+display:block;
+width:35px;
+height:2px;
+background:#f1c40f;
+margin-top:5px;
+}
+
+/* TEXTE */
+
+.footer-col p{
+font-size:12px;
+line-height:1.5;
+opacity:0.9;
+margin:4px 0;
+}
+
+/* LIENS */
+
+.footer-col a{
+display:block;
+color:white;
+text-decoration:none;
+font-size:12px;
+margin:4px 0;
+transition:0.3s;
+}
+
+.footer-col a:hover{
+color:#f1c40f;
+transform:translateX(4px);
+}
+
+/* ICONES */
+
+.footer-col i{
+margin-right:6px;
+color:#f1c40f;
+}
+
+/* RESEAUX SOCIAUX */
+
+.social-icons{
+display:flex;
+gap:10px;
+margin-top:8px;
+}
+
+.social-icons a{
+display:flex;
+align-items:center;
+justify-content:center;
+width:30px;
+height:30px;
+background:rgba(255,255,255,0.1);
+border-radius:50%;
+transition:0.3s;
+}
+
+.social-icons a:hover{
+background:#f1c40f;
+color:#00264d;
+}
+
+/* CARTE */
+
+.footer-col iframe{
+width:100%;
+height:100px;
+border:none;
+border-radius:6px;
+margin-top:5px;
+}
+
+/* BAS DU FOOTER */
+
+.footer-bottom{
+text-align:center;
+margin-top:25px;
+padding-top:10px;
+border-top:1px solid rgba(255,255,255,0.2);
+font-size:11px;
+opacity:0.8;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1000px){
+
+.footer-container{
+grid-template-columns:1fr 1fr;
+gap:25px;
+}
+
+}
+
+@media(max-width:600px){
+
+.footer-container{
+grid-template-columns:1fr;
+}
+
+}
+
+/* NAVIGATION FOOTER */
+
+.footer-nav{
+text-align:center;
+margin-top:20px;
+border-top:1px solid rgba(255,255,255,0.2);
+padding-top:10px;
+}
+
+.footer-nav a{
+color:white;
+text-decoration:none;
+margin:0 10px;
+font-size:12px;
+transition:0.3s;
+}
+
+.footer-nav a:hover{
+color:#f1c40f;
+}
+
+/* BOUTON RETOUR HAUT */
+
+#backToTop{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#f1c40f;
+color:#003366;
+border:none;
+width:40px;
+height:40px;
+border-radius:50%;
+font-size:18px;
+cursor:pointer;
+display:none;
+box-shadow:0 4px 10px rgba(0,0,0,0.3);
+transition:0.3s;
+}
+
+#backToTop:hover{
+background:white;
+}
+
+footer{
+text-align:center;
 }
 
 .footer-container{
-max-width:1200px;
-margin:auto;
 display:flex;
+justify-content:center;
 flex-wrap:wrap;
-justify-content:space-between;
-gap:15px;
+gap:40px;
+text-align:center;
 }
 
 .footer-col{
-flex:1;
-min-width:180px;
+max-width:300px;
 }
 
-.footer-col h3{
-margin-bottom:8px;
-color:#f1c40f;
-font-size:15px;
+.footer-logo{
+justify-content:center;
 }
 
-.footer-col p{
-margin:4px 0;
-font-size:13px;
+.social-icons{
+justify-content:center;
+}
+
+.footer-nav{
+text-align:center;
+margin-top:20px;
+}
+
+.footer-nav a{
+margin:0 12px;
 }
 
 .footer-col a{
 color:white;
 text-decoration:none;
-font-size:13px;
-display:block;
-margin:3px 0;
 }
 
 .footer-col a:hover{
 color:#f1c40f;
-}
-
-.footer-col i{
-color:#f1c40f;
-margin-right:6px;
-}
-
-.social-icons a{
-display:block;
-margin:3px 0;
-}
-
-.footer-col iframe{
-height:100px;
-}
-
-.footer-bottom{
-text-align:center;
-margin-top:10px;
-border-top:1px solid rgba(255,255,255,0.2);
-padding-top:8px;
-font-size:12px;
 }
 
 /* =========================
@@ -928,8 +1081,6 @@ html{
 scroll-behavior:smooth;
 }
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 </style>
 
 </head>
@@ -938,8 +1089,14 @@ scroll-behavior:smooth;
 
 <!-- BARRE SUPERIEURE -->
 <header class="top-menu">
-  <div class="menu-icon" onclick="openMenu()">☰</div>
-  <div class="site-title">IGTER</div>
+  <div class="menu-left">
+    <div class="menu-icon" onclick="openMenu()">☰</div>
+    <div class="site-title">IGTER</div>
+  </div>
+<div class="menu-right" id="top-contact">
+<a href="tel:+243822080469" class="phone">📞 00243 822 080 469</a> |
+<a href="mailto:contact@igter.cd" class="email">✉ contact@igter.cd</a>
+</div>
 </header>
 
 <!-- LIGNE DÉFILANTE -->
@@ -952,7 +1109,7 @@ scroll-behavior:smooth;
       <div class="text-group">
         <span class="val1">République Démocratique du Congo</span>
         <span class="separator"> • </span>
-        <span class="val2">Gouvernement Central</span>
+        <span class="val2">Gouvernement National</span>
         <span class="separator"> • </span>
         <span class="val3">Ministère de l'Intérieur, Sécurité, Décentralisation & Affaires Coutumières</span>
         <span class="separator"> • </span>
@@ -961,7 +1118,7 @@ scroll-behavior:smooth;
       <div class="text-group">
         <span class="val1">République Démocratique du Congo</span>
         <span class="separator"> • </span>
-        <span class="val2">Gouvernement Central</span>
+        <span class="val2">Gouvernement National</span>
         <span class="separator"> • </span>
         <span class="val3">Ministère de l'Intérieur, Sécurité, Décentralisation & Affaires Coutumières</span>
         <span class="separator"> • </span>
@@ -983,20 +1140,49 @@ scroll-behavior:smooth;
   </div>
 
   <!-- LIENS PRINCIPAUX -->
-  <a href="apercu general.html"><i class="fa-solid fa-building-columns"></i> Présentation de l'IGTER</a>
+  <a href="index.html"><i class="fa-solid fa-building-columns"></i> Accueil</a>
+  <a href="#actualite"> 📰 Actualités</a>
+  <div class="submenu-container">
+    <button class="submenu-btn">📖 Présentation de l'IGTER<i class="fa-solid fa-caret-down"></i></button>
+    <div class="submenu-content">
+     <a href="apercu general.html">👁️ Aperçu Général</a>
+    <div class="submenu-container">
+    <button class="submenu-btn">🧩 Organisation<i class="fa-solid fa-caret-down"></i></button>
+    <div class="submenu-content">
+      <a href="administration_centrale.html"><i class="fa-solid fa-building"></i> Administration Centrale (1)</a>
+     <a href="pool.html"><i class="fa-solid fa-layer-group"></i> Pool (8)</a>
+     <a href="inspection_provinciale.html"><i class="fa-solid fa-map-location-dot"></i> Inspections Provinciales (26)</a>
+      <a href="inspection_provinciale.html"><i class="fa-solid fa-satellite-dish"></i> ± 2 Antennes/IPTER</a></div>
+    <div class="submenu-container">
+    <button class="submenu-btn">⚖️ Cadre légal<i class="fa-solid fa-caret-down"></i></button>
+    <div class="submenu-content">
+    <a href="pdf/DECRET.pdf" target="_blank" download>
+      <i class="fa-solid fa-file-pdf"></i> Décret de création
+    </a>
+     <a href="pdf/CADRE ORGANIQUE.pdf" target="_blank" download>
+      <i class="fa-solid fa-file-pdf"></i> Cadre organique
+    </a>
+    </div></div></div>
+
+    <a href="personnel.html">👥 Personnel</a>
+</div>
 
   <!-- Sous-menu Provinces / ETDs -->
   <div class="submenu-container">
-    <button class="submenu-btn"><i class="fa-solid fa-map"></i> Provinces / ETDs <i class="fa-solid fa-caret-down"></i></button>
+    <button class="submenu-btn">🌍 Provinces/ETDs<i class="fa-solid fa-caret-down"></i></button>
     <div class="submenu-content">
-      <a href="province.html"><i class="fa-solid fa-layer-group"></i> Liste des Provinces / ETDs</a>
-      <a href="#"><i class="fa-solid fa-satellite-dish"></i> Autres informations</a>
+      <a href="province.html"><i class="fa-solid fa-layer-group"></i> Liste des Provinces</a>
+      <a href="etd.html"><i class="fa-solid fa-satellite-dish"></i> Liste des Entités Territoriales</a>
     </div>
   </div>
 
   <a href="https://interieur.gouv.cd/services/details/IGTER"><i class="fa-solid fa-shield"></i> Ministère de tutelle</a>
 
-</div>
+  <a href="saisie.php">📝 Mode de saisine de l'IGTER</a>
+  <a href="#contact">☎️ Nous contacter</a>
+  <a href="suggestion.php"> 💬 Vos Avis et suggestions</a>
+
+</div></div>
 
 <!-- HERO -->
 
@@ -1007,21 +1193,21 @@ scroll-behavior:smooth;
 <h1>Inspection Générale de la Territoriale - IGTER</h1>
 
 <p>
-Veiller au respect et à l'application correcte des lois, encadrer et accompagner les Autorités Territoriales pour une bonne Gouvernance Territoriale en République Démocratique du Congo. 
+Veille au respect et à l'application correcte des lois, encadre et accompagne les Autorités Territoriales, en vue d'une meilleure Gouvernance Territoriale en République Démocratique du Congo. 
 </p>
 
 <div class="buttons">
 
 <button class="btn btn-yellow">
-Découvrir nos missions effectuées
+<a href="mission.html">Découvrir nos missions réalisées</a>
 </button>
 
 <button class="btn btn-blue">
-Consulter les rapports
+<a href="rapport.html">Envoyer et consulter les rapports d'activités</a>
 </button>
 
 <button class="btn btn-red">
-Nous saisir en matière d'Administration Terrtitoriale
+<a href="saisie.html">Nous saisir en matière d'administration territoriale</a>
 </button>
 </div>
 
@@ -1040,118 +1226,42 @@ Inspecteur Général de la Territoriale a.i
 
 </div>
 
-<!-- STATS -->
-<div class="stats-container">
-
-<div class="stats-track">
-
-  <div class="stat stat-blue">
-    <span class="icon">📅</span>
-    <h3>28</h3>
-    <p>ANS D'EXISTENCE</p>
-  </div>
-
-  <div class="stat stat-green">
-    <span class="icon">👮‍♂️</span>
-    <h3>2.000</h3>
-    <p>INSPECTEURS</p>
-  </div>
-
-  <div class="stat stat-orange">
-    <span class="icon">✅</span>
-    <h3>1.500</h3>
-    <p>MISSIONS REALISEES</p>
-  </div>
-
-  <div class="stat stat-purple">
-    <span class="icon">🌍</span>
-    <h3>26</h3>
-    <p>PROVINCES</p>
-  </div>
-
-<div class="stat stat-blue">
-    <span class="icon">🏛️</span>
-    <h3>33</h3>
-    <p>VILLES</p>
-</div>
-
-<div class="stat stat-green">
-    <span class="icon">🏢</span>
-    <h3>145</h3>
-    <p>TERRITOIRES</p>
-</div>
-
-<div class="stat stat-orange">
-    <span class="icon">🏛️</span>
-    <h3>0</h3>
-    <p>COMMUNES</p>
-  </div>
-
-<div class="stat stat-purple">
-    <span class="icon">🏢</span>
-    <h3>0</h3>
-    <p>SECTEURS</p>
-</div>
-
-<div class="stat stat-blue">
-    <span class="icon">🏛️</span>
-    <h3>0</h3>
-    <p>CHEFFERIES</p>
-</div>
-
-<div class="stat stat-green">
-    <span class="icon">🏢</span>
-    <h3>0</h3>
-    <p>GROUPEMENTS</p>
-</div>
-
-<div class="stat stat-orange">
-    <span class="icon">🏛️</span>
-    <h3>0</h3>
-    <p>VILLAGES</p>
-  </div>
-
-<div class="stat stat-purple">
-    <span class="icon">🏢</span>
-    <h3>0</h3>
-    <p>QUARTIERS</p>
-</div>
-
-</div>
-
 <div class="home-sections">
 
 <!-- MISSIONS -->
 <section class="missions-section">
 
-<h2>Nos attributiond</h2>
+<h2>Nos attributions</h2>
 
 <div class="missions">
 
 <div class="card">
-<div class="icon">📋 Contrôle Actes des Provinces/ETDs</div>
-<p>Le contrôle consiste à la surveillance de l’application correcte des lois, règlements, directives et instructions, ainsi qu’à la vérification de la gestion administrative, financière et matérielle d’une entité territoriale.</p>
+<div class="icon">📋 Contrôle</div><br>
+<h3>Provinces et Entités Territoriales</h3>
+<p>Le contrôle consiste à la surveillance de l’application correcte des lois, règlements, directives et instructions, ainsi qu’à la vérification de la gestion administrative, financière et matérielle d'une entité territoriale.</p>
 </div>
 
 <div class="card">
-<div class="icon">🤝 Encadrement des Autorités Territoriales</div>
+<div class="icon">🤝 Encadrement</div><br>
+<h3>Autorités Territoriales</h3>
 <p>L’encadrement consiste en appui-conseil et au renforcement des capacités des responsables des services centraux du Ministère ayant l’intérieur dans ses attributions, ainsi que des Autorités Territoriales. </p>
 </div>
 
 <div class="card">
-<div class="icon">📊 Suivi Activités des Autorités Territoriales</div>
+<div class="icon">📊 Suivi</div><br>
+<h3>Activités des Autorités Territoriales</h3>
 <p>Le suivi est le monitoring ou la surveillance de l’exécution d’un projet, d’un programme ou d’une instruction dans le domaine de la territoriale.</p>
 </div>
 
 <div class="card">
-<div class="icon">⚖️ Evaluation Activités des Autorités Territoriales</div>
+<div class="icon">⚖️ Evaluation</div><br>
+<h3>Activités des Autorités Territoriales</h3>
 <p>L’évaluation est le mesurage à l’aide des indicateurs objectivement vérifiables du rendement et de la performance d’une entité territoriale et/ou d’une Autorité Territoriale.</p>
 </div>
 
 </div>
 
 </section>
-
 
 <!-- ACTUALITES -->
 <section class="news-section">
@@ -1163,7 +1273,7 @@ Inspecteur Général de la Territoriale a.i
 
 <div class="news-table">
 
-<a href="#" class="news-row">
+<a href="#actualite" class="news-row">
 
 <img src="images/ig2.jpg" class="news-img" alt="Actualité">
 
@@ -1177,14 +1287,14 @@ Visite de travail de Son Excellence, Madame la Vice-Ministre de l'Intérieur à 
 </a>
 
 
-<a href="#" class="news-row">
+<a href="#actualite" class="news-row">
 
 <img src="images/actu2.jpg" class="news-img" alt="Actualité">
 
 <div class="news-content">
-<div class="news-date">XX XXX 0000</div>
+<div class="news-date">XX XXX XXXX</div>
 <div class="news-title">
-Remise et reprise et reprise entre l'Inspecteur Général de la Territotiale a.i sortant, 
+Remise et reprise entre l'Inspecteur Général de la Territotiale a.i sortant, 
   BEYA MULUMBA Alidor et l'Inspecteur Général de la Territoriale a.i réhabilité et entrant, LUMBILA FEKEY Roger.
 </div>
 </div>
@@ -1198,22 +1308,20 @@ Remise et reprise et reprise entre l'Inspecteur Général de la Territotiale a.i
 <!-- VIDEOS -->
 <section class="videos-section">
   <div class="videos-header">
-    <h2>Nos vidéos</h2>
+    <h2>Vidéos récentes</h2>
     <a href="videos.html" class="voir-tout">Voir tout</a>
   </div>
 
   <div class="videos-grid">
 
     <div class="video-card">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/YqjpwzLhkBc?si=CWcG7o-Mm6RsoFGi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-        <title="Vidéo IGTER 1" frameborder="0" allowfullscreen></iframe>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/YqjpwzLhkBc?si=CWcG7o-Mm6RsoFGi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen title= "Vidéo IGTER 1" frameborder="0" allowfullscreen></iframe>
       <div class="video-title">Réhabilitation de l'Inspecteur Général de la Territoriale a.i, Monsieur LUMBILA FEKEY Roger</div>
     </div>
 
     <div class="video-card">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/pRgTeC9DVVw?si=JR5bk75cZh2KBiNC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-        <title="Vidéo IGTER 2" frameborder="0" allowfullscreen></iframe>
-      <div class="video-title">Inspection dans 5 provinces</div>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/pRgTeC9DVVw?si=JR5bk75cZh2KBiNC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen title="Vidéo IGTER 2" frameborder="0" allowfullscreen></iframe>
+      <div class="video-title">(Archive 2014) Cérémonie de prestation de serment de l'Inspecteur Général de la Territoriale, MUSASA KAZEZ Mike Odon Bernard, de son Adjoint et de différents Inspecteurs Principaux Chefs de Pools.</div>
     </div>
   </div>
 </section>
@@ -1223,78 +1331,101 @@ Remise et reprise et reprise entre l'Inspecteur Général de la Territotiale a.i
 
 <div class="footer-container">
 
-<!-- Colonne 1 : Logo + Réseaux -->
+<!-- Colonne 1 : Logo + Description -->
 <div class="footer-col">
-<h3>Inspection Générale de la Territoriale</h3>
 
-<p>Organe de contrôle et d'encadrement de l'administration territoriale en RDC.</p>
+<div class="footer-logo">
+<img src="images/logo.png" alt="Logo IGTER">
+<span>IGTER</span>
+</div>
+
+<p>
+Inspection Générale de la Territoriale.<br>
+Organe de contrôle et d'encadrement dans l'administration territoriale de la RDC.
+</p>
 
 <div class="social-icons">
-<a href="#"><i class="fa-brands fa-facebook"></i> Facebook</a>
-<a href="#"><i class="fa-brands fa-x-twitter"></i> X (Twitter)</a>
-<a href="#"><i class="fa-brands fa-youtube"></i> YouTube</a>
-<a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
+<a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+<a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+<a href="#"><i class="fa-brands fa-youtube"></i></a>
+<a href="#"><i class="fa-brands fa-instagram"></i></a>
 </div>
 
 </div>
 
 <!-- Colonne 2 : Contact -->
 <div class="footer-col">
+
 <h3>Contact</h3>
 
-<p><i class="fa-solid fa-location-dot"></i> Immeuble Semois<br>
-Royal / Kinshasa-Gombe</p>
+<p>
+<a href="https://www.google.com/maps/search/?api=1&query=Immeuble+Semois+Royal+Kinshasa+Gombe" target="_blank">
+<i class="fa-solid fa-location-dot"></i>
+Immeuble Semois<br>
+Royal / Kinshasa-Gombe
+</a>
+</p>
 
-<p><i class="fa-solid fa-envelope"></i> igteradmcentrale2014@gmail.com</p>
+<p>
+<a href="mailto:contact@igter.cd">
+<i class="fa-solid fa-envelope"></i>
+contact@igter.cd
+</a>
+</p>
 
-<p><i class="fa-solid fa-phone"></i>  +243 83 17 75 007 </p>
+<p>
+<a href="tel:00243822080469">
+<i class="fa-solid fa-phone"></i>
+00243 822 080 469
+</a>
+</p>
 
 </div>
 
-<!-- Colonne 3 : Liens rapides -->
+<!-- Colonne 3 : Liens institutionnels -->
 <div class="footer-col">
+
 <h3>Liens institutionnels</h3>
 
-<p>
 <a href="https://presidence.cd" target="_blank">
-<i class="fa-solid fa-landmark"></i> Présidence de la République
+<i class="fa-solid fa-landmark"></i>
+Présidence de la République
 </a>
-</p>
 
-<p>
 <a href="https://primature.cd" target="_blank">
-<i class="fa-solid fa-building"></i> Primature
+<i class="fa-solid fa-building"></i>
+Primature
 </a>
-</p>
 
-<p>
 <a href="https://interieur.gouv.cd" target="_blank">
-<i class="fa-solid fa-shield-halved"></i> Ministère de l'Intérieur
+<i class="fa-solid fa-shield-halved"></i>
+Ministère de l'Intérieur
 </a>
-</p>
-
-</div>
-
-<!-- Colonne 4 : Carte -->
-<div class="footer-col">
-<h3>Localisation</h3>
-
-<iframe 
-src="https://maps.google.com/maps?q=Kinshasa%20Gombe&t=&z=13&ie=UTF8&iwloc=&output=embed"
-width="100%" 
-height="150" 
-style="border:0;">
-</iframe>
 
 </div>
 
 </div>
+
+<!-- NAVIGATION FOOTER -->
+
+<div class="footer-nav">
+
+<a href="index.html">Accueil</a>
+<a href="mission.html">Missions</a>
+<a href="actualite.html">Actualités</a>
+<a href="document.html">Documents</a>
+<a href="#top-contact">Contact</a>
+
+</div>
+
+<!-- BAS DU FOOTER -->
 
 <div class="footer-bottom">
-<p>© 2026 Inspection Générale de la Territoriale — Tous droits réservés</p>
+<p>© <span id="year"></span> Inspection Générale de la Territoriale — Tous droits réservés</p>
 </div>
 
 </footer>
+
 <script>
 function openMenu(){
   document.getElementById("sideMenu").style.width="280px";
@@ -1311,9 +1442,35 @@ document.querySelectorAll('.submenu-btn').forEach(btn=>{
     content.style.display = content.style.display === 'flex' ? 'none' : 'flex';
   });
 });
+
+/* Année automatique */
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+
+/* Bouton retour en haut */
+
+let btn = document.getElementById("backToTop");
+
+window.onscroll = function(){
+if(document.documentElement.scrollTop > 300){
+btn.style.display="block";
+}else{
+btn.style.display="none";
+}
+};
+
+btn.onclick=function(){
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+};
+
 </script>
 </body>
 </html>
+
 
 
 
