@@ -16,6 +16,8 @@ STYLE GENERAL
 
 *{
 box-sizing:border-box;
+margin:0;
+padding:0;
 }
 
 body{
@@ -218,7 +220,6 @@ border-left:3px solid #003366;
 /* =========================
 HERO
 ========================= */
-
 .hero{
 display:flex;
 flex-wrap:wrap;
@@ -347,6 +348,7 @@ white-space:nowrap;
 box-shadow:0 3px 8px rgba(0,0,0,0.2);
 }
 
+  /* COULEURS */
 .stat-blue{background:#007bff;}
 .stat-green{background:#28a745;}
 .stat-orange{background:#fd7e14;}
@@ -367,16 +369,14 @@ font-size:12px;
 
 /* ICONE */
 
-.icon{
+.stat .icon{
 font-size:16px;
 }
 
-/* COULEURS */
-
-.stat-blue{background:#007bff;}
-.stat-green{background:#28a745;}
-.stat-orange{background:#fd7e14;}
-.stat-purple{background:#6f42c1;}
+.card .icon{
+font-size:28px;
+margin-bottom:10px;
+}
 
 /* ANIMATION */
 
@@ -391,7 +391,6 @@ transform:translateX(-100%);
 }
 
 }
-
 
 .stat:hover{
 transform:translateY(-5px);
@@ -439,11 +438,6 @@ transition:0.3s;
 .card:hover{
 transform:translateY(-5px);
 box-shadow:0 6px 14px rgba(0,0,0,0.15);
-}
-
-.icon{
-font-size:28px;
-margin-bottom:10px;
 }
 
 .card h3{
@@ -679,6 +673,21 @@ height:140px;
   }
 }
 
+/* SECTION MISSIONS + ACTUALITES RESPONSIVE */
+
+@media (max-width:900px){
+
+.home-sections{
+flex-direction:column;
+gap:40px;
+}
+
+.missions{
+grid-template-columns:1fr;
+}
+
+}
+  
 /* SECTION VIDEOS */
 
 .videos-section{
@@ -1311,6 +1320,7 @@ document.querySelectorAll('.submenu-btn').forEach(btn=>{
 </script>
 </body>
 </html>
+
 
 
 
