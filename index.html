@@ -123,6 +123,29 @@ height:auto;
   text-decoration:none;
   color:white;
 }
+
+/* TABLETTE ET TELEPHONE */
+@media (max-width:768px){
+
+.top-menu{
+flex-direction:column;
+text-align:center;
+gap:6px;
+}
+
+.menu-left{
+justify-content:center;
+}
+
+.site-title{
+font-size:14px;
+}
+
+.menu-right{
+font-size:13px;
+}
+
+}
 /* ------------------ LIGNE DÉFILANTE ------------------ */
 .institution-bar{
 display:flex;
@@ -1091,7 +1114,7 @@ scroll-behavior:smooth;
 <header class="top-menu">
   <div class="menu-left">
     <div class="menu-icon" onclick="openMenu()">☰</div>
-    <div class="site-title">IGTER</div>
+    <div class="site-title">Inspection Générale de la Territoriale - IGTER</div>
   </div>
 <div class="menu-right" id="top-contact">
 <a href="tel:+243822080469" class="phone">📞 00243 822 080 469</a> |
@@ -1470,6 +1493,7 @@ behavior:"smooth"
 </script>
 </body>
 </html>
+
 
 
 
