@@ -123,6 +123,7 @@ height:auto;
   text-decoration:none;
   color:white;
 }
+
 /* TABLETTE ET TELEPHONE */
 @media (max-width:768px){
 
@@ -145,7 +146,7 @@ font-size:13px;
 }
 
 }
-  
+
 /* ------------------ LIGNE DÉFILANTE ------------------ */
 .institution-bar{
 display:flex;
@@ -316,21 +317,41 @@ color:white;
 gap:20px;
 }
 
-.hero-text{
-flex:1;
-min-width:280px;
+/* --- HERO TEXT STYLE --- */
+.hero-text {
+    max-width:600px;      /* Limite la largeur pour une meilleure lecture */
+    padding:20px;
+    margin:0 auto;        /* Centrer sur petits écrans */
+    text-align:left;      /* Alignement classique */
+    color:white;        /* Couleur institutionnelle */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.hero-text h1{
-font-size:32px;
-margin-bottom:10px;
-font-weight:700;
+.hero-text h1 {
+    font-size:25px;
+    font-weight:700;
+    line-height:1.3;
+    margin-bottom:15px;
+    position:relative;
 }
 
-.hero-text p{
-font-size:15px;
-line-height:1.6;
-max-width:550px;
+/* Ligne décorative sous le titre */
+.hero-text h1::after {
+    content:"";
+    display:block;
+    width:60px;
+    height:4px;
+    background:#2563eb;   /* Couleur accent bleu */
+    margin-top:10px;
+    border-radius:2px;
+}
+
+/* Texte descriptif */
+.hero-text p {
+    font-size:14px;
+    line-height:1.7;
+    color:white;       /* Texte plus doux */
+    margin-bottom:25px;
 }
 
 .hero-image{
@@ -355,6 +376,22 @@ font-weight:600;
 .hero-caption strong{
 font-size:16px;
 display:block;
+}
+
+/* Responsive pour mobile */
+@media (max-width:768px){
+    .hero-text {
+        max-width:90%;
+        text-align:center;
+    }
+
+    .hero-text h1 {
+        font-size:22px;
+    }
+
+    .hero-text p {
+        font-size:15px;
+    }
 }
 
 /* =========================
@@ -832,13 +869,12 @@ font-size:16px;
 font-weight:600;
 }
 
-/* TITRES */
-
-.footer-col h3{
-color:#f1c40f;
-font-size:14px;
-margin-bottom:10px;
-position:relative;
+/* --- FOOTER : RÉSEAUX SOCIAUX HOVER --- */
+.footer-col h3 {
+    color:white; /* Même style que les autres colonnes */
+    margin-bottom:15px;
+    font-size:16px;
+    font-weight:600;
 }
 
 .footer-col h3::after{
@@ -861,14 +897,17 @@ margin:4px 0;
 
 /* LIENS */
 
-.footer-col a{
-display:block;
-color:white;
-text-decoration:none;
-font-size:12px;
-margin:4px 0;
-transition:0.3s;
+.footer-col a {
+    display:flex;
+    align-items:center;
+    gap:8px;
+    color:#333333; /* couleur du texte normale */
+    text-decoration:none;
+    margin-bottom:10px;
+    font-size:14px;
+    transition: all 0.3s ease;
 }
+
 
 .footer-col a:hover{
 color:#f1c40f;
@@ -882,28 +921,35 @@ margin-right:6px;
 color:#f1c40f;
 }
 
-/* RESEAUX SOCIAUX */
-
-.social-icons{
-display:flex;
-gap:10px;
-margin-top:8px;
+.footer-col a i {
+    font-size:16px;
+    transition: all 0.3s ease;
 }
 
-.social-icons a{
-display:flex;
-align-items:center;
-justify-content:center;
-width:30px;
-height:30px;
-background:rgba(255,255,255,0.1);
-border-radius:50%;
-transition:0.3s;
+/* HOVER : chaque réseau social avec sa couleur */
+.footer-col a:hover i,
+.footer-col a:hover {
+    font-weight:600;
 }
 
-.social-icons a:hover{
-background:#f1c40f;
-color:#00264d;
+.footer-col a[href*="facebook"]:hover {
+    color:#1877f2; /* bleu Facebook */
+}
+
+.footer-col a[href*="x.com"]:hover {
+    color:#1da1f2; /* bleu Twitter/X */
+}
+
+.footer-col a[href*="youtube"]:hover {
+    color:#ff0000; /* rouge Youtube */
+}
+
+.footer-col a[href*="instagram"]:hover {
+    color:#c13584; /* rose Instagram */
+}
+
+.footer-col a[href*="wa.me"]:hover {
+    color:#25d366; /* vert WhatsApp */
 }
 
 /* CARTE */
@@ -1213,7 +1259,7 @@ scroll-behavior:smooth;
 
 <div class="hero-text">
 
-<h1>Service de contrôle et d'appui-conseil aux Autorités Territoriales Congolaises.</h1><br>
+<h1>IGTER | Service de contrôle et d'appui-conseil aux Autorités Territoriales Congolaises.</h1>
 <p>L'IGTER a pour rôle principal de veiller au respect et à l'application correcte des lois, d'encadrer et d'accompagner les Autorités Territoriales dans la gestion de la chose publique, en vue d'une meilleure Gouvernance Territoriale en République Démocratique du Congo. 
 </p>
 
@@ -1316,7 +1362,7 @@ Visite de travail de Son Excellence, Madame la Vice-Ministre de l'Intérieur à 
 <div class="news-date">XX XXX XXXX</div>
 <div class="news-title">
 Remise et reprise entre l'Inspecteur Général de la Territotiale a.i sortant, 
-  BEYA MULUMBA Alidor et l'Inspecteur Général de la Territoriale a.i réhabilité et entrant, LUMBILA FEKEY Roger.
+  BEYA MULUMBA Alidor et l'Inspecteur Général de la Territoriale a.i réhabilité et rentrant, LUMBILA FEKEY Roger.
 </div>
 </div>
 
@@ -1352,25 +1398,29 @@ Remise et reprise entre l'Inspecteur Général de la Territotiale a.i sortant,
 
 <div class="footer-container">
 
-<!-- Colonne 1 : Logo + Description -->
+<!-- Colonne 1 : Réseaux sociaux -->
 <div class="footer-col">
+  <h3>Réseaux sociaux</h3>
 
-<div class="footer-logo">
-<img src="images/logo.png" alt="Logo IGTER">
-<span>IGTER</span>
-</div>
+  <a href="https://facebook.com/nomducompte" target="_blank">
+    <i class="fa-brands fa-facebook-f"></i> IGTER
+  </a>
 
-<p>
-Inspection Générale de la Territoriale.
-</p>
+  <a href="https://x.com/nomducompte" target="_blank">
+    <i class="fa-brands fa-x-twitter"></i> @IGTER
+  </a>
 
-<div class="social-icons">
-<a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-<a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-<a href="#"><i class="fa-brands fa-youtube"></i></a>
-<a href="#"><i class="fa-brands fa-instagram"></i></a>
-</div>
+  <a href="https://youtube.com/nomducompte" target="_blank">
+    <i class="fa-brands fa-youtube"></i> IGTER
+  </a>
 
+  <a href="https://instagram.com/nomducompte" target="_blank">
+    <i class="fa-brands fa-instagram"></i> IGTER
+  </a>
+
+  <a href="https://wa.me/00243822080469" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i> IGTER
+  </a>
 </div>
 
 <!-- Colonne 2 : Contact -->
@@ -1493,7 +1543,6 @@ behavior:"smooth"
 </script>
 </body>
 </html>
-
 
 
 
