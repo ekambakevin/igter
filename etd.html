@@ -744,77 +744,149 @@ Nous travaillons pour vous proposer prochainement un contenu complet et exhausti
 
 <div class="footer-container">
 
-<!-- Colonne 1 : Logo + Réseaux -->
+<!-- Colonne 1 : Réseaux sociaux -->
 <div class="footer-col">
-<h3>Inspection Générale de la Territoriale</h3>
+  <h3>Réseaux sociaux</h3>
 
-<p>Organe de contrôle et d'encadrement de l'administration territoriale en RDC.</p>
+  <a href="https://facebook.com/nomducompte" target="_blank">
+    <i class="fa-brands fa-facebook-f"></i> IGTER
+  </a>
 
-<div class="social-icons">
-<a href="#"><i class="fa-brands fa-facebook"></i> Facebook</a>
-<a href="#"><i class="fa-brands fa-x-twitter"></i> X (Twitter)</a>
-<a href="#"><i class="fa-brands fa-youtube"></i> YouTube</a>
-<a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
-</div>
+  <a href="https://x.com/nomducompte" target="_blank">
+    <i class="fa-brands fa-x-twitter"></i> @IGTER
+  </a>
 
+  <a href="https://youtube.com/nomducompte" target="_blank">
+    <i class="fa-brands fa-youtube"></i> IGTER
+  </a>
+
+  <a href="https://instagram.com/nomducompte" target="_blank">
+    <i class="fa-brands fa-instagram"></i> IGTER
+  </a>
+
+  <a href="https://wa.me/00243822080469" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i> IGTER
+  </a>
 </div>
 
 <!-- Colonne 2 : Contact -->
 <div class="footer-col">
+
 <h3>Contact</h3>
 
-<p><i class="fa-solid fa-location-dot"></i> Immeuble Semois<br>
-Royal / Kinshasa-Gombe</p>
+<p>
+<a href="https://www.google.com/maps/search/?api=1&query=Immeuble+Semois+Royal+Kinshasa+Gombe" target="_blank">
+<i class="fa-solid fa-location-dot"></i>
+Immeuble Semois<br>
+Royal / Kinshasa-Gombe
+</a>
+</p>
 
-<p><i class="fa-solid fa-envelope"></i> igteradmcentrale2014@gmail.com</p>
+<p>
+<a href="mailto:contact@igter.cd">
+<i class="fa-solid fa-envelope"></i>
+contact@igter.cd
+</a>
+</p>
 
-<p><i class="fa-solid fa-phone"></i> +243 83 17 75 007</p>
+<p>
+<a href="tel:00243822080469">
+<i class="fa-solid fa-phone"></i>
+00243 822 080 469
+</a>
+</p>
 
 </div>
 
-<!-- Colonne 3 : Liens rapides -->
+<!-- Colonne 3 : Liens institutionnels -->
 <div class="footer-col">
+
 <h3>Liens institutionnels</h3>
 
-<p>
 <a href="https://presidence.cd" target="_blank">
-<i class="fa-solid fa-landmark"></i> Présidence de la République
+<i class="fa-solid fa-landmark"></i>
+Présidence de la République
 </a>
-</p>
 
-<p>
 <a href="https://primature.cd" target="_blank">
-<i class="fa-solid fa-building"></i> Primature
+<i class="fa-solid fa-building"></i>
+Primature
 </a>
-</p>
 
-<p>
 <a href="https://interieur.gouv.cd" target="_blank">
-<i class="fa-solid fa-shield-halved"></i> Ministère de l'Intérieur
+<i class="fa-solid fa-shield-halved"></i>
+Ministère de l'Intérieur
 </a>
-</p>
-
-</div>
-
-<!-- Colonne 4 : Carte -->
-<div class="footer-col">
-<h3>Localisation</h3>
-
-<iframe 
-src="https://maps.google.com/maps?q=Kinshasa%20Gombe&t=&z=13&ie=UTF8&iwloc=&output=embed"
-width="100%" 
-height="150" 
-style="border:0;">
-</iframe>
 
 </div>
 
 </div>
+
+<!-- NAVIGATION FOOTER -->
+
+<div class="footer-nav">
+
+<a href="index.html">Accueil</a>
+<a href="mission.html">Missions</a>
+<a href="actualite.html">Actualités</a>
+<a href="document.html">Documents</a>
+<a href="#top-contact">Contact</a>
+
+</div>
+
+<!-- BAS DU FOOTER -->
 
 <div class="footer-bottom">
-<p>© 2026 Inspection Générale de la Territoriale — Tous droits réservés</p>
+<p>© <span id="year"></span> Inspection Générale de la Territoriale — Tous droits réservés</p>
 </div>
 
+<!-- BOUTON RETOUR HAUT -->
+
+<button id="backToTop">↑</button>
 </footer>
 
+<script>
+function openMenu(){
+  document.getElementById("sideMenu").style.width="280px";
+}
+
+function closeMenu(){
+  document.getElementById("sideMenu").style.width="0";
+}
+
+/* Sous-menus coulissants */
+document.querySelectorAll('.submenu-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const content = btn.nextElementSibling;
+    content.style.display = content.style.display === 'flex' ? 'none' : 'flex';
+  });
+});
+
+/* Année automatique */
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+
+/* Bouton retour en haut */
+
+let btn = document.getElementById("backToTop");
+
+window.onscroll = function(){
+if(document.documentElement.scrollTop > 300){
+btn.style.display="block";
+}else{
+btn.style.display="none";
+}
+};
+
+btn.onclick=function(){
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+};
+
+</script>
+</body>
 </html>
+
