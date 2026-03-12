@@ -4,7 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Inspection Générale de la Territoriale</title>
-<link rel="icon" type="image/png" href="images/logo.png">  
+<link rel="icon" type="image/png" href="images/logo.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -14,6 +16,8 @@ STYLE GENERAL
 
 *{
 box-sizing:border-box;
+margin:0;
+padding:0;
 }
 
 body{
@@ -23,106 +27,284 @@ background:#f4f6f9;
 line-height:1.5;
 }
 
-/* =========================
-TOP BAR
-========================= */
-
-.topbar{
-background:#ffffff;
-padding:10px 5%;
-display:flex;
-flex-wrap:wrap;
-justify-content:space-between;
-align-items:center;
-gap:10px;
-border-bottom:1px solid #ddd;
+/* ------------------ BARRE SUPERIEURE ------------------ */
+.top-menu{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:10px 20px;
+  background:#003366;
+  color:white;
+  font-family:Arial, sans-serif;
+  box-shadow:0 2px 5px rgba(0,0,0,0.1);
 }
 
-.logo-container{
-display:flex;
-align-items:center;
-flex-wrap:wrap;
+/* Côté gauche */
+.menu-left{
+  display:flex;
+  align-items:center;
+  gap:15px;
 }
 
-.logo-img{
-width:55px;
-margin-right:10px;
+.site-title{
+  font-size:18px;
+  font-weight:bold;
 }
 
-.logo-text div{
-line-height:1.2;
+/* Côté droit */
+.menu-right{
+  display:flex;
+  align-items:center;
+  gap:20px;
+  font-size:14px;
 }
 
-.country{
-font-size:14px;
-font-weight:bold;
-color:#d21034;
+.menu-right a{
+  color:white;
+  text-decoration:none;
+  transition:0.2s;
 }
 
-.institution{
-font-size:16px;
-font-weight:bold;
-color:#003366;
+.menu-right a:hover{
+  text-decoration:underline;
 }
 
-.slogan{
-font-size:12px;
-font-weight:bold;
-color:#ffcc00;
+/* Icône menu */
+.menu-icon{
+  font-size:22px;
+  cursor:pointer;
 }
 
-.flag{
-width:40px;
+/* RESPONSIVE TABLETTE/MOBILE */
+@media(max-width:768px){
+  .menu-right{
+    display:none; /* masque le téléphone et email sur petit écran */
+  }
 }
 
-.top-right{
-display:flex;
-align-items:center;
-gap:15px;
-flex-wrap:wrap;
-}
-
-.top-contact{
-font-size:13px;
-}
-
-/* =========================
-NAVBAR
-========================= */
-
-.navbar{
-background:#003366;
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-margin-bottom:0;
-padding:8px 5%;
-}
-
-.menu-center{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:10px;
-}
-
-.menu-center a{
+.menu-icon{
+font-size:32px;
+cursor:pointer;
+margin-right:15px;
 color:white;
-text-decoration:none;
-font-size:13px;
-font-weight:600;
-display:flex;
-align-items:center;
-gap:5px;
-padding:5px 8px;
 transition:0.3s;
 }
 
-.menu-center a:hover{
-color:#ffcc00;
-background:rgba(255,255,255,0.08);
-border-radius:4px;
+.menu-icon:hover{
+color:#f7d116; /* jaune institutionnel */
 }
+
+/* LOGO EN HAUT DU MENU */
+.menu-logo{
+text-align:center;
+margin-bottom:20px;
+}
+
+.menu-logo img{
+width:80px; /* taille réduite du logo */
+height:auto;
+}
+
+.menu-left{
+  display:flex;
+  align-items:center;
+  gap:15px; /* espace entre l'icône et le titre */
+}
+
+.menu-right{
+  display:flex;
+  align-items:center;
+  gap:20px; /* espace entre téléphone et email */
+  font-size:14px;
+}
+
+/* Optionnel : changer style des liens */
+.menu-right .email{
+  text-decoration:none;
+  color:white;
+}
+
+/* TABLETTE ET TELEPHONE */
+@media (max-width:768px){
+
+.top-menu{
+flex-direction:column;
+text-align:center;
+gap:6px;
+}
+
+.menu-left{
+justify-content:center;
+}
+
+.site-title{
+font-size:14px;
+}
+
+.menu-right{
+font-size:13px;
+}
+
+}
+
+/* ------------------ LIGNE DÉFILANTE ------------------ */
+.institution-bar{
+display:flex;
+align-items:center;
+background:white;
+width:100%;
+overflow:hidden;
+border-bottom:1px solid #ddd;
+padding:6px 20px;
+}
+
+.flag-box img{
+height:30px;
+margin-right:15px;
+}
+
+.scroll-container{
+flex:1;
+overflow:hidden;
+position:relative;
+}
+
+.scroll-text{
+display:flex;
+white-space:nowrap;
+font-family:"Times New Roman", serif;
+font-size:16px;
+animation:defilement 8s linear infinite;
+}
+  
+@media screen and (min-width: 1024px) { /* écran large */
+  .scroll-texte {
+    animation-duration: 5s; /* plus rapide sur ordinateur */
+  }
+}
+  
+.scroll-container:hover .scroll-text{
+animation-play-state:paused;
+}
+
+.text-group{
+display:flex;
+align-items:center;
+white-space:nowrap;
+padding-right:60px;
+}
+
+@keyframes defilement{
+0%{transform:translateX(100%);}
+100%{transform:translateX(-30%);}
+}
+  
+/* Couleurs */
+.val1{color:#ce1126; font-weight:bold;}
+.val2{color:#000000; font-weight:bold;}
+.val3{color:#007fff; font-weight:bold;}
+.val4{color:#000000; font-weight:bold;}
+.separator{margin:0 25px; color:#555;}
+
+/* ------------------ MENU LATERAL ------------------ */
+.side-menu{
+height:100%;
+width:0;
+position:fixed;
+top:0;
+left:0;
+background:white; /* fond blanc */
+overflow-x:hidden;
+transition:0.4s;
+padding-top:20px;
+z-index:999;
+box-shadow:2px 0 8px rgba(0,0,0,0.2);
+}
+
+/* BOUTON FERMER */
+.close-btn{
+position:absolute;
+top:10px;
+right:20px;
+font-size:25px;
+color:#003366;
+text-decoration:none;
+}
+
+/* TEXTE IGTER EN HAUT DU MENU */
+.menu-title{
+text-align:center;
+color:#003366;
+font-family:"Yu Gothic UI";
+font-weight:bold;
+font-size:18px;
+margin-bottom:20px;
+}
+
+/* LIENS PRINCIPAUX */
+.side-menu a{
+padding:12px 25px;
+text-decoration:none;
+display:block;
+font-family:"Yu Gothic UI";
+font-size:13px;
+color:#003366;
+transition:0.3s;
+}
+
+.side-menu a:hover{
+background:#f0f0f0;
+padding-left:35px;
+border-left:3px solid #003366;
+}
+
+/* SOUS-MENU COULISSANT */
+.submenu-container{
+font-family:"Yu Gothic UI";
+}
+
+.submenu-btn{
+padding:12px 25px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+color:#003366;
+font-size:13px;
+background:none;
+border:none;
+width:100%;
+text-align:left;
+cursor:pointer;
+transition:0.3s;
+}
+
+.submenu-btn:hover{
+background:#f0f0f0;
+padding-left:35px;
+border-left:3px solid #003366;
+}
+
+.submenu-content{
+display:none;
+flex-direction:column;
+background:#f9f9f9;
+}
+
+.submenu-content a{
+padding:10px 40px;
+font-size:13px;
+color:#003366;
+}
+
+.submenu-content a:hover{
+background:#e6e6e6;
+padding-left:50px;
+border-left:3px solid #003366;
+}
+
+
+
+
 
 /* =========================
 PAGE EN CONSTRUCTION
@@ -191,76 +373,253 @@ transform:translateY(-2px);
 }
 
 /* =========================
-FOOTER
+FOOTER INSTITUTIONNEL AVANCE
 ========================= */
 
 footer{
-background:#003366;
+background:#00264d;
 color:white;
-padding:30px 5%;
+padding:35px 7% 20px;
+font-size:13px;
+border-top:4px solid #f1c40f;
+}
+
+/* CONTAINER */
+
+.footer-container{
+max-width:1300px;
+margin:auto;
+display:grid;
+grid-template-columns:2fr 1fr 1fr 1fr 1.5fr;
+gap:30px;
+}
+
+/* LOGO + DESCRIPTION */
+
+.footer-logo{
+display:flex;
+align-items:center;
+gap:10px;
+margin-bottom:10px;
+}
+
+.footer-logo img{
+width:40px;
+height:40px;
+}
+.footer-logo span{
+font-size:16px;
+font-weight:600;
+}
+
+/* --- FOOTER : RÉSEAUX SOCIAUX HOVER --- */
+.footer-col h3 {
+    color:white; /* Même style que les autres colonnes */
+    margin-bottom:15px;
+    font-size:16px;
+    font-weight:600;
+}
+
+.footer-col h3::after{
+content:"";
+display:block;
+width:35px;
+height:2px;
+background:#f1c40f;
+margin-top:5px;
+}
+
+/* TEXTE */
+
+.footer-col p{
+font-size:12px;
+line-height:1.5;
+opacity:0.9;
+margin:4px 0;
+}
+
+/* LIENS */
+
+.footer-col a {
+    display:flex;
+    align-items:center;
+    gap:8px;
+    color:#333333; /* couleur du texte normale */
+    text-decoration:none;
+    margin-bottom:10px;
+    font-size:14px;
+    transition: all 0.3s ease;
+}
+
+
+.footer-col a:hover{
+color:#f1c40f;
+transform:translateX(4px);
+}
+
+/* ICONES */
+
+.footer-col i{
+margin-right:6px;
+color:#f1c40f;
+}
+
+.footer-col a i {
+    font-size:16px;
+    transition: all 0.3s ease;
+}
+
+/* HOVER : chaque réseau social avec sa couleur */
+.footer-col a:hover i,
+.footer-col a:hover {
+    font-weight:600;
+}
+
+.footer-col a[href*="facebook"]:hover {
+    color:#1877f2; /* bleu Facebook */
+}
+
+.footer-col a[href*="x.com"]:hover {
+    color:#1da1f2; /* bleu Twitter/X */
+}
+
+.footer-col a[href*="youtube"]:hover {
+    color:#ff0000; /* rouge Youtube */
+}
+
+.footer-col a[href*="instagram"]:hover {
+    color:#c13584; /* rose Instagram */
+}
+
+.footer-col a[href*="wa.me"]:hover {
+    color:#25d366; /* vert WhatsApp */
+}
+
+/* CARTE */
+
+.footer-col iframe{
+width:100%;
+height:100px;
+border:none;
+border-radius:6px;
+margin-top:5px;
+}
+
+/* BAS DU FOOTER */
+
+.footer-bottom{
 text-align:center;
-font-size:14px;
+margin-top:25px;
+padding-top:10px;
+border-top:1px solid rgba(255,255,255,0.2);
+font-size:11px;
+opacity:0.8;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1000px){
+
+.footer-container{
+grid-template-columns:1fr 1fr;
+gap:25px;
+}
+
+}
+
+@media(max-width:600px){
+
+.footer-container{
+grid-template-columns:1fr;
+}
+
+}
+
+/* NAVIGATION FOOTER */
+
+.footer-nav{
+text-align:center;
+margin-top:20px;
+border-top:1px solid rgba(255,255,255,0.2);
+padding-top:10px;
+}
+
+.footer-nav a{
+color:white;
+text-decoration:none;
+margin:0 10px;
+font-size:12px;
+transition:0.3s;
+}
+
+.footer-nav a:hover{
+color:#f1c40f;
+}
+
+/* BOUTON RETOUR HAUT */
+
+#backToTop{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#f1c40f;
+color:#003366;
+border:none;
+width:40px;
+height:40px;
+border-radius:50%;
+font-size:18px;
+cursor:pointer;
+display:none;
+box-shadow:0 4px 10px rgba(0,0,0,0.3);
+transition:0.3s;
+}
+
+#backToTop:hover{
+background:white;
+}
+
+footer{
+text-align:center;
 }
 
 .footer-container{
-max-width:1200px;
-margin:auto;
 display:flex;
+justify-content:center;
 flex-wrap:wrap;
-justify-content:space-between;
-gap:15px;
+gap:40px;
+text-align:center;
 }
 
 .footer-col{
-flex:1;
-min-width:180px;
+max-width:300px;
 }
 
-.footer-col h3{
-margin-bottom:8px;
-color:#f1c40f;
-font-size:15px;
+.footer-logo{
+justify-content:center;
 }
 
-.footer-col p{
-margin:4px 0;
-font-size:13px;
+.social-icons{
+justify-content:center;
+}
+
+.footer-nav{
+text-align:center;
+margin-top:20px;
+}
+
+.footer-nav a{
+margin:0 12px;
 }
 
 .footer-col a{
 color:white;
 text-decoration:none;
-font-size:13px;
-display:block;
-margin:3px 0;
 }
 
 .footer-col a:hover{
 color:#f1c40f;
 }
-
-.footer-col i{
-color:#f1c40f;
-margin-right:6px;
-}
-
-.social-icons a{
-display:block;
-margin:3px 0;
-}
-
-.footer-col iframe{
-height:100px;
-}
-
-.footer-bottom{
-text-align:center;
-margin-top:10px;
-border-top:1px solid rgba(255,255,255,0.2);
-padding-top:8px;
-font-size:12px;
-}
-
 /* =========================
 RESPONSIVE TABLETTE
 ========================= */
@@ -284,7 +643,6 @@ justify-content:center;
 /* =========================
 RESPONSIVE MOBILE
 ========================= */
-
 @media (max-width:600px){
 
 .topbar{
@@ -327,62 +685,280 @@ width:120px;
 flex:1 1 100%;
 }
 
-}
-
 html{
 scroll-behavior:smooth;
 }
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+}
 
+/* LOGO + TEXTE SUR UNE MEME LIGNE (mobile et tablette) */
+
+@media (max-width:900px){
+
+.logo-container{
+flex-wrap:nowrap;
+align-items:center;
+}
+
+.logo-img{
+width:45px;
+margin-right:8px;
+}
+
+.logo-text div{
+font-size:11px;
+line-height:1.2;
+}
+
+.country{
+font-size:11px;
+}
+
+.institution{
+font-size:12px;
+}
+
+.slogan{
+font-size:10px;
+}
+
+}
+
+/* =========================
+TOPBAR RESPONSIVE AMELIOREE
+========================= */
+
+@media (max-width:900px){
+
+.topbar{
+flex-direction:column;
+align-items:center;
+text-align:center;
+gap:8px;
+}
+
+.logo-container{
+display:flex;
+align-items:center;
+justify-content:center;
+flex-wrap:nowrap;
+}
+
+.logo-img{
+width:45px;
+}
+
+.logo-text{
+text-align:left;
+}
+
+.country{
+font-size:11px;
+}
+
+.institution{
+font-size:12px;
+font-weight:700;
+}
+
+.slogan{
+font-size:10px;
+}
+
+.top-right{
+justify-content:center;
+font-size:12px;
+}
+
+.flag{
+width:30px;
+}
+
+}
+
+/* BOUTON MENU MOBILE */
+
+.menu-toggle{
+display:none;
+font-size:22px;
+color:white;
+cursor:pointer;
+}
+
+/* MENU MOBILE */
+
+@media (max-width:768px){
+
+.menu-toggle{
+display:block;
+position:absolute;
+right:20px;
+top:12px;
+}
+
+.navbar{
+position:relative;
+}
+
+.menu-center{
+display:none;
+flex-direction:column;
+width:100%;
+background:#003366;
+margin-top:10px;
+}
+
+.menu-center.active{
+display:flex;
+}
+
+.menu-center a,
+.dropbtn{
+padding:12px;
+border-top:1px solid rgba(255,255,255,0.2);
+}
+
+.dropdown-menu{
+position:static;
+box-shadow:none;
+opacity:1;
+visibility:visible;
+transform:none;
+display:none;
+}
+
+.dropdown:hover .dropdown-menu{
+display:block;
+}
+
+.submenu-content{
+position:static;
+display:none;
+box-shadow:none;
+}
+
+.submenu:hover .submenu-content{
+display:block;
+}
+
+}
+
+/* SECTION MISSIONS + ACTUALITES RESPONSIVE */
+
+@media (max-width:900px){
+
+.home-sections{
+flex-direction:column;
+gap:40px;
+}
+
+.missions{
+grid-template-columns:1fr;
+}
+
+}
 </style>
 </head>
 
 <body>
 
-<div class="topbar">
+<!-- BARRE SUPERIEURE -->
+<header class="top-menu">
+  <div class="menu-left">
+    <div class="menu-icon" onclick="openMenu()">☰</div>
+    <div class="site-title">Inspection Générale de la Territotiale</div>
+  </div>
+<div class="menu-right" id="top-contact">
+<a href="tel:+243822080469" class="phone">📞 00243 822 080 469</a> |
+<a href="mailto:contact@igter.cd" class="email">✉ contact@igter.cd</a>
+</div>
+</header>
 
-<div class="logo-container">
-
-<img src="images/logo.png" alt="Logo IGTER" class="logo-img">
-
-<div class="logo-text">
-
-<div class="country">
-République Démocratique du Congo
+<!-- LIGNE DÉFILANTE -->
+<div class="institution-bar">
+  <div class="flag-box">
+    <img src="images/drapeau rdc.png" alt="Drapeau RDC">
+  </div>
+  <div class="scroll-container">
+    <div class="scroll-text">
+      <div class="text-group">
+        <span class="val1">République Démocratique du Congo</span>
+        <span class="separator"> • </span>
+        <span class="val2">Gouvernement National</span>
+        <span class="separator"> • </span>
+        <span class="val3">Ministère de l'Intérieur, Sécurité, Décentralisation & Affaires Coutumières</span>
+        <span class="separator"> • </span>
+        <span class="val4">Inspection Générale de la Territoriale</span>
+      </div>
+      <div class="text-group">
+        <span class="val1">République Démocratique du Congo</span>
+        <span class="separator"> • </span>
+        <span class="val2">Gouvernement National</span>
+        <span class="separator"> • </span>
+        <span class="val3">Ministère de l'Intérieur, Sécurité, Décentralisation & Affaires Coutumières</span>
+        <span class="separator"> • </span>
+        <span class="val4">Inspection Générale de la Territoriale</span>
+      </div>
+    </div>
+  </div>
 </div>
 
-<div class="institution">
-INSPECTION GÉNÉRALE DE LA TERRITORIALE
+<!-- MENU LATERAL -->
+<div id="sideMenu" class="side-menu">
+
+  <!-- BOUTON FERMER -->
+  <a href="javascript:void(0)" class="close-btn" onclick="closeMenu()">✕</a>
+
+  <!-- LOGO IGTER EN HAUT -->
+  <div class="menu-logo">
+    <img src="images/logo.png" alt="Logo IGTER">
+  </div>
+
+  <!-- LIENS PRINCIPAUX -->
+  <a href="index.html"><i class="fa-solid fa-building-columns"></i> Accueil</a>
+  <a href="#actualite"> 📰 Actualités</a>
+  <div class="submenu-container">
+    <button class="submenu-btn">📖 Présentation de l'IGTER<i class="fa-solid fa-caret-down"></i></button>
+    <div class="submenu-content">
+     <a href="apercu general.html">👁️ Aperçu Général</a>
+    <div class="submenu-container">
+    <button class="submenu-btn">🧩 Organisation<i class="fa-solid fa-caret-down"></i></button>
+    <div class="submenu-content">
+      <a href="administration_centrale.html"><i class="fa-solid fa-building"></i> Administration Centrale (1)</a>
+     <a href="pool.html"><i class="fa-solid fa-layer-group"></i> Pool (8)</a>
+     <a href="inspection_provinciale.html"><i class="fa-solid fa-map-location-dot"></i> Inspections Provinciales (26)</a>
+      <a href="inspection_provinciale.html"><i class="fa-solid fa-satellite-dish"></i> ± 2 Antennes/IPTER</a></div>
+    <div class="submenu-container">
+    <button class="submenu-btn">⚖️ Cadre légal<i class="fa-solid fa-caret-down"></i></button>
+    <div class="submenu-content">
+    <a href="pdf/DECRET.pdf" target="_blank" download>
+      <i class="fa-solid fa-file-pdf"></i> Décret de création
+    </a>
+     <a href="pdf/CADRE ORGANIQUE.pdf" target="_blank" download>
+      <i class="fa-solid fa-file-pdf"></i> Cadre organique
+    </a>
+    </div></div></div>
+
+    <a href="personnel.html">👥 Personnel</a>
 </div>
 
-<div class="slogan">
-Contrôle – Enquête – Encadrement – Suivi – Evaluation 
-</div>
-</div>
-</div>
+  <!-- Sous-menu Provinces / ETDs -->
+  <div class="submenu-container">
+    <button class="submenu-btn">🌍 Provinces/ETDs<i class="fa-solid fa-caret-down"></i></button>
+    <div class="submenu-content">
+      <a href="province.html"><i class="fa-solid fa-layer-group"></i> Liste des Provinces</a>
+      <a href="etd.html"><i class="fa-solid fa-satellite-dish"></i> Liste des Entités Territoriales</a>
+    </div>
+  </div>
 
-<div class="top-right">
+  <a href="https://interieur.gouv.cd/services/details/IGTER"><i class="fa-solid fa-shield"></i> Ministère de tutelle</a>
 
-<div class="top-contact">
-📞 +243 83 17 75 007 | ✉ igteradmcentrale2014@gmail.com
-</div>
-
-<!-- Drapeau RDC -->
-<img src="images/drapeau rdc.png" alt="Drapeau RDC" class="flag">
+  <a href="saisie.php">📝 Mode de saisine de l'IGTER</a>
+  <a href="#contact">☎️ Nous contacter</a>
+  <a href="suggestion.php"> 💬 Vos Avis et suggestions</a>
 
 </div></div>
 
-<!-- MENU -->
-<nav class="navbar">
-<div class="menu-center">
-<a href="index.html"><i class="fa-solid fa-house"></i> Accueil</a>
-<a href="province.html"><i class="fa-solid fa-map"></i> Provinces/ETD</a>
-<a href="actualite.html"><i class="fa-solid fa-newspaper"></i> Actualités</a>
-<a href="document.html"><i class="fa-solid fa-folder-open"></i> Documents officiels</a>
-<a href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a>
-</div>
-</nav>
 
 <!-- PAGE EN CONSTRUCTION -->
 <section class="construction-section">
@@ -393,8 +969,7 @@ Contrôle – Enquête – Encadrement – Suivi – Evaluation
 <i class="fa-solid fa-person-digging"></i>
 </div>
   
-<h1> Page : "Voir toutes les vidéos d'actualités"<h1>
-<h2>En cours de conception</h2>
+<h1> Page en maintenance<h1>
 <p>
 Cette page est actuellement en cours de développement.  
 Nous travaillons pour vous proposer prochainement un contenu complet et exhaustif. 
@@ -405,85 +980,155 @@ Nous travaillons pour vous proposer prochainement un contenu complet et exhausti
 </a>
 
 </div>
-
 </section>
-
 <!-- FOOTER -->
 <footer id="contact">
 
 <div class="footer-container">
 
-<!-- Colonne 1 : Logo + Réseaux -->
+<!-- Colonne 1 : Réseaux sociaux -->
 <div class="footer-col">
-<h3>Inspection Générale de la Territoriale</h3>
+  <h3>Réseaux sociaux</h3>
 
-<p>Organe de contrôle et d'encadrement de l'administration territoriale en RDC.</p>
+  <a href="https://facebook.com/nomducompte" target="_blank">
+    <i class="fa-brands fa-facebook-f"></i> IGTER
+  </a>
 
-<div class="social-icons">
-<a href="#"><i class="fa-brands fa-facebook"></i> Facebook</a>
-<a href="#"><i class="fa-brands fa-x-twitter"></i> X (Twitter)</a>
-<a href="#"><i class="fa-brands fa-youtube"></i> YouTube</a>
-<a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
-</div>
+  <a href="https://x.com/nomducompte" target="_blank">
+    <i class="fa-brands fa-x-twitter"></i> @IGTER
+  </a>
 
+  <a href="https://youtube.com/nomducompte" target="_blank">
+    <i class="fa-brands fa-youtube"></i> IGTER
+  </a>
+
+  <a href="https://instagram.com/nomducompte" target="_blank">
+    <i class="fa-brands fa-instagram"></i> IGTER
+  </a>
+
+  <a href="https://wa.me/00243822080469" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i> IGTER
+  </a>
 </div>
 
 <!-- Colonne 2 : Contact -->
 <div class="footer-col">
+
 <h3>Contact</h3>
 
-<p><i class="fa-solid fa-location-dot"></i> Immeuble Semois<br>
-Royal / Kinshasa-Gombe</p>
+<p>
+<a href="https://www.google.com/maps/search/?api=1&query=Immeuble+Semois+Royal+Kinshasa+Gombe" target="_blank">
+<i class="fa-solid fa-location-dot"></i>
+Immeuble Semois<br>
+Royal / Kinshasa-Gombe
+</a>
+</p>
 
-<p><i class="fa-solid fa-envelope"></i> igteradmcentrale2014@gmail.com</p>
+<p>
+<a href="mailto:contact@igter.cd">
+<i class="fa-solid fa-envelope"></i>
+contact@igter.cd
+</a>
+</p>
 
-<p><i class="fa-solid fa-phone"></i> +243 83 17 75 007</p>
+<p>
+<a href="tel:00243822080469">
+<i class="fa-solid fa-phone"></i>
+00243 822 080 469
+</a>
+</p>
 
 </div>
 
-<!-- Colonne 3 : Liens rapides -->
+<!-- Colonne 3 : Liens institutionnels -->
 <div class="footer-col">
+
 <h3>Liens institutionnels</h3>
 
-<p>
 <a href="https://presidence.cd" target="_blank">
-<i class="fa-solid fa-landmark"></i> Présidence de la République
+<i class="fa-solid fa-landmark"></i>
+Présidence de la République
 </a>
-</p>
 
-<p>
 <a href="https://primature.cd" target="_blank">
-<i class="fa-solid fa-building"></i> Primature
+<i class="fa-solid fa-building"></i>
+Primature
 </a>
-</p>
 
-<p>
 <a href="https://interieur.gouv.cd" target="_blank">
-<i class="fa-solid fa-shield-halved"></i> Ministère de l'Intérieur
+<i class="fa-solid fa-shield-halved"></i>
+Ministère de l'Intérieur
 </a>
-</p>
-
-</div>
-
-<!-- Colonne 4 : Carte -->
-<div class="footer-col">
-<h3>Localisation</h3>
-
-<iframe 
-src="https://maps.google.com/maps?q=Kinshasa%20Gombe&t=&z=13&ie=UTF8&iwloc=&output=embed"
-width="100%" 
-height="150" 
-style="border:0;">
-</iframe>
 
 </div>
 
 </div>
+
+<!-- NAVIGATION FOOTER -->
+
+<div class="footer-nav">
+
+<a href="index.html">Accueil</a>
+<a href="mission.html">Missions</a>
+<a href="actualite.html">Actualités</a>
+<a href="document.html">Documents</a>
+<a href="#top-contact">Contact</a>
+
+</div>
+
+<!-- BAS DU FOOTER -->
 
 <div class="footer-bottom">
-<p>© 2026 Inspection Générale de la Territoriale — Tous droits réservés</p>
+<p>© <span id="year"></span> Inspection Générale de la Territoriale — Tous droits réservés</p>
 </div>
 
+<!-- BOUTON RETOUR HAUT -->
+
+<button id="backToTop">↑</button>
 </footer>
 
+<script>
+function openMenu(){
+  document.getElementById("sideMenu").style.width="280px";
+}
+
+function closeMenu(){
+  document.getElementById("sideMenu").style.width="0";
+}
+
+/* Sous-menus coulissants */
+document.querySelectorAll('.submenu-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const content = btn.nextElementSibling;
+    content.style.display = content.style.display === 'flex' ? 'none' : 'flex';
+  });
+});
+
+/* Année automatique */
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+
+/* Bouton retour en haut */
+
+let btn = document.getElementById("backToTop");
+
+window.onscroll = function(){
+if(document.documentElement.scrollTop > 300){
+btn.style.display="block";
+}else{
+btn.style.display="none";
+}
+};
+
+btn.onclick=function(){
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+};
+
+</script>
+</body>
 </html>
+
