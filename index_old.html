@@ -307,7 +307,62 @@ padding-left:50px;
 border-left:3px solid #003366;
 }
 
+/* ============================= */
+/* NAVBAR ORDINATEUR */
+/* ============================= */
 
+.navbar{
+background:#003366;
+border-top:1px solid rgba(255,255,255,0.2);
+border-bottom:3px solid #f2b705;
+}
+
+.menu-center{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:25px;
+padding:12px 5%;
+flex-wrap:wrap;
+}
+
+.menu-center a{
+color:white;
+text-decoration:none;
+font-size:14px;
+font-weight:500;
+padding:6px 10px;
+border-radius:4px;
+transition:0.3s;
+}
+
+.menu-center a:hover{
+background:rgba(255,255,255,0.12);
+}
+
+@media (max-width:900px){
+
+.navbar{
+display:none;
+}
+
+.menu-icon{
+display:block;
+}
+
+}
+
+@media (min-width:901px){
+
+.menu-icon{
+display:none;
+}
+
+.navbar{
+display:block;
+}
+
+}
 /* =========================
 HERO
 ========================= */
@@ -1201,7 +1256,17 @@ scroll-behavior:smooth;
     </div>
   </div>
 </div>
+<nav class="navbar" id="main-menu">
 
+<div class="menu-center">
+<a href="index.html"><i class="fa-solid fa-house"></i> Accueil</a>
+<a href="province.html"><i class="fa-solid fa-map"></i> Provinces/ETD</a>
+<a href="actualite.html"><i class="fa-solid fa-newspaper"></i> Actualités</a>
+<a href="document.html"><i class="fa-solid fa-folder-open"></i> Documents officiels</a>
+<a href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a>
+</div>
+
+</nav>
 <!-- MENU LATERAL -->
 <div id="sideMenu" class="side-menu">
 
@@ -1266,7 +1331,7 @@ scroll-behavior:smooth;
 <div class="hero-text">
 
 <h1>IGTER | Inspection Générale de la Territoriale</h1>
-<p>Service Public de l'Etat ayant pour rôle principal de veiller au respect et à l'application correcte des lois, de contrôler, d'encadrer, de suivre et d'évaluer les actes posés par les Autorités Territoriales et Responsables des Services Centraux et Déconcentrés du Ministère ayant l'Intérieur dans ses attributions. 
+<p>Service Public de l'Etat ayant pour rôle principal de veiller au respect et à l'application correcte des lois, de contrôler, d'encadrer, de suivre et d'évaluer les actes posés par les Autorités Territoriales et par les Responsables des Services Centraux et Déconcentrés du Ministère ayant l'Intérieur dans ses attributions. 
 </p>
 
 <div class="buttons">
@@ -1549,8 +1614,6 @@ behavior:"smooth"
 </script>
 </body>
 </html>
-
-
 
 
 
