@@ -397,23 +397,28 @@ display:flex;
 
 }
 
-/* ============================= */
+/* ================================= */
 /* SLIDER MOBILE BARRE SUPERIEURE */
-/* ============================= */
+/* ================================= */
 
 .mobile-title-slider{
 display:none;
 position:relative;
+width:100%;
 height:40px;
 overflow:hidden;
 font-weight:600;
 color:#003366;
+text-align:center;
 }
+
+/* slides */
 
 .mobile-title-slider .slide{
 position:absolute;
 width:100%;
-text-align:center;
+left:0;
+top:0;
 opacity:0;
 animation:slideTitle 9s infinite;
 }
@@ -422,9 +427,10 @@ animation:slideTitle 9s infinite;
 
 .mobile-title-slider img{
 height:32px;
+margin-top:3px;
 }
 
-/* animation */
+/* délais */
 
 .mobile-title-slider .slide:nth-child(1){
 animation-delay:0s;
@@ -438,13 +444,33 @@ animation-delay:3s;
 animation-delay:6s;
 }
 
+
+/* animation */
+
 @keyframes slideTitle{
 
-0%{opacity:0; transform:translateY(15px);}
-5%{opacity:1; transform:translateY(0);}
-30%{opacity:1;}
-35%{opacity:0; transform:translateY(-15px);}
-100%{opacity:0;}
+0%{
+opacity:0;
+transform:translateY(15px);
+}
+
+10%{
+opacity:1;
+transform:translateY(0);
+}
+
+30%{
+opacity:1;
+}
+
+40%{
+opacity:0;
+transform:translateY(-15px);
+}
+
+100%{
+opacity:0;
+}
 
 }
 
@@ -453,19 +479,22 @@ animation-delay:6s;
 .top-menu{
 background:white;
 justify-content:center;
+text-align:center;
 }
+
+/* cacher titre desktop */
 
 .desktop-title{
 display:none;
 }
 
-/* cacher téléphone et email */
+/* cacher téléphone et mail */
 
 #top-contact{
 display:none;
 }
 
-/* afficher slider */
+/* afficher animation */
 
 .mobile-title-slider{
 display:block;
