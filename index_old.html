@@ -364,6 +364,80 @@ display:block;
 
 }
 
+/* ============================= */
+/* MENU DEROULANT ORDINATEUR */
+/* ============================= */
+
+.dropdown{
+position:relative;
+}
+
+.dropdown-menu{
+display:none;
+position:absolute;
+top:100%;
+left:0;
+background:white;
+min-width:220px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+border-radius:4px;
+z-index:999;
+}
+
+.dropdown-menu a{
+display:block;
+padding:10px 15px;
+text-decoration:none;
+color:#333;
+font-size:14px;
+}
+
+.dropdown-menu a:hover{
+background:#f4f4f4;
+}
+
+/* afficher au survol */
+
+.dropdown:hover .dropdown-menu{
+display:block;
+}
+
+/* sous menu */
+
+.submenu{
+position:relative;
+}
+
+.submenu-content{
+display:none;
+position:absolute;
+left:100%;
+top:0;
+background:white;
+min-width:220px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+.submenu:hover .submenu-content{
+display:block;
+}
+
+@media (max-width:900px){
+
+.dropdown-menu{
+display:none !important;
+}
+
+}
+
+@media (max-width:900px){
+
+.navbar .dropdown-menu{
+display:none !important;
+}
+
+}
+
 /* ========================= */
 /* BARRE MENU MOBILE */
 /* ========================= */
@@ -1449,11 +1523,58 @@ IGTER
 <nav class="navbar" id="main-menu">
 
 <div class="menu-center">
-<a href="index.html"><i class="fa-solid fa-house"></i> Accueil</a>
-<a href="province.html"><i class="fa-solid fa-map"></i> Provinces/ETD</a>
-<a href="actualite.html"><i class="fa-solid fa-newspaper"></i> Actualités</a>
-<a href="document.html"><i class="fa-solid fa-folder-open"></i> Documents officiels</a>
-<a href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a>
+<a href="index.html">Accueil</a>
+<a href="#actualite">Actualités</a>
+<a href="document.html">Documents officiels</a>
+
+<!-- MENU PRESENTATION -->
+<div class="dropdown">
+<a href="#" class="dropbtn">Présentation ▾</a>
+
+<div class="dropdown-menu">
+
+<a href="apercu general.html">Aperçu Général</a>
+
+<div class="submenu">
+<a href="#" class="submenu-btn">Organisation ▸</a>
+
+<div class="submenu-content">
+<a href="administration_centrale.html">Administration Centrale (1)</a>
+<a href="pool.html">Pool (8)</a>
+<a href="inspection_provinciale.html">Inspections Provinciales (26)</a>
+<a href="inspection_provinciale.html">± 2 Antennes/IPTER</a>
+</div>
+</div>
+
+<div class="submenu">
+<a href="#" class="submenu-btn">Cadre légal ▸</a>
+
+<div class="submenu-content">
+<a href="pdf/DECRET.pdf" target="_blank">Décret de création IGTER</a>
+<a href="pdf/CADRE ORGANIQUE.pdf" target="_blank">Cadre organique</a>
+</div>
+</div>
+
+<a href="personnel.html">Personnel</a>
+
+</div>
+</div>
+
+<div class="dropdown">
+<a href="#" class="dropbtn">Provinces/ETDs ▾</a>
+
+<div class="dropdown-menu">
+
+<a href="province.html">Liste des provinces</a>
+
+<a href="etd.html">Liste des Entités Territoriales</a>
+
+</div>
+</div>
+
+<a href="mode_saisine.html">Mode de saisine</a>
+<a href="#contact">Contact</a>
+<a href="suggestion.html">Suggestions</a>
 </div>
 
 </nav>
