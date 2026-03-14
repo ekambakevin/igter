@@ -397,82 +397,63 @@ display:flex;
 
 }
 
-/* ================================= */
+/* =============================== */
 /* SLIDER MOBILE BARRE SUPERIEURE */
-/* ================================= */
+/* =============================== */
 
 .mobile-title-slider{
 display:none;
-position:relative;
 width:100%;
 height:40px;
 overflow:hidden;
-font-weight:600;
-color:#003366;
 text-align:center;
+color:#003366;
+font-weight:600;
 }
-
-/* slides */
-
-.mobile-title-slider .slide{
-position:absolute;
-width:100%;
-left:0;
-top:0;
-opacity:0;
-animation:slideTitle 9s infinite;
-}
-
-/* logo */
 
 .mobile-title-slider img{
 height:32px;
-margin-top:3px;
 }
 
-/* délais */
+/* conteneur des slides */
 
-.mobile-title-slider .slide:nth-child(1){
-animation-delay:0s;
+.mobile-title-slider .slides{
+display:flex;
+flex-direction:column;
+animation:slideVertical 9s infinite;
 }
 
-.mobile-title-slider .slide:nth-child(2){
-animation-delay:3s;
-}
+/* slide */
 
-.mobile-title-slider .slide:nth-child(3){
-animation-delay:6s;
+.mobile-title-slider .slide{
+height:40px;
+display:flex;
+align-items:center;
+justify-content:center;
 }
 
 
 /* animation */
 
-@keyframes slideTitle{
+@keyframes slideVertical{
 
-0%{
-opacity:0;
-transform:translateY(15px);
-}
+0%{transform:translateY(0);}
+30%{transform:translateY(0);}
 
-10%{
-opacity:1;
-transform:translateY(0);
-}
+35%{transform:translateY(-40px);}
+65%{transform:translateY(-40px);}
 
-30%{
-opacity:1;
-}
+70%{transform:translateY(-80px);}
+95%{transform:translateY(-80px);}
 
-40%{
-opacity:0;
-transform:translateY(-15px);
-}
-
-100%{
-opacity:0;
-}
+100%{transform:translateY(0);}
 
 }
+
+
+/* =============================== */
+/* RESPONSIVE MOBILE */
+/* =============================== */
 
 @media (max-width:900px){
 
@@ -482,7 +463,7 @@ justify-content:center;
 text-align:center;
 }
 
-/* cacher titre desktop */
+/* cacher titre ordinateur */
 
 .desktop-title{
 display:none;
@@ -494,7 +475,7 @@ display:none;
 display:none;
 }
 
-/* afficher animation */
+/* afficher slider */
 
 .mobile-title-slider{
 display:block;
@@ -1362,19 +1343,19 @@ scroll-behavior:smooth;
 
 <div class="site-title desktop-title">IGTER</div>
 
-<!-- ANIMATION MOBILE -->
+<!-- SLIDER MOBILE -->
 <div class="mobile-title-slider">
+
+<div class="slides">
 
 <div class="slide">
 <img src="images/logo.png" alt="Logo IGTER">
 </div>
 
-<div class="slide">
-IGTER
-</div>
+<div class="slide">IGTER</div>
 
-<div class="slide">
-Inspection Générale de la Territoriale
+<div class="slide">Inspection Générale de la Territoriale</div>
+
 </div>
 
 </div>
