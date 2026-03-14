@@ -363,6 +363,40 @@ display:block;
 }
 
 }
+
+/* ========================= */
+/* BARRE MENU MOBILE */
+/* ========================= */
+
+.mobile-menu-bar{
+display:none;
+background:#003366;
+padding:10px 20px;
+justify-content:flex-end;
+}
+
+/* icone */
+
+.mobile-menu-bar .menu-icon{
+font-size:22px;
+color:white;
+cursor:pointer;
+}
+
+@media (max-width:900px){
+
+/* cacher l'icone dans la barre du haut */
+.top-icon{
+display:none;
+}
+
+/* afficher la barre mobile */
+.mobile-menu-bar{
+display:flex;
+}
+
+}
+
 /* =========================
 HERO
 ========================= */
@@ -1219,7 +1253,6 @@ scroll-behavior:smooth;
 <!-- BARRE SUPERIEURE -->
 <header class="top-menu">
   <div class="menu-left">
-    <div class="menu-icon" onclick="openMenu()">☰</div>
     <div class="site-title">IGTER</div>
   </div>
 <div class="menu-right" id="top-contact">
@@ -1227,7 +1260,10 @@ scroll-behavior:smooth;
 <a href="mailto:contact@igter.cd" class="email">✉ contact@igter.cd</a>
 </div>
 </header>
-
+<!-- BARRE MENU MOBILE -->
+<div class="mobile-menu-bar">
+  <div class="menu-icon" onclick="openMenu()">☰</div>
+</div>
 <!-- LIGNE DÉFILANTE -->
 <div class="institution-bar">
   <div class="flag-box">
