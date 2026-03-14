@@ -397,6 +397,74 @@ display:flex;
 
 }
 
+.top-menu{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:8px 6%;
+background:#00264d;
+color:white;
+}
+
+.site-title{
+font-size:18px;
+font-weight:bold;
+}
+
+.mobile-logo{
+display:none;
+}
+
+.site-fullname{
+display:none;
+}
+
+@media (max-width:900px){
+
+.top-menu{
+background:white;
+flex-direction:column;
+align-items:center;
+text-align:center;
+padding:15px 10px;
+border-bottom:1px solid #eee;
+}
+
+/* cacher téléphone et email */
+
+#top-contact{
+display:none;
+}
+
+/* logo */
+
+.mobile-logo{
+display:block;
+width:60px;
+margin-bottom:6px;
+}
+
+/* IGTER */
+
+.site-title{
+color:#003366;
+font-size:20px;
+font-weight:bold;
+letter-spacing:1px;
+margin-bottom:4px;
+}
+
+/* texte complet */
+
+.site-fullname{
+display:block;
+font-size:13px;
+color:#444;
+font-weight:500;
+}
+
+}
+
 /* =========================
 HERO
 ========================= */
@@ -1252,14 +1320,26 @@ scroll-behavior:smooth;
 
 <!-- BARRE SUPERIEURE -->
 <header class="top-menu">
-  <div class="menu-left">
-    <div class="site-title">IGTER</div>
-  </div>
+
+<div class="menu-left">
+
+<img src="images/logo.png" class="mobile-logo" alt="Logo IGTER">
+
+<div class="site-title">IGTER</div>
+
+<div class="site-fullname">
+Inspection Générale de la Territoriale
+</div>
+
+</div>
+
 <div class="menu-right" id="top-contact">
 <a href="tel:+243822080469" class="phone">📞 00243 822 080 469</a> |
 <a href="mailto:contact@igter.cd" class="email">✉ contact@igter.cd</a>
 </div>
+
 </header>
+
 <!-- BARRE MENU MOBILE -->
 <div class="mobile-menu-bar">
   <div class="menu-icon" onclick="openMenu()">☰</div>
