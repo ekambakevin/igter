@@ -483,6 +483,27 @@ display:block;
 
 }
 
+/* LOGO + TITRE ORDINATEUR */
+
+.site-title{
+display:flex;
+align-items:center;
+gap:8px;
+font-weight:bold;
+}
+
+.logo-desktop{
+height:28px;
+}
+
+@media (max-width:900px){
+
+.logo-desktop{
+display:none;
+}
+
+}
+
 /* =========================
 HERO
 ========================= */
@@ -1341,7 +1362,10 @@ scroll-behavior:smooth;
 
 <div class="menu-left">
 
-<div class="site-title desktop-title">IGTER</div>
+<div class="site-title desktop-title">
+<img src="images/logo.png" alt="Logo IGTER" class="logo-desktop">
+IGTER
+</div>
 
 <!-- SLIDER MOBILE -->
 <div class="mobile-title-slider">
