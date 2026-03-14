@@ -56,7 +56,6 @@ line-height:1.5;
   text-shadow:0 1px 3px rgba(0,0,0,0.3);
 }
 
-
 /* Côté droit */
 .menu-right{
   display:flex;
@@ -308,8 +307,202 @@ padding-left:50px;
 border-left:3px solid #003366;
 }
 
+/* ============================= */
+/* NAVBAR ORDINATEUR */
+/* ============================= */
+
+.navbar{
+background:#003366;
+border-top:1px solid rgba(255,255,255,0.2);
+border-bottom:3px solid #f2b705;
+}
+
+.menu-center{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:25px;
+padding:12px 5%;
+flex-wrap:wrap;
+}
+
+.menu-center a{
+color:white;
+text-decoration:none;
+font-size:14px;
+font-weight:500;
+padding:6px 10px;
+border-radius:4px;
+transition:0.3s;
+}
+
+.menu-center a:hover{
+background:rgba(255,255,255,0.12);
+}
+
+@media (max-width:900px){
+
+.navbar{
+display:none;
+}
+
+.menu-icon{
+display:block;
+}
+
+}
+
+@media (min-width:901px){
+
+.menu-icon{
+display:none;
+}
+
+.navbar{
+display:block;
+}
+
+}
+
+/* ========================= */
+/* BARRE MENU MOBILE */
+/* ========================= */
+
+.mobile-menu-bar{
+display:none;
+background:#003366;
+padding:10px 20px;
+justify-content:flex-end;
+}
+
+/* icone */
+
+.mobile-menu-bar .menu-icon{
+font-size:22px;
+color:white;
+cursor:pointer;
+}
+
+@media (max-width:900px){
+
+/* cacher l'icone dans la barre du haut */
+.top-icon{
+display:none;
+}
+
+/* afficher la barre mobile */
+.mobile-menu-bar{
+display:flex;
+}
+
+}
+
+/* =============================== */
+/* SLIDER MOBILE BARRE SUPERIEURE */
+/* =============================== */
+
+.mobile-title-slider{
+display:none;
+width:100%;
+height:40px;
+overflow:hidden;
+text-align:center;
+color:#003366;
+font-weight:600;
+}
+
+.mobile-title-slider img{
+height:32px;
+}
+
+/* conteneur des slides */
+
+.mobile-title-slider .slides{
+display:flex;
+flex-direction:column;
+animation:slideVertical 9s infinite;
+}
+
+/* slide */
+
+.mobile-title-slider .slide{
+height:40px;
+display:flex;
+align-items:center;
+justify-content:center;
+}
 
 
+/* animation */
+
+@keyframes slideVertical{
+
+0%{transform:translateY(0);}
+30%{transform:translateY(0);}
+
+35%{transform:translateY(-40px);}
+65%{transform:translateY(-40px);}
+
+70%{transform:translateY(-80px);}
+95%{transform:translateY(-80px);}
+
+100%{transform:translateY(0);}
+
+}
+
+
+/* =============================== */
+/* RESPONSIVE MOBILE */
+/* =============================== */
+
+@media (max-width:900px){
+
+.top-menu{
+background:white;
+justify-content:center;
+text-align:center;
+}
+
+/* cacher complètement le titre ordinateur */
+
+.site-title{
+display:none;
+}
+
+/* cacher téléphone et mail */
+
+#top-contact{
+display:none;
+}
+
+/* afficher slider */
+
+.mobile-title-slider{
+display:block;
+}
+
+}
+
+/* LOGO + TITRE ORDINATEUR */
+
+.site-title{
+display:flex;
+align-items:center;
+gap:8px;
+font-weight:bold;
+}
+
+.logo-desktop{
+height:28px;
+}
+
+@media (max-width:900px){
+
+.logo-desktop{
+display:none;
+}
+
+}
 
 
 /* =========================
@@ -626,243 +819,33 @@ text-decoration:none;
 .footer-col a:hover{
 color:#f1c40f;
 }
-/* =========================
-RESPONSIVE TABLETTE
-========================= */
-
-@media (max-width:900px){
-
-.hero-text h1{
-font-size:28px;
-}
-
-.hero-text p{
-font-size:14px;
-}
-
-.buttons{
-justify-content:center;
-}
-
-}
-
-/* =========================
-RESPONSIVE MOBILE
-========================= */
-@media (max-width:600px){
-
-.topbar{
-flex-direction:column;
-align-items:flex-start;
-}
-
-.hero{
-flex-direction:column;
-text-align:center;
-}
-
-.hero-text h1{
-font-size:24px;
-}
-
-.hero-text p{
-font-size:14px;
-}
-
-.buttons{
-flex-direction:column;
-align-items:center;
-}
-
-.btn{
-width:80%;
-}
-
-.menu-center{
-flex-direction:column;
-align-items:center;
-}
-
-.search-box input{
-width:120px;
-}
-
-.stat{
-flex:1 1 100%;
-}
 
 html{
 scroll-behavior:smooth;
 }
-
-}
-
-/* LOGO + TEXTE SUR UNE MEME LIGNE (mobile et tablette) */
-
 @media (max-width:900px){
 
-.logo-container{
-flex-wrap:nowrap;
-align-items:center;
+.top-menu .site-title{
+display:none !important;
 }
 
-.logo-img{
-width:45px;
-margin-right:8px;
+.top-menu #top-contact{
+display:none !important;
 }
 
-.logo-text div{
-font-size:11px;
-line-height:1.2;
-}
-
-.country{
-font-size:11px;
-}
-
-.institution{
-font-size:12px;
-}
-
-.slogan{
-font-size:10px;
-}
-
-}
-
-/* =========================
-TOPBAR RESPONSIVE AMELIOREE
-========================= */
-
-@media (max-width:900px){
-
-.topbar{
-flex-direction:column;
-align-items:center;
-text-align:center;
-gap:8px;
-}
-
-.logo-container{
-display:flex;
-align-items:center;
-justify-content:center;
-flex-wrap:nowrap;
-}
-
-.logo-img{
-width:45px;
-}
-
-.logo-text{
-text-align:left;
-}
-
-.country{
-font-size:11px;
-}
-
-.institution{
-font-size:12px;
-font-weight:700;
-}
-
-.slogan{
-font-size:10px;
-}
-
-.top-right{
-justify-content:center;
-font-size:12px;
-}
-
-.flag{
-width:30px;
-}
-
-}
-
-/* BOUTON MENU MOBILE */
-
-.menu-toggle{
-display:none;
-font-size:22px;
-color:white;
-cursor:pointer;
-}
-
-/* MENU MOBILE */
-
-@media (max-width:768px){
-
-.menu-toggle{
-display:block;
-position:absolute;
-right:20px;
-top:12px;
-}
-
-.navbar{
-position:relative;
-}
-
-.menu-center{
-display:none;
-flex-direction:column;
+.mobile-title-slider{
+display:block !important;
 width:100%;
-background:#003366;
-margin-top:10px;
 }
 
-.menu-center.active{
-display:flex;
-}
-
-.menu-center a,
-.dropbtn{
-padding:12px;
-border-top:1px solid rgba(255,255,255,0.2);
-}
-
-.dropdown-menu{
-position:static;
-box-shadow:none;
-opacity:1;
-visibility:visible;
-transform:none;
-display:none;
-}
-
-.dropdown:hover .dropdown-menu{
-display:block;
-}
-
-.submenu-content{
-position:static;
-display:none;
-box-shadow:none;
-}
-
-.submenu:hover .submenu-content{
-display:block;
+.top-menu{
+background:white;
+justify-content:center;
+align-items:center;
 }
 
 }
 
-/* SECTION MISSIONS + ACTUALITES RESPONSIVE */
-
-@media (max-width:900px){
-
-.home-sections{
-flex-direction:column;
-gap:40px;
-}
-
-.missions{
-grid-template-columns:1fr;
-}
-
-}
 </style>
 </head>
 
@@ -870,16 +853,44 @@ grid-template-columns:1fr;
 
 <!-- BARRE SUPERIEURE -->
 <header class="top-menu">
-  <div class="menu-left">
-    <div class="menu-icon" onclick="openMenu()">☰</div>
-    <div class="site-title">IGTER</div>
-  </div>
+
+<div class="menu-left">
+
+<div class="site-title desktop-title">
+<img src="images/logo.png" alt="Logo IGTER" class="logo-desktop">
+IGTER
+</div>
+
+<!-- SLIDER MOBILE -->
+<div class="mobile-title-slider">
+
+<div class="slides">
+
+<div class="slide">
+<img src="images/logo.png" alt="Logo IGTER">
+</div>
+
+<div class="slide">IGTER</div>
+
+<div class="slide">Inspection Générale de la Territoriale</div>
+
+</div>
+
+</div>
+
+</div>
+
 <div class="menu-right" id="top-contact">
-<a href="tel:+243822080469" class="phone">📞 00243 822 080 469</a> |
+<a href="tel:+243822080469" class="phone">📞 +243 822 080 469</a> |
 <a href="mailto:contact@igter.cd" class="email">✉ contact@igter.cd</a>
 </div>
+
 </header>
 
+<!-- BARRE MENU MOBILE -->
+<div class="mobile-menu-bar">
+  <div class="menu-icon" onclick="openMenu()">☰</div>
+</div>
 <!-- LIGNE DÉFILANTE -->
 <div class="institution-bar">
   <div class="flag-box">
@@ -908,7 +919,17 @@ grid-template-columns:1fr;
     </div>
   </div>
 </div>
+<nav class="navbar" id="main-menu">
 
+<div class="menu-center">
+<a href="index.html"><i class="fa-solid fa-house"></i> Accueil</a>
+<a href="province.html"><i class="fa-solid fa-map"></i> Provinces/ETD</a>
+<a href="actualite.html"><i class="fa-solid fa-newspaper"></i> Actualités</a>
+<a href="document.html"><i class="fa-solid fa-folder-open"></i> Documents officiels</a>
+<a href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a>
+</div>
+
+</nav>
 <!-- MENU LATERAL -->
 <div id="sideMenu" class="side-menu">
 
@@ -923,6 +944,7 @@ grid-template-columns:1fr;
   <!-- LIENS PRINCIPAUX -->
   <a href="index.html"><i class="fa-solid fa-building-columns"></i> Accueil</a>
   <a href="#actualite"> 📰 Actualités</a>
+  <a href="document.html">🗂️ Doments officiels</a>
   <div class="submenu-container">
     <button class="submenu-btn">📖 Présentation de l'IGTER<i class="fa-solid fa-caret-down"></i></button>
     <div class="submenu-content">
@@ -959,9 +981,9 @@ grid-template-columns:1fr;
 
   <a href="https://interieur.gouv.cd/services/details/IGTER"><i class="fa-solid fa-shield"></i> Ministère de tutelle</a>
 
-  <a href="saisie.php">📝 Mode de saisine de l'IGTER</a>
+  <a href="mode_saisine.html">📝 Mode de saisine de l'IGTER</a>
   <a href="#contact">☎️ Nous contacter</a>
-  <a href="suggestion.php"> 💬 Vos Avis et suggestions</a>
+  <a href="suggestion.html"> 💬 Vos Avis et suggestions</a>
 
 </div></div>
 
@@ -987,6 +1009,7 @@ Nous travaillons pour vous proposer prochainement un contenu complet et exhausti
 
 </div>
 </section>
+
 <!-- FOOTER -->
 <footer id="contact">
 
@@ -997,23 +1020,23 @@ Nous travaillons pour vous proposer prochainement un contenu complet et exhausti
   <h3>Réseaux sociaux</h3>
 
   <a href="https://facebook.com/nomducompte" target="_blank">
-    <i class="fa-brands fa-facebook-f"></i> IGTER
+    <i class="fa-brands fa-facebook-f"></i> Facebook
   </a>
 
   <a href="https://x.com/nomducompte" target="_blank">
-    <i class="fa-brands fa-x-twitter"></i> @IGTER
+    <i class="fa-brands fa-x-twitter"></i> Twitter
   </a>
 
   <a href="https://youtube.com/nomducompte" target="_blank">
-    <i class="fa-brands fa-youtube"></i> IGTER
+    <i class="fa-brands fa-youtube"></i> Youtube
   </a>
 
   <a href="https://instagram.com/nomducompte" target="_blank">
-    <i class="fa-brands fa-instagram"></i> IGTER
+    <i class="fa-brands fa-instagram"></i> Instagram
   </a>
 
   <a href="https://wa.me/00243822080469" target="_blank">
-    <i class="fa-brands fa-whatsapp"></i> IGTER
+    <i class="fa-brands fa-whatsapp"></i> Whatsapp
   </a>
 </div>
 
@@ -1040,7 +1063,7 @@ contact@igter.cd
 <p>
 <a href="tel:00243822080469">
 <i class="fa-solid fa-phone"></i>
-00243 822 080 469
++243 822 080 469
 </a>
 </p>
 
@@ -1137,4 +1160,3 @@ behavior:"smooth"
 </script>
 </body>
 </html>
-
