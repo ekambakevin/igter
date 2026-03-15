@@ -1446,6 +1446,26 @@ align-items:center;
 }
 
 }
+
+/* ========================= */
+/* CORRECTION SOUS-MENU MOBILE */
+/* ========================= */
+
+@media (max-width:900px){
+
+.side-menu .submenu-content{
+position:static;
+display:none;
+background:#f9f9f9;
+box-shadow:none;
+}
+
+.side-menu .submenu-content.show{
+display:block;
+}
+
+}
+
 </style>
 
 </head>
@@ -1599,7 +1619,7 @@ IGTER
     <div class="submenu-content">
      <a href="apercu general.html">👁️ Aperçu Général</a>
     <div class="submenu-container">
-    <button class="submenu-btn">🧩 Organisation<i class="fa-solid fa-caret-down"></i></button>
+    <button class="submenu-btn">🧩 Organisation<i class="fa-solid fa-caret-down"></i></button></div>
     <div class="submenu-content">
       <a href="administration_centrale.html"><i class="fa-solid fa-building"></i> Administration Centrale (1)</a>
      <a href="pool.html"><i class="fa-solid fa-layer-group"></i> Pool (8)</a>
@@ -1924,27 +1944,13 @@ behavior:"smooth"
 };
 
 
-document.querySelectorAll(".submenu-btn").forEach(button => {
+document.querySelectorAll(".side-menu .submenu-btn").forEach(button => {
 
 button.addEventListener("click", function(){
 
 let submenu = this.nextElementSibling;
 
-/* fermer les autres sous menus */
-
-document.querySelectorAll(".submenu-content").forEach(menu => {
-if(menu !== submenu){
-menu.style.display = "none";
-}
-});
-
-/* ouvrir ou fermer */
-
-if(submenu.style.display === "block"){
-submenu.style.display = "none";
-}else{
-submenu.style.display = "block";
-}
+submenu.classList.toggle("show");
 
 });
 
