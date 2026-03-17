@@ -1529,6 +1529,68 @@ cursor:pointer;
 background:#e0a800;
 }
 
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  min-width: 280px;
+  max-width: 320px;
+  background: #1e3a8a;
+  color: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.4s ease;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.toast-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+
+#toast-icon {
+  font-size: 18px;
+}
+
+/* Barre de progression */
+.toast-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  background: rgba(255,255,255,0.3);
+}
+
+.toast-progress::before {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: #fff;
+  animation: progress 4s linear forwards;
+}
+
+@keyframes progress {
+  from { width: 100%; }
+  to { width: 0%; }
+}
+
+/* Variantes */
+.toast.info { background: #1e3a8a; }
+.toast.success { background: #16a34a; }
+.toast.error { background: #dc2626; }
 </style>
 
 </head>
@@ -1808,6 +1870,19 @@ Inspecteur Général de la Territoriale a.i
 
 <a href="#actualite" class="news-row">
 
+<img src="images/ig4.jpg" class="news-img" alt="Actualité">
+
+<div class="news-content">
+<div class="news-date">17 Mars 2026</div>
+<div class="news-title">
+Séance de travail entre l'Inspection Générale de la Police Nationale Congolaise (IG PNC) et l'Inspection Générale de la Territoriale (IGTER)
+</div>
+</div>
+
+</a>
+
+<a href="#actualite" class="news-row">
+
 <img src="images/ig2.jpg" class="news-img" alt="Actualité">
 
 <div class="news-content">
@@ -1945,7 +2020,7 @@ Ministère de l'Intérieur
 
 <h3>Avis & Suggestions</h3>
 
-<form class="footer-form">
+<form id="avisForm" class="footer-form">
 
 <textarea placeholder="Votre avis ou suggestion..."></textarea>
 
@@ -1959,7 +2034,7 @@ Ministère de l'Intérieur
 
 <h3>Newsletter</h3>
 
-<form class="newsletter-form">
+<form id="newsletterForm" class="newsletter-form">
 
 <input type="email" placeholder="Votre adresse email">
 
@@ -1968,6 +2043,14 @@ Ministère de l'Intérieur
 </form>
 
 </div></div>
+
+<div id="toast" class="toast">
+  <div class="toast-content">
+    <span id="toast-icon">⚠️</span>
+    <span id="toast-message"></span>
+  </div>
+  <div class="toast-progress"></div>
+</div>
 
 <!-- NAVIGATION FOOTER -->
 
@@ -2045,6 +2128,57 @@ submenu.classList.toggle("show");
 
 });
 
+});
+
+function showToast(message, type = "info") {
+    const toast = document.getElementById("toast");
+    const msg = document.getElementById("toast-message");
+    const icon = document.getElementById("toast-icon");
+
+    msg.textContent = message;
+
+    // Icônes selon type
+    if(type === "success") icon.textContent = "✅";
+    else if(type === "error") icon.textContent = "❌";
+    else icon.textContent = "⚠️";
+
+    // Reset classes
+    toast.className = "toast show " + type;
+
+    // Reset animation barre
+    const progress = toast.querySelector(".toast-progress");
+    progress.innerHTML = "";
+    const bar = document.createElement("div");
+    bar.style.height = "100%";
+    bar.style.background = "#fff";
+    bar.style.animation = "progress 4s linear forwards";
+    progress.appendChild(bar);
+
+    // Disparition
+    setTimeout(() => {
+        toast.classList.remove("show");
+    }, 4000);
+}
+
+
+// Avis & Suggestions
+document.getElementById("avisForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    showToast(
+        "Désolé ! La Base de données n'est pas encore disponible pour vous permettre de nous faire part de vos avis et suggestions",
+        "error"
+    );
+});
+
+// Newsletter
+document.getElementById("newsletterForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    showToast(
+        "Désolé ! Vous ne pouvez pas vous abonner pour le moment. Prochainement !",
+        "info"
+    );
 });
 
 </script>
