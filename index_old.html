@@ -74,12 +74,6 @@ line-height:1.5;
   text-decoration:underline;
 }
 
-/* Icône menu */
-.menu-icon{
-  font-size:22px;
-  cursor:pointer;
-}
-
 /* RESPONSIVE TABLETTE/MOBILE */
 @media(max-width:768px){
   .menu-right{
@@ -182,9 +176,9 @@ font-size:16px;
 animation:defilement 8s linear infinite;
 }
   
-@media screen and (min-width: 1024px) { /* écran large */
+@media screen and (min-width: 1024px) {
   .scroll-texte {
-    animation-duration: 5s; /* plus rapide sur ordinateur */
+    animation-duration: 5s;
   }
 }
   
@@ -307,135 +301,46 @@ padding-left:50px;
 border-left:3px solid #003366;
 }
 
-/* ============================= */
-/* NAVBAR ORDINATEUR */
-/* ============================= */
-
-.navbar{
-background:#003366;
-border-top:1px solid rgba(255,255,255,0.2);
-border-bottom:3px solid #f2b705;
+/* Disposition flexible pour navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between; /* espace entre gauche et droite */
+  align-items: center;
+  padding: 12px 5%;
+  background: #003366;
+  border-top: 1px solid rgba(255,255,255,0.2);
+border-bottom: 5px solid;
+border-image: linear-gradient(
+  to right,
+  #007fff 0%,
+  #007fff 33%,
+  #f7d116 33%,
+  #f7d116 66%,
+  #ce1126 66%,
+  #ce1126 100%
+) 1;
 }
 
-.menu-center{
-display:flex;
-justify-content:center;
-align-items:center;
-gap:25px;
-padding:12px 5%;
-flex-wrap:wrap;
+/* Style des liens */
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 6px 10px;
+  border-radius: 4px;
+  transition: 0.3s;
 }
 
-.menu-center a{
-color:white;
-text-decoration:none;
-font-size:14px;
-font-weight:500;
-padding:6px 10px;
-border-radius:4px;
-transition:0.3s;
+.navbar a:hover {
+  background: rgba(255,255,255,0.12);
 }
 
-.menu-center a:hover{
-background:rgba(255,255,255,0.12);
-}
-
-@media (max-width:900px){
-
-.navbar{
-display:none;
-}
-
-.menu-icon{
-display:block;
-}
-
-}
-
-@media (min-width:901px){
-
-.menu-icon{
-display:none;
-}
-
-.navbar{
-display:block;
-}
-
-}
-
-/* ============================= */
-/* MENU DEROULANT ORDINATEUR */
-/* ============================= */
-
-.dropdown{
-position:relative;
-}
-
-.dropdown-menu{
-display:none;
-position:absolute;
-top:100%;
-left:0;
-background:white;
-min-width:220px;
-box-shadow:0 4px 10px rgba(0,0,0,0.1);
-border-radius:4px;
-z-index:999;
-}
-
-.dropdown-menu a{
-display:block;
-padding:10px 15px;
-text-decoration:none;
-color:#333;
-font-size:14px;
-}
-
-.dropdown-menu a:hover{
-background:#f4f4f4;
-}
-
-/* afficher au survol */
-
-.dropdown:hover .dropdown-menu{
-display:block;
-}
-
-/* sous menu */
-
-.submenu{
-position:relative;
-}
-
-.submenu-content{
-display:none;
-position:absolute;
-left:100%;
-top:0;
-background:white;
-min-width:220px;
-box-shadow:0 4px 10px rgba(0,0,0,0.1);
-}
-
-.submenu:hover .submenu-content{
-display:block;
-}
-
-@media (max-width:900px){
-
-.dropdown-menu{
-display:none !important;
-}
-
-}
-
-@media (max-width:900px){
-
-.navbar .dropdown-menu{
-display:none !important;
-}
-
+/* Flex pour les zones gauche et droite */
+.menu-left, .menu-right {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* espace entre les liens */
 }
 
 /* ========================= */
@@ -669,57 +574,6 @@ display:block;
     }
 }
 
-/* =========================
-BOUTONS
-========================= */
-
-.buttons{
-margin-top:25px;
-display:flex;
-flex-wrap:wrap;
-gap:10px;
-}
-
-.btn{
-padding:10px 22px;
-border:none;
-border-radius:5px;
-font-weight:600;
-cursor:pointer;
-transition:0.3s;
-}
-
-.btn:hover{
-transform:translateY(-2px);
-box-shadow:0 4px 10px rgba(0,0,0,0.2);
-}
-
-.btn-yellow{
-background:#ffcc00;
-}
-
-.btn-blue{
-background:#1e73be;
-color:white;
-}
-
-/* Bouton jaune */
-.btn-yellow a{
-  color: black;
-  text-decoration: none;
-}
-
-/* Bouton bleu */
-.btn-blue a{
-  color: white;
-  text-decoration: none;
-}
-
-/* Bouton rouge */
-.btn-red a{
-  color: black;
-  text-decoration: none;
-}
 
 /* CONTENEUR GENERAL */
 
@@ -742,70 +596,91 @@ border-left:5px solid #f2b705;
 padding-left:10px;
 }
 
-
-/* MISSIONS */
-
-.missions{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:15px;
+/* ==================== Section missions ==================== */
+.missions-section {
+  background: linear-gradient(135deg, #cfd6dd, #b8c2cc); /* gris fort élégant */
+  padding: 60px 0;
+  overflow: hidden;
 }
 
-/* CARTE */
-
-.card{
-background:white;
-padding:20px;
-border-radius:50px;
-box-shadow:0 3px 10px rgba(0,0,0,0.08);
-transition:0.3s;
-border-left:4px solid #003366;
-position:relative;
-overflow:hidden;
+.missions-section h2 {
+  text-align: center;
+  font-size: 28px;
+  color: #00264d;
+  font-weight: 700;
+  margin-bottom: 40px;
 }
 
-/* effet léger au survol */
-
-.card::before{
-content:"";
-position:absolute;
-top:0;
-left:0;
-width:0;
-height:100%;
-background:rgba(0,51,102,0.05);
-transition:0.3s;
+/* ==================== Slider défilant ==================== */
+.missions-slider {
+  overflow: hidden;
+  position: relative;
 }
 
-.card:hover::before{
-width:100%;
+.missions-track {
+  display: flex;
+  gap: 30px;
+  animation: scroll-left 30s linear infinite;
+  will-change: transform; /* optimisation pour performances */
 }
 
-.card:hover{
-transform:translateY(-3px);
-box-shadow:0 5px 12px rgba(0,0,0,0.12);
+.missions-slider:hover .missions-track {
+  animation-play-state: paused; /* pause au survol */
 }
 
-/* TITRE */
-
-.card h3{
-font-size:15px;
-margin-bottom:6px;
-color:#003366;
-font-weight:600;
+/* ==================== Animation droite → gauche ==================== */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* défilement moitié du contenu pour boucle infinie */
+  }
 }
 
-/* TEXTE */
-
-.card p{
-font-size:13px;
-color:#555;
-line-height:1.4;
+/* ==================== Cartes ==================== */
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  min-width: 300px;
+  max-width: 300px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
 }
 
-.icon{
-font-size:24px;
-font-weight:bold;
+.card:hover {
+  transform: translateY(-5px); /* effet léger au survol */
+}
+
+.card h3 {
+  font-size: 18px;
+  color: #003366;
+  margin: 10px 0;
+}
+
+.card p {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.5;
+}
+
+.card .icon {
+  font-size: 28px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* ==================== Responsive ==================== */
+@media (max-width:900px) {
+  .missions-track {
+    gap: 20px;
+  }
+
+  .card {
+    min-width: 250px;
+  }
 }
 
 /* ENTETE ACTUALITES */
@@ -1108,88 +983,96 @@ background:#e5ecf8;
 FOOTER INSTITUTIONNEL AVANCE
 ========================= */
 
-footer{
-background:#00264d;
-color:white;
-padding:35px 7% 20px;
-font-size:13px;
-border-top:4px solid #f1c40f;
+footer {
+  background: #00264d;
+  color: white;
+  padding: 20px 7% 15px; /* réduit le padding vertical */
+  font-size: 13px;
+
+  /* Ligne tricolore en haut */
+  border-top: 5px solid;
+  border-image: linear-gradient(
+    to right,
+    #007fff 0%,
+    #007fff 33%,
+    #f7d116 33%,
+    #f7d116 66%,
+    #ce1126 66%,
+    #ce1126 100%
+  ) 1;
+
+  text-align: center;
 }
 
 /* CONTAINER */
-
-.footer-container{
-max-width:1300px;
-margin:auto;
-display:flex;
-grid-template-columns:2fr 1fr 1fr 1fr 1.5fr;
-justify-content:space-between;
-flex-wrap:wrap;
-gap:30px;
+.footer-container {
+  max-width: 1300px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px; /* réduit l'écart entre colonnes */
+  text-align: center;
 }
 
-.footer-col{
-flex:1;
-min-width:180px;
+/* COLONNES */
+.footer-col {
+  max-width: 280px; /* réduit légèrement la largeur */
+  flex: 1;
+  min-width: 180px;
 }
 
 /* LOGO + DESCRIPTION */
-
-.footer-logo{
-display:flex;
-align-items:center;
-gap:10px;
-margin-bottom:10px;
+.footer-logo {
+  display: flex;
+  justify-content: center; /* centre le logo */
+  align-items: center;
+  gap: 8px; /* réduit l'espace entre logo et texte */
+  margin-bottom: 10px;
 }
 
-.footer-logo img{
-width:40px;
-height:40px;
-}
-.footer-logo span{
-font-size:16px;
-font-weight:600;
+.footer-logo img {
+  width: 35px; /* légèrement plus petit */
+  height: 35px;
 }
 
-/* --- FOOTER : RÉSEAUX SOCIAUX HOVER --- */
+.footer-logo span {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* TITRES COLONNES */
 .footer-col h3 {
-    color:white; /* Même style que les autres colonnes */
-    margin-bottom:15px;
-    font-size:16px;
-    font-weight:600;
+  color: white;
+  margin-bottom: 10px; /* réduit marge */
+  font-size: 15px;
+  font-weight: 600;
 }
 
-.footer-col h3::after{
-content:"";
-display:block;
-width:35px;
-height:2px;
-background:#f1c40f;
-margin-top:5px;
+.footer-col h3::after {
+  width: 30px; /* ligne sous titre plus courte */
+  height: 2px;
+  margin-top: 4px;
 }
 
 /* TEXTE */
-
-.footer-col p{
-font-size:12px;
-line-height:1.5;
-opacity:0.9;
-margin:4px 0;
+.footer-col p {
+  font-size: 12px;
+  line-height: 1.4; /* réduit l'interligne */
+  opacity: 0.9;
+  margin: 2px 0; /* réduit marge verticale */
 }
 
 /* LIENS */
-
 .footer-col a {
-    display:flex;
-    align-items:center;
-    gap:8px;
-    color:#333333; /* couleur du texte normale */
-    text-decoration:none;
-    margin-bottom:10px;
-    font-size:14px;
-    transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px; /* réduit espace icone/texte */
+  color: white;
+  text-decoration: none;
+  margin-bottom: 6px; /* réduit marge entre liens */
+  font-size: 13px; /* légèrement plus petit */
 }
-
 
 .footer-col a:hover{
 color:#f1c40f;
@@ -1245,14 +1128,13 @@ margin-top:5px;
 }
 
 /* BAS DU FOOTER */
-
-.footer-bottom{
-text-align:center;
-margin-top:25px;
-padding-top:10px;
-border-top:1px solid rgba(255,255,255,0.2);
-font-size:11px;
-opacity:0.8;
+.footer-bottom {
+  text-align: center;
+  margin-top: 15px; /* réduit espace avec le reste */
+  padding-top: 5px; /* réduit padding interne */
+  border-top: 1px solid rgba(255,255,255,0.2);
+  font-size: 11px;
+  opacity: 0.8;
 }
 
 /* RESPONSIVE */
@@ -1275,20 +1157,17 @@ grid-template-columns:1fr;
 }
 
 /* NAVIGATION FOOTER */
-
-.footer-nav{
-text-align:center;
-margin-top:20px;
-border-top:1px solid rgba(255,255,255,0.2);
-padding-top:10px;
+.footer-nav {
+  text-align: center;
+  margin-top: 10px; /* réduit espace */
+  border-top: 1px solid rgba(255,255,255,0.2);
+  padding-top: 5px; /* réduit padding */
 }
 
-.footer-nav a{
-color:white;
-text-decoration:none;
-margin:0 10px;
-font-size:12px;
-transition:0.3s;
+.footer-nav a {
+  margin: 0 8px; /* réduit espace horizontal */
+  font-size: 12px;
+  color: white;
 }
 
 .footer-nav a:hover{
@@ -1591,6 +1470,603 @@ background:#e0a800;
 .toast.info { background: #1e3a8a; }
 .toast.success { background: #16a34a; }
 .toast.error { background: #dc2626; }
+
+/* ========================= */
+/* HERO BAR MODERNE */
+/* ========================= */
+
+.hero-bar{
+width:100%;
+overflow:hidden;
+background:linear-gradient(135deg,#003366,#004f99);
+color:white;
+padding:25px 0;
+position:relative;
+}
+
+/* piste animée */
+
+.hero-track{
+display:flex;
+width:200%;
+animation:slideHero 12s infinite;
+}
+
+/* slide */
+
+.hero-slide{
+width:50%;
+flex-shrink:0;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:10px;
+}
+
+/* contenu */
+
+.hero-content{
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+}
+
+/* LOGO */
+
+.hero-logo{
+width:70px;
+margin-bottom:10px;
+}
+
+/* PHOTO */
+
+.hero-photo{
+width:90px;
+height:90px;
+object-fit:cover;
+border-radius:50%;
+border:3px solid white;
+margin-bottom:10px;
+}
+
+/* TITRES */
+
+.hero-content h2{
+font-size:22px;
+font-weight:700;
+margin:0;
+}
+
+.hero-content h3{
+font-size:18px;
+margin:5px 0;
+}
+
+.hero-content p{
+font-size:14px;
+margin:0;
+opacity:0.9;
+}
+
+/* ========================= */
+/* ANIMATION */
+/* ========================= */
+
+@keyframes slideHero{
+
+0%{transform:translateX(0);}
+40%{transform:translateX(0);}
+
+50%{transform:translateX(-50%);}
+90%{transform:translateX(-50%);}
+
+100%{transform:translateX(0);}
+
+}
+
+/* ========================= */
+/* HERO EXPERT IGTER */
+/* ========================= */
+
+.hero-expert{
+position:relative;
+height:320px;
+background:linear-gradient(135deg,#003366,#004f99);
+overflow:hidden;
+color:white;
+}
+
+/* effet fond subtil */
+
+.hero-expert::before{
+content:"";
+position:absolute;
+width:200%;
+height:200%;
+background:radial-gradient(circle, rgba(255,255,255,0.05) 10%, transparent 60%);
+animation:moveBg 12s linear infinite;
+}
+
+/* animation fond */
+
+@keyframes moveBg{
+0%{transform:translate(0,0);}
+100%{transform:translate(-50px,-50px);}
+}
+
+/* wrapper */
+
+.hero-wrapper{
+position:relative;
+height:100%;
+}
+
+/* slides */
+
+.hero-slide{
+position:absolute;
+width:100%;
+height:100%;
+top:0;
+left:0;
+opacity:0;
+transform:translateX(40px);
+transition:all 0.8s ease;
+display:flex;
+justify-content:center;
+align-items:center;
+overflow: hidden; /* évite débordement */
+}
+
+/* actif */
+
+.hero-slide.active{
+opacity:1;
+transform:translateX(0);
+}
+
+/* contenu */
+
+.hero-content{
+display:flex;
+flex-direction:column;
+align-items:center;
+animation:fadeUp 1s ease;
+}
+
+/* animation contenu */
+
+@keyframes fadeUp{
+from{opacity:0; transform:translateY(20px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+/* logo */
+
+.hero-logo{
+width:75px;
+margin-bottom:10px;
+}
+
+/* photo avec effet zoom */
+
+.hero-photo{
+width:95px;
+height:95px;
+border-radius:50%;
+border:3px solid white;
+object-fit:cover;
+margin-bottom:10px;
+transition:transform 0.5s;
+}
+
+.hero-slide.active .hero-photo{
+transform:scale(1.05);
+}
+
+/* textes */
+
+.hero-content h2{
+font-size:24px;
+margin:0;
+letter-spacing:0.5px;
+}
+
+.hero-content h3{
+font-size:18px;
+margin:5px 0;
+}
+
+.hero-content p{
+font-size:14px;
+opacity:0.9;
+margin:0;
+}
+
+.hero-highlight{
+color:#f2b705;
+font-weight:bold;
+}
+
+/* Fond blanc pour le slide 1 uniquement */
+.hero-slide.slide-white {
+  background-color: white;
+  color: #003366; /* texte bleu foncé pour contraste */
+}
+
+/* Ajuster le texte et logo si besoin */
+.hero-slide.slide-white h2 {
+  color: #003366;
+}
+
+.hero-slide.slide-white .hero-logo {
+  filter: none; /* au cas où tu avais un filtre sur la vidéo */
+}
+
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+
+@media (max-width:768px){
+
+.hero-expert{
+height:180px;
+}
+
+.hero-logo{
+width:55px;
+}
+
+.hero-photo{
+width:70px;
+height:70px;
+}
+
+.hero-content h2{
+font-size:16px;
+}
+
+.hero-content h3{
+font-size:15px;
+}
+
+.hero-content p{
+font-size:12px;
+}
+
+}
+
+/* Container global */
+.hero-simple{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:40px;
+padding:20px 60px; /* réduit pour entrer dans la hauteur */
+width:100%;
+height:100%; /* TRÈS IMPORTANT */
+}
+
+.slide-white-pro {
+  background: #ffffff;
+  color: #00264d; /* bleu institutionnel */
+}
+
+/* Structure */
+.hero-simple {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 40px 7%;
+}
+
+/* Texte */
+.hero-text h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color : black;
+}
+
+.hero-text p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #333;
+}
+
+/* Image */
+.hero-image img {
+  width: 260px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+/* Nom + fonction */
+.hero-caption {
+  margin-top: 12px;
+  text-align: center;
+}
+
+.hero-caption strong {
+  display: block;
+  font-size: 15px;
+}
+
+.hero-caption p {
+  font-size: 13px;
+  color: #555;
+}
+
+/* IMPORTANT : éviter que le texte soit coupé */
+.hero-slide {
+  overflow: visible;
+}
+.hero-wrapper{
+height:100%;
+overflow:hidden;
+}
+
+.slide-blue {
+  background: linear-gradient(135deg, #003366, #004080);
+  color: white;
+}
+
+.hero-text-center {
+  text-align: center;
+  max-width: 800px;
+  margin: auto;
+}
+
+.hero-text-center h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.hero-text-center p {
+  font-size: 15px;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+/* =========================
+   BARRE DE DÉFILEMENT MISSIONS
+========================= */
+
+.missions-marquee {
+  width: 100%;
+  overflow: hidden;
+  background: #f4f6f9; /* fond institutionnel clair */
+  border-top: 4px solid #003366;
+  border-bottom: 4px solid #003366;
+  padding: 10px 0;
+  position: relative;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+
+.missions-content {
+  display: inline-block;
+  padding-left: 100%;
+  animation: scrollMissions 22s linear infinite;
+}
+
+/* Mise en valeur du titre */
+.missions-content strong {
+  color: #8a6d00;
+  font-weight: 700;
+}
+
+/* Animation */
+@keyframes scrollMissions {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .missions-marquee {
+    font-size: 14px;
+    padding: 8px 0;
+  }
+}
+
+.title-with-bar {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.title-bar {
+  width: 6px;
+  height: 50px;
+  background: linear-gradient(
+    to bottom,
+    #003366 0%,   /* bleu institutionnel */
+    #ffcc00 50%,  /* jaune */
+    #cc0000 100%  /* rouge */
+  );
+  border-radius: 2px;
+}
+
+.missions-track {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scroll-marquee 20s linear infinite;
+  padding-left: 20px;
+}
+
+.missions-track span {
+  margin-right: 60px;
+  color: #00264d;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+}
+
+/* Animation fluide */
+@keyframes scroll-marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.missions-track:hover {
+  animation-play-state: paused;
+}
+
+/* =========================
+   SECTION IGTER AUTONOME
+========================= */
+
+.igter-home{
+  background:#eef1f5;
+  padding:60px 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.igter-container{
+  width:90%;
+  margin:auto;
+  display:flex;
+  gap:50px;
+}
+
+/* ===== TITRES ===== */
+
+.igter-home h2{
+  font-size:26px;
+  font-weight:700;
+  border-left:6px solid #f2b705;
+  padding-left:12px;
+  margin-bottom:25px;
+}
+
+/* ===== MISSIONS ===== */
+
+.igter-missions{
+  flex:1.2;
+}
+
+.igter-cards{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:25px;
+}
+
+.igter-card{
+  background:#f3f5f8;
+  padding:25px;
+  border-radius:35px;
+  border-left:6px solid #0b3a6d;
+  transition:0.3s;
+}
+
+.igter-card:hover{
+  transform:translateY(-5px);
+}
+
+.igter-icon{
+  font-size:28px;
+  margin-bottom:10px;
+}
+
+.igter-card h3{
+  font-size:20px;
+  font-weight:800;
+}
+
+.igter-card h4{
+  color:#0b3a6d;
+  margin:5px 0 10px;
+}
+
+.igter-card p{
+  font-size:14px;
+  color:#444;
+  line-height:1.6;
+}
+
+/* ===== ACTUALITES ===== */
+
+.igter-news{
+  flex:1;
+  background:#f3f5f8;
+  padding:20px;
+  border-radius:15px;
+}
+
+.igter-news-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:20px;
+}
+
+.igter-link{
+  color:#1d4ed8;
+  text-decoration:none;
+  font-weight:600;
+}
+
+.igter-news-list{
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
+
+.igter-news-item{
+  display:flex;
+  gap:12px;
+  background:#e6ebf1;
+  padding:12px;
+  border-radius:10px;
+  transition:0.3s;
+}
+
+.igter-news-item:hover{
+  background:#dde3ea;
+}
+
+.igter-news-item img{
+  width:90px;
+  height:65px;
+  object-fit:cover;
+  border-radius:6px;
+}
+
+.igter-news-item span{
+  font-size:12px;
+  color:#555;
+}
+
+.igter-news-item p{
+  font-size:14px;
+  font-weight:600;
+  color:#0b3a6d;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width:900px){
+  .igter-container{
+    flex-direction:column;
+  }
+
+  .igter-cards{
+    grid-template-columns:1fr;
+  }
+}
 </style>
 
 </head>
@@ -1599,13 +2075,6 @@ background:#e0a800;
 
 <!-- BARRE SUPERIEURE -->
 <header class="top-menu">
-
-<div class="menu-left">
-
-<div class="site-title desktop-title">
-<img src="images/logo.png" alt="Logo IGTER" class="logo-desktop">
-IGTER
-</div>
 
 <!-- SLIDER MOBILE -->
 <div class="mobile-title-slider">
@@ -1624,11 +2093,6 @@ IGTER
 
 </div>
 
-</div>
-
-<div class="menu-right" id="top-contact">
-<a href="tel:+243822080469" class="phone">📞 +243 822 080 469</a> |
-<a href="mailto:contact@igter.cd" class="email">✉ contact@igter.cd</a>
 </div>
 
 </header>
@@ -1665,62 +2129,19 @@ IGTER
     </div>
   </div>
 </div>
+
 <nav class="navbar" id="main-menu">
+  <div class="menu-left">
+    <a href="presentation.html">Qu'est-ce que l'IGTER ?</a>
+  </div>
 
-<div class="menu-center">
-<a href="index.html">Accueil</a>
-<a href="#actualite">Actualités</a>
-<a href="document.html">Documents officiels</a>
-
-<!-- MENU PRESENTATION -->
-<div class="dropdown">
-<a href="#" class="dropbtn">Présentation ▾</a>
-
-<div class="dropdown-menu">
-
-<a href="apercu general.html">Aperçu Général</a>
-
-<div class="submenu">
-<a href="#" class="submenu-btn">Organisation ▸</a>
-
-<div class="submenu-content">
-<a href="administration_centrale.html">Administration Centrale (1)</a>
-<a href="pool.html">Pool (8)</a>
-<a href="inspection_provinciale.html">Inspections Provinciales (26)</a>
-<a href="inspection_provinciale.html">± 2 Antennes/IPTER</a>
-</div>
-</div>
-
-<div class="submenu">
-<a href="#" class="submenu-btn">Cadre légal ▸</a>
-
-<div class="submenu-content">
-<a href="pdf/DECRET.pdf" target="_blank">Décret de création IGTER</a>
-<a href="pdf/CADRE ORGANIQUE.pdf" target="_blank">Cadre organique</a>
-</div>
-</div>
-
-<a href="personnel.html">Personnel</a>
-
-</div>
-</div>
-
-<div class="dropdown">
-<a href="#" class="dropbtn">Provinces/ETDs ▾</a>
-
-<div class="dropdown-menu">
-
-<a href="province.html">Liste des provinces</a>
-<a href="etd.html">Liste des Entités Territoriales</a>
-<a href="scd.html">Liste des Services Centraux et Déconcentrés/MISDAC</a>
-
-</div>
-</div>
-
-<a href="mode_saisine.html">Mode de saisine</a>
-<a href="#contact">Contact</a>
-</div>
-
+  <div class="menu-right">
+    <a href="index.html">Accueil</a>
+    <a href="#actualite">Actualités</a>
+    <a href="#missions">Missions</a>
+    <a href="#">Rapports</a>
+    <a href="#contact">Contact</a>
+  </div>
 </nav>
 
 <!-- MENU LATERAL -->
@@ -1737,7 +2158,7 @@ IGTER
   <!-- LIENS PRINCIPAUX -->
   <a href="index.html"><i class="fa-solid fa-building-columns"></i> Accueil</a>
   <a href="#actualite"> 📰 Actualités</a>
-  <a href="document.html">🗂️ Documents officiels</a>
+  <a href="document.html">🗂️ Doments officiels</a>
   <div class="submenu-container">
     <button class="submenu-btn">📖 Présentation de l'IGTER<i class="fa-solid fa-caret-down"></i></button>
     <div class="submenu-content">
@@ -1781,137 +2202,177 @@ IGTER
 
 </div></div>
 
-<!-- HERO -->
+<!-- HERO EXPERT IGTER -->
 
-<div class="hero">
+<div class="hero-expert">
 
-<div class="hero-text">
+<div class="hero-wrapper">
 
-<h1>IGTER | Inspection Générale de la Territoriale</h1>
-<p>Service Public de l'Etat ayant pour rôle principal de veiller au respect et à l'application correcte des lois, de contrôler, d'encadrer, de suivre et d'évaluer les actes posés par les Autorités Territoriales et par les Responsables des Services Centraux et Déconcentrés du Ministère ayant l'Intérieur dans ses attributions. 
-</p>
-
-<div class="buttons">
-
-<button class="btn btn-yellow">
-<a href="mission.html">Découvrir nos missions réalisées</a>
-</button>
-
-<button class="btn btn-blue">
-<a href="rapport.html">Envoyer et consulter les rapports d'activités</a>
-</button>
-
-<button class="btn btn-red">
-<a href="saisie.html">Nous saisir en matière d'administration territoriale</a>
-</button>
+<!-- SLIDE 1 --> 
+<div class="hero-slide active slide-white">
+  <div class="hero-content">
+    <img src="images/logo.png" class="hero-logo">
+    <div class="title-with-bar">
+  <div class="title-bar"></div>
+  <h1>Inspection Générale de la Territoriale</h1>
+</div>
+  </div>
 </div>
 
+<!-- SLIDE 2 -->
+<div class="hero-slide slide-blue">
+  <div class="hero-content hero-text-center">
+
+    <h1>IGTER | Inspection Générale de la Territoriale</h1>
+
+    <p>
+      Service Public de l'Etat ayant pour rôle principal de veiller au respect 
+      et à l'application correcte des lois, de contrôler, d'encadrer, de suivre 
+      et d'évaluer les actes posés par les Autorités Territoriales et par les 
+      Responsables des Services Centraux et Déconcentrés du Ministère ayant 
+      l'Intérieur dans ses attributions.
+    </p>
+
+  </div>
 </div>
 
-<div class="hero-image">
+<!-- SLIDE 3 -->
+<div class="hero-slide slide-white-pro">
+  <div class="hero-simple">
 
-<img src="images/ig3.jpg" alt="Inspecteur Général">
-<!-- Texte sous l'image -->
-    <div class="hero-caption">
-<strong>LUMBILA FEKEY Roger</strong>
-Inspecteur Général de la Territoriale a.i
+    <!-- Texte -->
+    <div class="hero-text">
+      <h1>Vision de l'Inspecteur Général</h1>
+      <p>
+        J'ai repris mes fonctions d'Inspecteur Général de la Territoriale pour ...
+      </p>
+    </div>
+
+    <!-- Image -->
+    <div class="hero-image">
+      <img src="images/ig3.jpg" alt="Inspecteur Général">
+
+      <div class="hero-caption">
+        <strong>LUMBILA FEKEY Roger</strong>
+        <p>Inspecteur Général de la Territoriale a.i</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div></div>
+
+<!-- BARRE DES MISSIONS EN COURS -->
+<div class="missions-marquee">
+  <div class="missions-track">
+    <span>🔵 Contrôle des actes des Autorités Territoriales en cours</span>
+    <span>🟡 Audit des Services Déconcentrés</span>
+    <span>🔴 Évaluation des actes administratifs</span>
+    <span>🔵 Mission d’inspection à Kinshasa</span>
+    <span>🟡 Suivi des recommandations gouvernementales</span>
+  </div>
 </div>
 
-</div>
+<!-- =========================
+     SECTION MISSIONS + ACTUALITES (IGTER)
+========================= -->
+<section class="igter-home">
 
-</div>
+  <div class="igter-container">
 
-<div class="home-sections">
+    <!-- ===== MISSIONS ===== -->
+    <div class="igter-missions">
 
-<!-- MISSIONS -->
-<section class="missions-section">
+      <h2>Nos attributions</h2>
 
-<h2>Nos attributions</h2>
+      <div class="igter-cards">
 
-<div class="missions">
+        <div class="igter-card">
+          <div class="igter-icon">📋</div>
+          <h3>Contrôle</h3>
+          <h4>Provinces et Entités Territoriales</h4>
+          <p>
+            Le contrôle consiste à la surveillance de l’application correcte des lois,
+            règlements et instructions ainsi qu’à la vérification de la gestion administrative,
+            financière et matérielle.
+          </p>
+        </div>
 
-<div class="card">
-<div class="icon">📋 Contrôle</div><br>
-<h3>Provinces et Entités Territoriales</h3>
-<p>Le contrôle consiste à la surveillance de l’application correcte des lois, règlements, directives et instructions, ainsi qu’à la vérification de la gestion administrative, financière et matérielle d'une entité territoriale.</p>
-</div>
+        <div class="igter-card">
+          <div class="igter-icon">🤝</div>
+          <h3>Encadrement</h3>
+          <h4>Autorités Territoriales</h4>
+          <p>
+            Appui-conseil et renforcement des capacités des responsables des services
+            centraux et des Autorités Territoriales.
+          </p>
+        </div>
 
-<div class="card">
-<div class="icon">🤝 Encadrement</div><br>
-<h3>Autorités Territoriales</h3>
-<p>L’encadrement consiste en appui-conseil et au renforcement des capacités des responsables des services centraux du Ministère ayant l’intérieur dans ses attributions, ainsi que des Autorités Territoriales. </p>
-</div>
+        <div class="igter-card">
+          <div class="igter-icon">📊</div>
+          <h3>Suivi</h3>
+          <h4>Activités des Autorités</h4>
+          <p>
+            Monitoring de l’exécution des projets, programmes et instructions dans
+            le domaine de la territoriale.
+          </p>
+        </div>
 
-<div class="card">
-<div class="icon">📊 Suivi</div><br>
-<h3>Activités des Autorités Territoriales</h3>
-<p>Le suivi est le monitoring ou la surveillance de l’exécution d’un projet, d’un programme ou d’une instruction dans le domaine de la territoriale.</p>
-</div>
+        <div class="igter-card">
+          <div class="igter-icon">⚖️</div>
+          <h3>Évaluation</h3>
+          <h4>Performance des entités</h4>
+          <p>
+            Mesure du rendement et de la performance à l’aide d’indicateurs
+            objectivement vérifiables.
+          </p>
+        </div>
 
-<div class="card">
-<div class="icon">⚖️ Evaluation</div><br>
-<h3>Activités des Autorités Territoriales</h3>
-<p>L’évaluation est le mesurage à l’aide des indicateurs objectivement vérifiables du rendement et de la performance d’une entité territoriale et/ou d’une Autorité Territoriale.</p>
-</div>
+      </div>
 
-</div>
+    </div>
+
+    <!-- ===== ACTUALITES ===== -->
+    <div class="igter-news">
+
+      <div class="igter-news-header">
+        <h2>Actualités récentes</h2>
+        <a href="#" class="igter-link">Voir tout</a>
+      </div>
+
+      <div class="igter-news-list">
+
+        <div class="igter-news-item">
+          <img src="images/ig4.jpg">
+          <div>
+            <span>17 Mars 2026</span>
+            <p>Séance de travail entre l'IG PNC et l'IGTER</p>
+          </div>
+        </div>
+
+        <div class="igter-news-item">
+          <img src="images/ig2.jpg">
+          <div>
+            <span>11 Février 2026</span>
+            <p>Visite de la Vice-Ministre de l’Intérieur</p>
+          </div>
+        </div>
+
+        <div class="igter-news-item">
+          <img src="images/actu2.jpg">
+          <div>
+            <span>—</span>
+            <p>Remise et reprise entre Inspecteurs Généraux</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
 
 </section>
-
-<!-- ACTUALITES -->
-<section class="news-section">
-
-<div class="news-header" id="actualite">
-<h2>Actualités récentes</h2>
-<a href="actualite.html" class="voir-tout">Voir tout</a>
-</div>
-
-<div class="news-table">
-
-<a href="#actualite" class="news-row">
-
-<img src="images/ig4.jpg" class="news-img" alt="Actualité">
-
-<div class="news-content">
-<div class="news-date">17 Mars 2026</div>
-<div class="news-title">
-Séance de travail entre l'Inspection Générale de la Police Nationale Congolaise (IG PNC) et l'Inspection Générale de la Territoriale (IGTER)
-</div>
-</div>
-
-</a>
-
-<a href="#actualite" class="news-row">
-
-<img src="images/ig2.jpg" class="news-img" alt="Actualité">
-
-<div class="news-content">
-<div class="news-date">11 Février 2026</div>
-<div class="news-title">
-Visite de travail de Son Excellence, Madame la Vice-Ministre de l'Intérieur à l'Inspection Générale de la Territoriale.
-</div>
-</div>
-
-</a>
-
-
-<a href="#actualite" class="news-row">
-
-<img src="images/actu2.jpg" class="news-img" alt="Actualité">
-
-<div class="news-content">
-<div class="news-date">XX XXX XXXX</div>
-<div class="news-title">
-Remise et reprise entre l'Inspecteur Général de la Territotiale a.i sortant, 
-  BEYA MULUMBA Alidor et l'Inspecteur Général de la Territoriale a.i réhabilité et rentrant, LUMBILA FEKEY Roger.
-</div>
-</div>
-
-</a>
-
-</section>
-
-</div>
 
 <!-- VIDEOS -->
 <section class="videos-section">
@@ -1938,6 +2399,7 @@ Remise et reprise entre l'Inspecteur Général de la Territotiale a.i sortant,
     </div>
   </div>
 </section>
+</div>
 
 <!-- FOOTER -->
 <footer id="contact">
@@ -2062,7 +2524,7 @@ Ministère de l'Intérieur
 <div class="footer-nav">
 
 <a href="index.html">Accueil</a>
-<a href="mission.html">Missions</a>
+<a href="#missions">Missions</a>
 <a href="actualite.html">Actualités</a>
 <a href="document.html">Documents</a>
 <a href="#top-contact">Contact</a>
@@ -2186,6 +2648,72 @@ document.getElementById("newsletterForm").addEventListener("submit", function(e)
     );
 });
 
+</script>
+
+<script>
+let slides = document.querySelectorAll(".hero-slide");
+let dots = document.querySelectorAll(".dot");
+let index = 0;
+let interval;
+
+/* afficher slide */
+
+function showSlide(i){
+
+slides.forEach(s => s.classList.remove("active"));
+dots.forEach(d => d.classList.remove("active"));
+
+slides[i].classList.add("active");
+dots[i].classList.add("active");
+
+index = i;
+}
+
+/* auto */
+
+function startAuto(){
+interval = setInterval(() => {
+index++;
+if(index >= slides.length){ index = 0; }
+showSlide(index);
+}, 5000);
+}
+
+/* pause au survol */
+
+let hero = document.querySelector(".hero-expert");
+
+hero.addEventListener("mouseenter", () => clearInterval(interval));
+hero.addEventListener("mouseleave", startAuto);
+
+/* dots clic */
+
+dots.forEach((dot, i) => {
+dot.addEventListener("click", () => showSlide(i));
+});
+
+/* lancer */
+
+startAuto();
+</script>
+<script>
+const elements = document.querySelectorAll('.igter-card, .igter-news-item');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.style.opacity = 1;
+      entry.target.style.transform = "translateY(0)";
+    }
+  });
+});
+
+elements.forEach(el => {
+  el.style.opacity = 0;
+  el.style.transform = "translateY(20px)";
+  el.style.transition = "0.6s";
+  observer.observe(el);
+});
 </script>
 </body>
 </html>
