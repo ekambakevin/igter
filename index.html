@@ -1823,6 +1823,59 @@ overflow:hidden;
   }
 
 }
+
+/* =========================
+   SLIDE 3 MOBILE SPLIT
+========================= */
+@media (max-width: 768px) {
+
+  .hero-simple {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* IMPORTANT : ordre d'affichage */
+  .hero-image {
+    order: 1; /* image en premier */
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-text {
+    order: 2; /* texte après */
+    width: 100%;
+    text-align: center;
+    margin-top: 15px;
+  }
+
+  /* IMAGE */
+  .hero-image img {
+    width: 100%;
+    max-width: 220px;
+    border-radius: 10px;
+  }
+
+  /* ESPACEMENT PRO */
+  .hero-caption {
+    margin-top: 8px;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .hero-slide {
+    padding: 15px 10px;
+  }
+
+  .hero-text p {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+}
+
 </style>
 
 </head>
