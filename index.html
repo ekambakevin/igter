@@ -117,58 +117,77 @@ height:auto;
 }
 
 
-/* ------------------ LIGNE DÉFILANTE ------------------ */
-.institution-bar{
-display:flex;
-align-items:center;
-background:white;
-width:100%;
-overflow:hidden;
-border-bottom:1px solid #ddd;
-padding:6px 20px;
+/* ------------------ LIGNE DÉFILANTE RESPONSIVE ------------------ */
+.institution-bar {
+  display: flex;
+  align-items: center;
+  background: white;
+  width: 100%;
+  overflow: hidden;
+  border-bottom: 1px solid #ddd;
+  padding: 6px 15px;
+  box-sizing: border-box;
 }
 
-.flag-box img{
-height:30px;
-margin-right:15px;
+.flag-box img {
+  height: 30px;
+  margin-right: 10px;
 }
 
-.scroll-container{
-flex:1;
-overflow:hidden;
-position:relative;
+.scroll-container {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
 }
 
-.scroll-text{
-display:flex;
-white-space:nowrap;
-font-family:"Times New Roman", serif;
-font-size:16px;
-animation:defilement 8s linear infinite;
-}
-  
-.scroll-container:hover .scroll-text{
-animation-play-state:paused;
+.scroll-text {
+  display: flex;
+  white-space: nowrap;
+  font-family: "Times New Roman", serif;
+  font-size: 16px;
+  animation: defilement 15s linear infinite;
 }
 
-.text-group{
-display:flex;
-align-items:center;
-white-space:nowrap;
-padding-right:60px;
+.scroll-container:hover .scroll-text {
+  animation-play-state: paused;
 }
 
-@keyframes defilement{
-0%{transform:translateX(100%);}
-100%{transform:translateX(-30%);}
+.text-group {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  padding-right: 60px; /* espace entre répétitions */
 }
-  
+
 /* Couleurs */
-.val1{color:#ce1126; font-weight:bold;}
-.val2{color:#000000; font-weight:bold;}
-.val3{color:#007fff; font-weight:bold;}
-.val4{color:#000000; font-weight:bold;}
-.separator{margin:0 25px; color:#555;}
+.val1 {color: #ce1126; font-weight: bold;}
+.val2 {color: #000000; font-weight: bold;}
+.val3 {color: #007fff; font-weight: bold;}
+.val4 {color: #000000; font-weight: bold;}
+.separator {margin: 0 15px; color: #555;}
+
+/* Animation responsive avec largeur dynamique */
+@keyframes defilement {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Petite optimisation mobile */
+@media (max-width: 768px) {
+  .scroll-text {
+    font-size: 14px;
+  }
+  .separator {
+    margin: 0 10px;
+  }
+  .flag-box img {
+    height: 25px;
+  }
+}
 
 /* ------------------ MENU LATERAL ------------------ */
 .side-menu{
@@ -1544,134 +1563,103 @@ overflow:hidden;
 }
 
 /* =========================
-   SECTION IGTER AUTONOME
+   SECTION ATTRIBUTIONS GLASS TRICOLORE PREMIUM
 ========================= */
-
-.igter-home{
-  background:#eef1f5;
-  padding:60px 0;
-  font-family: "Segoe UI", Arial, sans-serif;
+.attributions-section {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 50px 6%;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  backdrop-filter: blur(12px);
 }
 
-.igter-container{
-  width:90%;
-  margin:auto;
-  display:flex;
-  gap:50px;
+.attributions-section h2 {
+  text-align: center;
+  font-size: 26px;
+  color: #003366;
+  margin-bottom: 35px;
+  font-weight: 700;
 }
 
-/* ===== TITRES ===== */
-
-.igter-home h2{
-  font-size:26px;
-  font-weight:700;
-  border-left:6px solid #f2b705;
-  padding-left:12px;
-  margin-bottom:25px;
+.attributions-section h2::after {
+  content: "";
+  width: 60px;
+  height: 4px;
+  background: #ffcc00;
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 2px;
 }
 
-/* ===== MISSIONS ===== */
-
-.igter-missions{
-  flex:1.2;
+/* GRILLE 2 PAR LIGNE */
+.attributions-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px; /* réduit l’espace entre les cartes */
+  justify-items: stretch; /* cartes prennent la largeur de la colonne */
 }
 
-.igter-cards{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:25px;
+.attribution-card {
+  width: 100%;
+  margin: 0;
+  padding: 18px 15px;
+  background: rgba(255, 255, 255, 0.15);
+  border-left: 6px solid transparent;
+  border-radius: 12px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+
+  /* animation init */
+  opacity: 0;
+  transform: translateY(40px) scale(0.9) rotateX(5deg);
+  transition: all 0.6s ease, box-shadow 0.3s ease;
+
+  /* Glow subtil pour style gouvernemental ultra-pro */
+  filter: drop-shadow(0 0 8px rgba(0, 51, 102, 0.25));
 }
 
-.igter-card{
-  background:#f3f5f8;
-  padding:25px;
-  border-radius:35px;
-  border-left:6px solid #0b3a6d;
-  transition:0.3s;
+/* Hover glow et léger zoom */
+.attribution-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+  filter: drop-shadow(0 0 15px rgba(0, 51, 102, 0.35));
 }
 
-.igter-card:hover{
-  transform:translateY(-5px);
+/* BORDURE TRICOLORE RDC 🇨🇩 */
+.attribution-card:nth-child(1) { border-left-color: #003399; } /* bleu */
+.attribution-card:nth-child(2) { border-left-color: #ffcc00; } /* jaune */
+.attribution-card:nth-child(3) { border-left-color: #ff0000; } /* rouge */
+.attribution-card:nth-child(4) { border-left-color: #003399; } /* bleu, cycle */
+
+
+/* ICÔNES */
+.attribution-card .icon {
+  font-size: 32px;
+  color: #003366;
+  margin-bottom: 12px;
 }
 
-.igter-icon{
-  font-size:28px;
-  margin-bottom:10px;
+/* TITRES */
+.attribution-card h3 {
+  font-size: 16px;
+  color: #003366;
+  margin-bottom: 8px;
 }
 
-.igter-card h3{
-  font-size:20px;
-  font-weight:800;
+/* PARAGRAPHE */
+.attribution-card p {
+  font-size: 13px;
+  color: #333;
+  line-height: 1.5;
 }
 
-.igter-card h4{
-  color:#0b3a6d;
-  margin:5px 0 10px;
-}
-
-.igter-card p{
-  font-size:14px;
-  color:#444;
-  line-height:1.6;
-}
-
-/* ===== ACTUALITES ===== */
-
-.igter-news{
-  flex:1;
-  background:#f3f5f8;
-  padding:20px;
-  border-radius:15px;
-}
-
-.igter-news-header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-bottom:20px;
-}
-
-.igter-link{
-  color:#1d4ed8;
-  text-decoration:none;
-  font-weight:600;
-}
-
-.igter-news-list{
-  display:flex;
-  flex-direction:column;
-  gap:15px;
-}
-
-.igter-news-item{
-  display:flex;
-  gap:12px;
-  background:#e6ebf1;
-  padding:12px;
-  border-radius:10px;
-  transition:0.3s;
-}
-
-.igter-news-item:hover{
-  background:#dde3ea;
-}
-
-.igter-news-item img{
-  width:90px;
-  height:65px;
-  object-fit:cover;
-  border-radius:6px;
-}
-
-.igter-news-item span{
-  font-size:12px;
-  color:#555;
-}
-
-.igter-news-item p{
-  font-size:14px;
-  font-weight:600;
-  color:#0b3a6d;
+/* Responsive */
+@media (max-width: 768px) {
+  .attributions-container {
+    grid-template-columns: 1fr;
+  }
 }
 
 </style>
@@ -1680,34 +1668,6 @@ overflow:hidden;
 
 <body>
 
-<!-- BARRE SUPERIEURE -->
-<header class="top-menu">
-
-<!-- SLIDER MOBILE -->
-<div class="mobile-title-slider">
-
-<div class="slides">
-
-<div class="slide">
-<img src="images/logo.png" alt="Logo IGTER">
-</div>
-
-<div class="slide">IGTER</div>
-
-<div class="slide">Inspection Générale de la Territoriale</div>
-
-</div>
-
-</div>
-
-</div>
-
-</header>
-
-<!-- BARRE MENU MOBILE -->
-<div class="mobile-menu-bar">
-  <div class="menu-icon" onclick="openMenu()">☰</div>
-</div>
 <!-- LIGNE DÉFILANTE -->
 <div class="institution-bar">
   <div class="flag-box">
@@ -1735,6 +1695,11 @@ overflow:hidden;
       </div>
     </div>
   </div>
+</div>
+
+<!-- BARRE MENU MOBILE -->
+<div class="mobile-menu-bar">
+  <div class="menu-icon" onclick="openMenu()">☰</div>
 </div>
 
 <nav class="navbar" id="main-menu">
@@ -1881,100 +1846,48 @@ overflow:hidden;
 </div>
 
 <!-- =========================
-     SECTION MISSIONS + ACTUALITES (IGTER)
+   NOS ATTRIBUTIONS (VERSION GLASS TRICOLORE)
 ========================= -->
-<section class="igter-home">
+<section class="attributions-section">
 
-  <div class="igter-container">
+  <h2>Nos attributions</h2>
 
-    <!-- ===== MISSIONS ===== -->
-    <div class="igter-missions">
+  <div class="attributions-container">
 
-      <h2>Nos attributions</h2>
-
-      <div class="igter-cards">
-
-        <div class="igter-card">
-          <div class="igter-icon">📋</div>
-          <h3>Contrôle</h3>
-          <h4>Provinces et Entités Territoriales</h4>
-          <p>
-            Le contrôle consiste à la surveillance de l’application correcte des lois,
-            règlements et instructions ainsi qu’à la vérification de la gestion administrative,
-            financière et matérielle.
-          </p>
-        </div>
-
-        <div class="igter-card">
-          <div class="igter-icon">🤝</div>
-          <h3>Encadrement</h3>
-          <h4>Autorités Territoriales</h4>
-          <p>
-            Appui-conseil et renforcement des capacités des responsables des services
-            centraux et des Autorités Territoriales.
-          </p>
-        </div>
-
-        <div class="igter-card">
-          <div class="igter-icon">📊</div>
-          <h3>Suivi</h3>
-          <h4>Activités des Autorités</h4>
-          <p>
-            Monitoring de l’exécution des projets, programmes et instructions dans
-            le domaine de la territoriale.
-          </p>
-        </div>
-
-        <div class="igter-card">
-          <div class="igter-icon">⚖️</div>
-          <h3>Évaluation</h3>
-          <h4>Performance des entités</h4>
-          <p>
-            Mesure du rendement et de la performance à l’aide d’indicateurs
-            objectivement vérifiables.
-          </p>
-        </div>
-
-      </div>
-
+    <!-- Carte 1 -->
+    <div class="attribution-card">
+      <div class="icon"><i class="fas fa-balance-scale"></i></div>
+      <h3>Contrôle des Provinces et Entités Territoriales</h3>
+      <p>
+        Le contrôle consiste à la surveillance de l’application correcte des lois, règlements, directives et instructions ainsi qu’à la vérification de la gestion administrative, financière et matérielle d’une entité territoriale.
+      </p>
     </div>
 
-    <!-- ===== ACTUALITES ===== -->
-    <div class="igter-news">
+    <!-- Carte 2 -->
+    <div class="attribution-card">
+      <div class="icon"><i class="fas fa-user-tie"></i></div>
+      <h3>Encadrement des Autorités Territoriales</h3>
+      <p>
+        L’encadrement consiste en appui-conseil et au renforcement des capacités des responsables des services centraux du Ministère ayant l’intérieur dans ses attributions ainsi que des Autorités Territoriales.
+      </p>
+    </div>
 
-      <div class="igter-news-header">
-        <h2>Actualités récentes</h2>
-        <a href="#" class="igter-link">Voir tout</a>
-      </div>
+    <!-- Carte 3 -->
+    <div class="attribution-card">
+      <div class="icon"><i class="fas fa-tasks"></i></div>
+      <h3>Suivi des actes administratifs</h3>
+      <p>
+        Le suivi est le monitoring ou la surveillance de l’exécution d’un projet, d’un programme ou d’une instruction dans le domaine de la territoriale.
+      </p>
+    </div>
 
-      <div class="igter-news-list">
-
-        <div class="igter-news-item">
-          <img src="images/ig4.jpg">
-          <div>
-            <span>17 Mars 2026</span>
-            <p>Séance de travail entre l'IG PNC et l'IGTER</p>
-          </div>
-        </div>
-
-        <div class="igter-news-item">
-          <img src="images/ig2.jpg">
-          <div>
-            <span>11 Février 2026</span>
-            <p>Visite de la Vice-Ministre de l’Intérieur</p>
-          </div>
-        </div>
-
-        <div class="igter-news-item">
-          <img src="images/actu2.jpg">
-          <div>
-            <span>—</span>
-            <p>Remise et reprise entre Inspecteurs Généraux</p>
-          </div>
-        </div>
-
-      </div>
-
+    <!-- Carte 4 -->
+    <div class="attribution-card">
+      <div class="icon"><i class="fas fa-chart-line"></i></div>
+      <h3>Évaluation des actes administratifs</h3>
+      <p>
+        L’évaluation est le mesurage à l’aide des indicateurs objectivement vérifiables du rendement et de la performance d’une entité territoriale et/ou d’une Autorité Territoriale.
+      </p>
     </div>
 
   </div>
@@ -2304,23 +2217,25 @@ dot.addEventListener("click", () => showSlide(i));
 startAuto();
 </script>
 <script>
-const elements = document.querySelectorAll('.igter-card, .igter-news-item');
+const cards = document.querySelectorAll('.attribution-card');
 
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      entry.target.style.opacity = 1;
-      entry.target.style.transform = "translateY(0)";
+function animateCards() {
+  const triggerBottom = window.innerHeight * 0.85;
+
+  cards.forEach((card, index) => {
+    const cardTop = card.getBoundingClientRect().top;
+
+    if (cardTop < triggerBottom) {
+      setTimeout(() => {
+        card.style.opacity = '1';
+        card.style.transform = 'scale(1) translateY(0)';
+      }, index * 200); // délai par carte (200ms)
     }
   });
-});
+}
 
-elements.forEach(el => {
-  el.style.opacity = 0;
-  el.style.transform = "translateY(20px)";
-  el.style.transition = "0.6s";
-  observer.observe(el);
-});
+window.addEventListener('scroll', animateCards);
+window.addEventListener('load', animateCards);
 </script>
 </body>
 </html>
