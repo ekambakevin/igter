@@ -1795,6 +1795,34 @@ overflow:hidden;
 
 }
 
+/* =========================
+   LIGNE TRICOLORE MOBILE FIX
+========================= */
+@media (max-width: 768px) {
+
+  .title-with-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .title-bar {
+    width: 60px;
+    height: 4px;
+    margin-bottom: 10px;
+
+    /* TRICOLORE PROPRE */
+    background: linear-gradient(
+      to bottom,
+      #007fff 33%,   /* bleu */
+      #ffcc00 33% 66%, /* jaune */
+      #ce1126 66%   /* rouge */
+    );
+
+    border-radius: 2px;
+  }
+
+}
 </style>
 
 </head>
