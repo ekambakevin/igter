@@ -1876,6 +1876,44 @@ overflow:hidden;
 
 }
 
+/* Par défaut (desktop) → caché */
+.slide-mobile-text {
+  display: none;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  /* Afficher le nouveau slide */
+  .slide-mobile-text {
+    display: block;
+  }
+
+  /* Cacher le texte dans le slide 3 */
+  .hero-slide.slide-white-pro .hero-text {
+    display: none;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .slide-mobile-text {
+    text-align: center;
+    padding: 20px 15px;
+  }
+
+  .slide-mobile-text h1 {
+    font-size: 18px;
+    color: #003366;
+  }
+
+  .slide-mobile-text p {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+}
 </style>
 
 </head>
@@ -2047,6 +2085,16 @@ overflow:hidden;
       </div>
     </div>
 
+  </div>
+</div>
+
+<!-- SLIDE 4 (MOBILE UNIQUEMENT) -->
+<div class="hero-slide slide-mobile-text">
+  <div class="hero-content">
+    <h1>Vision de l'Inspecteur Général</h1>
+    <p>
+      J'ai repris mes fonctions d'Inspecteur Général de la Territoriale pour ...
+    </p>
   </div>
 </div>
 </div></div>
