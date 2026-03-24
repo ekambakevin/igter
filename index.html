@@ -1820,6 +1820,18 @@ overflow:hidden;
 
 }
 
+/* transition plus fluide */
+.news-item {
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.news-item.active {
+  transform: translateX(0);
+}
+
+.news-item {
+  transform: translateX(20px);
+}
 /* =========================
    SECTION ACTUALITÉS
 ========================= */
@@ -1943,22 +1955,9 @@ overflow:hidden;
   }
 
   .news-btn {
-    font-size: 12px;
+    font-size: 18px;
     padding: 8px 10px;
   }
-}
-
-/* transition plus fluide */
-.news-item {
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.news-item.active {
-  transform: translateX(0);
-}
-
-.news-item {
-  transform: translateX(20px);
 }
 </style>
 
@@ -2238,7 +2237,7 @@ overflow:hidden;
         <img src="images/ig2.jpg" alt="Actualité">
         <div class="news-content">
           <h3>Visite de travail</h3>
-          <span class="news-date">11 février 2026</span>
+          <span class="news-date">10 mars 2026</span>
           <p>
             Visite de travail de Son Excellence, Madame la Vice-Ministre de l'Intérieur à l'Inspection Générale de la Territoriale.
           </p>
