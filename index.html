@@ -1820,6 +1820,132 @@ overflow:hidden;
 
 }
 
+/* =========================
+   SECTION ACTUALITÉS
+========================= */
+.news-section {
+  padding: 60px 8%;
+  background: #f4f6f9;
+  text-align: center;
+}
+
+.news-section h2 {
+  font-size: 24px;
+  color: #003366;
+  margin-bottom: 30px;
+  border-left: none;
+  padding-left: 0;
+}
+
+.news-section h2::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 4px;
+  margin: 10px auto 0;
+  border-radius: 2px;
+
+  background: linear-gradient(
+    to right,
+    #007fff 0%,
+    #007fff 33%,
+    #ffcc00 33%,
+    #ffcc00 66%,
+    #ce1126 66%,
+    #ce1126 100%
+  );
+}
+/* CONTENEUR */
+.news-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* BOUTONS */
+.news-btn {
+  background: #003366;
+  color: white;
+  border: none;
+  font-size: 20px;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.news-btn:hover {
+  background: #0055aa;
+}
+
+/* ZONE */
+.news-display {
+  width: 100%;
+  max-width: 800px;
+  position: relative;
+}
+
+/* ITEM */
+.news-item {
+  display: none;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  text-align: left;
+}
+
+/* ACTIF */
+.news-item.active {
+  display: block;
+  animation: fadeNews 0.5s ease;
+}
+
+@keyframes fadeNews {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+/* IMAGE */
+.news-item img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+/* TEXTE */
+.news-content {
+  padding: 20px;
+}
+
+.news-content h3 {
+  color: #003366;
+  margin-bottom: 5px;
+}
+
+.news-date {
+  font-size: 13px;
+  color: #888;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .news-item img {
+    height: 180px;
+  }
+
+  .news-content {
+    padding: 15px;
+  }
+
+  .news-btn {
+    font-size: 18px;
+    padding: 8px 10px;
+  }
+}
 </style>
 
 </head>
@@ -2060,6 +2186,57 @@ overflow:hidden;
         L’évaluation est le mesurage à l’aide des indicateurs objectivement vérifiables du rendement et de la performance d’une entité territoriale et/ou d’une Autorité Territoriale.
       </p>
     </div>
+
+  </div>
+
+</section>
+
+<!-- =========================
+   ACTUALITÉS IGTER
+========================= -->
+<section class="news-section">
+
+  <h2>Actualités récentes</h2>
+
+  <div class="news-container">
+
+    <!-- Bouton gauche -->
+    <button class="news-btn prev-news">❮</button>
+
+    <!-- Zone affichage -->
+    <div class="news-display">
+
+      <!-- ACTUALITÉ 1 -->
+      <div class="news-item active">
+        <img src="images/ig4.jpg" alt="Actualité">
+        <div class="news-content">
+          <h3>Rencontre IG PNC et IGTER</h3>
+          <span class="news-date">17 mars 2026</span>
+          <p>
+            Séance de travail et échange d'expériences entre l'Inspection Générale 
+            de la Police Nationale Congolaise et l'Inspection Générale de la Territoriale.
+          </p>
+        </div>
+      </div>
+
+      <!-- ACTUALITÉ 2 (exemple) -->
+      <div class="news-item">
+        <img src="images/ig2.jpg" alt="Actualité">
+        <div class="news-content">
+          <h3>Visite de travail</h3>
+          <span class="news-date">11 février 2026</span>
+          <p>
+           Visite de travail de Son Excellence, Madame la Vice-Ministre de l'Intérieur à l'Inspection Générale de la Territoriale.
+          </p>
+        </div>
+      </div>
+
+      <!-- Tu peux ajouter autant d’actualités que tu veux -->
+
+    </div>
+
+    <!-- Bouton droite -->
+    <button class="news-btn next-news">❯</button>
 
   </div>
 
@@ -2407,6 +2584,28 @@ function animateCards() {
 
 window.addEventListener('scroll', animateCards);
 window.addEventListener('load', animateCards);
+</script>
+<script>
+const newsItems = document.querySelectorAll('.news-item');
+const nextNews = document.querySelector('.next-news');
+const prevNews = document.querySelector('.prev-news');
+
+let newsIndex = 0;
+
+function showNews(i) {
+  newsItems.forEach(item => item.classList.remove('active'));
+  newsItems[i].classList.add('active');
+}
+
+nextNews.addEventListener('click', () => {
+  newsIndex = (newsIndex + 1) % newsItems.length;
+  showNews(newsIndex);
+});
+
+prevNews.addEventListener('click', () => {
+  newsIndex = (newsIndex - 1 + newsItems.length) % newsItems.length;
+  showNews(newsIndex);
+});
 </script>
 </body>
 </html>
