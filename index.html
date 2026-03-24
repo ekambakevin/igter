@@ -1879,71 +1879,65 @@ overflow:hidden;
   background: #0055aa;
 }
 
-/* ZONE */
+/* CONTENEUR */
 .news-display {
+  overflow: hidden;
   width: 100%;
-  max-width: 800px;
-  position: relative;
 }
 
-/* ITEM */
+/* TRACK (glissement horizontal) */
+.news-track {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.5s ease;
+}
+
+/* CARTES */
 .news-item {
-  display: none;
+  min-width: 300px;
+  max-width: 300px;
   background: white;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-  text-align: left;
-}
-
-/* ACTIF */
-.news-item.active {
-  display: block;
-  animation: fadeNews 0.5s ease;
-}
-
-@keyframes fadeNews {
-  from {opacity: 0;}
-  to {opacity: 1;}
 }
 
 /* IMAGE */
 .news-item img {
   width: 100%;
-  height: 250px;
+  height: 180px;
   object-fit: cover;
 }
 
 /* TEXTE */
 .news-content {
-  padding: 20px;
+  padding: 15px;
 }
 
-.news-content h3 {
-  color: #003366;
-  margin-bottom: 5px;
+/* DOTS */
+.news-dots {
+  margin-top: 15px;
+  text-align: center;
 }
 
-.news-date {
-  font-size: 13px;
-  color: #888;
-  display: block;
-  margin-bottom: 10px;
+.news-dots span {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: #ccc;
+  margin: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.news-dots .active {
+  background: #003366;
 }
 
 /* MOBILE */
 @media (max-width: 768px) {
-  .news-item img {
-    height: 180px;
-  }
-
-  .news-content {
-    padding: 15px;
-  }
-
-  .news-btn {
-    font-size: 18px;
-    padding: 8px 10px;
+  .news-item {
+    min-width: 85%;
   }
 }
 </style>
@@ -2204,36 +2198,38 @@ overflow:hidden;
     <button class="news-btn prev-news">❮</button>
 
     <!-- Zone affichage -->
-    <div class="news-display">
+     <div class="news-display">
+    <div class="news-track">
 
-      <!-- ACTUALITÉ 1 -->
-      <div class="news-item active">
-        <img src="images/ig4.jpg" alt="Actualité">
-        <div class="news-content">
-          <h3>Rencontre IG PNC et IGTER</h3>
-          <span class="news-date">17 mars 2026</span>
-          <p>
-            Séance de travail et échange d'expériences entre l'Inspection Générale 
-            de la Police Nationale Congolaise et l'Inspection Générale de la Territoriale.
-          </p>
-        </div>
+    <!-- ACTU 1 -->
+    <div class="news-item">
+      <img src="images/ig4.jpg">
+      <div class="news-content">
+        <h3>Rencontre IG PNC et IGTER</h3>
+        <span class="news-date">17 mars 2026</span>
+       <p> Séance de travail et échange d'expériences entre l'Inspection Générale 
+           de la Police Nationale Congolaise et l'Inspection Générale de la Territoriale. </p>
       </div>
-
-      <!-- ACTUALITÉ 2 (exemple) -->
-      <div class="news-item">
-        <img src="images/ig2.jpg" alt="Actualité">
-        <div class="news-content">
+    </div>
+      
+      <!-- ACTU 2 -->
+    <div class="news-item">
+      <img src="images/ig2.jpg">
+      <div class="news-content">
           <h3>Visite de travail</h3>
-          <span class="news-date">11 février 2026</span>
-          <p>
+         <span class="news-date">11 février 2026</span>
+        <p>
            Visite de travail de Son Excellence, Madame la Vice-Ministre de l'Intérieur à l'Inspection Générale de la Territoriale.
           </p>
-        </div>
       </div>
-
-      <!-- Tu peux ajouter autant d’actualités que tu veux -->
-
     </div>
+
+    <!-- Ajoute autant d'actualités que tu veux -->
+  </div>
+</div>
+
+<!-- INDICATEURS -->
+<div class="news-dots"></div>
 
     <!-- Bouton droite -->
     <button class="news-btn next-news">❯</button>
@@ -2586,26 +2582,85 @@ window.addEventListener('scroll', animateCards);
 window.addEventListener('load', animateCards);
 </script>
 <script>
-const newsItems = document.querySelectorAll('.news-item');
-const nextNews = document.querySelector('.next-news');
-const prevNews = document.querySelector('.prev-news');
+  const track = document.querySelector('.news-track');
+const items = document.querySelectorAll('.news-item');
+const dotsContainer = document.querySelector('.news-dots');
 
-let newsIndex = 0;
+let index = 0;
+let startX = 0;
+let currentTranslate = 0;
 
-function showNews(i) {
-  newsItems.forEach(item => item.classList.remove('active'));
-  newsItems[i].classList.add('active');
+/* =========================
+   POSITION
+========================= */
+function updateSlider() {
+  const itemWidth = items[0].offsetWidth + 20;
+  track.style.transform = `translateX(-${index * itemWidth}px)`;
+
+  updateDots();
 }
 
-nextNews.addEventListener('click', () => {
-  newsIndex = (newsIndex + 1) % newsItems.length;
-  showNews(newsIndex);
+/* =========================
+   DOTS
+========================= */
+items.forEach((_, i) => {
+  const dot = document.createElement('span');
+  dot.addEventListener('click', () => {
+    index = i;
+    updateSlider();
+  });
+  dotsContainer.appendChild(dot);
 });
 
-prevNews.addEventListener('click', () => {
-  newsIndex = (newsIndex - 1 + newsItems.length) % newsItems.length;
-  showNews(newsIndex);
+function updateDots() {
+  const dots = document.querySelectorAll('.news-dots span');
+  dots.forEach(d => d.classList.remove('active'));
+  if(dots[index]) dots[index].classList.add('active');
+}
+
+updateDots();
+
+/* =========================
+   AUTO SLIDE
+========================= */
+let auto = setInterval(() => {
+  index = (index + 1) % items.length;
+  updateSlider();
+}, 5000);
+
+/* =========================
+   SWIPE + INERTIE
+========================= */
+track.addEventListener('touchstart', (e) => {
+  startX = e.touches[0].clientX;
 });
+
+track.addEventListener('touchend', (e) => {
+  let endX = e.changedTouches[0].clientX;
+  let diff = startX - endX;
+
+  if (diff > 50) index++;
+  if (diff < -50) index--;
+
+  /* LIMITES */
+  if (index < 0) index = 0;
+  if (index >= items.length) index = items.length - 1;
+
+  updateSlider();
+});
+
+/* =========================
+   BOUTONS EXISTANTS
+========================= */
+document.querySelector('.next-news').onclick = () => {
+  index = (index + 1) % items.length;
+  updateSlider();
+};
+
+document.querySelector('.prev-news').onclick = () => {
+  index = (index - 1 + items.length) % items.length;
+  updateSlider();
+};
 </script>
 </body>
 </html>
