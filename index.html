@@ -1855,6 +1855,7 @@ overflow:hidden;
     #ce1126 100%
   );
 }
+
 /* CONTENEUR */
 .news-container {
   display: flex;
@@ -1878,6 +1879,7 @@ overflow:hidden;
 .news-btn:hover {
   background: #0055aa;
 }
+
 /* ZONE */
 .news-display {
   width: 100%;
@@ -1941,11 +1943,23 @@ overflow:hidden;
   }
 
   .news-btn {
-    font-size: 18px;
+    font-size: 12px;
     padding: 8px 10px;
   }
 }
 
+/* transition plus fluide */
+.news-item {
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.news-item.active {
+  transform: translateX(0);
+}
+
+.news-item {
+  transform: translateX(20px);
+}
 </style>
 
 </head>
@@ -2591,20 +2605,86 @@ const nextNews = document.querySelector('.next-news');
 const prevNews = document.querySelector('.prev-news');
 
 let newsIndex = 0;
+let autoNews;
 
+/* AFFICHER */
 function showNews(i) {
   newsItems.forEach(item => item.classList.remove('active'));
   newsItems[i].classList.add('active');
 }
 
-nextNews.addEventListener('click', () => {
+/* SUIVANT */
+function nextSlide() {
   newsIndex = (newsIndex + 1) % newsItems.length;
   showNews(newsIndex);
+}
+
+/* PRECEDENT */
+function prevSlide() {
+  newsIndex = (newsIndex - 1 + newsItems.length) % newsItems.length;
+  showNews(newsIndex);
+}
+
+/* BOUTONS */
+nextNews.addEventListener('click', () => {
+  nextSlide();
+  resetAuto();
 });
 
 prevNews.addEventListener('click', () => {
-  newsIndex = (newsIndex - 1 + newsItems.length) % newsItems.length;
-  showNews(newsIndex);
+  prevSlide();
+  resetAuto();
+});
+
+/* =========================
+   AUTO SLIDE 🔄
+========================= */
+function startAuto() {
+  autoNews = setInterval(nextSlide, 5000); // 5 secondes
+}
+
+function resetAuto() {
+  clearInterval(autoNews);
+  startAuto();
+}
+
+startAuto();
+
+/* =========================
+   SWIPE MOBILE 🖱
+========================= */
+let startX = 0;
+let endX = 0;
+
+const newsContainer = document.querySelector('.news-display');
+
+newsContainer.addEventListener('touchstart', (e) => {
+  startX = e.touches[0].clientX;
+});
+
+newsContainer.addEventListener('touchend', (e) => {
+  endX = e.changedTouches[0].clientX;
+
+  if (startX - endX > 50) {
+    nextSlide();
+    resetAuto();
+  }
+
+  if (endX - startX > 50) {
+    prevSlide();
+    resetAuto();
+  }
+});
+
+/* =========================
+   PAUSE AU SURVOL (DESKTOP)
+========================= */
+newsContainer.addEventListener('mouseenter', () => {
+  clearInterval(autoNews);
+});
+
+newsContainer.addEventListener('mouseleave', () => {
+  startAuto();
 });
 </script>
 </body>
