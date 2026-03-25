@@ -1837,13 +1837,20 @@ overflow:hidden;
 ========================= */
 .news-section {
   padding: 60px 8%;
-  background: #f4f6f9;
   text-align: center;
+
+/* 🔥 FOND BLEU PRO */
+  background: linear-gradient(rgba(0,51,102,0.92), rgba(0,51,102,0.92)),
+              url("images/ig4.jpg");
+  background-size: cover;
+  background-position: center;
+
+  color: white;
 }
 
 .news-section h2 {
   font-size: 24px;
-  color: #003366;
+  color: white;
   margin-bottom: 30px;
   border-left: none;
   padding-left: 0;
@@ -1869,95 +1876,153 @@ overflow:hidden;
 }
 
 /* CONTENEUR */
-.news-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-}
-
-/* BOUTONS */
-.news-btn {
-  background: #003366;
-  color: white;
-  border: none;
-  font-size: 20px;
-  padding: 10px 15px;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: 0.3s;
-}
-
-.news-btn:hover {
-  background: #0055aa;
-}
-
-/* ZONE */
 .news-display {
-  width: 100%;
-  max-width: 800px;
+  overflow: hidden;
   position: relative;
+}
+
+/* SLIDER */
+.news-slider {
+  display: flex;
+  transition: transform 0.6s ease;
 }
 
 /* ITEM */
 .news-item {
-  display: none;
-  background: white;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-  text-align: left;
-}
-
-/* ACTIF */
-.news-item.active {
-  display: block;
-  animation: fadeNews 0.5s ease;
-}
-
-@keyframes fadeNews {
-  from {opacity: 0;}
-  to {opacity: 1;}
-}
-
-/* IMAGE */
-.news-item img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
+  min-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
 }
 
 /* TEXTE */
-.news-content {
-  padding: 20px;
+.news-left {
+  flex: 1;
 }
 
-.news-content h3 {
-  color: #003366;
-  margin-bottom: 5px;
-}
-
-.news-date {
-  font-size: 13px;
-  color: #888;
-  display: block;
+.news-left h3 {
+  font-size: 28px;
   margin-bottom: 10px;
 }
 
-/* MOBILE */
+.news-date {
+  font-size: 14px;
+  opacity: 0.8;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.news-left p {
+  line-height: 1.6;
+}
+
+/* IMAGE */
+.news-right {
+  flex: 1;
+  text-align: right;
+}
+
+.news-right img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 5px;
+  border: 4px solid white;
+}
+
+.news-container {
+  position: relative; /* 🔥 indispensable */
+}
+
+/* BOUTONS VISIBLES */
+.news-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  
+  background: rgba(0,0,0,0.6);
+  border: none;
+  color: white;
+  font-size: 24px;
+  padding: 12px 16px;
+  cursor: pointer;
+
+  z-index: 1000; /* 🔥 très important */
+}
+
+/* Position corrigée */
+.prev-news {
+  left: -100px;
+}
+
+.next-news {
+  right: -100px;
+}
+
+/* =========================
+   LIEN BAS ACTUALITÉS
+========================= */
+.news-more-link {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.news-more-link a {
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 4px;
+  transition: 0.3s;
+}
+
+/* Ligne animée élégante */
+.news-more-link a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+
+  background: linear-gradient(
+    to right,
+    #007fff,
+    #ffcc00,
+    #ce1126
+  );
+
+  transition: width 0.3s ease;
+}
+
+/* Hover */
+.news-more-link a:hover::after {
+  width: 100%;
+}
+
+.news-more-link a:hover {
+  opacity: 0.85;
+}
+
+/* =========================
+   MOBILE
+========================= */
 @media (max-width: 768px) {
-  .news-item img {
-    height: 180px;
+
+  .news-item {
+    flex-direction: column;
+    text-align: center;
   }
 
-  .news-content {
-    padding: 15px;
+  .news-right {
+    text-align: center;
   }
 
-  .news-btn {
-    font-size: 18px;
-    padding: 8px 10px;
+  .news-right img {
+    max-width: 250px;
   }
+
 }
 </style>
 
@@ -2207,9 +2272,9 @@ overflow:hidden;
 <!-- =========================
    ACTUALITÉS IGTER
 ========================= -->
-<section class="news-section">
+<section class="news-section" id="actualite">
 
-  <h2>Actualités</h2>
+  <h2>Nos Actualités</h2>
 
   <div class="news-container">
 
@@ -2217,42 +2282,56 @@ overflow:hidden;
     <button class="news-btn prev-news">❮</button>
 
     <!-- Zone affichage -->
-    <div class="news-display">
+   <div class="news-display">
 
-      <!-- ACTUALITÉ 1 -->
-      <div class="news-item active">
+  <div class="news-slider">
+
+    <!-- ACTUALITÉ 1 -->
+    <div class="news-item active">
+      <div class="news-left">
+        <h3>Rencontre IG PNC et IGTER</h3>
+        <span class="news-date">17 mars 2026</span>
+        <p>
+          Séance de travail et échange d'expériences entre l'Inspection Générale 
+          de la Police Nationale Congolaise et l'Inspection Générale de la Territoriale.
+        </p>
+      </div>
+
+      <div class="news-right">
         <img src="images/ig4.jpg" alt="Actualité">
-        <div class="news-content">
-          <h3>Rencontre IG PNC et IGTER</h3>
-          <span class="news-date">17 mars 2026</span>
-          <p>
-            Séance de travail et échange d'expériences entre l'Inspection Générale 
-            de la Police Nationale Congolaise et l'Inspection Générale de la Territoriale.
-          </p>
-        </div>
       </div>
-
-      <!-- ACTUALITÉ 2 (exemple) -->
-      <div class="news-item">
-        <img src="images/ig2.jpg" alt="Actualité">
-        <div class="news-content">
-          <h3>Visite de travail</h3>
-          <span class="news-date">10 mars 2026</span>
-          <p>
-            Visite de travail de Son Excellence, Madame la Vice-Ministre de l'Intérieur à l'Inspection Générale de la Territoriale.
-          </p>
-        </div>
-      </div>
-
-      <!-- Tu peux ajouter autant d’actualités que tu veux -->
-
     </div>
+
+    <!-- ACTUALITÉ 2 -->
+    <div class="news-item">
+      <div class="news-left">
+        <h3>Visite de travail</h3>
+        <span class="news-date">10 mars 2026</span>
+        <p>
+          Visite de travail de Son Excellence, Madame la Vice-Ministre de l'Intérieur.
+        </p>
+      </div>
+
+      <div class="news-right">
+        <img src="images/ig2.jpg" alt="Actualité">
+      </div>
+    </div>
+
+ <!-- Tu peux ajouter autant d’actualités que tu veux -->
+  </div>
+
+</div>
 
     <!-- Bouton droite -->
     <button class="news-btn next-news">❯</button>
 
   </div>
 
+<div class="news-more-link">
+  <a href="https://web.facebook.com/groups/544962343127299/user/61584911503215" target="_blank">
+    Lire toutes les actualités
+  </a>
+</div>
 </section>
 
 <!-- VIDEOS -->
@@ -2599,91 +2678,72 @@ window.addEventListener('scroll', animateCards);
 window.addEventListener('load', animateCards);
 </script>
 <script>
-const newsItems = document.querySelectorAll('.news-item');
-const nextNews = document.querySelector('.next-news');
-const prevNews = document.querySelector('.prev-news');
+document.addEventListener("DOMContentLoaded", function(){
 
-let newsIndex = 0;
-let autoNews;
+const slider = document.querySelector('.news-slider');
+const items = document.querySelectorAll('.news-item');
+const nextBtn = document.querySelector('.next-news');
+const prevBtn = document.querySelector('.prev-news');
 
-/* AFFICHER */
-function showNews(i) {
-  newsItems.forEach(item => item.classList.remove('active'));
-  newsItems[i].classList.add('active');
+let index = 0;
+let autoSlide;
+
+/* AFFICHAGE */
+function updateSlider() {
+  slider.style.transform = "translateX(-" + (index * 100) + "%)";
 }
 
-/* SUIVANT */
+/* NEXT */
 function nextSlide() {
-  newsIndex = (newsIndex + 1) % newsItems.length;
-  showNews(newsIndex);
+  index = (index + 1) % items.length;
+  updateSlider();
 }
 
-/* PRECEDENT */
+/* PREV */
 function prevSlide() {
-  newsIndex = (newsIndex - 1 + newsItems.length) % newsItems.length;
-  showNews(newsIndex);
+  index = (index - 1 + items.length) % items.length;
+  updateSlider();
 }
 
 /* BOUTONS */
-nextNews.addEventListener('click', () => {
+nextBtn.addEventListener("click", () => {
   nextSlide();
   resetAuto();
 });
 
-prevNews.addEventListener('click', () => {
+prevBtn.addEventListener("click", () => {
   prevSlide();
   resetAuto();
 });
 
-/* =========================
-   AUTO SLIDE 🔄
-========================= */
+/* AUTO */
 function startAuto() {
-  autoNews = setInterval(nextSlide, 5000); // 5 secondes
+  autoSlide = setInterval(nextSlide, 4000);
 }
 
 function resetAuto() {
-  clearInterval(autoNews);
+  clearInterval(autoSlide);
   startAuto();
 }
 
 startAuto();
 
-/* =========================
-   SWIPE MOBILE 🖱
-========================= */
+/* SWIPE */
 let startX = 0;
-let endX = 0;
 
-const newsContainer = document.querySelector('.news-display');
-
-newsContainer.addEventListener('touchstart', (e) => {
+slider.addEventListener('touchstart', e => {
   startX = e.touches[0].clientX;
 });
 
-newsContainer.addEventListener('touchend', (e) => {
-  endX = e.changedTouches[0].clientX;
+slider.addEventListener('touchend', e => {
+  let endX = e.changedTouches[0].clientX;
 
-  if (startX - endX > 50) {
-    nextSlide();
-    resetAuto();
-  }
+  if (startX - endX > 50) nextSlide();
+  if (endX - startX > 50) prevSlide();
 
-  if (endX - startX > 50) {
-    prevSlide();
-    resetAuto();
-  }
+  resetAuto();
 });
 
-/* =========================
-   PAUSE AU SURVOL (DESKTOP)
-========================= */
-newsContainer.addEventListener('mouseenter', () => {
-  clearInterval(autoNews);
-});
-
-newsContainer.addEventListener('mouseleave', () => {
-  startAuto();
 });
 </script>
 </body>
