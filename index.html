@@ -116,77 +116,91 @@ height:auto;
   color:white;
 }
 
-
-/* ------------------ LIGNE DÉFILANTE RESPONSIVE ------------------ */
-.institution-bar {
+/* HEADER GLOBAL */
+.top-header {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  background: white;
-  width: 100%;
-  overflow: hidden;
+  background: #f4f4f4;
+  padding: 15px 30px;
   border-bottom: 1px solid #ddd;
-  padding: 6px 15px;
-  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
-.flag-box img {
-  height: 30px;
+/* PARTIE GAUCHE */
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 70px;
   margin-right: 10px;
 }
 
-.scroll-container {
-  flex: 1;
-  overflow: hidden;
-  position: relative;
+/* TEXTE */
+.header-text .title {
+  font-size: 15px;
+  font-weight: bold;
+  color: #000;
 }
 
-.scroll-text {
+.header-text .subtitle {
+  font-size: 14px;
+  color: #000;
+  margin-top: 3px;
+}
+
+/* PARTIE DROITE */
+.header-right {
   display: flex;
-  white-space: nowrap;
-  font-family: "Times New Roman", serif;
-  font-size: 16px;
-  animation: defilement 15s linear infinite;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
 }
 
-.scroll-container:hover .scroll-text {
-  animation-play-state: paused;
-}
-
-.text-group {
+/* CONTACT */
+.contact-item {
   display: flex;
-  align-items: center;
-  white-space: nowrap;
-  padding-right: 60px; /* espace entre répétitions */
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  color: #555;
 }
 
-/* Couleurs */
-.val1 {color: #ce1126; font-weight: bold;}
-.val2 {color: #000000; font-weight: bold;}
-.val3 {color: #007fff; font-weight: bold;}
-.val4 {color: #000000; font-weight: bold;}
-.separator {margin: 0 15px; color: #555;}
-
-/* Animation responsive avec largeur dynamique */
-@keyframes defilement {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+.icon {
+  font-size: 18px;
 }
 
-/* Petite optimisation mobile */
+/* RESPONSIVE */
 @media (max-width: 768px) {
-  .scroll-text {
-    font-size: 12px;
+  .top-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
   }
-  .separator {
-    margin: 0 10px;
+
+  .header-right {
+    width: 100%;
   }
-  .flag-box img {
-    height: 25px;
+
+  .logo {
+    height: 50px;
   }
+}
+
+/* BARRE TRICOLORE */
+.flag-bar {
+  width: 4px;
+  height: 60px;
+  margin: 0 15px;
+  background: linear-gradient(
+    to bottom,
+    #007fff 33%,   /* bleu */
+    #fcd116 33%,   /* jaune */
+    #fcd116 66%,
+    #ce1126 66%    /* rouge */
+  );
 }
 
 /* ------------------ MENU LATERAL ------------------ */
@@ -2145,34 +2159,36 @@ overflow:hidden;
 
 <body>
 
-<!-- LIGNE DÉFILANTE -->
-<div class="institution-bar">
-  <div class="flag-box">
-    <img src="images/drapeau rdc.png" alt="Drapeau RDC">
-  </div>
-  <div class="scroll-container">
-    <div class="scroll-text">
-      <div class="text-group">
-        <span class="val1">République Démocratique du Congo</span>
-        <span class="separator"> • </span>
-        <span class="val2">Gouvernement National</span>
-        <span class="separator"> • </span>
-        <span class="val3">Ministère de l'Intérieur, Sécurité, Décentralisation & Affaires Coutumières</span>
-        <span class="separator"> • </span>
-        <span class="val4">Inspection Générale de la Territoriale</span>
-      </div>
-      <div class="text-group">
-        <span class="val1">République Démocratique du Congo</span>
-        <span class="separator"> • </span>
-        <span class="val2">Gouvernement National</span>
-        <span class="separator"> • </span>
-        <span class="val3">Ministère de l'Intérieur, Sécurité, Décentralisation & Affaires Coutumières</span>
-        <span class="separator"> • </span>
-        <span class="val4">Inspection Générale de la Territoriale</span>
+<header class="top-header">
+  <div class="header-left">
+    <img src="images/logo2.png" alt="Logo RDC" class="logo">
+
+    <!-- BARRE TRICOLORE -->
+    <div class="flag-bar"></div>
+
+    <div class="header-text">
+      <div class="title">MINISTÈRE DE L'INTÉRIEUR</div>
+      <div class="subtitle">
+        SÉCURITÉ, DÉCENTRALISATION ET AFFAIRES COUTUMIÈRES
       </div>
     </div>
   </div>
-</div>
+
+  <div class="header-right">
+    <div class="contact-item">
+      <span class="icon">📞</span>
+      <span>+243 82 20 80 469</span>
+    </div>
+
+    <div class="contact-item">
+      <span class="icon">📍</span>
+      <span>
+        Immeuble Sémois - Boulevard Triomphal<br>
+        Royal Kinshasa - Gombe
+      </span>
+    </div>
+  </div>
+</header>
 
 <nav class="navbar" id="main-menu"> 
 
