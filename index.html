@@ -2143,12 +2143,14 @@ overflow:hidden;
 }
 
 /* =========================
-   BARRE
+   BARRE alignement des 2 boutons 
 ========================= */
 .saisine-bar {
   width: 100%;
   margin: 40px 0;
   padding: 15px;
+  flex-direction: column;
+  gap: 12px;
 
   display: flex;
   justify-content: center;
@@ -2235,6 +2237,16 @@ overflow:hidden;
   background: linear-gradient(135deg, #0055aa, #007fff);
 }
 
+/* bouton secondaire */
+.secondary-btn {
+  background: linear-gradient(135deg, #ce1126, #ff4d4d); /* 🔴 rouge institutionnel */
+}
+
+/* hover bouton secondaire */
+.secondary-btn:hover {
+  background: linear-gradient(135deg, #ff4d4d, #ff6666);
+}
+
 /* =========================
    MOBILE
 ========================= */
@@ -2304,7 +2316,7 @@ overflow:hidden;
   <div class="menu-right">
     <a href="#actualite">Actualités</a>
     <a href="document.html">Documents</a>
-    <a href="#">Missions</a>
+    <a href="#mission">Missions</a>
     <a href="#">Rapports</a>
     <a href="#saisine">Saisissez-nous</a>
   </div>
@@ -2331,7 +2343,7 @@ overflow:hidden;
   <a href="index.html"><i class="fa-solid fa-building-columns"></i> Accueil</a>
   <a href="#actualite"> 📰 Actualités</a>
   <a href="document.html">🗂️ Documents officiels</a>
-  <a href="mission.html">🎯 Missions</a>
+  <a href="#mission">🎯 Missions</a>
   <a href="rapport.html">📊 Rapports</a>
   <div class="submenu-container">
     <button class="submenu-btn">📖 Présentation de l'IGTER<i class="fa-solid fa-caret-down"></i></button>
@@ -2506,10 +2518,18 @@ overflow:hidden;
 </section>
 
 <div class="saisine-bar reveal-on-scroll" id="saisine">
+
   <a href="mode_saisine.html" class="saisine-btn">
     <i class="fas fa-paper-plane"></i>
-    Saisissez l’IGTER pour toute question en Administration Territoriale en RDC. 
+    Saisissez l’IGTER pour toute question en Administration Territoriale en RDC.
   </a>
+
+  <!-- NOUVEAU BOUTON -->
+  <a href="mission.html" class="saisine-btn secondary-btn" id="mission">
+  <i class="fas fa-chart-bar"></i>
+  Voir nos missions récentes
+</a>
+
 </div>
 
 <!-- =========================
