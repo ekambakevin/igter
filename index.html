@@ -151,25 +151,74 @@ height:auto;
   margin-top: 3px;
 }
 
-/* PARTIE DROITE */
-.header-right {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  text-align: left;
-}
+/* =========================
+   DESKTOP UNIQUEMENT
+========================= */
+@media (min-width: 769px) {
 
-/* CONTACT */
-.contact-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  font-size: 14px;
-  color: #555;
-}
+  .header-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 15px;
+  }
 
-.icon {
-  font-size: 18px;
+  /* ITEMS */
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #003366;
+    font-weight: 500;
+  }
+
+  /* SEPARATEUR */
+  .contact-separator {
+    color: #999;
+    font-size: 18px;
+    margin: 0 5px;
+  }
+
+  /* ICÔNES */
+  .contact-item i {
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: linear-gradient(135deg, #003366, #0055aa);
+    color: white;
+
+    font-size: 14px;
+
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+
+    transition: all 0.3s ease;
+  }
+
+  /* HOVER ANIMATION 🔥 */
+  .contact-item:hover i {
+    transform: translateY(-3px) scale(1.1);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+    background: linear-gradient(135deg, #0055aa, #007fff);
+  }
+
+  /* EMAIL */
+  .contact-item a {
+    color: #003366;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+
+  .contact-item a:hover {
+    text-decoration: underline;
+    color: #0055aa;
+  }
+
 }
 
 /* RESPONSIVE */
@@ -2201,20 +2250,23 @@ overflow:hidden;
       </div>
     </div>
   </div>
+<div class="header-right">
 
-  <div class="header-right">
-    <div class="contact-item">
-      <span class="icon">📞</span>
-      <span>+243 82 20 80 469</span>
-    </div>
+  <div class="contact-item">
+    <i class="fas fa-phone"></i>
+    <span>+243 82 20 80 469</span>
+  </div>
 
-    <div class="contact-item">
-      <span class="icon">📍</span>
-      <span>
-        Immeuble Sémois - Boulevard Triomphal<br>
-        Royal Kinshasa - Gombe
-      </span>
-    </div>
+  <div class="contact-separator">|</div>
+
+  <div class="contact-item">
+    <i class="fas fa-envelope"></i>
+    <span>
+      <a href="mailto:contact@igter.cd">contact@igter.cd</a>
+    </span>
+  </div>
+
+</div>
   </div>
 </header>
 
