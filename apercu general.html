@@ -498,57 +498,70 @@ font-weight:bold;
 height:28px;
 }
 
-/* conteneur */
-.menu-item {
-  position: relative;
+/* =========================
+   SOUS-MENU DESKTOP
+========================= */
+@media (min-width: 769px) {
+
+  .menu-item-with-submenu {
+    position: relative;
+  }
+
+  .menu-item-with-submenu a {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  /* SOUS-MENU */
+  .submenu-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    background: white;
+    min-width: 260px;
+
+    border-radius: 6px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+
+    display: none;
+    flex-direction: column;
+
+    padding: 10px 0;
+    z-index: 999;
+  }
+
+  /* liens */
+  .menu-item-with-submenu .submenu-content a {
+  color: #222;
 }
-
-/* sous-menu caché */
-.submenu-content {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-
-  background: white;
-  min-width: 260px;
-
-  border-radius: 6px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-
-  padding: 10px 0;
-  z-index: 999;
-}
-
-/* liens */
-.menu-item .submenu-content a {
-  color: #000000;
-}
-
-.submenu-content a {
-  display: block;
+  .submenu-content a {
   padding: 10px 15px;
-  color: #000000; /* noir */
+
   text-decoration: none;
   font-size: 14px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
 
   transition: 0.3s;
 }
 
-/* hover */
-.submenu-content a:hover {
-  background: #f4f6f9;
-  padding-left: 20px;
-}
+  .submenu-content a:hover {
+    background: #f4f6f9;
+    padding-left: 20px;
+  }
 
-/* icônes */
-.submenu-content i {
-  margin-right: 8px;
-  color: #0055aa;
+  /* ACTIF */
+  .submenu-content.show {
+    display: flex;
+  }
+
 }
 
 /* SECTION PRÉSENTATION IGTER */
-
 .presentation-igter{
 padding:50px 8%;          /* espace vertical + horizontal */
 background:#f9fafb;       /* fond clair, pas agressif */
@@ -1166,24 +1179,18 @@ scroll-behavior:smooth;
   <!-- MENU DESKTOP -->
   <div class="menu-right">
     <a href="index.html">Accueil</a>
-    <!-- MENU AVEC SOUS-MENU -->
-  <div class="menu-item has-submenu">
+     <!-- MENU AVEC SOUS-MENU -->
+  <div class="menu-item-with-submenu">
+
     <a href="javascript:void(0)" onclick="toggleSubmenu()">Organisation</a>
 
     <div class="submenu-content" id="submenuOrg">
-      <a href="administration_centrale.html">
-        <i class="fa-solid fa-building"></i> Administration Centrale (1)
-      </a>
-      <a href="pool.html">
-        <i class="fa-solid fa-layer-group"></i> Pool (8)
-      </a>
-      <a href="inspection_provinciale.html">
-        <i class="fa-solid fa-map-location-dot"></i> Inspections Provinciales (26)
-      </a>
-      <a href="inspection_provinciale.html">
-        <i class="fa-solid fa-satellite-dish"></i> ± 2 Antennes/IPTER
-      </a>
+      <a href="administration_centrale.html"><i class="fa-solid fa-building"></i> Administration Centrale (1)</a>
+      <a href="pool.html"><i class="fa-solid fa-layer-group"></i> Pool (8)</a>
+      <a href="inspection_provinciale.html"><i class="fa-solid fa-map-location-dot"></i> Inspections Provinciales (26)</a>
+      <a href="inspection_provinciale.html"><i class="fa-solid fa-satellite-dish"></i> ± 2 Antennes/IPTER</a>
     </div>
+
   </div>
     <a href="#">Cadre légal</a>
     <a href="#">Personnel</a>
@@ -1520,21 +1527,16 @@ window.addEventListener('scroll', revealOnScroll);
 <script>
 function toggleSubmenu() {
   const menu = document.getElementById("submenuOrg");
-
-  if (menu.style.display === "block") {
-    menu.style.display = "none";
-  } else {
-    menu.style.display = "block";
-  }
+  menu.classList.toggle("show");
 }
 
-/* fermer si clic ailleurs */
+/* fermer si on clique ailleurs */
 document.addEventListener("click", function(e) {
   const submenu = document.getElementById("submenuOrg");
-  const trigger = document.querySelector(".has-submenu");
+  const trigger = document.querySelector(".menu-item-with-submenu");
 
   if (!trigger.contains(e.target)) {
-    submenu.style.display = "none";
+    submenu.classList.remove("show");
   }
 });
 </script>
