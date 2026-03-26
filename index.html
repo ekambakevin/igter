@@ -143,11 +143,15 @@ height:auto;
   font-size: 12px;
   font-weight: bold;
   color: #000;
+  font-weight: 500;
+  letter-spacing: 0.5px;
 }
 
 .header-text .subtitle {
   font-size: 13px;
   color: #000;
+  margin-top: 3px;
+  font-weight: 600;
   margin-top: 3px;
 }
 
@@ -157,7 +161,9 @@ height:auto;
 .header-text {
   font-family: "Times New Roman", Times, serif;
   font-size: 12px;
+  text-transform: uppercase;
 }
+
 /* =========================
    DESKTOP UNIQUEMENT
 ========================= */
@@ -1057,6 +1063,13 @@ cursor:pointer;
 
 .newsletter-form button:hover{
 background:#e0a800;
+}
+
+.newsletter-text {
+  font-size: 13px;
+  color: #ccc;
+  margin: 5px 0 12px;
+  line-height: 1.4;
 }
 
 .toast {
@@ -2263,7 +2276,7 @@ overflow:hidden;
   </div>
 <div class="header-right">
 
-  <div class="contact-item">
+  <div class="contact-item" id="top-contact">
     <i class="fas fa-phone"></i>
     <span>+243 82 20 80 469</span>
   </div>
@@ -2675,15 +2688,16 @@ Ministère de l'Intérieur
 <!-- Colonne 5 : Newsletter -->
 <div class="footer-col">
 
-<h3>Newsletter</h3>
+  <h3>Newsletter</h3>
 
-<form id="newsletterForm" class="newsletter-form">
+  <p class="newsletter-text">
+    Inscrivez-vous pour ne rien rater de nos nouvelles.
+  </p><br>
 
-<input type="email" placeholder="Votre adresse email">
-
-<button type="submit">S'abonner</button>
-
-</form>
+  <form id="newsletterForm" class="newsletter-form">
+    <input type="email" placeholder="Votre adresse email">
+    <button type="submit">S'abonner</button>
+  </form>
 
 </div></div>
 
