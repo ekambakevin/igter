@@ -2057,7 +2057,21 @@ overflow:hidden;
 }
 
 /* =========================
-   BARRE NON FIXE (SOUS SECTION)
+   ANIMATION SCROLL (WOW)
+========================= */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+  transition: all 0.8s ease;
+}
+
+.reveal-on-scroll.active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* =========================
+   BARRE
 ========================= */
 .saisine-bar {
   width: 100%;
@@ -2068,13 +2082,11 @@ overflow:hidden;
   justify-content: center;
   align-items: center;
 
-  /* glass moderne */
   background: rgba(0, 51, 102, 0.08);
   backdrop-filter: blur(8px);
 
   border-radius: 10px;
 
-  /* ligne tricolore RDC */
   border-top: 4px solid;
   border-image: linear-gradient(to right, #007fff, #ffcc00, #ce1126) 1;
 
@@ -2082,7 +2094,7 @@ overflow:hidden;
   overflow: hidden;
 }
 
-/* effet lumière subtile */
+/* Effet lumière */
 .saisine-bar::before {
   content: "";
   position: absolute;
@@ -2098,15 +2110,16 @@ overflow:hidden;
     transparent
   );
 
-  animation: shineMove 5s linear infinite;
+  animation: shineMove 6s linear infinite;
 }
 
 @keyframes shineMove {
   0% { left: -100%; }
   100% { left: 100%; }
 }
+
 /* =========================
-   BOUTON STYLE GOUVERNEMENT
+   BOUTON
 ========================= */
 .saisine-btn {
   color: white;
@@ -2119,23 +2132,31 @@ overflow:hidden;
 
   background: linear-gradient(135deg, #003366, #0055aa);
 
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
   position: relative;
   z-index: 2;
 
   transition: all 0.3s ease;
 
-  /* pulse moderne */
   animation: pulseGlow 2.5s infinite;
 }
 
-/* glow amélioré */
+/* Icône */
+.saisine-btn i {
+  font-size: 16px;
+}
+
+/* Pulse */
 @keyframes pulseGlow {
   0% { box-shadow: 0 0 0 rgba(0,85,170,0.3); }
   50% { box-shadow: 0 0 20px rgba(0,85,170,0.6); }
   100% { box-shadow: 0 0 0 rgba(0,85,170,0.3); }
 }
 
-/* hover premium */
+/* Hover */
 .saisine-btn:hover {
   animation: none;
   transform: translateY(-2px) scale(1.03);
@@ -2408,9 +2429,10 @@ overflow:hidden;
 
 </section>
 
-<div class="saisine-bar" id="saisine">
+<div class="saisine-bar reveal-on-scroll" id="saisine">
   <a href="mode_saisine.html" class="saisine-btn">
-    Saisissez-nous en matière d'administration territoriale. Allez-y →
+    <i class="fas fa-paper-plane"></i>
+    Saisissez l’IGTER pour toute question en Administration Territoriale en RDC. 
   </a>
 </div>
 
@@ -2865,6 +2887,23 @@ slider.addEventListener('touchend', e => {
 });
 
 });
+</script>
+<script>
+const revealElements = document.querySelectorAll('.reveal-on-scroll');
+
+function revealOnScroll() {
+  const windowHeight = window.innerHeight;
+
+  revealElements.forEach(el => {
+    const elementTop = el.getBoundingClientRect().top;
+
+    if (elementTop < windowHeight - 100) {
+      el.classList.add('active');
+    }
+  });
+}
+
+window.addEventListener('scroll', revealOnScroll);
 </script>
 </body>
 </html>
