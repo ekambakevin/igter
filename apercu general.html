@@ -1182,7 +1182,7 @@ scroll-behavior:smooth;
      <!-- MENU AVEC SOUS-MENU -->
   <div class="menu-item-with-submenu">
 
-    <a href="javascript:void(0)" onclick="toggleSubmenu()">Organisation</a>
+    <a href="javascript:void(0)" onclick="toggleSubmenu()">Organisation <i class="fa-solid fa-caret-down"></i></a>
 
     <div class="submenu-content" id="submenuOrg">
       <a href="administration_centrale.html"><i class="fa-solid fa-building"></i> Administration Centrale (1)</a>
@@ -1192,8 +1192,23 @@ scroll-behavior:smooth;
     </div>
 
   </div>
-    <a href="#">Cadre légal</a>
-    <a href="#">Personnel</a>
+  <div class="menu-item-with-submenu">
+
+  <a href="javascript:void(0)" onclick="toggleSubmenuLegal()">
+    Cadre légal <i class="fa-solid fa-caret-down"></i>
+  </a>
+
+  <div class="submenu-content" id="submenuLegal">
+    <a href="pdf/DECRET.pdf" target="_blank">
+      <i class="fa-solid fa-file-pdf"></i> Décret de création IGTER
+    </a>
+    <a href="pdf/CADRE ORGANIQUE.pdf" target="_blank">
+      <i class="fa-solid fa-file-pdf"></i> Cadre organique
+    </a>
+  </div>
+
+</div>
+    <a href="personnel.html">Personnel</a>
     <a href="#contact">Contacts</a>
   </div>
 
@@ -1538,6 +1553,45 @@ document.addEventListener("click", function(e) {
   if (!trigger.contains(e.target)) {
     submenu.classList.remove("show");
   }
+});
+
+function toggleSubmenu() {
+  const menu = document.getElementById("submenuOrg");
+  menu.classList.toggle("show");
+
+  // fermer l'autre
+  document.getElementById("submenuLegal").classList.remove("show");
+}
+
+function toggleSubmenuLegal() {
+  const menu = document.getElementById("submenuLegal");
+  menu.classList.toggle("show");
+
+  // fermer l'autre
+  document.getElementById("submenuOrg").classList.remove("show");
+}
+
+/* fermer si clic ailleurs */
+document.addEventListener("click", function(e) {
+
+  const org = document.getElementById("submenuOrg");
+  const legal = document.getElementById("submenuLegal");
+
+  const triggers = document.querySelectorAll(".menu-item-with-submenu");
+
+  let clickedInside = false;
+
+  triggers.forEach(trigger => {
+    if (trigger.contains(e.target)) {
+      clickedInside = true;
+    }
+  });
+
+  if (!clickedInside) {
+    org.classList.remove("show");
+    legal.classList.remove("show");
+  }
+
 });
 </script>
 </body>
