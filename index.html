@@ -3282,14 +3282,18 @@ window.onclick = function(e) {
 
 function openRapportMobile() {
 
-  // fermer le menu latéral d'abord
+  // fermer menu latéral
   if (typeof closeMenu === "function") {
     closeMenu();
   }
 
-  // ouvrir le modal
-  const modal = document.getElementById("rapportModal");
-  modal.style.display = "flex";
+  // 🔥 attendre que le menu se ferme AVANT d'ouvrir le modal
+  setTimeout(() => {
+    const modal = document.getElementById("rapportModal");
+    if (modal) {
+      modal.style.display = "flex";
+    }
+  }, 300); // délai important
 }
 </script>
 </body>
