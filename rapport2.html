@@ -1,0 +1,1492 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inspection Générale de la Territoriale</title>
+<link rel="icon" type="image/png" href="images/logo.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+<style>
+
+/* =========================
+STYLE GENERAL
+========================= */
+
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:#f4f6f9;
+line-height:1.5;
+}
+
+/* ------------------ BARRE SUPERIEURE ------------------ */
+.top-menu{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:10px 20px;
+  background:#003366;
+  color:white;
+  font-family:Arial, sans-serif;
+  box-shadow:0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Côté gauche */
+.menu-left{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.site-title{
+  font-family:"Montserrat", sans-serif;
+  font-size:18px;
+  font-weight:700;
+  color:#ffffff;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  text-shadow:0 1px 3px rgba(0,0,0,0.3);
+}
+
+/* Côté droit */
+.menu-right{
+  display:flex;
+  align-items:center;
+  gap:20px;
+  font-size:14px;
+}
+
+.menu-right a{
+  color:white;
+  text-decoration:none;
+  transition:0.2s;
+}
+
+.menu-right a:hover{
+  text-decoration:underline;
+}
+
+.menu-icon{
+font-size:32px;
+cursor:pointer;
+margin-right:15px;
+color:white;
+transition:0.3s;
+}
+
+.menu-icon:hover{
+color:#f7d116; /* jaune institutionnel */
+}
+
+/* LOGO EN HAUT DU MENU */
+.menu-logo{
+text-align:center;
+margin-bottom:20px;
+}
+
+.menu-logo img{
+width:80px; /* taille réduite du logo */
+height:auto;
+}
+
+.menu-left{
+  display:flex;
+  align-items:center;
+  gap:15px; /* espace entre l'icône et le titre */
+}
+
+.menu-right{
+  display:flex;
+  align-items:center;
+  gap:20px; /* espace entre téléphone et email */
+  font-size:14px;
+}
+
+/* Optionnel : changer style des liens */
+.menu-right .email{
+  text-decoration:none;
+  color:white;
+}
+
+/* HEADER GLOBAL */
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f4f4f4;
+  padding: 15px 30px;
+  border-bottom: 1px solid #ddd;
+  font-family: Arial, sans-serif;
+}
+
+/* PARTIE GAUCHE */
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 70px;
+  margin-right: 10px;
+}
+
+/* TEXTE */
+.header-text .title {
+  font-size: 12px;
+  font-weight: bold;
+  color: #000;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.header-text .subtitle {
+  font-size: 13px;
+  color: #000;
+  margin-top: 3px;
+  font-weight: 600;
+  margin-top: 3px;
+}
+
+/* =========================
+   HEADER TEXTE STYLE OFFICIEL
+========================= */
+.header-text {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+/* =========================
+   DESKTOP UNIQUEMENT
+========================= */
+@media (min-width: 769px) {
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 15px;
+  }
+
+  /* ITEMS */
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #003366;
+    font-weight: 500;
+  }
+
+  /* SEPARATEUR */
+  .contact-separator {
+    color: #999;
+    font-size: 18px;
+    margin: 0 5px;
+  }
+
+  /* ICÔNES */
+  .contact-item i {
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: linear-gradient(135deg, #003366, #0055aa);
+    color: white;
+
+    font-size: 14px;
+
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+
+    transition: all 0.3s ease;
+  }
+
+  /* HOVER ANIMATION 🔥 */
+  .contact-item:hover i {
+    transform: translateY(-3px) scale(1.1);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+    background: linear-gradient(135deg, #0055aa, #007fff);
+  }
+
+  /* EMAIL */
+  .contact-item a {
+    color: #003366;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+
+  .contact-item a:hover {
+    text-decoration: underline;
+    color: #0055aa;
+  }
+
+.contact-item:hover span {
+  letter-spacing: 0.3px;
+}
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .top-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 13px;
+  }
+
+  .header-right {
+    width: 50%;
+  }
+
+  .logo {
+    height: 50px;
+  }
+}
+
+/* BARRE TRICOLORE */
+.flag-bar {
+  width: 4px;
+  height: 60px;
+  margin: 0 15px;
+  background: linear-gradient(
+    to bottom,
+    #007fff 33%,   /* bleu */
+    #fcd116 33%,   /* jaune */
+    #fcd116 66%,
+    #ce1126 66%    /* rouge */
+  );
+}
+
+/* Cacher les contacts sur mobile uniquement */
+@media (max-width: 768px) {
+  .header-right {
+    display: none;
+  }
+}
+
+/* ------------------ MENU LATERAL ------------------ */
+.side-menu{
+height:100%;
+width:0;
+position:fixed;
+top:0;
+left:0;
+background:white; /* fond blanc */
+overflow-x:hidden;
+transition:0.4s;
+padding-top:20px;
+z-index:999;
+box-shadow:2px 0 8px rgba(0,0,0,0.2);
+}
+
+/* BOUTON FERMER */
+.close-btn{
+position:absolute;
+top:10px;
+right:20px;
+font-size:25px;
+color:#003366;
+text-decoration:none;
+}
+
+/* TEXTE IGTER EN HAUT DU MENU */
+.menu-title{
+text-align:center;
+color:#003366;
+font-family:"Yu Gothic UI";
+font-weight:bold;
+font-size:18px;
+margin-bottom:20px;
+}
+
+/* LIENS PRINCIPAUX */
+.side-menu a{
+padding:12px 25px;
+text-decoration:none;
+display:block;
+font-family:"Yu Gothic UI";
+font-size:13px;
+color:#003366;
+transition:0.3s;
+}
+
+.side-menu a:hover{
+background:#f0f0f0;
+padding-left:35px;
+border-left:3px solid #003366;
+}
+
+/* SOUS-MENU COULISSANT */
+.submenu-container{
+font-family:"Yu Gothic UI";
+}
+
+.submenu-btn{
+padding:12px 25px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+color:#003366;
+font-size:13px;
+background:none;
+border:none;
+width:100%;
+text-align:left;
+cursor:pointer;
+transition:0.3s;
+}
+
+.submenu-btn:hover{
+background:#f0f0f0;
+padding-left:35px;
+border-left:3px solid #003366;
+}
+
+.submenu-content{
+display:none;
+flex-direction:column;
+background:#f9f9f9;
+}
+
+.submenu-content a{
+padding:10px 40px;
+font-size:13px;
+color:#003366;
+}
+
+.submenu-content a:hover{
+background:#e6e6e6;
+padding-left:50px;
+border-left:3px solid #003366;
+}
+
+/* Disposition flexible pour navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between; /* espace entre gauche et droite */
+  align-items: center;
+  padding: 12px 5%;
+  background: #003366;
+  border-top: 1px solid rgba(255,255,255,0.2);
+border-bottom: 5px solid;
+border-image: linear-gradient(
+  to right,
+  #007fff 0%,
+  #007fff 33%,
+  #f7d116 33%,
+  #f7d116 66%,
+  #ce1126 66%,
+  #ce1126 100%
+) 1;
+}
+
+/* Style des liens */
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 6px 10px;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+.navbar a:hover {
+  background: rgba(255,255,255,0.12);
+}
+
+/* Flex pour les zones gauche et droite */
+.menu-left, .menu-right {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* espace entre les liens */
+}
+
+/* ========================= */
+/* BARRE MENU MOBILE */
+/* ========================= */
+
+.mobile-menu-bar{
+display:none;
+background:#003366;
+padding:10px 20px;
+justify-content:flex-end;
+}
+
+/* icone */
+
+.mobile-menu-bar .menu-icon{
+font-size:22px;
+color:white;
+cursor:pointer;
+}
+
+/* =============================== */
+/* SLIDER MOBILE BARRE SUPERIEURE */
+/* =============================== */
+
+.mobile-title-slider{
+display:none;
+width:100%;
+height:40px;
+overflow:hidden;
+text-align:center;
+color:#003366;
+font-weight:600;
+}
+
+.mobile-title-slider img{
+height:32px;
+}
+
+/* conteneur des slides */
+
+.mobile-title-slider .slides{
+display:flex;
+flex-direction:column;
+animation:slideVertical 9s infinite;
+}
+
+/* slide */
+
+.mobile-title-slider .slide{
+height:40px;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+
+/* animation */
+
+@keyframes slideVertical{
+
+0%{transform:translateY(0);}
+30%{transform:translateY(0);}
+
+35%{transform:translateY(-40px);}
+65%{transform:translateY(-40px);}
+
+70%{transform:translateY(-80px);}
+95%{transform:translateY(-80px);}
+
+100%{transform:translateY(0);}
+
+}
+
+/* LOGO + TITRE ORDINATEUR */
+
+.site-title{
+display:flex;
+align-items:center;
+gap:8px;
+font-weight:bold;
+}
+
+.logo-desktop{
+height:28px;
+}
+
+/* =========================
+PAGE EN CONSTRUCTION
+========================= */
+
+.construction-section{
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:60vh;
+background:#f4f6f9;
+padding:40px 20px;
+}
+
+.construction-box{
+background:white;
+padding:40px;
+text-align:center;
+border-radius:10px;
+max-width:500px;
+box-shadow:0 8px 25px rgba(0,0,0,0.1);
+}
+
+.construction-icon{
+font-size:50px;
+color:#f2b705;
+margin-bottom:15px;
+}
+
+.construction-box h1{
+font-size:26px;
+color:#003366;
+margin-bottom:10px;
+}
+
+.construction-box h2{
+font-size:26px;
+color:#003366;
+margin-bottom:10px;
+}
+
+.construction-box p{
+font-size:15px;
+color:#555;
+margin-bottom:25px;
+line-height:1.6;
+}
+
+/* bouton retour */
+
+.btn-retour{
+display:inline-block;
+padding:10px 20px;
+background:#003366;
+color:white;
+text-decoration:none;
+border-radius:6px;
+font-size:14px;
+font-weight:600;
+transition:0.3s;
+}
+
+.btn-retour:hover{
+background:#0052a3;
+transform:translateY(-2px);
+}
+
+/* =========================
+FOOTER INSTITUTIONNEL AVANCE
+========================= */
+
+footer {
+  background: #00264d;
+  color: white;
+  padding: 20px 7% 15px; /* réduit le padding vertical */
+  font-size: 13px;
+
+  /* Ligne tricolore en haut */
+  border-top: 5px solid;
+  border-image: linear-gradient(
+    to right,
+    #007fff 0%,
+    #007fff 33%,
+    #f7d116 33%,
+    #f7d116 66%,
+    #ce1126 66%,
+    #ce1126 100%
+  ) 1;
+
+  text-align: center;
+}
+
+/* CONTAINER */
+.footer-container {
+  max-width: 1300px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px; /* réduit l'écart entre colonnes */
+  text-align: center;
+}
+
+/* COLONNES */
+.footer-col {
+  max-width: 280px; /* réduit légèrement la largeur */
+  flex: 1;
+  min-width: 180px;
+}
+
+/* LOGO + DESCRIPTION */
+.footer-logo {
+  display: flex;
+  justify-content: center; /* centre le logo */
+  align-items: center;
+  gap: 8px; /* réduit l'espace entre logo et texte */
+  margin-bottom: 10px;
+}
+
+.footer-logo img {
+  width: 35px; /* légèrement plus petit */
+  height: 35px;
+}
+
+.footer-logo span {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* TITRES COLONNES */
+.footer-col h3 {
+  color: white;
+  margin-bottom: 10px; /* réduit marge */
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.footer-col h3::after {
+  width: 30px; /* ligne sous titre plus courte */
+  height: 2px;
+  margin-top: 4px;
+}
+
+/* TEXTE */
+.footer-col p {
+  font-size: 12px;
+  line-height: 1.4; /* réduit l'interligne */
+  opacity: 0.9;
+  margin: 2px 0; /* réduit marge verticale */
+}
+
+/* LIENS */
+.footer-col a {
+  display: flex;
+  align-items: center;
+  gap: 6px; /* réduit espace icone/texte */
+  color: white;
+  text-decoration: none;
+  margin-bottom: 6px; /* réduit marge entre liens */
+  font-size: 13px; /* légèrement plus petit */
+}
+
+.footer-col a:hover{
+color:#f1c40f;
+transform:translateX(4px);
+}
+
+/* ICONES */
+
+.footer-col i{
+margin-right:6px;
+color:#f1c40f;
+}
+
+.footer-col a i {
+    font-size:16px;
+    transition: all 0.3s ease;
+}
+
+/* HOVER : chaque réseau social avec sa couleur */
+.footer-col a:hover i,
+.footer-col a:hover {
+    font-weight:600;
+}
+
+.footer-col a[href*="facebook"]:hover {
+    color:#1877f2; /* bleu Facebook */
+}
+
+.footer-col a[href*="x.com"]:hover {
+    color:#1da1f2; /* bleu Twitter/X */
+}
+
+.footer-col a[href*="youtube"]:hover {
+    color:#ff0000; /* rouge Youtube */
+}
+
+.footer-col a[href*="instagram"]:hover {
+    color:#c13584; /* rose Instagram */
+}
+
+.footer-col a[href*="wa.me"]:hover {
+    color:#25d366; /* vert WhatsApp */
+}
+
+/* CARTE */
+
+.footer-col iframe{
+width:100%;
+height:100px;
+border:none;
+border-radius:6px;
+margin-top:5px;
+}
+
+/* BAS DU FOOTER */
+.footer-bottom {
+  text-align: center;
+  margin-top: 15px; /* réduit espace avec le reste */
+  padding-top: 5px; /* réduit padding interne */
+  border-top: 1px solid rgba(255,255,255,0.2);
+  font-size: 11px;
+  opacity: 0.8;
+}
+
+/* NAVIGATION FOOTER */
+.footer-nav {
+  text-align: center;
+  margin-top: 10px; /* réduit espace */
+  border-top: 1px solid rgba(255,255,255,0.2);
+  padding-top: 5px; /* réduit padding */
+}
+
+.footer-nav a {
+  margin: 0 8px; /* réduit espace horizontal */
+  font-size: 12px;
+  color: white;
+}
+
+.footer-nav a:hover{
+color:#f1c40f;
+}
+
+/* BOUTON RETOUR HAUT */
+
+#backToTop{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#f1c40f;
+color:#003366;
+border:none;
+width:40px;
+height:40px;
+border-radius:50%;
+font-size:18px;
+cursor:pointer;
+display:none;
+box-shadow:0 4px 10px rgba(0,0,0,0.3);
+transition:0.3s;
+}
+
+#backToTop:hover{
+background:white;
+}
+
+footer{
+text-align:center;
+}
+
+.footer-container{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:40px;
+text-align:center;
+}
+
+.footer-col{
+max-width:300px;
+}
+
+.footer-logo{
+justify-content:center;
+}
+
+.social-icons{
+justify-content:center;
+}
+
+.footer-nav{
+text-align:center;
+margin-top:20px;
+}
+
+.footer-nav a{
+margin:0 12px;
+}
+
+.footer-col a{
+color:white;
+text-decoration:none;
+}
+
+.footer-col a:hover{
+color:#f1c40f;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+/* ======================= */
+/* FORMULAIRE FOOTER */
+/* ======================= */
+
+.footer-form textarea{
+width:100%;
+height:70px;
+padding:8px;
+border-radius:4px;
+border:none;
+font-size:12px;
+font-family:"Yu Gothic UI";
+resize:none;
+margin-bottom:8px;
+}
+
+.footer-form button{
+width:100%;
+padding:8px;
+background:#f2b705;
+border:none;
+color:#003366;
+font-weight:bold;
+border-radius:4px;
+cursor:pointer;
+font-size:12px;
+}
+
+.footer-form button:hover{
+background:#e0a800;
+}
+
+.newsletter-form input{
+width:100%;
+padding:8px;
+border:none;
+border-radius:4px;
+margin-bottom:8px;
+font-size:12px;
+}
+
+.newsletter-form button{
+width:100%;
+padding:8px;
+background:#f2b705;
+border:none;
+border-radius:4px;
+color:#003366;
+font-weight:bold;
+cursor:pointer;
+}
+
+.newsletter-form button:hover{
+background:#e0a800;
+}
+
+.newsletter-text {
+  font-size: 13px;
+  color: #ccc;
+  margin: 5px 0 12px;
+  line-height: 1.4;
+}
+
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  min-width: 280px;
+  max-width: 320px;
+  background: #1e3a8a;
+  color: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.4s ease;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.toast-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+
+#toast-icon {
+  font-size: 18px;
+}
+
+/* Barre de progression */
+.toast-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  background: rgba(255,255,255,0.3);
+}
+
+.toast-progress::before {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: #fff;
+  animation: progress 4s linear forwards;
+}
+
+@keyframes progress {
+  from { width: 100%; }
+  to { width: 0%; }
+}
+
+/* Variantes */
+.toast.info { background: #1e3a8a; }
+.toast.success { background: #16a34a; }
+.toast.error { background: #dc2626; }
+
+/* NAVBAR STRUCTURE */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 5%;
+  background: #003366;
+}
+
+/* MENU LEFT */
+.menu-left a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* MENU RIGHT (desktop) */
+.menu-right {
+  display: flex;
+  gap: 20px;
+}
+
+.menu-right a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+/* MOBILE MENU ICON */
+.mobile-menu-bar {
+  display: none;
+}
+
+.menu-icon {
+  font-size: 26px;
+  color: white;
+  cursor: pointer;
+}
+
+/* =========================
+   RESPONSIVE MOBILE
+========================= */
+@media (max-width: 768px) {
+
+  /* cacher menu desktop */
+  .menu-right {
+    display: none;
+  }
+
+  /* afficher icône mobile */
+  .mobile-menu-bar {
+    display: block;
+  }
+
+  /* alignement horizontal propre */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .menu-left {
+    flex: 1;
+  }
+
+}
+
+/* =========================
+   LIGNE TRICOLORE MOBILE FIX
+========================= */
+@media (max-width: 768px) {
+
+  .title-with-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .title-bar {
+    width: 60px;
+    height: 4px;
+    margin-bottom: 10px;
+
+    /* TRICOLORE PROPRE */
+    background: linear-gradient(
+      to bottom,
+      #007fff 33%,   /* bleu */
+      #ffcc00 33% 66%, /* jaune */
+      #ce1126 66%   /* rouge */
+    );
+
+    border-radius: 2px;
+  }
+
+}
+
+/* transition plus fluide */
+.news-item {
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.news-item.active {
+  transform: translateX(0);
+}
+
+.news-item {
+  transform: translateX(20px);
+}
+
+/* ======================= */
+/* FORMULAIRE FOOTER */
+/* ======================= */
+
+.footer-form textarea{
+width:100%;
+height:70px;
+padding:8px;
+border-radius:4px;
+border:none;
+font-size:12px;
+font-family:"Yu Gothic UI";
+resize:none;
+margin-bottom:8px;
+}
+
+.footer-form button{
+width:100%;
+padding:8px;
+background:#f2b705;
+border:none;
+color:#003366;
+font-weight:bold;
+border-radius:4px;
+cursor:pointer;
+font-size:12px;
+}
+
+.footer-form button:hover{
+background:#e0a800;
+}
+
+.newsletter-form input{
+width:100%;
+padding:8px;
+border:none;
+border-radius:4px;
+margin-bottom:8px;
+font-size:12px;
+}
+
+.newsletter-form button{
+width:100%;
+padding:8px;
+background:#f2b705;
+border:none;
+border-radius:4px;
+color:#003366;
+font-weight:bold;
+cursor:pointer;
+}
+
+.newsletter-form button:hover{
+background:#e0a800;
+}
+
+html{
+scroll-behavior:smooth;
+}
+</style>
+
+</head>
+
+<body>
+
+<header class="top-header">
+  <div class="header-left">
+    <img src="images/logo2.png" alt="Logo RDC" class="logo">
+
+    <!-- BARRE TRICOLORE -->
+    <div class="flag-bar"></div>
+
+    <div class="header-text">
+      <div class="title">MINISTERE DE L'INTERIEUR, SECURITE,</div>
+      <div class="title">DECENTRALISATION & AFFAIRES COUTUMIERES</div>
+      <div class="subtitle">
+        INSPECTION GENERALE DE LA TERRITORIALE - IGTER
+      </div>
+    </div>
+  </div>
+<div class="header-right">
+
+  <div class="contact-item" id="top-contact">
+    <i class="fas fa-phone"></i>
+    <span>+243 82 20 80 469</span>
+  </div>
+
+  <div class="contact-separator">|</div>
+
+  <div class="contact-item">
+    <i class="fas fa-envelope"></i>
+    <span>
+      <a href="mailto:contact@igter.cd">contact@igter.cd</a>
+    </span>
+  </div>
+
+</div>
+  </div>
+</header>
+
+<nav class="navbar" id="main-menu"> 
+
+  <div class="menu-left">
+    <a href="apercu general.html">Qu'est-ce que l'IGTER ?</a>
+  </div>
+
+  <!-- MENU DESKTOP -->
+  <div class="menu-right">
+    <a href="index.html">Accueil</a>
+    <a href="document.html">Documents</a>
+    <a href="#">Missions</a>
+    <a href="#">Rapports</a>
+    <a href="#contact">Contacts</a>
+  </div>
+
+  <!-- MENU MOBILE -->
+  <div class="mobile-menu-bar">
+    <div class="menu-icon" onclick="openMenu()">☰</div>
+  </div>
+
+</nav>
+
+<!-- MENU LATERAL -->
+<div id="sideMenu" class="side-menu">
+
+  <!-- BOUTON FERMER -->
+  <a href="javascript:void(0)" class="close-btn" onclick="closeMenu()">✕</a>
+
+  <!-- LOGO IGTER EN HAUT -->
+  <div class="menu-logo">
+    <img src="images/logo.png" alt="Logo IGTER">
+  </div>
+
+  <!-- LIENS PRINCIPAUX -->
+  <a href="index.html"><i class="fa-solid fa-building-columns"></i> Accueil</a>
+  <a href="#actualite"> 📰 Actualités</a>
+  <a href="document.html">🗂️ Documents officiels</a>
+  <a href="mission.html">🎯 Missions</a>
+  <a href="rapport.html">📊 Rapports</a>
+  <div class="submenu-container">
+    <button class="submenu-btn">📖 Présentation de l'IGTER<i class="fa-solid fa-caret-down"></i></button>
+    <div class="submenu-content">
+     <a href="apercu general.html">👁️ Aperçu Général</a>
+    <div class="submenu-container">
+    <button class="submenu-btn">🧩 Organisation<i class="fa-solid fa-caret-down"></i></button>
+    <div class="submenu-content">
+      <a href="administration_centrale.html"><i class="fa-solid fa-building"></i> Administration Centrale (1)</a>
+     <a href="pool.html"><i class="fa-solid fa-layer-group"></i> Pool (8)</a>
+     <a href="inspection_provinciale.html"><i class="fa-solid fa-map-location-dot"></i> Inspections Provinciales (26)</a>
+      <a href="inspection_provinciale.html"><i class="fa-solid fa-satellite-dish"></i> ± 2 Antennes/IPTER</a></div>
+    <div class="submenu-container">
+    <button class="submenu-btn">⚖️ Cadre légal<i class="fa-solid fa-caret-down"></i></button>
+    <div class="submenu-content">
+    <a href="pdf/DECRET.pdf" target="_blank" download>
+      <i class="fa-solid fa-file-pdf"></i> Décret de création
+    </a>
+     <a href="pdf/CADRE ORGANIQUE.pdf" target="_blank" download>
+      <i class="fa-solid fa-file-pdf"></i> Cadre organique
+    </a>
+    </div></div></div>
+
+    <a href="personnel.html">👥 Personnel</a>
+</div>
+
+  <!-- Sous-menu Provinces / ETDs -->
+  <div class="submenu-container">
+    <button class="submenu-btn">🌍 Provinces/ETDs<i class="fa-solid fa-caret-down"></i></button>
+    <div class="submenu-content">
+      <a href="province.html"><i class="fa-solid fa-layer-group"></i> Liste des Provinces</a>
+      <a href="etd.html"><i class="fa-solid fa-satellite-dish"></i> Liste des Entités Territoriales</a>
+       <a href="scd.html"><i class="fa-solid fa-satellite-dish"></i> Liste des Services Centraux et Déconcentrés/MISDAC</a>
+    </div>
+  </div>
+
+  <a href="https://interieur.gouv.cd/services/details/IGTER"><i class="fa-solid fa-shield"></i> Ministère de tutelle</a>
+
+  <a href="#saisine">📝 Saisissez-nous</a>
+  <a href="#contact">☎️ Nos contacts</a>
+
+</div></div>
+
+<!-- PAGE EN CONSTRUCTION -->
+<section class="construction-section">
+
+<div class="construction-box">
+
+<div class="construction-icon">
+<i class="fa-solid fa-person-digging"></i>
+</div>
+  
+<h1> Page en conception<h1>
+<p>
+Cette page est actuellement en cours de développement.  
+Nous travaillons pour vous proposer prochainement un contenu complet et exhaustif. 
+</p>
+
+<a href="index.html" class="btn-retour">
+<i class="fa-solid fa-arrow-left"></i> Retour à l'accueil
+</a>
+
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+
+<div class="footer-container">
+
+<!-- Colonne 1 : Réseaux sociaux -->
+<div class="footer-col">
+  <h3>Réseaux sociaux</h3>
+
+  <a href="https://web.facebook.com/groups/544962343127299/user/61584911503215" target="_blank">
+    <i class="fa-brands fa-facebook-f"></i> Facebook
+  </a>
+
+  <a href="https://x.com/nomducompte" target="_blank">
+    <i class="fa-brands fa-x-twitter"></i> Twitter
+  </a>
+
+  <a href="https://youtube.com/nomducompte" target="_blank">
+    <i class="fa-brands fa-youtube"></i> Youtube
+  </a>
+
+  <a href="https://instagram.com/nomducompte" target="_blank">
+    <i class="fa-brands fa-instagram"></i> Instagram
+  </a>
+
+  <a href="https://wa.me/00243822080469" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i> Whatsapp
+  </a>
+</div>
+
+<!-- Colonne 2 : Contact -->
+<div class="footer-col">
+
+<h3>Contact</h3>
+
+<p>
+<a href="https://www.google.com/maps/search/?api=1&query=Immeuble+Semois+Royal+Kinshasa+Gombe" target="_blank">
+<i class="fa-solid fa-location-dot"></i>
+Immeuble Semois<br>
+Royal / Kinshasa-Gombe
+</a>
+</p>
+
+<p>
+<a href="mailto:contact@igter.cd">
+<i class="fa-solid fa-envelope"></i>
+contact@igter.cd
+</a>
+</p>
+
+<p>
+<a href="tel:+243822080469">
+<i class="fa-solid fa-phone"></i>
++243 822 080 469
+</a>
+</p>
+
+</div>
+
+<!-- Colonne 3 : Liens institutionnels -->
+<div class="footer-col">
+
+<h3>Liens institutionnels</h3>
+
+<a href="https://presidence.cd" target="_blank">
+<i class="fa-solid fa-landmark"></i>
+Présidence de la République
+</a>
+
+<a href="https://primature.cd" target="_blank">
+<i class="fa-solid fa-building"></i>
+Primature
+</a>
+
+<a href="https://interieur.gouv.cd" target="_blank">
+<i class="fa-solid fa-shield-halved"></i>
+Ministère de l'Intérieur
+</a>
+
+</div>
+
+<!-- Colonne 5 : Newsletter -->
+<div class="footer-col">
+
+  <h3>Newsletter</h3>
+
+  <p class="newsletter-text">
+    Inscrivez-vous pour ne rien rater de nos nouvelles.
+  </p><br>
+
+  <form id="newsletterForm" class="newsletter-form">
+    <input type="email" placeholder="Votre adresse email">
+    <button type="submit">S'abonner</button>
+  </form>
+
+</div></div>
+
+<div id="toast" class="toast">
+  <div class="toast-content">
+    <span id="toast-icon">⚠️</span>
+    <span id="toast-message"></span>
+  </div>
+  <div class="toast-progress"></div>
+</div>
+
+<!-- NAVIGATION FOOTER -->
+
+<div class="footer-nav">
+
+<a href="index.html">Accueil</a>
+<a href="#missions">Missions</a>
+<a href="actualite.html">Actualités</a>
+<a href="document.html">Documents</a>
+<a href="#top-contact">Contact</a>
+
+</div>
+
+<!-- BAS DU FOOTER -->
+
+<div class="footer-bottom">
+<p>© <span id="year"></span> Inspection Générale de la Territoriale — Tous droits réservés</p>
+</div>
+
+<!-- BOUTON RETOUR HAUT -->
+
+<button id="backToTop">↑</button>
+
+</footer>
+
+<script>
+function openMenu(){
+  document.getElementById("sideMenu").style.width="280px";
+}
+
+function closeMenu(){
+  document.getElementById("sideMenu").style.width="0";
+}
+
+/* Sous-menus coulissants */
+document.querySelectorAll('.submenu-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const content = btn.nextElementSibling;
+    content.style.display = content.style.display === 'flex' ? 'none' : 'flex';
+  });
+});
+
+/* Année automatique */
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+
+/* Bouton retour en haut */
+
+let btn = document.getElementById("backToTop");
+
+window.onscroll = function(){
+if(document.documentElement.scrollTop > 300){
+btn.style.display="block";
+}else{
+btn.style.display="none";
+}
+};
+
+btn.onclick=function(){
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+};
+
+
+document.querySelectorAll(".side-menu .submenu-btn").forEach(button => {
+
+button.addEventListener("click", function(){
+
+let submenu = this.nextElementSibling;
+
+submenu.classList.toggle("show");
+
+});
+
+});
+
+function showToast(message, type = "info") {
+    const toast = document.getElementById("toast");
+    const msg = document.getElementById("toast-message");
+    const icon = document.getElementById("toast-icon");
+
+    msg.textContent = message;
+
+    // Icônes selon type
+    if(type === "success") icon.textContent = "✅";
+    else if(type === "error") icon.textContent = "❌";
+    else icon.textContent = "⚠️";
+
+    // Reset classes
+    toast.className = "toast show " + type;
+
+    // Reset animation barre
+    const progress = toast.querySelector(".toast-progress");
+    progress.innerHTML = "";
+    const bar = document.createElement("div");
+    bar.style.height = "100%";
+    bar.style.background = "#fff";
+    bar.style.animation = "progress 4s linear forwards";
+    progress.appendChild(bar);
+
+    // Disparition
+    setTimeout(() => {
+        toast.classList.remove("show");
+    }, 4000);
+}
+
+// Newsletter
+document.getElementById("newsletterForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    showToast(
+        "Désolé ! Vous ne pouvez pas vous abonner pour le moment. Prochainement !",
+        "info"
+    );
+});
+
+</script>
+<script>
+const revealElements = document.querySelectorAll('.reveal-on-scroll');
+
+function revealOnScroll() {
+  const windowHeight = window.innerHeight;
+
+  revealElements.forEach(el => {
+    const elementTop = el.getBoundingClientRect().top;
+
+    if (elementTop < windowHeight - 100) {
+      el.classList.add('active');
+    }
+  });
+}
+
+window.addEventListener('scroll', revealOnScroll);
+</script>
+</body>
+</html>
