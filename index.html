@@ -2435,17 +2435,6 @@ overflow:hidden;
   animation: popIn 0.3s ease;
 }
 
-/* affichage prioritaire */
-.rapport-modal {
-  display: none;
-  justify-content: center;
-  align-items: center;
-}
-
-.rapport-modal.active {
-  display: flex !important;
-}
-
 @keyframes popIn {
   from {
     transform: scale(0.8);
@@ -2568,7 +2557,39 @@ overflow:hidden;
   <a href="#actualite"> 📰 Actualités</a>
   <a href="document.html">🗂️ Documents officiels</a>
   <a href="#mission">🎯 Missions</a>
-  <a href="rapport.html">📊 Rapports</a>
+ <a href="javascript:void(0)" onclick="openRapportMobile()">📊 Rapports</a>
+ <!-- =========================
+   MODAL RAPPORTS
+========================= -->
+<div id="rapportModal" class="rapport-modal">
+
+  <div class="rapport-content">
+
+    <!-- fermer -->
+    <span class="rapport-close" onclick="closeRapportModal()">✖</span>
+
+    <h2>Rapports</h2>
+
+    <!-- ETAPE 2 -->
+    <div id="rapport-step1" class="rapport-step active">
+
+  <!-- bouton avec menu -->
+  <div class="rapport-dropdown">
+    <button onclick="toggleRapportMenu(event)">Envoyer un rapport ▸</button>
+
+    <div class="rapport-submenu" id="rapportSubmenu">
+      <a href="rapport.html">Envoyer un rapport d'activités</a>
+      <a href="rapport2.html">Envoyer un rapport de mission</a>
+    </div>
+  </div>
+
+  <a href="#" class="rapport-link">Consulter un rapport</a>
+
+</div>
+
+  </div>
+
+</div>
   <div class="submenu-container">
     <button class="submenu-btn">📖 Présentation de l'IGTER<i class="fa-solid fa-caret-down"></i></button>
     <div class="submenu-content">
@@ -3258,6 +3279,18 @@ window.onclick = function(e) {
     closeRapportModal();
   }
 };
+
+function openRapportMobile() {
+
+  // fermer le menu latéral d'abord
+  if (typeof closeMenu === "function") {
+    closeMenu();
+  }
+
+  // ouvrir le modal
+  const modal = document.getElementById("rapportModal");
+  modal.style.display = "flex";
+}
 </script>
 </body>
 </html>
