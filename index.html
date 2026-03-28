@@ -2408,44 +2408,6 @@ overflow:hidden;
   display: flex;
 }
 
-@media (max-width: 768px) {
-
-  .rapport-submenu {
-    position: static; /* 🔥 devient bloc normal */
-    box-shadow: none;
-    margin-top: 10px;
-    display: none;
-  }
-
-  .rapport-submenu.show {
-    display: flex;
-  }
-
-  .rapport-dropdown {
-    width: 100%;
-  }
-
-  .rapport-dropdown button {
-    width: 100%;
-  }
-
-}
-
-.rapport-content {
-  animation: popIn 0.3s ease;
-}
-
-@keyframes popIn {
-  from {
-    transform: scale(0.8);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
 </style>
 
 </head>
@@ -2524,7 +2486,7 @@ overflow:hidden;
     </div>
   </div>
 
-  <a href="#" class="rapport-link">Consulter un rapport</a>
+  <a href="rapport.html" class="rapport-link">Consulter un rapport</a>
 
 </div>
 
@@ -2557,39 +2519,7 @@ overflow:hidden;
   <a href="#actualite"> 📰 Actualités</a>
   <a href="document.html">🗂️ Documents officiels</a>
   <a href="#mission">🎯 Missions</a>
- <a href="javascript:void(0)" onclick="openRapportMobile()">📊 Rapports</a>
- <!-- =========================
-   MODAL RAPPORTS
-========================= -->
-<div id="rapportModal" class="rapport-modal">
-
-  <div class="rapport-content">
-
-    <!-- fermer -->
-    <span class="rapport-close" onclick="closeRapportModal()">✖</span>
-
-    <h2>Rapports</h2>
-
-    <!-- ETAPE 2 -->
-    <div id="rapport-step1" class="rapport-step active">
-
-  <!-- bouton avec menu -->
-  <div class="rapport-dropdown">
-    <button onclick="toggleRapportMenu(event)">Envoyer un rapport ▸</button>
-
-    <div class="rapport-submenu" id="rapportSubmenu">
-      <a href="rapport.html">Envoyer un rapport d'activités</a>
-      <a href="rapport2.html">Envoyer un rapport de mission</a>
-    </div>
-  </div>
-
-  <a href="#" class="rapport-link">Consulter un rapport</a>
-
-</div>
-
-  </div>
-
-</div>
+  <a href="rapport.html">📊 Rapports</a>
   <div class="submenu-container">
     <button class="submenu-btn">📖 Présentation de l'IGTER<i class="fa-solid fa-caret-down"></i></button>
     <div class="submenu-content">
@@ -3279,22 +3209,6 @@ window.onclick = function(e) {
     closeRapportModal();
   }
 };
-
-function openRapportMobile() {
-
-  // fermer menu latéral
-  if (typeof closeMenu === "function") {
-    closeMenu();
-  }
-
-  // 🔥 attendre que le menu se ferme AVANT d'ouvrir le modal
-  setTimeout(() => {
-    const modal = document.getElementById("rapportModal");
-    if (modal) {
-      modal.style.display = "flex";
-    }
-  }, 300); // délai important
-}
 </script>
 </body>
 </html>
