@@ -2265,6 +2265,171 @@ overflow:hidden;
 
 }
 
+/* =========================
+   MODAL RAPPORTS
+========================= */
+.rapport-modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0,0,0,0.5);
+
+  justify-content: center;
+  align-items: center;
+}
+
+/* contenu */
+.rapport-content {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  width: 320px;
+  text-align: center;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+
+  position: relative;
+}
+
+/* titre */
+.rapport-content h2 {
+  color: #003366;
+  margin-bottom: 20px;
+  border-left: none;
+}
+
+/* fermer */
+.rapport-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* étapes */
+.rapport-step {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.rapport-step.active {
+  display: flex;
+}
+
+/* boutons */
+.rapport-step button,
+.rapport-step a {
+  padding: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* bouton principal */
+.rapport-step button {
+  background: #003366;
+  color: white;
+}
+
+/* liens */
+.rapport-step a {
+  background: #f4f6f9;
+  color: #003366;
+}
+
+/* hover */
+.rapport-step a:hover,
+.rapport-step button:hover {
+  transform: scale(1.03);
+}
+
+/* conteneur */
+.rapport-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* bouton */
+.rapport-dropdown button {
+  background: #003366;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+/* menu à droite */
+.rapport-submenu {
+  position: absolute;
+  top: 0;
+  left: 105%; /* 👉 à droite du bouton */
+
+  background: white;
+  min-width: 220px;
+
+  border-radius: 6px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+
+  display: none;
+  flex-direction: column;
+
+  padding: 8px 0;
+  z-index: 1000;
+}
+
+/* items */
+.rapport-submenu a {
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #003366;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+/* hover */
+.rapport-submenu a:hover {
+  background: #f4f6f9;
+  padding-left: 20px;
+}
+
+/* affichage */
+.rapport-submenu.show {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+
+  .rapport-submenu {
+    position: static; /* 🔥 devient bloc normal */
+    box-shadow: none;
+    margin-top: 10px;
+    display: none;
+  }
+
+  .rapport-submenu.show {
+    display: flex;
+  }
+
+  .rapport-dropdown {
+    width: 100%;
+  }
+
+  .rapport-dropdown button {
+    width: 100%;
+  }
+
+}
 </style>
 
 </head>
@@ -2317,7 +2482,39 @@ overflow:hidden;
     <a href="#actualite">Actualités</a>
     <a href="document.html">Documents</a>
     <a href="#mission">Missions</a>
-    <a href="#">Rapports</a>
+  <a href="javascript:void(0)" onclick="openRapportModal()">Rapports</a>
+  <!-- =========================
+   MODAL RAPPORTS
+========================= -->
+<div id="rapportModal" class="rapport-modal">
+
+  <div class="rapport-content">
+
+    <!-- fermer -->
+    <span class="rapport-close" onclick="closeRapportModal()">✖</span>
+
+    <h2>Rapports</h2>
+
+    <!-- ETAPE 2 -->
+    <div id="rapport-step1" class="rapport-step active">
+
+  <!-- bouton avec menu -->
+  <div class="rapport-dropdown">
+    <button onclick="toggleRapportMenu(event)">Envoyer un rapport ▸</button>
+
+    <div class="rapport-submenu" id="rapportSubmenu">
+      <a href="rapport.html">Envoyer un rapport d'activités</a>
+      <a href="rapport2.html">Envoyer un rapport de mission</a>
+    </div>
+  </div>
+
+  <a href="#" class="rapport-link">Consulter un rapport</a>
+
+</div>
+
+  </div>
+
+</div>
     <a href="#saisine">Saisissez-nous</a>
   </div>
 
@@ -2344,7 +2541,7 @@ overflow:hidden;
   <a href="#actualite"> 📰 Actualités</a>
   <a href="document.html">🗂️ Documents officiels</a>
   <a href="#mission">🎯 Missions</a>
-  <a href="rapport.html">📊 Rapports</a>
+  <a href="javascript:void(0)" onclick="openRapportMobile()">📊 Rapports</a>
   <div class="submenu-container">
     <button class="submenu-btn">📖 Présentation de l'IGTER<i class="fa-solid fa-caret-down"></i></button>
     <div class="submenu-content">
@@ -3001,6 +3198,51 @@ function revealOnScroll() {
 }
 
 window.addEventListener('scroll', revealOnScroll);
+</script>
+<script>
+function openRapportModal() {
+  document.getElementById("rapportModal").style.display = "flex";
+}
+
+function closeRapportModal() {
+  document.getElementById("rapportModal").style.display = "none";
+
+  // reset
+  document.getElementById("rapport-step1").classList.add("active");
+  document.getElementById("rapport-step2").classList.remove("active");
+}
+
+function toggleRapportMenu(e) {
+  e.stopPropagation();
+  const menu = document.getElementById("rapportSubmenu");
+  menu.classList.toggle("show");
+}
+
+/* fermer si clic ailleurs */
+document.addEventListener("click", function() {
+  const menu = document.getElementById("rapportSubmenu");
+  if (menu) menu.classList.remove("show");
+});
+
+/* fermer si clic extérieur */
+window.onclick = function(e) {
+  const modal = document.getElementById("rapportModal");
+  if (e.target === modal) {
+    closeRapportModal();
+  }
+};
+
+function openRapportMobile() {
+
+  // fermer le menu latéral d'abord
+  if (typeof closeMenu === "function") {
+    closeMenu();
+  }
+
+  // ouvrir le modal
+  const modal = document.getElementById("rapportModal");
+  modal.style.display = "flex";
+}
 </script>
 </body>
 </html>
