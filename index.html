@@ -2568,7 +2568,7 @@ overflow:hidden;
   <a href="#actualite"> 📰 Actualités</a>
   <a href="document.html">🗂️ Documents officiels</a>
   <a href="#mission">🎯 Missions</a>
-  <a href="javascript:void(0)" onclick="openRapportMobile()">📊 Rapports</a>
+  <a href="rapport.html">📊 Rapports</a>
   <div class="submenu-container">
     <button class="submenu-btn">📖 Présentation de l'IGTER<i class="fa-solid fa-caret-down"></i></button>
     <div class="submenu-content">
@@ -3258,23 +3258,6 @@ window.onclick = function(e) {
     closeRapportModal();
   }
 };
-
-function openRapportMobile() {
-
-  if (typeof closeMenu === "function") {
-    closeMenu();
-  }
-
-  setTimeout(() => {
-    const modal = document.getElementById("rapportModal");
-    modal.classList.add("active");
-  }, 300);
-}
-
-function closeRapportModal() {
-  const modal = document.getElementById("rapportModal");
-  modal.classList.remove("active");
-}
 </script>
 </body>
 </html>
