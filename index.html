@@ -1386,7 +1386,7 @@ height:100%; /* TRÈS IMPORTANT */
 }
 
 /* Structure */
-.hero-simple {
+ .hero-simple {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1522,7 +1522,7 @@ overflow:hidden;
 .missions-track {
   display: inline-block;
   white-space: nowrap;
-  animation: scroll-marquee 20s linear infinite;
+  animation: scroll-marquee 40s linear infinite;
   padding-left: 20px;
 }
 
@@ -2834,7 +2834,7 @@ function showToast(message, type = "info") {
     // Disparition
     setTimeout(() => {
         toast.classList.remove("show");
-    }, 4000);
+    }, 10000);
 }
 
 // Newsletter
@@ -2875,7 +2875,7 @@ interval = setInterval(() => {
 index++;
 if(index >= slides.length){ index = 0; }
 showSlide(index);
-}, 4000);
+}, 10000);
 }
 
 /* pause au survol */
