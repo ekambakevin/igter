@@ -454,7 +454,7 @@ height:32px;
 .mobile-title-slider .slides{
 display:flex;
 flex-direction:column;
-animation:slideVertical 9s infinite;
+animation:slideVertical 80s infinite;
 }
 
 /* slide */
@@ -2278,7 +2278,7 @@ overflow:hidden;
     <div class="flag-bar"></div>
 
     <div class="header-text">
-      <div class="title">INSPECTION GENERALE DE LA TERRITORIALE - IGTER</div>
+      <div class="title">INSPECTION GENERALE DE LA TERRITORIALE</div>
     </div>
     </div>
   </div>
@@ -2428,15 +2428,6 @@ overflow:hidden;
   </div>
 </div>
 
-<!-- SLIDE 4 (MOBILE UNIQUEMENT) -->
-<div class="hero-slide slide-mobile-text">
-  <div class="hero-content">
-    <h1>Vision de l'Inspecteur Général, Chef de Corps des Inspecteurs Territoriaux</h1>
-    <p>
-      J'ai repris mes fonctions d'Inspecteur Général de la Territoriale pour ...
-    </p>
-  </div>
-</div>
 </div></div>
 
 <!-- BARRE DES MISSIONS EN COURS -->
@@ -2819,7 +2810,7 @@ function showToast(message, type = "info") {
     // Disparition
     setTimeout(() => {
         toast.classList.remove("show");
-    }, 10000);
+    }, 13000);
 }
 
 // Newsletter
@@ -2860,7 +2851,7 @@ interval = setInterval(() => {
 index++;
 if(index >= slides.length){ index = 0; }
 showSlide(index);
-}, 10000);
+}, 13000);
 }
 
 /* pause au survol */
