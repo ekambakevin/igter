@@ -926,17 +926,21 @@ color:#f1c40f;
   color: #00bfff;
 }
 
-/* Titre localisation */
-.location-title {
-  margin-bottom: 10px;
+/* Section localisation */
+.location-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 0px;
 }
 
-/* Texte localisation */
+/* Lien localisation */
 .location-text a {
   color: white;
   text-decoration: none;
-  line-height: 1.5;
-  font-size: 12px;
+  font-size: 13px;
+  line-height: 1.6;
 }
 
 /* Icône localisation */
@@ -1052,6 +1056,40 @@ html{
 scroll-behavior:smooth;
 }
 
+/* Colonne Contact */
+.footer-col {
+  text-align: center;
+}
+
+/* Bloc contact */
+.contact-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+/* Paragraphes */
+.contact-info p {
+  margin: 0;
+}
+
+/* Liens */
+.contact-info a {
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+/* Icônes */
+.contact-info i {
+  color: #00bfff;
+  margin-right: 6px;
+}
+
 /* ======================= */
 /* FORMULAIRE FOOTER */
 /* ======================= */
@@ -1126,6 +1164,29 @@ background:#e0a800;
   background: #009acd;
 }
 
+/* Colonne liens institutionnels */
+.institutional-links {
+  text-align: center;
+}
+
+/* Liens */
+.institutional-links a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+
+  color: white;
+  text-decoration: none;
+
+  margin-bottom: 5px;
+  font-size: 15px;
+}
+
+/* Icônes */
+.institutional-links a i {
+  color: #00bfff;
+}
 .toast {
   position: fixed;
   bottom: 20px;
@@ -2668,8 +2729,7 @@ overflow:hidden;
   <div class="location-text">
   <a href="https://www.google.com/maps/search/?api=1&query=Immeuble+Semois+Royal+Kinshasa+Gombe" target="_blank">
 
-  <i class="fa-solid fa-location-dot"></i>Immeuble Semois<br>Royal / Kinshasa-Gombe</a>
-  </p>
+  <i class="fa-solid fa-location-dot"></i>Immeuble Semois Royal / Kinshasa-Gombe</a>
 </div>
 </div>
 
@@ -2677,6 +2737,8 @@ overflow:hidden;
 <div class="footer-col">
 
   <h3>Contact</h3>
+
+ <div class="contact-info">
 
   <p>
     <a href="mailto:contact@igter.cd">
@@ -2691,6 +2753,8 @@ overflow:hidden;
       +243 822 080 469
     </a>
   </p>
+
+</div>
 
   <!-- Newsletter -->
   <h3 class="newsletter-title">Newsletter</h3>
@@ -2720,24 +2784,24 @@ overflow:hidden;
 </div>
 
 <!-- Colonne 3 : Liens institutionnels -->
-<div class="footer-col">
+<div class="footer-col institutional-links">
 
-<h3>Liens institutionnels</h3>
+  <h3>Liens institutionnels</h3>
 
-<a href="https://presidence.cd" target="_blank">
-<i class="fa-solid fa-landmark"></i>
-Présidence de la République
-</a>
+  <a href="https://presidence.cd" target="_blank">
+    <i class="fa-solid fa-landmark"></i>
+    Présidence de la République
+  </a>
 
-<a href="https://primature.cd" target="_blank">
-<i class="fa-solid fa-building"></i>
-Primature
-</a>
+  <a href="https://primature.cd" target="_blank">
+    <i class="fa-solid fa-building"></i>
+    Primature
+  </a>
 
-<a href="https://interieur.gouv.cd" target="_blank">
-<i class="fa-solid fa-shield-halved"></i>
-Ministère de l'Intérieur
-</a>
+  <a href="https://interieur.gouv.cd" target="_blank">
+    <i class="fa-solid fa-shield-halved"></i>
+    Ministère de l'Intérieur
+  </a>
 
 </div></div>
 
