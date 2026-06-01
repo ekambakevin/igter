@@ -2353,52 +2353,7 @@ overflow:hidden;
   }
 
 }
-.menu-right{
-  display:flex;
-  gap:20px;
-  align-items:center;
-}
 
-.menu-right a{
-  text-decoration:none;
-  color:white;
-  padding:10px;
-}
-
-/* CONTENEUR DU MENU DÉROULANT */
-.dropdown{
-  position:relative;
-}
-
-/* SOUS-MENU CACHÉ AU DÉPART */
-.submenu{
-  display:none;
-  position:absolute;
-  top:100%;
-  left:0;
-  background:#fff;
-  min-width:220px;
-  box-shadow:0 4px 10px rgba(0,0,0,0.15);
-  border-radius:5px;
-  overflow:hidden;
-  z-index:1000;
-}
-
-/* LIENS DU SOUS-MENU */
-.submenu a{
-  display:block;
-  padding:12px;
-  color:#000;
-}
-
-.submenu a:hover{
-  background:#f2f2f2;
-}
-
-/* AFFICHER LE SOUS-MENU AU SURVOL */
-.dropdown:hover .submenu{
-  display:block;
-}
 </style>
 
 </head>
@@ -2444,22 +2399,12 @@ overflow:hidden;
   </div>
 
   <!-- MENU DESKTOP -->
-<div class="menu-right">
-  <a href="#actualite">Actualités</a>
-
-  <!-- MENU DÉROULANT -->
-  <div class="dropdown">
-    <a href="#">Dirigeants</a>
-
-    <div class="submenu">
-      <a href="ig_iga.html">I.G et I.G.A</a>
-      <a href="directeurs.html">Directeurs Chefs de Services</a>
-    </div>
+  <div class="menu-right">
+    <a href="#actualite">Actualités</a>
+    <a href="#missions">Missions</a>
+    <a href="document.html">Documents officiels</a>
+    <a href="#saisine">Saisissez-nous</a>
   </div>
-
-  <a href="document.html">Documents officiels</a>
-  <a href="#saisine">Saisissez-nous</a>
-</div>
   <!-- MENU MOBILE -->
   <div class="mobile-menu-bar">
     <div class="menu-icon" onclick="openMenu()">☰</div>
@@ -2481,22 +2426,6 @@ overflow:hidden;
   <!-- LIENS PRINCIPAUX -->
   <a href="index.html"><i class="fa-solid fa-building-columns"></i> Accueil</a>
   <a href="#actualite"> 📰 Actualités</a>
- <!-- SOUS-MENU DIRIGEANTS -->
-<div class="submenu-container">
-  <button class="submenu-btn">
-    👥 Dirigeants <i class="fa-solid fa-caret-down"></i>
-  </button>
-
-  <div class="submenu-content">
-    <a href="ig_iga.html">
-      <i class="fa-solid fa-user-tie"></i> I.G et I.G.A
-    </a>
-
-    <a href="directeurs.html">
-      <i class="fa-solid fa-users-gear"></i> Directeurs Chefs de Services
-    </a>
-  </div>
-</div>
   <a href="#missions">🎯 Missions</a>
   <a href="document.html">🗂️ Documents officiels</a>
   <div class="submenu-container">
