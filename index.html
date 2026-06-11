@@ -2486,25 +2486,28 @@ overflow:hidden;
   gap: 20px;
 }
 
-/* MOBILE */
-@media (max-width: 768px) {
-  .menu-right {
-    display: none;
-  }
-
-  .mobile-menu-bar {
-    display: flex;
-  }
+/* ===== DESKTOP ===== */
+.menu-right {
+  display: flex;
+  gap: 20px;
 }
-/* ORDINATEUR */
+
 .mobile-menu-bar {
   display: none;
 }
 
-@media (min-width: 769px) {
+/* ===== MOBILE ===== */
+@media screen and (max-width: 768px) {
+
   .menu-right {
-    display: flex;
+    display: none !important;
   }
+
+  .mobile-menu-bar {
+    display: flex !important;
+    align-items: center;
+  }
+
 }
 </style>
 
