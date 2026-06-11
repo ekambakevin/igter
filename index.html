@@ -2480,6 +2480,32 @@ overflow:hidden;
 .dropdown:hover .dropdown-content {
   display: block;
 }
+/* MENU DESKTOP */
+.menu-right {
+  display: flex;
+  gap: 20px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .menu-right {
+    display: none;
+  }
+
+  .mobile-menu-bar {
+    display: flex;
+  }
+}
+/* ORDINATEUR */
+.mobile-menu-bar {
+  display: none;
+}
+
+@media (min-width: 769px) {
+  .menu-right {
+    display: flex;
+  }
+}
 </style>
 
 </head>
