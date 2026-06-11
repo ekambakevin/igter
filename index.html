@@ -2448,43 +2448,36 @@ overflow:hidden;
   display:flex;
 }
 
-/* Sous-menu Desktop */
-.menu-right .dropdown {
+/* SOUS-MENU DESKTOP */
+.dropdown {
   position: relative;
   display: inline-block;
 }
 
-.menu-right .dropdown-content {
+.dropdown-content {
   display: none;
   position: absolute;
   top: 100%;
   left: 0;
-  min-width: 230px;
+  min-width: 250px;
   background: #fff;
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  border-radius: 6px;
   z-index: 1000;
 }
 
-.menu-right .dropdown-content a {
+.dropdown-content a {
   display: block;
-  padding: 10px 15px;
-  color: #000;
+  padding: 12px 15px;
+  color: #333;
   text-decoration: none;
 }
 
-.menu-right .dropdown-content a:hover {
-  background: #f2f2f2;
+.dropdown-content a:hover {
+  background: #f3f3f3;
 }
 
-.menu-right .dropdown:hover .dropdown-content {
-  display: block;
-}
-
-.submenu-content {
-  display: none;
-}
-
-.submenu-content.show {
+.dropdown:hover .dropdown-content {
   display: block;
 }
 </style>
@@ -2536,6 +2529,7 @@ overflow:hidden;
   <a href="#actualite">Actualités</a>
   <div class="dropdown">
   <a href="javascript:void(0)">Dirigeants <i class="fa-solid fa-caret-down"></i></a>
+
   <div class="dropdown-content">
     <a href="ig_iga.html">I.G et I.G.A</a>
     <a href="directeurs.html">Directeurs Chefs de Services</a>
@@ -2567,12 +2561,20 @@ overflow:hidden;
   <a href="#actualite"> 📰 Actualités</a>
  <div class="submenu-container">
   <button class="submenu-btn">
-    👔 Dirigeants <i class="fa-solid fa-caret-down"></i>
+    👔 Dirigeants
+    <i class="fa-solid fa-caret-down"></i>
   </button>
 
   <div class="submenu-content">
-    <a href="ig-iga.html">👤 I.G et I.G.A</a>
-    <a href="directeurs.html">🏢 Directeurs Chefs de Services</a>
+    <a href="ig_iga.html">
+      <i class="fa-solid fa-user-tie"></i>
+      I.G et I.G.A
+    </a>
+
+    <a href="directeurs.html">
+      <i class="fa-solid fa-users-gear"></i>
+      Directeurs Chefs de Services
+    </a>
   </div>
 </div>
   <a href="#missions">🎯 Missions</a>
