@@ -2353,7 +2353,140 @@ overflow:hidden;
   }
 
 }
+.menu-right{
+  display:flex;
+  gap:20px;
+  align-items:center;
+}
 
+.menu-right a{
+  text-decoration:none;
+  color:white;
+  padding:10px;
+}
+
+/* CONTENEUR DU MENU DÉROULANT */
+.dropdown{
+  position:relative;
+}
+
+/* SOUS-MENU CACHÉ AU DÉPART */
+.submenu{
+  display:none;
+  position:absolute;
+  top:100%;
+  left:0;
+  background:#fff;
+  min-width:220px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.15);
+  border-radius:5px;
+  overflow:hidden;
+  z-index:1000;
+}
+
+/* LIENS DU SOUS-MENU */
+.submenu a{
+  display:block;
+  padding:12px;
+  color:#000;
+}
+
+.submenu a:hover{
+  background:#f2f2f2;
+}
+
+/* AFFICHER LE SOUS-MENU AU SURVOL */
+.dropdown:hover .submenu{
+  display:block;
+}
+
+/* CONTENEUR SOUS-MENU */
+.submenu-container{
+  position:relative;
+  width:100%;
+}
+
+/* BOUTON */
+.submenu-btn{
+  width:100%;
+  border:none;
+  background:none;
+  color:white;
+  padding:12px 15px;
+  text-align:left;
+  cursor:pointer;
+  font-size:16px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+/* SOUS-MENU */
+.submenu-content{
+  display:none;
+  flex-direction:column;
+  background:rgba(255,255,255,0.08);
+  margin-left:15px;
+  border-left:2px solid #198754;
+}
+
+/* LIENS */
+.submenu-content a{
+  padding:10px 15px;
+  text-decoration:none;
+  color:white;
+  font-size:15px;
+}
+
+/* HOVER */
+.submenu-content a:hover{
+  background:rgba(255,255,255,0.1);
+}
+
+/* AFFICHAGE */
+.submenu-container.active .submenu-content{
+  display:flex;
+}
+
+/* Sous-menu Desktop */
+.menu-right .dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.menu-right .dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 230px;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  z-index: 1000;
+}
+
+.menu-right .dropdown-content a {
+  display: block;
+  padding: 10px 15px;
+  color: #000;
+  text-decoration: none;
+}
+
+.menu-right .dropdown-content a:hover {
+  background: #f2f2f2;
+}
+
+.menu-right .dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.submenu-content {
+  display: none;
+}
+
+.submenu-content.show {
+  display: block;
+}
 </style>
 
 </head>
@@ -2399,12 +2532,18 @@ overflow:hidden;
   </div>
 
   <!-- MENU DESKTOP -->
-  <div class="menu-right">
-    <a href="#actualite">Actualités</a>
-    <a href="#missions">Missions</a>
-    <a href="document.html">Documents officiels</a>
-    <a href="#saisine">Saisissez-nous</a>
+<div class="menu-right">
+  <a href="#actualite">Actualités</a>
+  <div class="dropdown">
+  <a href="javascript:void(0)">Dirigeants <i class="fa-solid fa-caret-down"></i></a>
+  <div class="dropdown-content">
+    <a href="ig_iga.html">I.G et I.G.A</a>
+    <a href="directeurs.html">Directeurs Chefs de Services</a>
   </div>
+</div>
+  <a href="document.html">Documents officiels</a>
+  <a href="#saisine">Saisissez-nous</a>
+</div>
   <!-- MENU MOBILE -->
   <div class="mobile-menu-bar">
     <div class="menu-icon" onclick="openMenu()">☰</div>
@@ -2426,6 +2565,16 @@ overflow:hidden;
   <!-- LIENS PRINCIPAUX -->
   <a href="index.html"><i class="fa-solid fa-building-columns"></i> Accueil</a>
   <a href="#actualite"> 📰 Actualités</a>
+ <div class="submenu-container">
+  <button class="submenu-btn">
+    👔 Dirigeants <i class="fa-solid fa-caret-down"></i>
+  </button>
+
+  <div class="submenu-content">
+    <a href="ig-iga.html">👤 I.G et I.G.A</a>
+    <a href="directeurs.html">🏢 Directeurs Chefs de Services</a>
+  </div>
+</div>
   <a href="#missions">🎯 Missions</a>
   <a href="document.html">🗂️ Documents officiels</a>
   <div class="submenu-container">
@@ -2830,6 +2979,14 @@ overflow:hidden;
 </footer>
 
 <script>
+const submenuBtns = document.querySelectorAll(".submenu-btn");
+
+submenuBtns.forEach(btn => {
+  btn.addEventListener("click", function () {
+    this.parentElement.classList.toggle("active");
+  });
+});
+
 function openMenu(){
   document.getElementById("sideMenu").style.width="280px";
 }
@@ -2882,6 +3039,13 @@ submenu.classList.toggle("show");
 });
 
 });
+
+document.querySelectorAll('.submenu-btn').forEach(button => {
+  button.addEventListener('click', () => {
+    button.nextElementSibling.classList.toggle('show');
+  });
+});
+
 
 function showToast(message, type = "info") {
     const toast = document.getElementById("toast");
