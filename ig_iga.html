@@ -454,7 +454,7 @@ height:32px;
 .mobile-title-slider .slides{
 display:flex;
 flex-direction:column;
-animation:slideVertical 9s infinite;
+animation:slideVertical 30s infinite;
 }
 
 /* slide */
@@ -498,69 +498,269 @@ height:28px;
 }
 
 /* =========================
-PAGE EN CONSTRUCTION
+HERO
+========================= */
+.hero{
+display:flex;
+flex-wrap:wrap;
+align-items:center;
+justify-content:space-between;
+padding:30px 6%;
+background:linear-gradient(135deg,#003366,#004f99);
+color:white;
+gap:20px;
+}
+
+/* --- HERO TEXT STYLE --- */
+.hero-text {
+    max-width:600px;      /* Limite la largeur pour une meilleure lecture */
+    padding:15px;
+    margin:0 auto;        /* Centrer sur petits écrans */
+    text-align:left;      /* Alignement classique */
+    color:white;        /* Couleur institutionnelle */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.hero-text h1 {
+    font-size:20px;
+    font-weight:700;
+    line-height:1.3;
+    margin-bottom:15px;
+    position:relative;
+}
+
+/* Ligne décorative sous le titre */
+.hero-text h1::after {
+    content:"";
+    display:block;
+    width:60px;
+    height:4px;
+    background:#2563eb;   /* Couleur accent bleu */
+    margin-top:10px;
+    border-radius:2px;
+}
+
+/* Texte descriptif */
+.hero-text p {
+    font-size:14px;
+    line-height:1.7;
+    color:white;       /* Texte plus doux */
+    margin-bottom:25px;
+}
+
+.hero-image{
+text-align:center;
+}
+
+.hero-image img{
+width:250px;
+height:auto;
+border-radius:10px;
+border:4px solid white;
+box-shadow:0 10px 25px rgba(0,0,0,0.35);
+}
+
+.hero-caption{
+margin-top:10px;
+font-size:14px;
+line-height:1.4;
+font-weight:600;
+}
+
+.hero-caption strong{
+font-size:16px;
+display:block;
+}
+
+/* CONTENEUR GENERAL */
+
+.home-sections{
+display:flex;
+gap:50px;
+margin:60px 6%;
+align-items:flex-start;
+}
+
+.missions-section,
+.news-section{
+flex:1;
+}
+
+h2{
+margin-bottom:20px;
+font-size:24px;
+border-left:5px solid #f2b705;
+padding-left:10px;
+}
+
+/* ==================== Section missions ==================== */
+.missions-section {
+  background: linear-gradient(135deg, #cfd6dd, #b8c2cc); /* gris fort élégant */
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+.missions-section h2 {
+  text-align: center;
+  font-size: 28px;
+  color: #00264d;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+/* ==================== Slider défilant ==================== */
+.missions-slider {
+  overflow: hidden;
+  position: relative;
+}
+
+.missions-track {
+  display: flex;
+  gap: 30px;
+  animation: scroll-left 30s linear infinite;
+  will-change: transform; /* optimisation pour performances */
+}
+
+.missions-slider:hover .missions-track {
+  animation-play-state: paused; /* pause au survol */
+}
+
+/* ==================== Animation droite → gauche ==================== */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* défilement moitié du contenu pour boucle infinie */
+  }
+}
+
+/* ==================== Cartes ==================== */
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  min-width: 300px;
+  max-width: 300px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px); /* effet léger au survol */
+}
+
+.card h3 {
+  font-size: 18px;
+  color: #003366;
+  margin: 10px 0;
+}
+
+.card p {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.5;
+}
+
+.card .icon {
+  font-size: 28px;
+  display: block;
+  margin-bottom: 10px;
+}
+  
+/* =========================
+SECTION VIDEOS - STYLE PROFESSIONNEL
 ========================= */
 
-.construction-section{
+.videos-section{
+padding:50px 8%;
+background:#f9f9f9; /* fond légèrement plus clair pour professionnalisme */
+}
+
+.videos-header{
 display:flex;
-justify-content:center;
+justify-content:space-between;
 align-items:center;
-min-height:60vh;
-background:#f4f6f9;
-padding:40px 20px;
+margin-bottom:30px;
 }
 
-.construction-box{
-background:white;
-padding:40px;
-text-align:center;
-border-radius:10px;
-max-width:500px;
-box-shadow:0 8px 25px rgba(0,0,0,0.1);
-}
-
-.construction-icon{
-font-size:50px;
-color:#f2b705;
-margin-bottom:15px;
-}
-
-.construction-box h1{
-font-size:26px;
+.videos-header h2{
 color:#003366;
-margin-bottom:10px;
+font-size:22px;
+font-weight:700;
+margin:0;
 }
 
-.construction-box h2{
-font-size:26px;
-color:#003366;
-margin-bottom:10px;
-}
-
-.construction-box p{
-font-size:15px;
-color:#555;
-margin-bottom:25px;
-line-height:1.6;
-}
-
-/* bouton retour */
-
-.btn-retour{
-display:inline-block;
-padding:10px 20px;
-background:#003366;
-color:white;
+.videos-header .voir-tout{
 text-decoration:none;
-border-radius:6px;
-font-size:14px;
+color:#1d4ed8;
 font-weight:600;
+font-size:14px;
 transition:0.3s;
 }
 
-.btn-retour:hover{
-background:#0052a3;
-transform:translateY(-2px);
+.videos-header .voir-tout:hover{
+text-decoration:underline;
+color:#003366;
+}
+
+/* GRID VIDEOS */
+
+.videos-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* avant 280px → maintenant 220px */
+  gap: 25px;
+}
+
+/* CARTE VIDEO */
+
+.video-card{
+background:white;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 6px 18px rgba(0,0,0,0.08);
+transition:0.3s, transform 0.3s;
+border-top:4px solid #003366; /* accent officiel */
+position:relative;
+display:flex;
+flex-direction:column;
+}
+
+.video-card:hover{
+transform:translateY(-5px);
+box-shadow:0 12px 25px rgba(0,0,0,0.12);
+}
+
+/* IFRAME RESPONSIVE - 16:9 */
+.video-card iframe{
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 16/9;
+  height: 160px; /* avant auto → maintenant fixe plus petit */
+  border: none;
+  transition: 0.3s;
+}
+
+.video-card:hover iframe{
+  transform: scale(1.01);
+}
+
+/* TITRE VIDEO */
+
+.video-title{
+padding:12px 15px;
+font-size:14px;
+color:#003366;
+font-weight:600;
+line-height:1.4;
+background:#f4f6f9;
+border-top:1px solid #eee;
+transition:0.3s;
+}
+
+.video-card:hover .video-title{
+background:#e5ecf8;
 }
 
 /* =========================
@@ -701,6 +901,54 @@ color:#f1c40f;
     color:#25d366; /* vert WhatsApp */
 }
 
+/* Colonne réseaux sociaux */
+.footer-col:first-child {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Icônes réseaux sociaux */
+.social-icons {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 22px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  color: #00bfff;
+}
+
+/* Section localisation */
+.location-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 0px;
+}
+
+/* Lien localisation */
+.location-text a {
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* Icône localisation */
+.location-text i {
+  color: #00bfff;
+  margin-right: 8px;
+}
+
 /* CARTE */
 
 .footer-col iframe{
@@ -808,6 +1056,40 @@ html{
 scroll-behavior:smooth;
 }
 
+/* Colonne Contact */
+.footer-col {
+  text-align: center;
+}
+
+/* Bloc contact */
+.contact-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+/* Paragraphes */
+.contact-info p {
+  margin: 0;
+}
+
+/* Liens */
+.contact-info a {
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+/* Icônes */
+.contact-info i {
+  color: #00bfff;
+  margin-right: 6px;
+}
+
 /* ======================= */
 /* FORMULAIRE FOOTER */
 /* ======================= */
@@ -840,37 +1122,71 @@ font-size:12px;
 background:#e0a800;
 }
 
-.newsletter-form input{
-width:100%;
-padding:8px;
-border:none;
-border-radius:4px;
-margin-bottom:8px;
-font-size:12px;
+/* Titre newsletter */
+.newsletter-title {
+  margin-top: 25px;
+  margin-bottom: 10px;
 }
 
-.newsletter-form button{
-width:100%;
-padding:8px;
-background:#f2b705;
-border:none;
-border-radius:4px;
-color:#003366;
-font-weight:bold;
-cursor:pointer;
-}
-
-.newsletter-form button:hover{
-background:#e0a800;
-}
-
+/* Texte newsletter */
 .newsletter-text {
-  font-size: 13px;
-  color: #ccc;
-  margin: 5px 0 12px;
-  line-height: 1.4;
+  margin-bottom: 15px;
+  line-height: 1.6;
 }
 
+/* Formulaire newsletter */
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Champ email */
+.newsletter-form input {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+/* Bouton */
+.newsletter-form button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background: #00bfff;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.newsletter-form button:hover {
+  background: #009acd;
+}
+
+/* Colonne liens institutionnels */
+.institutional-links {
+  text-align: center;
+}
+
+/* Liens */
+.institutional-links a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+
+  color: white;
+  text-decoration: none;
+
+  margin-bottom: 5px;
+  font-size: 15px;
+}
+
+/* Icônes */
+.institutional-links a i {
+  color: #00bfff;
+}
 .toast {
   position: fixed;
   bottom: 20px;
@@ -933,6 +1249,525 @@ background:#e0a800;
 .toast.info { background: #1e3a8a; }
 .toast.success { background: #16a34a; }
 .toast.error { background: #dc2626; }
+
+/* ========================= */
+/* HERO BAR MODERNE */
+/* ========================= */
+
+.hero-bar{
+width:100%;
+overflow:hidden;
+background:linear-gradient(135deg,#003366,#004f99);
+color:white;
+padding:25px 0;
+position:relative;
+}
+
+/* piste animée */
+
+.hero-track{
+display:flex;
+width:200%;
+animation:slideHero 12s infinite;
+}
+
+/* slide */
+
+.hero-slide{
+width:50%;
+flex-shrink:0;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:10px;
+}
+
+/* contenu */
+
+.hero-content{
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+}
+
+/* LOGO */
+
+.hero-logo{
+width:70px;
+margin-bottom:10px;
+}
+
+/* PHOTO */
+
+.hero-photo{
+width:90px;
+height:90px;
+object-fit:cover;
+border-radius:50%;
+border:3px solid white;
+margin-bottom:10px;
+}
+
+/* TITRES */
+
+.hero-content h2{
+font-size:22px;
+font-weight:700;
+margin:0;
+}
+
+.hero-content h3{
+font-size:18px;
+margin:5px 0;
+}
+
+.hero-content p{
+font-size:14px;
+margin:0;
+opacity:0.9;
+}
+
+/* ========================= */
+/* ANIMATION */
+/* ========================= */
+
+@keyframes slideHero{
+
+0%{transform:translateX(0);}
+40%{transform:translateX(0);}
+
+50%{transform:translateX(-50%);}
+90%{transform:translateX(-50%);}
+
+100%{transform:translateX(0);}
+
+}
+
+/* ========================= */
+/* HERO EXPERT IGTER */
+/* ========================= */
+
+.hero-expert{
+position:relative;
+height:320px;
+background:linear-gradient(135deg,#003366,#004f99);
+overflow:hidden;
+color:white;
+}
+
+/* effet fond subtil */
+
+.hero-expert::before{
+content:"";
+position:absolute;
+width:200%;
+height:200%;
+background:radial-gradient(circle, rgba(255,255,255,0.05) 10%, transparent 60%);
+animation:moveBg 12s linear infinite;
+}
+
+/* animation fond */
+
+@keyframes moveBg{
+0%{transform:translate(0,0);}
+100%{transform:translate(-50px,-50px);}
+}
+
+/* wrapper */
+
+.hero-wrapper{
+position:relative;
+height:100%;
+}
+
+/* slides */
+
+.hero-slide{
+position:absolute;
+width:100%;
+height:100%;
+top:0;
+left:0;
+opacity:0;
+transform:translateX(40px);
+transition:all 0.8s ease;
+display:flex;
+justify-content:center;
+align-items:center;
+overflow: hidden; /* évite débordement */
+}
+
+/* actif */
+
+.hero-slide.active{
+opacity:1;
+transform:translateX(0);
+}
+
+/* contenu */
+
+.hero-content{
+display:flex;
+flex-direction:column;
+align-items:center;
+animation:fadeUp 1s ease;
+}
+
+/* animation contenu */
+
+@keyframes fadeUp{
+from{opacity:0; transform:translateY(20px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+/* logo */
+
+.hero-logo{
+width:75px;
+margin-bottom:10px;
+}
+
+/* photo avec effet zoom */
+
+.hero-photo{
+width:95px;
+height:95px;
+border-radius:50%;
+border:3px solid white;
+object-fit:cover;
+margin-bottom:10px;
+transition:transform 0.5s;
+}
+
+.hero-slide.active .hero-photo{
+transform:scale(1.05);
+}
+
+/* textes */
+
+.hero-content h2{
+font-size:24px;
+margin:0;
+letter-spacing:0.5px;
+}
+
+.hero-content h3{
+font-size:18px;
+margin:5px 0;
+}
+
+.hero-content p{
+font-size:14px;
+opacity:0.9;
+margin:0;
+}
+
+.hero-highlight{
+color:#f2b705;
+font-weight:bold;
+}
+
+/* Fond blanc pour le slide 1 uniquement */
+.hero-slide.slide-white {
+  background-color: white;
+  color: #003366; /* texte bleu foncé pour contraste */
+}
+
+/* Ajuster le texte et logo si besoin */
+.hero-slide.slide-white h2 {
+  color: #003366;
+}
+
+.hero-slide.slide-white .hero-logo {
+  filter: none; /* au cas où tu avais un filtre sur la vidéo */
+}
+
+/* Container global */
+.hero-simple{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:40px;
+padding:20px 60px; /* réduit pour entrer dans la hauteur */
+width:100%;
+height:100%; /* TRÈS IMPORTANT */
+}
+
+.slide-white-pro {
+  background: #ffffff;
+  color: #00264d; /* bleu institutionnel */
+}
+
+/* Structure */
+ .hero-simple {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 40px 7%;
+}
+
+/* Texte */
+.hero-text h1 {
+  font-size: 25px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color : black;
+}
+
+.hero-text p {
+  font-size: 15px;
+  line-height: 1.5;
+  color: #333;
+}
+
+/* Image */
+.hero-image img {
+  width: 200px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+/* Nom + fonction */
+.hero-caption {
+  margin-top: 12px;
+  text-align: center;
+}
+
+.hero-caption strong {
+  display: block;
+  font-size: 15px;
+}
+
+.hero-caption p {
+  font-size: 13px;
+  color: #555;
+}
+
+/* IMPORTANT : éviter que le texte soit coupé */
+.hero-slide {
+  overflow: visible;
+}
+.hero-wrapper{
+height:100%;
+overflow:hidden;
+}
+
+.hero-text-center {
+  text-align: center;
+  max-width: 800px;
+  margin: auto;
+}
+
+.hero-text-center h1 {
+  font-size: 25px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.hero-text-center p {
+  font-size: 15px;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+/* =========================
+   BARRE DE DÉFILEMENT MISSIONS
+========================= */
+
+.missions-marquee {
+  width: 100%;
+  overflow: hidden;
+  background: #f4f6f9; /* fond institutionnel clair */
+  border-top: 4px solid #003366;
+  border-bottom: 4px solid #003366;
+  padding: 10px 0;
+  position: relative;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+
+.missions-content {
+  display: inline-block;
+  padding-left: 100%;
+  animation: scrollMissions 22s linear infinite;
+}
+
+/* Mise en valeur du titre */
+.missions-content strong {
+  color: #8a6d00;
+  font-weight: 700;
+}
+
+/* Animation */
+@keyframes scrollMissions {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.title-with-bar {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.title-bar {
+  width: 6px;
+  height: 50px;
+  background: linear-gradient(
+    to bottom,
+    #003366 0%,   /* bleu institutionnel */
+    #ffcc00 50%,  /* jaune */
+    #cc0000 100%  /* rouge */
+  );
+  border-radius: 2px;
+}
+
+.missions-track {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scroll-marquee 40s linear infinite;
+  padding-left: 20px;
+}
+
+.missions-track span {
+  margin-right: 60px;
+  color: #00264d;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+}
+
+/* Animation fluide */
+@keyframes scroll-marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.missions-track:hover {
+  animation-play-state: paused;
+}
+
+/* =========================
+   SECTION ATTRIBUTIONS GLASS TRICOLORE PREMIUM
+========================= */
+.attributions-section {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 50px 6%;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  backdrop-filter: blur(12px);
+}
+
+.attributions-section h2 {
+  text-align: center;
+  font-size: 26px;
+  color: #003366;
+  margin-bottom: 35px;
+  font-weight: 700;
+  border-left: none;
+  padding-left: 0;
+}
+
+.attributions-section h2::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 4px;
+  margin: 10px auto 0;
+  border-radius: 2px;
+
+  background: linear-gradient(
+    to right,
+    #007fff 0%,
+    #007fff 33%,
+    #ffcc00 33%,
+    #ffcc00 66%,
+    #ce1126 66%,
+    #ce1126 100%
+  );
+}
+
+/* GRILLE 2 PAR LIGNE */
+.attributions-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px; /* réduit l’espace entre les cartes */
+  justify-items: stretch; /* cartes prennent la largeur de la colonne */
+}
+
+.attribution-card {
+  width: 100%;
+  margin: 0;
+  padding: 18px 15px;
+  background: rgba(255, 255, 255, 0.15);
+  border-left: 6px solid transparent;
+  border-radius: 12px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+
+  /* animation init */
+  opacity: 0;
+  transform: translateY(40px) scale(0.9) rotateX(5deg);
+  transition: all 0.6s ease, box-shadow 0.3s ease;
+
+  /* Glow subtil pour style gouvernemental ultra-pro */
+  filter: drop-shadow(0 0 8px rgba(0, 51, 102, 0.25));
+}
+
+/* Hover glow et léger zoom */
+.attribution-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+  filter: drop-shadow(0 0 15px rgba(0, 51, 102, 0.35));
+}
+
+/* BORDURE TRICOLORE RDC 🇨🇩 */
+.attribution-card:nth-child(1) { border-left-color: #003399; } /* bleu */
+.attribution-card:nth-child(2) { border-left-color: #ffcc00; } /* jaune */
+.attribution-card:nth-child(3) { border-left-color: #ff0000; } /* rouge */
+.attribution-card:nth-child(4) { border-left-color: #003399; } /* bleu, cycle */
+
+
+/* ICÔNES */
+.attribution-card .icon {
+  font-size: 32px;
+  color: #003366;
+  margin-bottom: 12px;
+}
+
+/* TITRES */
+.attribution-card h3 {
+  font-size: 16px;
+  color: #003366;
+  margin-bottom: 8px;
+}
+
+/* PARAGRAPHE */
+.attribution-card p {
+  font-size: 13px;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .attributions-container {
+    grid-template-columns: 1fr;
+  }
+}
 
 /* NAVBAR STRUCTURE */
 .navbar {
@@ -1002,6 +1837,72 @@ background:#e0a800;
 }
 
 /* =========================
+   HERO SLIDER COMPACT MOBILE
+========================= */
+@media (max-width: 768px) {
+
+  /* Réduire la hauteur globale */
+  .hero-slide {
+    min-height: 200px; /* réduit la hauteur */
+    padding: 20px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Contenu centré et compact */
+  .hero-content {
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  /* LOGO SLIDE 1 */
+  .hero-logo {
+    width: 70px; /* plus petit */
+    margin-bottom: 10px;
+  }
+
+  /* TITRES */
+  .hero-content h1 {
+    font-size: 15px; /* réduit */
+    line-height: 1.3;
+    margin-bottom: 8px;
+  }
+
+  /* BARRE DÉCORATIVE */
+  .title-bar {
+    width: 40px;
+    height: 3px;
+    margin-bottom: 8px;
+  }
+
+  /* TEXTE SLIDE 2 */
+  .hero-content p {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  /* SLIDE 2 plus compact */
+  .slide-blue {
+    padding: 20px 10px;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .hero-slide {
+    border-radius: 10px;
+  }
+
+  .hero-content {
+    max-width: 95%;
+    margin: auto;
+  }
+
+}
+
+/* =========================
    LIGNE TRICOLORE MOBILE FIX
 ========================= */
 @media (max-width: 768px) {
@@ -1030,6 +1931,77 @@ background:#e0a800;
 
 }
 
+/* =========================
+   SLIDE 3 MOBILE SPLIT
+========================= */
+@media (max-width: 768px) {
+
+  .hero-simple {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* IMPORTANT : ordre d'affichage */
+  .hero-image {
+    order: 1; /* image en premier */
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-text {
+    order: 2; /* texte après */
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  /* IMAGE */
+  .hero-image img {
+    width: 100%;
+    max-width: 200px;
+    border-radius: 10px;
+  }
+
+  /* ESPACEMENT PRO */
+  .hero-caption {
+    margin-top: 8px;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .hero-slide {
+    padding: 15px 10px;
+  }
+
+  .hero-text p {
+    font-size: 12px;
+    line-height: 1;
+  }
+
+}
+/* Par défaut (desktop) → caché */
+.slide-mobile-text {
+  display: none;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  /* Afficher le nouveau slide */
+  .slide-mobile-text {
+    display: block;
+  }
+
+  /* Cacher le texte dans le slide 3 */
+  .hero-slide.slide-white-pro .hero-text {
+    display: none;
+  }
+
+}
+
 /* transition plus fluide */
 .news-item {
   transition: opacity 0.5s ease, transform 0.5s ease;
@@ -1042,150 +2014,514 @@ background:#e0a800;
 .news-item {
   transform: translateX(20px);
 }
+/* =========================
+   SECTION ACTUALITÉS
+========================= */
+.news-section {
+  padding: 60px 8%;
+  text-align: center;
 
-/* ======================= */
-/* FORMULAIRE FOOTER */
-/* ======================= */
+/* 🔥 FOND BLEU PRO */
+  background: linear-gradient(rgba(0,51,102,0.92), rgba(0,51,102,0.92)),
+              url("images/ig4.jpg");
+  background-size: cover;
+  background-position: center;
 
-.footer-form textarea{
-width:100%;
-height:70px;
-padding:8px;
-border-radius:4px;
-border:none;
-font-size:12px;
-font-family:"Yu Gothic UI";
-resize:none;
-margin-bottom:8px;
+  color: white;
 }
 
-.footer-form button{
-width:100%;
-padding:8px;
-background:#f2b705;
-border:none;
-color:#003366;
-font-weight:bold;
-border-radius:4px;
-cursor:pointer;
-font-size:12px;
+.news-section h2 {
+  font-size: 24px;
+  color: white;
+  margin-bottom: 30px;
+  border-left: none;
+  padding-left: 0;
 }
 
-.footer-form button:hover{
-background:#e0a800;
+.news-section h2::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 4px;
+  margin: 10px auto 0;
+  border-radius: 2px;
+
+  background: linear-gradient(
+    to right,
+    #007fff 0%,
+    #007fff 33%,
+    #ffcc00 33%,
+    #ffcc00 66%,
+    #ce1126 66%,
+    #ce1126 100%
+  );
 }
 
-.newsletter-form input{
-width:100%;
-padding:8px;
-border:none;
-border-radius:4px;
-margin-bottom:8px;
-font-size:12px;
+/* CONTENEUR */
+.news-display {
+  overflow: hidden;
+  position: relative;
 }
 
-.newsletter-form button{
-width:100%;
-padding:8px;
-background:#f2b705;
-border:none;
-border-radius:4px;
-color:#003366;
-font-weight:bold;
-cursor:pointer;
+/* SLIDER */
+.news-slider {
+  display: flex;
+  transition: transform 0.6s ease;
 }
 
-.newsletter-form button:hover{
-background:#e0a800;
+/* ITEM */
+.news-item {
+  min-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
 }
 
-html{
-scroll-behavior:smooth;
+/* TEXTE */
+.news-left {
+  flex: 1;
 }
 
-/* SECTION PRINCIPALE */
-.dirigeants-section{
-  width:100%;
-  padding:60px 8%;
-  background:#f5f7f6;
-  display:flex;
-  flex-direction:column;
-  gap:50px;
+.news-left h3 {
+  font-size: 28px;
+  margin-bottom: 10px;
 }
 
-/* BOÎTE DIRIGEANT */
-.dirigeant-box{
-  display:flex;
-  gap:40px;
-  background:#fff;
-  padding:35px;
-  border-radius:15px;
-  box-shadow:0 5px 15px rgba(0,0,0,0.08);
-  align-items:flex-start;
+.news-date {
+  font-size: 14px;
+  opacity: 0.8;
+  display: block;
+  margin-bottom: 15px;
 }
 
-/* PHOTO */
-.dirigeant-photo{
-  flex:0 0 200px;
+.news-left p {
+  line-height: 1.6;
 }
 
-.dirigeant-photo img{
-  width:100%;
-  border-radius:12px;
-  object-fit:cover;
-  border:4px solid #0F5D3F;
+/* IMAGE */
+.news-right {
+  flex: 1;
+  text-align: right;
 }
 
-/* CONTENU */
-.dirigeant-content{
-  flex:1;
-  margin-top: 0;
-  padding-top: 0;
+.news-right img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 5px;
+  border: 4px solid white;
 }
 
-.dirigeant-content h1{
-  color:#0F5D3F;
-  margin-bottom:3px;
-  font-size:28px;
-  margin-top: 0;
+.news-container {
+  position: relative; /* 🔥 indispensable */
 }
 
-.dirigeant-content h3{
-  color:#198754;
-  margin-bottom:5px;
-  font-size:20px;
+/* BOUTONS VISIBLES */
+.news-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  
+  background: rgba(0,0,0,0.6);
+  border: none;
+  color: white;
+  font-size: 24px;
+  padding: 12px 16px;
+  cursor: pointer;
+
+  z-index: 1000; /* 🔥 très important */
 }
 
-.dirigeant-content p{
-  font-size:15px;
-  line-height:1.5;
-  color:#333;
-  text-align:justify;
-  margin-bottom:15px;
+/* Position corrigée */
+.prev-news {
+  left: -100px;
 }
 
-/* RESPONSIVE */
-@media(max-width:500px){
+.next-news {
+  right: -100px;
+}
 
-  .dirigeant-box{
+/* =========================
+   MASQUER BOUTONS SUR MOBILE
+========================= */
+@media (max-width: 768px) {
+
+  .news-btn {
+    display: none !important;
+  }
+
+}
+/* =========================
+   LIEN BAS ACTUALITÉS
+========================= */
+.news-more-link {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.news-more-link a {
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 4px;
+  transition: 0.3s;
+}
+
+/* Ligne animée élégante */
+.news-more-link a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+
+  background: linear-gradient(
+    to right,
+    #007fff,
+    #ffcc00,
+    #ce1126
+  );
+
+  transition: width 0.3s ease;
+}
+
+/* Hover */
+.news-more-link a:hover::after {
+  width: 100%;
+}
+
+.news-more-link a:hover {
+  opacity: 0.85;
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 768px) {
+
+  .news-item {
     flex-direction: column;
-    gap: 0;
+    text-align: center;
   }
 
-  .dirigeant-photo{
-    width: 100%;
+  .news-right {
+    text-align: center;
   }
 
-  .dirigeant-content{
-    padding-top: 0px; /* ou 0 */
-    margin-top: 0;
+  .news-right img {
+    max-width: 250px;
   }
 
-  .dirigeant-content h1{
-    font-size: 20px;
-    margin-top: 0px; /* ou 0 */
+}
+
+/* =========================
+   ANIMATION SCROLL (WOW)
+========================= */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+  transition: all 0.8s ease;
+}
+
+.reveal-on-scroll.active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* =========================
+   BARRE alignement des 2 boutons 
+========================= */
+.saisine-bar {
+  width: 100%;
+  margin: 40px 0;
+  padding: 15px;
+  flex-direction: column;
+  gap: 12px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(0, 51, 102, 0.08);
+  backdrop-filter: blur(8px);
+
+  border-radius: 10px;
+
+  border-top: 4px solid;
+  border-image: linear-gradient(to right, #007fff, #ffcc00, #ce1126) 1;
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* Effet lumière */
+.saisine-bar::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 100%;
+  top: 0;
+  left: -100%;
+
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.25),
+    transparent
+  );
+
+  animation: shineMove 6s linear infinite;
+}
+
+@keyframes shineMove {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+/* =========================
+   BOUTON
+========================= */
+.saisine-btn {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+
+  padding: 12px 25px;
+  border-radius: 6px;
+
+  background: linear-gradient(135deg, #003366, #0055aa);
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  position: relative;
+  z-index: 2;
+
+  transition: all 0.3s ease;
+
+  animation: pulseGlow 2.5s infinite;
+}
+
+/* Icône */
+.saisine-btn i {
+  font-size: 16px;
+}
+
+/* Pulse */
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 0 rgba(0,85,170,0.3); }
+  50% { box-shadow: 0 0 20px rgba(0,85,170,0.6); }
+  100% { box-shadow: 0 0 0 rgba(0,85,170,0.3); }
+}
+
+/* Hover */
+.saisine-btn:hover {
+  animation: none;
+  transform: translateY(-2px) scale(1.03);
+  background: linear-gradient(135deg, #0055aa, #007fff);
+}
+
+/* bouton secondaire */
+.secondary-btn {
+  background: linear-gradient(135deg, #ce1126, #ff4d4d); /* 🔴 rouge institutionnel */
+}
+
+/* hover bouton secondaire */
+.secondary-btn:hover {
+  background: linear-gradient(135deg, #ff4d4d, #ff6666);
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 768px) {
+
+  .saisine-bar {
+    padding: 12px;
+    margin: 30px 0;
   }
 
+  .saisine-btn {
+    font-size: 13px;
+    padding: 10px 15px;
+    text-align: center;
+  }
+
+}
+.menu-right{
+  display:flex;
+  gap:20px;
+  align-items:center;
+}
+
+.menu-right a{
+  text-decoration:none;
+  color:white;
+  padding:10px;
+}
+
+/* CONTENEUR DU MENU DÉROULANT */
+.dropdown{
+  position:relative;
+}
+
+/* SOUS-MENU CACHÉ AU DÉPART */
+.submenu{
+  display:none;
+  position:absolute;
+  top:100%;
+  left:0;
+  background:#fff;
+  min-width:220px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.15);
+  border-radius:5px;
+  overflow:hidden;
+  z-index:1000;
+}
+
+/* LIENS DU SOUS-MENU */
+.submenu a{
+  display:block;
+  padding:12px;
+  color:#000;
+}
+
+.submenu a:hover{
+  background:#f2f2f2;
+}
+
+/* AFFICHER LE SOUS-MENU AU SURVOL */
+.dropdown:hover .submenu{
+  display:block;
+}
+
+/* CONTENEUR SOUS-MENU */
+.submenu-container{
+  position:relative;
+  width:100%;
+}
+
+/* BOUTON */
+.submenu-btn{
+  width:100%;
+  border:none;
+  background:none;
+  color:white;
+  padding:12px 15px;
+  text-align:left;
+  cursor:pointer;
+  font-size:16px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+/* SOUS-MENU */
+.submenu-content{
+  display:none;
+  flex-direction:column;
+  background:rgba(255,255,255,0.08);
+  margin-left:15px;
+  border-left:2px solid #198754;
+}
+
+/* LIENS */
+.submenu-content a{
+  padding:10px 15px;
+  text-decoration:none;
+  color:white;
+  font-size:15px;
+}
+
+/* HOVER */
+.submenu-content a:hover{
+  background:rgba(255,255,255,0.1);
+}
+
+/* AFFICHAGE */
+.submenu-container.active .submenu-content{
+  display:flex;
+}
+
+/* SOUS-MENU DESKTOP */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {  
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 250px;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  border-radius: 6px;
+  z-index: 1000;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 12px 15px;
+  color: #333;
+  text-decoration: none;
+}
+
+.dropdown-content a:hover {
+  background: #f3f3f3;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+/* MENU DESKTOP */
+.menu-right {
+  display: flex;
+  gap: 20px;
+}
+
+/* ===== DESKTOP ===== */
+.menu-right {
+  display: flex;
+  gap: 20px;
+}
+
+.mobile-menu-bar {
+  display: none;
+}
+
+/* ===== MOBILE ===== */
+@media screen and (max-width: 768px) {
+
+  .menu-right {
+    display: none !important;
+  }
+
+  .mobile-menu-bar {
+    display: flex !important;
+    align-items: center;
+  }
+
+}
+/* FORCER LES COULEURS DU MENU LATÉRAL */
+
+.side-menu .submenu-btn{
+    color:#003366 !important;
+    background:none;
+}
+
+.side-menu .submenu-content a{
+    color:#003366 !important;
+}
+
+.side-menu .submenu-btn i{
+    color:#003366 !important;
 }
 </style>
 
@@ -1204,8 +2540,9 @@ scroll-behavior:smooth;
       <div class="title">INSPECTION GENERALE DE LA TERRITORIALE</div>
     </div>
     </div>
-<div class="header-right">
+  </div>
 
+<div class="header-right">
   <div class="contact-item" id="top-contact">
     <i class="fas fa-phone"></i>
     <span>+243 82 20 80 469</span>
@@ -1231,14 +2568,21 @@ scroll-behavior:smooth;
   </div>
 
   <!-- MENU DESKTOP -->
-  <div class="menu-right">
-    <a href="index.html">Accueil</a>
-    <a href="document.html">Documents</a>
-    <a href="#">Missions</a>
-    <a href="#">Rapports</a>
-    <a href="#contact">Contacts</a>
-  </div>
+<div class="menu-right">
+  <a href="#actualite">Actualités</a>
+  <div class="dropdown">
+  <a href="javascript:void(0)">Dirigeants <i class="fa-solid fa-caret-down"></i></a>
 
+  <div class="dropdown-content">
+    <a href="ig_iga.html">I.G et I.G.A</a>
+    <a href="directeurs.html">Directeurs</a>
+    <a href="cd.html">Chefs de Divisions</a>
+    <a href="cb.html">Chefs de Bureau</a>
+  </div>
+</div>
+  <a href="document.html">Documents officiels</a>
+  <a href="#saisine">Saisissez-nous</a>
+</div>
   <!-- MENU MOBILE -->
   <div class="mobile-menu-bar">
     <div class="menu-icon" onclick="openMenu()">☰</div>
@@ -1260,10 +2604,22 @@ scroll-behavior:smooth;
   <!-- LIENS PRINCIPAUX -->
   <a href="index.html"><i class="fa-solid fa-building-columns"></i> Accueil</a>
   <a href="#actualite"> 📰 Actualités</a>
+ <div class="submenu-container">
+  <button class="submenu-btn">
+    👔 Dirigeants
+    <i class="fa-solid fa-caret-down"></i>
+  </button>
+
+  <div class="submenu-content">
+    <a href="ig_iga.html"><i class="fa-solid fa-user-tie"></i>I.G et I.G.A</a>
+    <a href="directeurs.html"><i class="fa-solid fa-users-gear"></i>Directeurs</a>
+    <a href="cd.html"><i class="fa-solid fa-user-tie"></i>Chefs de Divisions</a>
+    <a href="cb.html"><i class="fa-solid fa-users-gear"></i>Chefs de Bureau</a>
+  </div>
+</div>
+  <a href="#missions">🎯 Missions</a>
   <a href="document.html">🗂️ Documents officiels</a>
-  <a href="mission.html">🎯 Missions</a>
-  <a href="rapport.html">📊 Rapports</a>
-  <div class="submenu-container">
+    <div class="submenu-container">
     <button class="submenu-btn">📖 Présentation de l'IGTER<i class="fa-solid fa-caret-down"></i></button>
     <div class="submenu-content">
      <a href="apercu general.html">👁️ Aperçu Général</a>
@@ -1305,48 +2661,228 @@ scroll-behavior:smooth;
 
 </div></div>
 
-<!-- SECTION DIRIGEANTS -->
-<section class="dirigeants-section">
+<!-- HERO EXPERT IGTER -->
 
-  <!-- ZONE I.G -->
-  <div class="dirigeant-box">
+<div class="hero-expert">
 
-    <div class="dirigeant-photo">
-      <img src="images/IGMULOLO.jpg" alt="Inspecteur Général">
-    </div>
+<div class="hero-wrapper">
 
-    <div class="dirigeant-content">
-      <h1>MULOLO KANYIMBU Didier</h1>
+<!-- SLIDE 2 -->
+<div class="hero-slide active slide-blue">
+  <div class="hero-content hero-text-center">
 
-      <h3>Inspecteur Général de la Territoriale, Chef de Corps</h3>
+    <h1>IGTER | Inspection Générale de la Territoriale</h1>
 
+    <p>
+      Service Public de l'Etat ayant pour rôle principal de veiller au respect 
+      et à l'application correcte des lois, de contrôler, d'encadrer, de suivre 
+      et d'évaluer les actes posés par les Autorités Territoriales et par les 
+      Responsables des Services Centraux et Déconcentrés du Ministère ayant 
+      l'Intérieur dans ses attributions.
+    </p>
+
+  </div>
+</div>
+
+<!-- SLIDE 3 -->
+<div class="hero-slide slide-white-pro">
+  <div class="hero-simple">
+    <!-- Texte -->
+    <div class="hero-text">
+      <h1>Vision de l'Inspecteur Général de la Territoriale</h1>
       <p>
-        Biographie complète de l’I.G, son parcours académique, son expérience professionnelle, ses fonctions occupées, les distinctions obtenues ainsi que ses réalisations au sein de l’IGTER.
+        Mon Adjoint et moi, nous avons été nommés par ordonnance du Président de la République, référencée .................., sur proposition du Vice-Premier Ministre en charge de l'Intérieur, Sécurité, Décentralisation & Affaires Coutumières, avec mission de restructurer le Service qu'est l'Inspection Générale de la Territoriale, en sigle "IGTER". 
+
+        Ma vision précise est de : 
+        - faire respecter les lois et règlements de la République en matière d'administration territoriale, ainsi que les instructions de la hiérarchie;
+        - professionnaliser les missions dévolues à un Inspecteur de la Territoriale.
       </p>
     </div>
 
-  </div>
+    <!-- Image -->
+    <div class="hero-image">
+      <img src="images/IGMULOLO.jpg" alt="Inspecteur Général">
 
-  <!-- ZONE I.G.A -->
-  <div class="dirigeant-box">
-
-    <div class="dirigeant-photo">
-      <img src="images/IGASHOMBA.jpg" alt="Inspecteur Général Adjoint">
+      <div class="hero-caption">
+        <strong>MULOLO KANYIMBU Didier</strong>
+        <p>Inspecteur Général, Chef de Corps des Inspecteurs de la Territoriale</p>
+      </div>
     </div>
 
-    <div class="dirigeant-content">
-      <h1>SHOMBA WA SHOMBA Désiré</h1>
+  </div>
+</div>
 
-      <h3>Inspecteur Général Adjoint de la Territoriale</h3>
+</div></div>
 
+<!-- BARRE DES MISSIONS EN COURS -->
+<div class="missions-marquee">
+  <div class="missions-track">
+    <span>🔵 Contrôle des Services Centraux du Ministère de l'Intérieur</span>
+    <span>🟡 Contrôle des Services Déconcentrés du Ministère de l'Intérieur</span>
+    <span>🔴 Contrôle des Provinces</span>
+    <span>🔵 Contrôle des Entités Territoriales</span>
+    <span>🟡 Encadrement des Services Centraux et Entités Administratives</span>
+    <span>🔴 Appui-Conseil aux Gouverneurs de provinces</span>
+    <span>🔵 Appui-Conseil aux Autorités Territoriales</span>
+    <span>🟡 Suivi-Evaluation des Actes Administratifs</span>
+  </div>
+</div>
+
+<!-- =========================
+   NOS ATTRIBUTIONS (VERSION GLASS TRICOLORE)
+========================= -->
+<section class="attributions-section">
+
+  <h2>Nos attributions</h2>
+
+  <div class="attributions-container">
+
+    <!-- Carte 1 -->
+    <div class="attribution-card">
+      <div class="icon"><i class="fas fa-balance-scale"></i></div>
+      <h3>Contrôle des Provinces, Entités Territoriales et Services Centraux et Déconcentrés du Ministère de l'Interieur</h3>
       <p>
-        Biographie complète de l’I.G.A, son parcours professionnel, ses compétences, ses responsabilités ainsi que ses réalisations au sein de l’IGTER.
+        Le contrôle consiste à la surveillance de l’application correcte des lois, règlements, directives et instructions ainsi qu’à la vérification de la gestion administrative, financière et matérielle d’une entité territoriale.
+      </p>
+    </div>
+
+    <!-- Carte 2 -->
+    <div class="attribution-card">
+      <div class="icon"><i class="fas fa-user-tie"></i></div>
+      <h3>Encadrement des Gouverneurs de provinces, Autorités Territoriales et Responsables des Services du Ministère de l'Interieur</h3>
+      <p>
+        L’encadrement consiste en appui-conseil et au renforcement des capacités des responsables des services centraux du Ministère ayant l’intérieur dans ses attributions ainsi que des Autorités Territoriales.
+      </p>
+    </div>
+
+    <!-- Carte 3 -->
+    <div class="attribution-card">
+      <div class="icon"><i class="fas fa-tasks"></i></div>
+      <h3>Suivi des actes administratifs</h3>
+      <p>
+        Le suivi est le monitoring ou la surveillance de l’exécution d’un projet, d’un programme ou d’une instruction dans le domaine de la territoriale.
+      </p>
+    </div>
+
+    <!-- Carte 4 -->
+    <div class="attribution-card">
+      <div class="icon"><i class="fas fa-chart-line"></i></div>
+      <h3>Évaluation des actes administratifs</h3>
+      <p>
+        L’évaluation est le mesurage à l’aide des indicateurs objectivement vérifiables du rendement et de la performance d’une entité territoriale et/ou d’une Autorité Territoriale.
       </p>
     </div>
 
   </div>
 
 </section>
+
+<div class="saisine-bar reveal-on-scroll" id="saisine">
+
+  <a href="mode_saisine.html" class="saisine-btn">
+    <i class="fas fa-paper-plane"></i>
+    Saisissez l’IGTER pour toute question en Administration Territoriale en RDC.
+  </a>
+
+  <!-- NOUVEAU BOUTON -->
+  <a href="mission.html" class="saisine-btn secondary-btn" id="missions">
+  <i class="fas fa-chart-bar"></i>
+  Voir nos missions récentes
+</a>
+
+</div>
+
+<!-- =========================
+   ACTUALITÉS IGTER
+========================= -->
+<section class="news-section" id="actualite">
+
+  <h2>Nos Actualités</h2>
+
+  <div class="news-container">
+
+    <!-- Bouton gauche -->
+    <button class="news-btn prev-news">❮</button>
+
+    <!-- Zone affichage -->
+   <div class="news-display">
+
+  <div class="news-slider">
+
+    <!-- ACTUALITÉ 1 -->
+    <div class="news-item active">
+      <div class="news-left">
+        <h3>Rencontre IG PNC et IGTER</h3>
+        <span class="news-date">17 mars 2026</span>
+        <p>
+          Séance de travail et échange d'expériences entre l'Inspection Générale 
+          de la Police Nationale Congolaise et l'Inspection Générale de la Territoriale.
+        </p>
+      </div>
+
+      <div class="news-right">
+        <img src="images/ig4.jpg" alt="Actualité">
+      </div>
+    </div>
+
+    <!-- ACTUALITÉ 2 -->
+    <div class="news-item">
+      <div class="news-left">
+        <h3>Visite de travail</h3>
+        <span class="news-date">10 mars 2026</span>
+        <p>
+          Visite de travail de Son Excellence, Madame la Vice-Ministre de l'Intérieur.
+        </p>
+      </div>
+
+      <div class="news-right">
+        <img src="images/ig2.jpg" alt="Actualité">
+      </div>
+    </div>
+
+ <!-- Tu peux ajouter autant d’actualités que tu veux -->
+  </div>
+
+</div>
+
+    <!-- Bouton droite -->
+    <button class="news-btn next-news">❯</button>
+
+  </div>
+
+<div class="news-more-link">
+  <a href="https://web.facebook.com/groups/544962343127299/user/61584911503215" target="_blank">
+    Lire toutes les actualités
+  </a>
+</div>
+</section>
+
+<!-- VIDEOS -->
+<section class="videos-section">
+  <div class="videos-header">
+    <h2>Vidéos récentes</h2>
+    <a href="videos.html" class="voir-tout">Voir tout</a>
+  </div>
+
+  <div class="videos-grid">
+
+    <div class="video-card">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/CSwLSblEffc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen title= "Vidéo IGTER 1" frameborder="0" allowfullscreen></iframe>
+      <div class="video-title">Séance de travail entre l'inspection Générale de la Police Nationale Congolaise (I.G PNC) et l'Inspection Générale de la Territoriale (IGTER).</div>
+    </div>
+
+    <div class="video-card">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/YqjpwzLhkBc?si=CWcG7o-Mm6RsoFGi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen title= "Vidéo IGTER 2" frameborder="0" allowfullscreen></iframe>
+      <div class="video-title">Réhabilitation de l'Inspecteur Général de la Territoriale a.i, Monsieur LUMBILA FEKEY Roger</div>
+    </div>
+
+    <div class="video-card">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/pRgTeC9DVVw?si=JR5bk75cZh2KBiNC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen title="Vidéo IGTER 3" frameborder="0" allowfullscreen></iframe>
+      <div class="video-title">(Archive 2014) Cérémonie de prestation de serment de l'Inspecteur Général de la Territoriale, MUSASA KAZEZ Mike Odon Bernard, de son Adjoint et de différents Inspecteurs Principaux Chefs de Pools.</div>
+    </div>
+  </div>
+</section>
+</div>
 
 <!-- FOOTER -->
 <footer id="contact">
@@ -1355,112 +2891,122 @@ scroll-behavior:smooth;
 
 <!-- Colonne 1 : Réseaux sociaux -->
 <div class="footer-col">
+
   <h3>Réseaux sociaux</h3>
 
-  <a href="https://web.facebook.com/groups/544962343127299/user/61584911503215" target="_blank">
-    <i class="fa-brands fa-facebook-f"></i> Facebook
-  </a>
+  <div class="social-icons">
 
-  <a href="https://x.com/nomducompte" target="_blank">
-    <i class="fa-brands fa-x-twitter"></i> Twitter
-  </a>
+    <a href="https://web.facebook.com/groups/544962343127299/user/61584911503215" target="_blank">
+      <i class="fa-brands fa-facebook-f"></i>
+    </a>
 
-  <a href="https://youtube.com/nomducompte" target="_blank">
-    <i class="fa-brands fa-youtube"></i> Youtube
-  </a>
+    <a href="https://x.com/nomducompte" target="_blank">
+      <i class="fa-brands fa-x-twitter"></i>
+    </a>
 
-  <a href="https://instagram.com/nomducompte" target="_blank">
-    <i class="fa-brands fa-instagram"></i> Instagram
-  </a>
+    <a href="https://youtube.com/nomducompte" target="_blank">
+      <i class="fa-brands fa-youtube"></i>
+    </a>
 
-  <a href="https://wa.me/00243822080469" target="_blank">
-    <i class="fa-brands fa-whatsapp"></i> Whatsapp
-  </a>
+    <a href="https://instagram.com/nomducompte" target="_blank">
+      <i class="fa-brands fa-instagram"></i>
+    </a>
+
+    <a href="https://wa.me/00243822080469" target="_blank">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+  </div>
+
+  <!-- Localisation -->
+  <h3>Localisation</h3>
+  <div class="location-text">
+  <a href="https://www.google.com/maps/search/?api=1&query=Immeuble+Semois+Royal+Kinshasa+Gombe" target="_blank">
+
+  <i class="fa-solid fa-location-dot"></i>6è niveau Immeuble Semois<br>Place Royal/Kinshasa-Gombe</a>
+</div>
 </div>
 
 <!-- Colonne 2 : Contact -->
 <div class="footer-col">
 
-<h3>Contact</h3>
+  <h3>Contact</h3>
 
-<p>
-<a href="https://www.google.com/maps/search/?api=1&query=Immeuble+Semois+Royal+Kinshasa+Gombe" target="_blank">
-<i class="fa-solid fa-location-dot"></i>
-Immeuble Semois<br>
-Royal / Kinshasa-Gombe
-</a>
-</p>
+ <div class="contact-info">
 
-<p>
-<a href="mailto:contact@igter.cd">
-<i class="fa-solid fa-envelope"></i>
-contact@igter.cd
-</a>
-</p>
+  <p>
+    <a href="mailto:contact@igter.cd">
+      <i class="fa-solid fa-envelope"></i>
+      contact@igter.cd
+    </a>
+  </p>
 
-<p>
-<a href="tel:+243822080469">
-<i class="fa-solid fa-phone"></i>
-+243 822 080 469
-</a>
-</p>
+  <p>
+    <a href="tel:+243822080469">
+      <i class="fa-solid fa-phone"></i>
+      +243 822 080 469
+    </a>
+  </p>
 
 </div>
 
-<!-- Colonne 3 : Liens institutionnels -->
-<div class="footer-col">
-
-<h3>Liens institutionnels</h3>
-
-<a href="https://presidence.cd" target="_blank">
-<i class="fa-solid fa-landmark"></i>
-Présidence de la République
-</a>
-
-<a href="https://primature.cd" target="_blank">
-<i class="fa-solid fa-building"></i>
-Primature
-</a>
-
-<a href="https://interieur.gouv.cd" target="_blank">
-<i class="fa-solid fa-shield-halved"></i>
-Ministère de l'Intérieur
-</a>
-
-</div>
-
-<!-- Colonne 5 : Newsletter -->
-<div class="footer-col">
-
-  <h3>Newsletter</h3>
+  <!-- Newsletter -->
+  <h3 class="newsletter-title">Newsletter</h3>
 
   <p class="newsletter-text">
     Inscrivez-vous pour ne rien rater de nos nouvelles.
-  </p><br>
+  </p>
 
   <form id="newsletterForm" class="newsletter-form">
+
     <input type="email" placeholder="Votre adresse email">
-    <button type="submit">S'abonner</button>
+
+    <button type="submit">
+      S'abonner
+    </button>
+
   </form>
 
-</div></div>
-
+</div>
 <div id="toast" class="toast">
   <div class="toast-content">
     <span id="toast-icon">⚠️</span>
     <span id="toast-message"></span>
   </div>
+
   <div class="toast-progress"></div>
 </div>
+
+<!-- Colonne 3 : Liens institutionnels -->
+<div class="footer-col institutional-links">
+
+  <h3>Liens institutionnels</h3>
+
+  <a href="https://presidence.cd" target="_blank">
+    <i class="fa-solid fa-landmark"></i>
+    Présidence de la République
+  </a>
+
+  <a href="https://primature.cd" target="_blank">
+    <i class="fa-solid fa-building"></i>
+    Primature
+  </a>
+
+  <a href="https://interieur.gouv.cd" target="_blank">
+    <i class="fa-solid fa-shield-halved"></i>
+    Ministère de l'Intérieur
+  </a>
+
+</div></div>
 
 <!-- NAVIGATION FOOTER -->
 
 <div class="footer-nav">
 
 <a href="index.html">Accueil</a>
-<a href="#missions">Missions</a>
-<a href="actualite.html">Actualités</a>
+<a href="#actualite">Actualités</a>
 <a href="document.html">Documents</a>
+<a href="#missions">Missions</a>
 <a href="#top-contact">Contact</a>
 
 </div>
@@ -1478,6 +3024,14 @@ Ministère de l'Intérieur
 </footer>
 
 <script>
+const submenuBtns = document.querySelectorAll(".submenu-btn");
+
+submenuBtns.forEach(btn => {
+  btn.addEventListener("click", function () {
+    this.parentElement.classList.toggle("active");
+  });
+});
+
 function openMenu(){
   document.getElementById("sideMenu").style.width="280px";
 }
@@ -1531,6 +3085,13 @@ submenu.classList.toggle("show");
 
 });
 
+document.querySelectorAll('.submenu-btn').forEach(button => {
+  button.addEventListener('click', () => {
+    button.nextElementSibling.classList.toggle('show');
+  });
+});
+
+
 function showToast(message, type = "info") {
     const toast = document.getElementById("toast");
     const msg = document.getElementById("toast-message");
@@ -1571,6 +3132,143 @@ document.getElementById("newsletterForm").addEventListener("submit", function(e)
     );
 });
 
+</script>
+
+<script>
+let slides = document.querySelectorAll(".hero-slide");
+let dots = document.querySelectorAll(".dot");
+let index = 0;
+let interval;
+
+/* afficher slide */
+
+function showSlide(i){
+
+slides.forEach(s => s.classList.remove("active"));
+dots.forEach(d => d.classList.remove("active"));
+
+slides[i].classList.add("active");
+dots[i].classList.add("active");
+
+index = i;
+}
+
+/* auto */
+
+function startAuto(){
+interval = setInterval(() => {
+index++;
+if(index >= slides.length){ index = 0; }
+showSlide(index);
+}, 15000);
+}
+
+/* pause au survol */
+
+let hero = document.querySelector(".hero-expert");
+
+hero.addEventListener("mouseenter", () => clearInterval(interval));
+hero.addEventListener("mouseleave", startAuto);
+
+/* dots clic */
+
+dots.forEach((dot, i) => {
+dot.addEventListener("click", () => showSlide(i));
+});
+
+/* lancer */
+
+startAuto();
+</script>
+<script>
+const cards = document.querySelectorAll('.attribution-card');
+
+function animateCards() {
+  const triggerBottom = window.innerHeight * 0.85;
+
+  cards.forEach((card, index) => {
+    const cardTop = card.getBoundingClientRect().top;
+
+    if (cardTop < triggerBottom) {
+      setTimeout(() => {
+        card.style.opacity = '1';
+        card.style.transform = 'scale(1) translateY(0)';
+      }, index * 200); // délai par carte (200ms)
+    }
+  });
+}
+
+window.addEventListener('scroll', animateCards);
+window.addEventListener('load', animateCards);
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+
+const slider = document.querySelector('.news-slider');
+const items = document.querySelectorAll('.news-item');
+const nextBtn = document.querySelector('.next-news');
+const prevBtn = document.querySelector('.prev-news');
+
+let index = 0;
+let autoSlide;
+
+/* AFFICHAGE */
+function updateSlider() {
+  slider.style.transform = "translateX(-" + (index * 100) + "%)";
+}
+
+/* NEXT */
+function nextSlide() {
+  index = (index + 1) % items.length;
+  updateSlider();
+}
+
+/* PREV */
+function prevSlide() {
+  index = (index - 1 + items.length) % items.length;
+  updateSlider();
+}
+
+/* BOUTONS */
+nextBtn.addEventListener("click", () => {
+  nextSlide();
+  resetAuto();
+});
+
+prevBtn.addEventListener("click", () => {
+  prevSlide();
+  resetAuto();
+});
+
+/* AUTO */
+function startAuto() {
+  autoSlide = setInterval(nextSlide, 4000);
+}
+
+function resetAuto() {
+  clearInterval(autoSlide);
+  startAuto();
+}
+
+startAuto();
+
+/* SWIPE */
+let startX = 0;
+
+slider.addEventListener('touchstart', e => {
+  startX = e.touches[0].clientX;
+});
+
+slider.addEventListener('touchend', e => {
+  let endX = e.changedTouches[0].clientX;
+
+  if (startX - endX > 50) nextSlide();
+  if (endX - startX > 50) prevSlide();
+
+  resetAuto();
+});
+
+});
 </script>
 <script>
 const revealElements = document.querySelectorAll('.reveal-on-scroll');
