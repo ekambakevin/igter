@@ -1654,103 +1654,113 @@ background:#e0a800;
 
 <!-- Colonne 1 : Réseaux sociaux -->
 <div class="footer-col">
+
   <h3>Réseaux sociaux</h3>
 
-  <a href="https://web.facebook.com/groups/544962343127299/user/61584911503215" target="_blank">
-    <i class="fa-brands fa-facebook-f"></i> Facebook
-  </a>
+  <div class="social-icons">
 
-  <a href="https://x.com/nomducompte" target="_blank">
-    <i class="fa-brands fa-x-twitter"></i> Twitter
-  </a>
+    <a href="https://web.facebook.com/groups/544962343127299/user/61584911503215" target="_blank">
+      <i class="fa-brands fa-facebook-f"></i>
+    </a>
 
-  <a href="https://youtube.com/nomducompte" target="_blank">
-    <i class="fa-brands fa-youtube"></i> Youtube
-  </a>
+    <a href="https://x.com/nomducompte" target="_blank">
+      <i class="fa-brands fa-x-twitter"></i>
+    </a>
 
-  <a href="https://instagram.com/nomducompte" target="_blank">
-    <i class="fa-brands fa-instagram"></i> Instagram
-  </a>
+    <a href="https://youtube.com/nomducompte" target="_blank">
+      <i class="fa-brands fa-youtube"></i>
+    </a>
 
-  <a href="https://wa.me/00243822080469" target="_blank">
-    <i class="fa-brands fa-whatsapp"></i> Whatsapp
-  </a>
+    <a href="https://instagram.com/nomducompte" target="_blank">
+      <i class="fa-brands fa-instagram"></i>
+    </a>
+
+    <a href="https://wa.me/00243822080469" target="_blank">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+  </div>
+
+  <!-- Localisation -->
+  <h3>Localisation</h3>
+  <div class="location-text">
+  <a href="https://www.google.com/maps/search/?api=1&query=Immeuble+Semois+Royal+Kinshasa+Gombe" target="_blank">
+
+  <i class="fa-solid fa-location-dot"></i>6è niveau Immeuble Semois<br>Place Royal/Kinshasa-Gombe</a>
+</div>
 </div>
 
 <!-- Colonne 2 : Contact -->
 <div class="footer-col">
 
-<h3>Contact</h3>
+  <h3>Contact</h3>
 
-<p>
-<a href="https://www.google.com/maps/search/?api=1&query=Immeuble+Semois+Royal+Kinshasa+Gombe" target="_blank">
-<i class="fa-solid fa-location-dot"></i>
-Immeuble Semois<br>
-Royal / Kinshasa-Gombe
-</a>
-</p>
+ <div class="contact-info">
 
-<p>
-<a href="mailto:contact@igter.cd">
-<i class="fa-solid fa-envelope"></i>
-contact@igter.cd
-</a>
-</p>
+  <p>
+    <a href="mailto:contact@igter.cd">
+      <i class="fa-solid fa-envelope"></i>
+      contact@igter.cd
+    </a>
+  </p>
 
-<p>
-<a href="tel:+243822080469">
-<i class="fa-solid fa-phone"></i>
-+243 822 080 469
-</a>
-</p>
+  <p>
+    <a href="tel:+243822080469">
+      <i class="fa-solid fa-phone"></i>
+      +243 822 080 469
+    </a>
+  </p>
 
 </div>
 
-<!-- Colonne 3 : Liens institutionnels -->
-<div class="footer-col">
-
-<h3>Liens institutionnels</h3>
-
-<a href="https://presidence.cd" target="_blank">
-<i class="fa-solid fa-landmark"></i>
-Présidence de la République
-</a>
-
-<a href="https://primature.cd" target="_blank">
-<i class="fa-solid fa-building"></i>
-Primature
-</a>
-
-<a href="https://interieur.gouv.cd" target="_blank">
-<i class="fa-solid fa-shield-halved"></i>
-Ministère de l'Intérieur
-</a>
-
-</div>
-
-<!-- Colonne 5 : Newsletter -->
-<div class="footer-col">
-
-  <h3>Newsletter</h3>
+  <!-- Newsletter -->
+  <h3 class="newsletter-title">Newsletter</h3>
 
   <p class="newsletter-text">
     Inscrivez-vous pour ne rien rater de nos nouvelles.
-  </p><br>
+  </p>
 
   <form id="newsletterForm" class="newsletter-form">
+
     <input type="email" placeholder="Votre adresse email">
-    <button type="submit">S'abonner</button>
+
+    <button type="submit">
+      S'abonner
+    </button>
+
   </form>
 
-</div></div>
-
+</div>
 <div id="toast" class="toast">
   <div class="toast-content">
     <span id="toast-icon">⚠️</span>
     <span id="toast-message"></span>
   </div>
+
   <div class="toast-progress"></div>
 </div>
+
+<!-- Colonne 3 : Liens institutionnels -->
+<div class="footer-col institutional-links">
+
+  <h3>Liens institutionnels</h3>
+
+  <a href="https://presidence.cd" target="_blank">
+    <i class="fa-solid fa-landmark"></i>
+    Présidence de la République
+  </a>
+
+  <a href="https://primature.cd" target="_blank">
+    <i class="fa-solid fa-building"></i>
+    Primature
+  </a>
+
+  <a href="https://interieur.gouv.cd" target="_blank">
+    <i class="fa-solid fa-shield-halved"></i>
+    Ministère de l'Intérieur
+  </a>
+
+</div></div>
 
 <!-- NAVIGATION FOOTER -->
 
@@ -1777,6 +1787,14 @@ Ministère de l'Intérieur
 </footer>
 
 <script>
+const submenuBtns = document.querySelectorAll(".submenu-btn");
+
+submenuBtns.forEach(btn => {
+  btn.addEventListener("click", function () {
+    this.parentElement.classList.toggle("active");
+  });
+});
+
 function openMenu(){
   document.getElementById("sideMenu").style.width="280px";
 }
@@ -1830,6 +1848,13 @@ submenu.classList.toggle("show");
 
 });
 
+document.querySelectorAll('.submenu-btn').forEach(button => {
+  button.addEventListener('click', () => {
+    button.nextElementSibling.classList.toggle('show');
+  });
+});
+
+
 function showToast(message, type = "info") {
     const toast = document.getElementById("toast");
     const msg = document.getElementById("toast-message");
@@ -1869,8 +1894,8 @@ document.getElementById("newsletterForm").addEventListener("submit", function(e)
         "info"
     );
 });
-
 </script>
+
 <script>
 const revealElements = document.querySelectorAll('.reveal-on-scroll');
 
