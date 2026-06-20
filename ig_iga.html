@@ -570,7 +570,7 @@ FOOTER INSTITUTIONNEL AVANCE
 footer {
   background: #00264d;
   color: white;
-  padding: 20px 7% 15px; /* réduit le padding vertical */
+  padding: 18px 7% 10px; /* réduit le padding vertical */
   font-size: 13px;
 
   /* Ligne tricolore en haut */
@@ -595,7 +595,7 @@ footer {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 25px; /* réduit l'écart entre colonnes */
+  gap: 20px; /* réduit l'écart entre colonnes */
   text-align: center;
 }
 
@@ -699,6 +699,54 @@ color:#f1c40f;
 
 .footer-col a[href*="wa.me"]:hover {
     color:#25d366; /* vert WhatsApp */
+}
+
+/* Colonne réseaux sociaux */
+.footer-col:first-child {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Icônes réseaux sociaux */
+.social-icons {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 22px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  color: #00bfff;
+}
+
+/* Section localisation */
+.location-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 0px;
+}
+
+/* Lien localisation */
+.location-text a {
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* Icône localisation */
+.location-text i {
+  color: #00bfff;
+  margin-right: 8px;
 }
 
 /* CARTE */
@@ -808,6 +856,367 @@ html{
 scroll-behavior:smooth;
 }
 
+/* Colonne Contact */
+.footer-col {
+  text-align: center;
+}
+
+/* Bloc contact */
+.contact-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+/* Paragraphes */
+.contact-info p {
+  margin: 0;
+}
+
+/* Liens */
+.contact-info a {
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+/* Icônes */
+.contact-info i {
+  color: #00bfff;
+  margin-right: 6px;
+}
+
+/* =========================
+FOOTER INSTITUTIONNEL AVANCE
+========================= */
+
+footer {
+  background: #00264d;
+  color: white;
+  padding: 18px 7% 10px; /* réduit le padding vertical */
+  font-size: 13px;
+
+  /* Ligne tricolore en haut */
+  border-top: 5px solid;
+  border-image: linear-gradient(
+    to right,
+    #007fff 0%,
+    #007fff 33%,
+    #f7d116 33%,
+    #f7d116 66%,
+    #ce1126 66%,
+    #ce1126 100%
+  ) 1;
+
+  text-align: center;
+}
+
+/* CONTAINER */
+.footer-container {
+  max-width: 1300px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px; /* réduit l'écart entre colonnes */
+  text-align: center;
+}
+
+/* COLONNES */
+.footer-col {
+  max-width: 280px; /* réduit légèrement la largeur */
+  flex: 1;
+  min-width: 180px;
+}
+
+/* LOGO + DESCRIPTION */
+.footer-logo {
+  display: flex;
+  justify-content: center; /* centre le logo */
+  align-items: center;
+  gap: 8px; /* réduit l'espace entre logo et texte */
+  margin-bottom: 10px;
+}
+
+.footer-logo img {
+  width: 35px; /* légèrement plus petit */
+  height: 35px;
+}
+
+.footer-logo span {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* TITRES COLONNES */
+.footer-col h3 {
+  color: white;
+  margin-bottom: 10px; /* réduit marge */
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.footer-col h3::after {
+  width: 30px; /* ligne sous titre plus courte */
+  height: 2px;
+  margin-top: 4px;
+}
+
+/* TEXTE */
+.footer-col p {
+  font-size: 12px;
+  line-height: 1.4; /* réduit l'interligne */
+  opacity: 0.9;
+  margin: 2px 0; /* réduit marge verticale */
+}
+
+/* LIENS */
+.footer-col a {
+  display: flex;
+  align-items: center;
+  gap: 6px; /* réduit espace icone/texte */
+  color: white;
+  text-decoration: none;
+  margin-bottom: 6px; /* réduit marge entre liens */
+  font-size: 13px; /* légèrement plus petit */
+}
+
+.footer-col a:hover{
+color:#f1c40f;
+transform:translateX(4px);
+}
+
+/* ICONES */
+
+.footer-col i{
+margin-right:6px;
+color:#f1c40f;
+}
+
+.footer-col a i {
+    font-size:16px;
+    transition: all 0.3s ease;
+}
+
+/* HOVER : chaque réseau social avec sa couleur */
+.footer-col a:hover i,
+.footer-col a:hover {
+    font-weight:600;
+}
+
+.footer-col a[href*="facebook"]:hover {
+    color:#1877f2; /* bleu Facebook */
+}
+
+.footer-col a[href*="x.com"]:hover {
+    color:#1da1f2; /* bleu Twitter/X */
+}
+
+.footer-col a[href*="youtube"]:hover {
+    color:#ff0000; /* rouge Youtube */
+}
+
+.footer-col a[href*="instagram"]:hover {
+    color:#c13584; /* rose Instagram */
+}
+
+.footer-col a[href*="wa.me"]:hover {
+    color:#25d366; /* vert WhatsApp */
+}
+
+/* Colonne réseaux sociaux */
+.footer-col:first-child {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Icônes réseaux sociaux */
+.social-icons {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 22px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  color: #00bfff;
+}
+
+/* Section localisation */
+.location-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 0px;
+}
+
+/* Lien localisation */
+.location-text a {
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* Icône localisation */
+.location-text i {
+  color: #00bfff;
+  margin-right: 8px;
+}
+
+/* CARTE */
+
+.footer-col iframe{
+width:100%;
+height:100px;
+border:none;
+border-radius:6px;
+margin-top:5px;
+}
+
+/* BAS DU FOOTER */
+.footer-bottom {
+  text-align: center;
+  margin-top: 15px; /* réduit espace avec le reste */
+  padding-top: 5px; /* réduit padding interne */
+  border-top: 1px solid rgba(255,255,255,0.2);
+  font-size: 11px;
+  opacity: 0.8;
+}
+
+/* NAVIGATION FOOTER */
+.footer-nav {
+  text-align: center;
+  margin-top: 10px; /* réduit espace */
+  border-top: 1px solid rgba(255,255,255,0.2);
+  padding-top: 5px; /* réduit padding */
+}
+
+.footer-nav a {
+  margin: 0 8px; /* réduit espace horizontal */
+  font-size: 12px;
+  color: white;
+}
+
+.footer-nav a:hover{
+color:#f1c40f;
+}
+
+/* BOUTON RETOUR HAUT */
+
+#backToTop{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#f1c40f;
+color:#003366;
+border:none;
+width:40px;
+height:40px;
+border-radius:50%;
+font-size:18px;
+cursor:pointer;
+display:none;
+box-shadow:0 4px 10px rgba(0,0,0,0.3);
+transition:0.3s;
+}
+
+#backToTop:hover{
+background:white;
+}
+
+footer{
+text-align:center;
+}
+
+.footer-container{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:40px;
+text-align:center;
+}
+
+.footer-col{
+max-width:300px;
+}
+
+.footer-logo{
+justify-content:center;
+}
+
+.social-icons{
+justify-content:center;
+}
+
+.footer-nav{
+text-align:center;
+margin-top:20px;
+}
+
+.footer-nav a{
+margin:0 12px;
+}
+
+.footer-col a{
+color:white;
+text-decoration:none;
+}
+
+.footer-col a:hover{
+color:#f1c40f;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+/* Colonne Contact */
+.footer-col {
+  text-align: center;
+}
+
+/* Bloc contact */
+.contact-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+/* Paragraphes */
+.contact-info p {
+  margin: 0;
+}
+
+/* Liens */
+.contact-info a {
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+/* Icônes */
+.contact-info i {
+  color: #00bfff;
+  margin-right: 6px;
+}
+
 /* ======================= */
 /* FORMULAIRE FOOTER */
 /* ======================= */
@@ -840,37 +1249,71 @@ font-size:12px;
 background:#e0a800;
 }
 
-.newsletter-form input{
-width:100%;
-padding:8px;
-border:none;
-border-radius:4px;
-margin-bottom:8px;
-font-size:12px;
+/* Titre newsletter */
+.newsletter-title {
+  margin-top: 25px;
+  margin-bottom: 10px;
 }
 
-.newsletter-form button{
-width:100%;
-padding:8px;
-background:#f2b705;
-border:none;
-border-radius:4px;
-color:#003366;
-font-weight:bold;
-cursor:pointer;
-}
-
-.newsletter-form button:hover{
-background:#e0a800;
-}
-
+/* Texte newsletter */
 .newsletter-text {
-  font-size: 13px;
-  color: #ccc;
-  margin: 5px 0 12px;
-  line-height: 1.4;
+  margin-bottom: 15px;
+  line-height: 1.6;
 }
 
+/* Formulaire newsletter */
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Champ email */
+.newsletter-form input {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+/* Bouton */
+.newsletter-form button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background: #00bfff;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.newsletter-form button:hover {
+  background: #009acd;
+}
+
+/* Colonne liens institutionnels */
+.institutional-links {
+  text-align: center;
+}
+
+/* Liens */
+.institutional-links a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+
+  color: white;
+  text-decoration: none;
+
+  margin-bottom: 5px;
+  font-size: 15px;
+}
+
+/* Icônes */
+.institutional-links a i {
+  color: #00bfff;
+}
 .toast {
   position: fixed;
   bottom: 20px;
@@ -934,173 +1377,163 @@ background:#e0a800;
 .toast.success { background: #16a34a; }
 .toast.error { background: #dc2626; }
 
-/* NAVBAR STRUCTURE */
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 5%;
-  background: #003366;
+/* CONTENEUR DU MENU DÉROULANT */
+.dropdown{
+  position:relative;
 }
 
-/* MENU LEFT */
-.menu-left a {
-  color: white;
+/* SOUS-MENU CACHÉ AU DÉPART */
+.submenu{
+  display:none;
+  position:absolute;
+  top:100%;
+  left:0;
+  background:#fff;
+  min-width:220px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.15);
+  border-radius:5px;
+  overflow:hidden;
+  z-index:1000;
+}
+
+/* LIENS DU SOUS-MENU */
+.submenu a{
+  display:block;
+  padding:12px;
+  color:#000;
+}
+
+.submenu a:hover{
+  background:#f2f2f2;
+}
+
+/* AFFICHER LE SOUS-MENU AU SURVOL */
+.dropdown:hover .submenu{
+  display:block;
+}
+
+/* CONTENEUR SOUS-MENU */
+.submenu-container{
+  position:relative;
+  width:100%;
+}
+
+/* BOUTON */
+.submenu-btn{
+  width:100%;
+  border:none;
+  background:none;
+  color:white;
+  padding:12px 15px;
+  text-align:left;
+  cursor:pointer;
+  font-size:16px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+/* SOUS-MENU */
+.submenu-content{
+  display:none;
+  flex-direction:column;
+  background:rgba(255,255,255,0.08);
+  margin-left:15px;
+  border-left:2px solid #198754;
+}
+
+/* LIENS */
+.submenu-content a{
+  padding:10px 15px;
+  text-decoration:none;
+  color:white;
+  font-size:15px;
+}
+
+/* HOVER */
+.submenu-content a:hover{
+  background:rgba(255,255,255,0.1);
+}
+
+/* AFFICHAGE */
+.submenu-container.active .submenu-content{
+  display:flex;
+}
+
+/* SOUS-MENU DESKTOP */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {  
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 250px;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  border-radius: 6px;
+  z-index: 1000;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 12px 15px;
+  color: #333;
   text-decoration: none;
-  font-weight: 600;
 }
 
-/* MENU RIGHT (desktop) */
+.dropdown-content a:hover {
+  background: #f3f3f3;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+/* MENU DESKTOP */
 .menu-right {
   display: flex;
   gap: 20px;
 }
 
-.menu-right a {
-  color: white;
-  text-decoration: none;
-  font-size: 14px;
+/* ===== DESKTOP ===== */
+.menu-right {
+  display: flex;
+  gap: 20px;
 }
 
-/* MOBILE MENU ICON */
 .mobile-menu-bar {
   display: none;
 }
 
-.menu-icon {
-  font-size: 26px;
-  color: white;
-  cursor: pointer;
-}
+/* ===== MOBILE ===== */
+@media screen and (max-width: 768px) {
 
-/* =========================
-   RESPONSIVE MOBILE
-========================= */
-@media (max-width: 768px) {
-
-  /* cacher menu desktop */
   .menu-right {
-    display: none;
+    display: none !important;
   }
 
-  /* afficher icône mobile */
   .mobile-menu-bar {
-    display: block;
-  }
-
-  /* alignement horizontal propre */
-  .navbar {
-    display: flex;
-    justify-content: space-between;
+    display: flex !important;
     align-items: center;
   }
 
-  .menu-left {
-    flex: 1;
-  }
+}
+/* FORCER LES COULEURS DU MENU LATÉRAL */
 
+.side-menu .submenu-btn{
+    color:#003366 !important;
+    background:none;
 }
 
-/* =========================
-   LIGNE TRICOLORE MOBILE FIX
-========================= */
-@media (max-width: 768px) {
-
-  .title-with-bar {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .title-bar {
-    width: 60px;
-    height: 4px;
-    margin-bottom: 10px;
-
-    /* TRICOLORE PROPRE */
-    background: linear-gradient(
-      to bottom,
-      #007fff 33%,   /* bleu */
-      #ffcc00 33% 66%, /* jaune */
-      #ce1126 66%   /* rouge */
-    );
-
-    border-radius: 2px;
-  }
-
+.side-menu .submenu-content a{
+    color:#003366 !important;
 }
 
-/* transition plus fluide */
-.news-item {
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.news-item.active {
-  transform: translateX(0);
-}
-
-.news-item {
-  transform: translateX(20px);
-}
-
-/* ======================= */
-/* FORMULAIRE FOOTER */
-/* ======================= */
-
-.footer-form textarea{
-width:100%;
-height:70px;
-padding:8px;
-border-radius:4px;
-border:none;
-font-size:12px;
-font-family:"Yu Gothic UI";
-resize:none;
-margin-bottom:8px;
-}
-
-.footer-form button{
-width:100%;
-padding:8px;
-background:#f2b705;
-border:none;
-color:#003366;
-font-weight:bold;
-border-radius:4px;
-cursor:pointer;
-font-size:12px;
-}
-
-.footer-form button:hover{
-background:#e0a800;
-}
-
-.newsletter-form input{
-width:100%;
-padding:8px;
-border:none;
-border-radius:4px;
-margin-bottom:8px;
-font-size:12px;
-}
-
-.newsletter-form button{
-width:100%;
-padding:8px;
-background:#f2b705;
-border:none;
-border-radius:4px;
-color:#003366;
-font-weight:bold;
-cursor:pointer;
-}
-
-.newsletter-form button:hover{
-background:#e0a800;
-}
-
-html{
-scroll-behavior:smooth;
+.side-menu .submenu-btn i{
+    color:#003366 !important;
 }
 
 /* SECTION PRINCIPALE */
@@ -1230,15 +1663,22 @@ scroll-behavior:smooth;
     <a href="apercu general.html">Qu'est-ce que l'IGTER ?</a>
   </div>
 
-  <!-- MENU DESKTOP -->
-  <div class="menu-right">
-    <a href="index.html">Accueil</a>
-    <a href="document.html">Documents</a>
-    <a href="#">Missions</a>
-    <a href="#">Rapports</a>
-    <a href="#contact">Contacts</a>
-  </div>
+<!-- MENU DESKTOP -->
+<div class="menu-right">
+  <a href="index.html">Accueil</a>
+  <div class="dropdown">
+  <a href="javascript:void(0)">Dirigeants <i class="fa-solid fa-caret-down"></i></a>
 
+  <div class="dropdown-content">
+    <a href="ig_iga.html">I.G et I.G.A</a>
+    <a href="directeurs.html">Directeurs</a>
+    <a href="cd.html">Chefs de Divisions</a>
+    <a href="cb.html">Chefs de Bureau</a>
+  </div>
+</div>
+  <a href="document.html">Documents officiels</a>
+  <a href="mode_saisine.html">Saisissez-nous</a>
+</div>
   <!-- MENU MOBILE -->
   <div class="mobile-menu-bar">
     <div class="menu-icon" onclick="openMenu()">☰</div>
@@ -1260,10 +1700,22 @@ scroll-behavior:smooth;
   <!-- LIENS PRINCIPAUX -->
   <a href="index.html"><i class="fa-solid fa-building-columns"></i> Accueil</a>
   <a href="#actualite"> 📰 Actualités</a>
+ <div class="submenu-container">
+  <button class="submenu-btn">
+    👔 Dirigeants
+    <i class="fa-solid fa-caret-down"></i>
+  </button>
+
+  <div class="submenu-content">
+    <a href="ig_iga.html"><i class="fa-solid fa-user-tie"></i>I.G et I.G.A</a>
+    <a href="directeurs.html"><i class="fa-solid fa-users-gear"></i>Directeurs</a>
+    <a href="cd.html"><i class="fa-solid fa-user-tie"></i>Chefs de Divisions</a>
+    <a href="cb.html"><i class="fa-solid fa-users-gear"></i>Chefs de Bureau</a>
+  </div>
+</div>
+  <a href="#missions">🎯 Missions</a>
   <a href="document.html">🗂️ Documents officiels</a>
-  <a href="mission.html">🎯 Missions</a>
-  <a href="rapport.html">📊 Rapports</a>
-  <div class="submenu-container">
+    <div class="submenu-container">
     <button class="submenu-btn">📖 Présentation de l'IGTER<i class="fa-solid fa-caret-down"></i></button>
     <div class="submenu-content">
      <a href="apercu general.html">👁️ Aperçu Général</a>
@@ -1355,112 +1807,122 @@ scroll-behavior:smooth;
 
 <!-- Colonne 1 : Réseaux sociaux -->
 <div class="footer-col">
+
   <h3>Réseaux sociaux</h3>
 
-  <a href="https://web.facebook.com/groups/544962343127299/user/61584911503215" target="_blank">
-    <i class="fa-brands fa-facebook-f"></i> Facebook
-  </a>
+  <div class="social-icons">
 
-  <a href="https://x.com/nomducompte" target="_blank">
-    <i class="fa-brands fa-x-twitter"></i> Twitter
-  </a>
+    <a href="https://web.facebook.com/groups/544962343127299/user/61584911503215" target="_blank">
+      <i class="fa-brands fa-facebook-f"></i>
+    </a>
 
-  <a href="https://youtube.com/nomducompte" target="_blank">
-    <i class="fa-brands fa-youtube"></i> Youtube
-  </a>
+    <a href="https://x.com/nomducompte" target="_blank">
+      <i class="fa-brands fa-x-twitter"></i>
+    </a>
 
-  <a href="https://instagram.com/nomducompte" target="_blank">
-    <i class="fa-brands fa-instagram"></i> Instagram
-  </a>
+    <a href="https://youtube.com/nomducompte" target="_blank">
+      <i class="fa-brands fa-youtube"></i>
+    </a>
 
-  <a href="https://wa.me/00243822080469" target="_blank">
-    <i class="fa-brands fa-whatsapp"></i> Whatsapp
-  </a>
+    <a href="https://instagram.com/nomducompte" target="_blank">
+      <i class="fa-brands fa-instagram"></i>
+    </a>
+
+    <a href="https://wa.me/00243822080469" target="_blank">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+  </div>
+
+  <!-- Localisation -->
+  <h3>Localisation</h3>
+  <div class="location-text">
+  <a href="https://www.google.com/maps/search/?api=1&query=Immeuble+Semois+Royal+Kinshasa+Gombe" target="_blank">
+
+  <i class="fa-solid fa-location-dot"></i>6è niveau Immeuble Semois<br>Place Royal/Kinshasa-Gombe</a>
+</div>
 </div>
 
 <!-- Colonne 2 : Contact -->
 <div class="footer-col">
 
-<h3>Contact</h3>
+  <h3>Contact</h3>
 
-<p>
-<a href="https://www.google.com/maps/search/?api=1&query=Immeuble+Semois+Royal+Kinshasa+Gombe" target="_blank">
-<i class="fa-solid fa-location-dot"></i>
-Immeuble Semois<br>
-Royal / Kinshasa-Gombe
-</a>
-</p>
+ <div class="contact-info">
 
-<p>
-<a href="mailto:contact@igter.cd">
-<i class="fa-solid fa-envelope"></i>
-contact@igter.cd
-</a>
-</p>
+  <p>
+    <a href="mailto:contact@igter.cd">
+      <i class="fa-solid fa-envelope"></i>
+      contact@igter.cd
+    </a>
+  </p>
 
-<p>
-<a href="tel:+243822080469">
-<i class="fa-solid fa-phone"></i>
-+243 822 080 469
-</a>
-</p>
+  <p>
+    <a href="tel:+243822080469">
+      <i class="fa-solid fa-phone"></i>
+      +243 822 080 469
+    </a>
+  </p>
 
 </div>
 
-<!-- Colonne 3 : Liens institutionnels -->
-<div class="footer-col">
-
-<h3>Liens institutionnels</h3>
-
-<a href="https://presidence.cd" target="_blank">
-<i class="fa-solid fa-landmark"></i>
-Présidence de la République
-</a>
-
-<a href="https://primature.cd" target="_blank">
-<i class="fa-solid fa-building"></i>
-Primature
-</a>
-
-<a href="https://interieur.gouv.cd" target="_blank">
-<i class="fa-solid fa-shield-halved"></i>
-Ministère de l'Intérieur
-</a>
-
-</div>
-
-<!-- Colonne 5 : Newsletter -->
-<div class="footer-col">
-
-  <h3>Newsletter</h3>
+  <!-- Newsletter -->
+  <h3 class="newsletter-title">Newsletter</h3>
 
   <p class="newsletter-text">
     Inscrivez-vous pour ne rien rater de nos nouvelles.
-  </p><br>
+  </p>
 
   <form id="newsletterForm" class="newsletter-form">
+
     <input type="email" placeholder="Votre adresse email">
-    <button type="submit">S'abonner</button>
+
+    <button type="submit">
+      S'abonner
+    </button>
+
   </form>
 
-</div></div>
-
+</div>
 <div id="toast" class="toast">
   <div class="toast-content">
     <span id="toast-icon">⚠️</span>
     <span id="toast-message"></span>
   </div>
+
   <div class="toast-progress"></div>
 </div>
+
+<!-- Colonne 3 : Liens institutionnels -->
+<div class="footer-col institutional-links">
+
+  <h3>Liens institutionnels</h3>
+
+  <a href="https://presidence.cd" target="_blank">
+    <i class="fa-solid fa-landmark"></i>
+    Présidence de la République
+  </a>
+
+  <a href="https://primature.cd" target="_blank">
+    <i class="fa-solid fa-building"></i>
+    Primature
+  </a>
+
+  <a href="https://interieur.gouv.cd" target="_blank">
+    <i class="fa-solid fa-shield-halved"></i>
+    Ministère de l'Intérieur
+  </a>
+
+</div></div>
 
 <!-- NAVIGATION FOOTER -->
 
 <div class="footer-nav">
 
 <a href="index.html">Accueil</a>
-<a href="#missions">Missions</a>
-<a href="actualite.html">Actualités</a>
+<a href="#actualite">Actualités</a>
 <a href="document.html">Documents</a>
+<a href="#missions">Missions</a>
 <a href="#top-contact">Contact</a>
 
 </div>
@@ -1478,6 +1940,14 @@ Ministère de l'Intérieur
 </footer>
 
 <script>
+const submenuBtns = document.querySelectorAll(".submenu-btn");
+
+submenuBtns.forEach(btn => {
+  btn.addEventListener("click", function () {
+    this.parentElement.classList.toggle("active");
+  });
+});
+
 function openMenu(){
   document.getElementById("sideMenu").style.width="280px";
 }
@@ -1531,6 +2001,13 @@ submenu.classList.toggle("show");
 
 });
 
+document.querySelectorAll('.submenu-btn').forEach(button => {
+  button.addEventListener('click', () => {
+    button.nextElementSibling.classList.toggle('show');
+  });
+});
+
+
 function showToast(message, type = "info") {
     const toast = document.getElementById("toast");
     const msg = document.getElementById("toast-message");
@@ -1570,8 +2047,8 @@ document.getElementById("newsletterForm").addEventListener("submit", function(e)
         "info"
     );
 });
-
 </script>
+
 <script>
 const revealElements = document.querySelectorAll('.reveal-on-scroll');
 
