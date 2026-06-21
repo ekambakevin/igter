@@ -559,34 +559,170 @@ height:28px;
   }
 
 }
+/* =========================
+SECTION STRUCTURE ADMINISTRATIVE - VERSION MODERNE
+========================= */
 
-/* SECTION PRÉSENTATION IGTER */
-.presentation-igter{
-padding:50px 8%;          /* espace vertical + horizontal */
-background:#f9fafb;       /* fond clair, pas agressif */
-color:#111;                /* texte sombre pour lisibilité */
-line-height:1.8;           /* espace entre les lignes pour confort */
+.structure-admin{
+padding:70px 8%;
+background:linear-gradient(to bottom,#f8fafc,#eef3f8);
+}
+
+/* TITRE SECTION */
+
+.titre-section{
+text-align:center;
+font-size:28px;
+font-weight:700;
+color:#003366;
+margin-bottom:50px;
+letter-spacing:1px;
+position:relative;
+}
+
+.titre-section::after{
+content:"";
+width:90px;
+height:4px;
+background:#f2b705;
+display:block;
+margin:15px auto 0;
+border-radius:4px;
+}
+
+/* GRILLE */
+
+.admin-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+}
+
+/* CARTE */
+
+.admin-card{
+background:white;
+padding:30px 25px;
+border-radius:12px;
+box-shadow:0 8px 22px rgba(0,0,0,0.08);
+transition:all 0.35s ease;
+position:relative;
+overflow:hidden;
+border-top:5px solid #003366;
+}
+
+/* EFFET LUMIERE AU HOVER */
+
+.admin-card::before{
+content:"";
+position:absolute;
+top:0;
+left:-100%;
+width:100%;
+height:100%;
+background:linear-gradient(120deg,transparent,rgba(255,255,255,0.4),transparent);
+transition:0.5s;
+}
+
+.admin-card:hover::before{
+left:100%;
+}
+
+/* ANIMATION HOVER */
+
+.admin-card:hover{
+transform:translateY(-8px);
+box-shadow:0 15px 35px rgba(0,0,0,0.15);
+}
+
+/* ICONE */
+
+.admin-card i{
+font-size:30px;
+color:white;
+background:#003366;
+width:60px;
+height:60px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+margin-bottom:18px;
+box-shadow:0 5px 12px rgba(0,0,0,0.2);
+}
+
+/* TITRE */
+
+.admin-card h3{
+font-size:18px;
+color:#003366;
+margin-bottom:15px;
+font-weight:600;
+}
+
+/* LISTE */
+
+.admin-card p{
+font-size:14px;
+color:#555;
+margin:7px 0;
+line-height:1.5;
+padding-left:15px;
+position:relative;
+}
+
+/* BULLET STYLE */
+
+.admin-card p::before{
+content:"";
+width:6px;
+height:6px;
+background:#f2b705;
+border-radius:50%;
+position:absolute;
+left:0;
+top:8px;
+}
+
+/* RESPONSIVE TABLETTE */
+
+@media (max-width:900px){
+
+.admin-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+/* RESPONSIVE MOBILE */
+
+@media (max-width:600px){
+
+.structure-admin{
+padding:50px 6%;
+}
+
+.titre-section{
+font-size:22px;
+}
+
+.admin-grid{
+grid-template-columns:1fr;
+}
+
+.admin-card{
+padding:22px;
+}
+
+.admin-card h3{
 font-size:16px;
-border-radius:8px;
-margin:30px 8%;            /* marge autour pour séparation */
-box-shadow:0 4px 12px rgba(0,0,0,0.05); /* léger relief */
 }
 
-/* responsive */
-@media (max-width:768px){
-.presentation-igter{
-padding:30px 5%;
-font-size:15px;
-}
+.admin-card p{
+font-size:13px;
 }
 
-.titre-centre {
-    text-align: center;       /* Centre le texte */
-    font-size: 24px;          /* Taille du titre */
-    font-weight: bold;        /* Met le titre en gras */
-    margin-bottom: 15px;      /* Espace sous le titre */
-    color: #2c3e50;           /* Couleur du texte (optionnel) */
-  }
+}
 
 /* =========================
 FOOTER INSTITUTIONNEL AVANCE
@@ -1075,137 +1211,6 @@ background:#e0a800;
 .toast.success { background: #16a34a; }
 .toast.error { background: #dc2626; }
 
-/* CONTENEUR DU MENU DÉROULANT */
-.dropdown{
-  position:relative;
-}
-
-/* SOUS-MENU CACHÉ AU DÉPART */
-.submenu{
-  display:none;
-  position:absolute;
-  top:100%;
-  left:0;
-  background:#fff;
-  min-width:220px;
-  box-shadow:0 4px 10px rgba(0,0,0,0.15);
-  border-radius:5px;
-  overflow:hidden;
-  z-index:1000;
-}
-
-/* LIENS DU SOUS-MENU */
-.submenu a{
-  display:block;
-  padding:12px;
-  color:#000;
-}
-
-.submenu a:hover{
-  background:#f2f2f2;
-}
-
-/* AFFICHER LE SOUS-MENU AU SURVOL */
-.dropdown:hover .submenu{
-  display:block;
-}
-
-/* CONTENEUR SOUS-MENU */
-.submenu-container{
-  position:relative;
-  width:100%;
-}
-
-/* BOUTON */
-.submenu-btn{
-  width:100%;
-  border:none;
-  background:none;
-  color:white;
-  padding:12px 15px;
-  text-align:left;
-  cursor:pointer;
-  font-size:16px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-
-/* SOUS-MENU */
-.submenu-content{
-  display:none;
-  flex-direction:column;
-  background:rgba(255,255,255,0.08);
-  margin-left:15px;
-  border-left:2px solid #198754;
-}
-
-/* LIENS */
-.submenu-content a{
-  padding:10px 15px;
-  text-decoration:none;
-  color:white;
-  font-size:15px;
-}
-
-/* HOVER */
-.submenu-content a:hover{
-  background:rgba(255,255,255,0.1);
-}
-
-/* AFFICHAGE */
-.submenu-container.active .submenu-content{
-  display:flex;
-}
-
-/* SOUS-MENU DESKTOP */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {  
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  min-width: 250px;
-  background: #fff;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-  border-radius: 6px;
-  z-index: 1000;
-}
-
-.dropdown-content a {
-  display: block;
-  padding: 12px 15px;
-  color: #333;
-  text-decoration: none;
-}
-
-.dropdown-content a:hover {
-  background: #f3f3f3;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-/* MENU DESKTOP */
-.menu-right {
-  display: flex;
-  gap: 20px;
-}
-
-/* ===== DESKTOP ===== */
-.menu-right {
-  display: flex;
-  gap: 20px;
-}
-
-.mobile-menu-bar {
-  display: none;
-}
-
 /* ===== MOBILE ===== */
 @media screen and (max-width: 768px) {
 
@@ -1386,9 +1391,9 @@ background:#e0a800;
 
   <div class="submenu-content" id="submenuLegal">
     <a href="pdf/DECRET.pdf" target="_blank">
-      <i class="fa-solid fa-file-pdf"></i> Décret N° 19/13 du 16 MAI 2019
+      <i class="fa-solid fa-file-pdf"></i> Décret N° 19/13 DU 16 MAI 2019
     </a>
-    <a href="apercu general.html">
+    <a href="administration_centrale.html">
       <i class="fa-solid fa-file-pdf"></i> Cadre organique
     </a>
   </div>
@@ -1418,22 +1423,9 @@ background:#e0a800;
   <!-- LIENS PRINCIPAUX -->
   <a href="index.html"><i class="fa-solid fa-building-columns"></i> Accueil</a>
   <a href="index.html"> 📰 Actualités</a>
- <div class="submenu-container">
-  <button class="submenu-btn">
-    👔 Dirigeants
-    <i class="fa-solid fa-caret-down"></i>
-  </button>
-
-  <div class="submenu-content">
-    <a href="ig_iga.html"><i class="fa-solid fa-user-tie"></i>I.G et I.G.A</a>
-    <a href="directeurs.html"><i class="fa-solid fa-users-gear"></i>Directeurs</a>
-    <a href="cd.html"><i class="fa-solid fa-user-tie"></i>Chefs de Divisions</a>
-    <a href="cb.html"><i class="fa-solid fa-users-gear"></i>Chefs de Bureau</a>
-  </div>
-</div>
-  <a href="mission.html">🎯 Missions</a>
   <a href="document.html">🗂️ Documents officiels</a>
-    <div class="submenu-container">
+  <a href="#missions">🎯 Missions</a>
+  <div class="submenu-container">
     <button class="submenu-btn">📖 Présentation de l'IGTER<i class="fa-solid fa-caret-down"></i></button>
     <div class="submenu-content">
      <a href="apercu general.html">👁️ Aperçu Général</a>
@@ -1450,7 +1442,7 @@ background:#e0a800;
     <a href="pdf/DECRET.pdf" target="_blank" download>
       <i class="fa-solid fa-file-pdf"></i> Décret N° 19/13 DU 16 MAI 2019
     </a>
-     <a href="apercu general.html">
+     <a href="administration_centrale.html">
       <i class="fa-solid fa-file-pdf"></i> Cadre organique
     </a>
     </div></div></div>
@@ -1468,31 +1460,60 @@ background:#e0a800;
 
   <a href="https://interieur.gouv.cd/services/details/IGTER"><i class="fa-solid fa-shield"></i> Ministère de tutelle</a>
 
-  <a href="mode_saisine.html">📝 Saisissez-nous</a>
+  <a href="#saisine">📝 Saisissez-nous</a>
   <a href="#contact">☎️ Nos contacts</a>
 
 </div></div>
 
-<!-- ZONE DE PRÉSENTATION DE L'IGTER -->
-<section class="presentation-igter">
-  <div class="container">
-  	<h2 class="titre-centre">Aperçu général et historique</h2>
-    <center>
-    <p>
-    Le sigle "IGTER" veut dire : "INSPECTION GENERALE DE LA TERRITORIALE.</p>
+<!-- SECTION STRUCTURE ADMINISTRATIVE -->
 
-    <p>
-      En 1998, il existait un Décret-loi n° 081 du 02 Juillet 1998 portant Organisation Territoriale et Administrative de la République démocratique du Congo, signé dans un contexte de transition politique et de réforme de l'État, en vue de répondre à des besoins spécifiques liés à la réforme administrative et territoriale du pays. Ce décret a été adopté pour établir une structure administrative claire et une organisation territoriale cohérente permettant de mieux gérer les affaires publiques et d'améliorer la gouvernance.</p><br>
+<section class="structure-admin">
 
-      <p>Toujours en cette date du 02 Juillet 1998, un autre Décret-loi n°083 portant organisation et fonctionnement du Corps des Inspecteurs de la Territoriale en République Démocratique du Congo, a été signé pour accompagner le Décret-loi n° 081.</p><br>
+  <h2 class="titre-section">STRUCTURES ADMINISTRATION CENTRALE</h2>
 
-      <p>Ce corps était chargé de contrôler, évaluer et suivre les activités des Autorités des Entités Administratives et des Services du Ministère des Affaires Intérieures. Il veillait à la bonne administration des entités administratives, formulait des avis pour améliorer la gestion territoriale, évaluait les performances des entités administratives et surveillait l’utilisation des ressources affectées aux services de la Territoriale. Le rôle initial de ce Corps était principalement axé sur le contrôle de la décentralisation et de la gestion des ressources publiques au niveau local.</p><br>
+  <div class="admin-grid">
 
-      <p>Aujourd'hui, le Décret-loi n°083 du 02 Juillet 1998, est remplacé par le Décret n° 19/13 du 16 Mai 2019 portant Création, Organisation et Fonctionnament d'un Service Public, dénommé : « Inspection Générale de la Territoriale, IGTER en sigle », mis en vigueur.</p><br>
+    <div class="admin-card">
+      <i class="fa-solid fa-user-tie"></i>
+      <h3>Administration de l'Inspecteur Général</h3>
+      <p>Bureau de l'Inspecteur Général de la Territoriale</p>
+      <p>Bureau de l'Inspecteur Général Adjoint de la Territoriale</p>
+      <p>Secrétariat Administratif</p>
+      <p>Secrétariat Technique</p>
+    </div>
 
-      <p>L’Inspection Générale de la Territoriale est donc un service public à caractère administratif doté de l’autonomie administrative et financière. Elle est un outil du Gouvernement central placé sous l’autorité directe du Ministre ayant l’intérieur dans ses attributions et a pour mission générale : le contrôle, l’encadrement, le suivi et l’évaluation des activités des Autorités des entités administratives et des services centraux et déconcentrés du Ministère ayant l’intérieur dans ses attributions.</p>
-    </center>
+    <div class="admin-card">
+      <i class="fa-solid fa-sitemap"></i>
+      <h3>Services Rattachés à l'Inspecteur Général</h3>
+      <p>Cellule Technique d'Appui</p>
+      <p>Pool Juridique et Contentieux</p>
+      <p>Pool Communication Interne et Externe</p>
+      <p>Pool Audit Interne</p>
+      <p>Point Focal Ethique</p>
+    </div>
+
+    <div class="admin-card">
+      <i class="fa-solid fa-building"></i>
+      <h3>Directions Standards</h3>
+      <p>Direction des Ressources Humaines</p>
+      <p>Direction Administrative et Financière</p>
+      <p>Direction d'Etudes et Planification</p>
+      <p>Direction des Archives et NTIC</p>
+    </div>
+
+    <div class="admin-card">
+      <i class="fa-solid fa-briefcase"></i>
+      <h3>Directions Métiers</h3>
+      <p>Direction Controle Services Centraux</p>
+      <p>Direction Controle Provinces et Entités Territoriales</p>
+      <p>Direction Questions Sécuritaires</p>
+      <p>Direction Encadrement Services Centraux et Entités Administratives</p>
+      <p>Direction Suivi et Evaluation des Performances des Services Centraux et Entités Administratives</p>
+      <p>Direction Promotion Gouvernance Territoriale</p>   
+    </div>
+
   </div>
+
 </section>
 
 <!-- FOOTER -->
@@ -1743,6 +1764,7 @@ document.getElementById("newsletterForm").addEventListener("submit", function(e)
     );
 });
 </script>
+
 <script>
 const revealElements = document.querySelectorAll('.reveal-on-scroll');
 
