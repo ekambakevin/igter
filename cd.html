@@ -1209,8 +1209,8 @@ background:#e0a800;
     color:#003366 !important;
 }
 
-/* SECTION DIRECTEURS */
-.directeurs-section{
+/* SECTION CHEFS DE DIVISIONS*/
+.cd-section{
 padding:50px 8%;
 background:#F4F7F5;
 }
@@ -1222,15 +1222,15 @@ margin-bottom:40px;
 font-size: 25px;
 }
 
-/* GRILLE DES DIRECTEURS */
-.directeurs-grid{
+/* GRILLE DES CHEFS DE DIVISIONS */
+.cd-grid{
 display:grid;
 grid-template-columns:repeat(3, 1fr);
 gap:30px;
 }
 
-/* CARTE DIRECTEUR */
-.directeur-card{
+/* CARTE CHEF DE DIVISION */
+.cd-card{
 background:white;
 border-radius:15px;
 padding:25px;
@@ -1239,12 +1239,12 @@ box-shadow:0 5px 15px rgba(0,0,0,0.12);
 transition:0.3s;
 }
 
-.directeur-card:hover{
+.cd-card:hover{
 transform:translateY(-8px);
 }
 
 /* PHOTO */
-.directeur-photo img{
+.cd-photo img{
 width:150px;
 height:150px;
 object-fit:cover;
@@ -1254,26 +1254,26 @@ margin-bottom:15px;
 }
 
 /* NOM */
-.directeur-card h2{
+.cd-card h2{
 font-size:18px;
 color:#0F5D3F;
 margin:10px 0;
 }
 
-/* DIRECTION */
-.directeur-card h3{
+/* DIVISION */
+.cd-card h3{
 font-size:14px;
 font-weight:600;
 color:#444;
 line-height: 1.2;
 }
 
-.plus-directeurs{
+.plus-cd{
 text-align:center;
 margin-top:40px;
 }
 
-.plus-directeurs a{
+.plus-cd a{
 display:inline-block;
 padding:14px 35px;
 background:#0F5D3F;
@@ -1285,7 +1285,7 @@ text-decoration:none;
 transition:0.3s;
 }
 
-.plus-directeurs a:hover{
+.plus-cd a:hover{
 background:#198754;
 box-shadow:0 5px 15px rgba(0,0,0,0.2);
 transform:translateY(-3px);
@@ -1293,13 +1293,13 @@ transform:translateY(-3px);
 
 /* RESPONSIVE */
 @media(max-width:900px){
-.directeurs-grid{
+.cd-grid{
 grid-template-columns:repeat(2,1fr);
   }
 }
 
 @media(max-width:600px){
-.directeurs-grid{
+.cd-grid{
 grid-template-columns:1fr;
   }
 }
@@ -1349,7 +1349,17 @@ grid-template-columns:1fr;
  <!-- MENU DESKTOP -->
 <div class="menu-right">
   <a href="index.html">Accueil</a>
-  <a href="mission.html">Missions réalisées</a>
+  <div class="dropdown">
+  <a href="javascript:void(0)">Dirigeants <i class="fa-solid fa-caret-down"></i></a>
+
+  <div class="dropdown-content">
+    <a href="ig_iga.html">I.G et I.G.A</a>
+    <a href="directeurs.html">Directeurs</a>
+    <a href="cd.html">Chefs de Divisions</a>
+    <a href="cb.html">Chefs de Bureau</a>
+  </div>
+</div>
+  <a href="document.html">Documents</a>
   <a href="mode_saisine.html">Saisissez-nous</a>
 </div>
   <!-- MENU MOBILE -->
@@ -1428,114 +1438,218 @@ grid-template-columns:1fr;
 
 </div></div>
 
-<!-- SECTION DIRECTEURS -->
+<!-- SECTION CHEFS DE DIVISIONS -->
 
-<section class="directeurs-section">
+<section class="cd-section">
 
 <h1 class="titre-section">CHEFS DE DIVISIONS, COORDONNATEURS DE DIVISIONS DE L'ADMINISTRATION CENTRALE</h1>
-<div class="directeurs-grid">
+<div class="cd-grid">
 
-<!-- DIRECTEUR 11 -->
-<div class="directeur-card">
-<div class="directeur-photo">
-<img src="images/cd1.jpg" alt="Directeur"></div>
+<!-- CD 1 -->
+<div class="cd-card">
+<div class="cd-photo">
+<img src="images/cd1.jpg" alt="Chef de Division"></div>
 
-<h2>JONATHAN MAKAYA</h2>
+<h2>Jonathan MAKAYA SEKE</h2>
 <h3>Chef de Division, Secrétaire Administratif</h3></div>
 
-<!-- DIRECTEUR 12 -->
-<div class="directeur-card">
-<div class="directeur-photo">
-<img src="images/cd2.jpg" alt="Directeur"></div>
+<!-- CD 2 -->
+<div class="cd-card">
+<div class="cd-photo">
+<img src="images/cd2.jpg" alt="Chef de Division"></div>
 
 <h2>...</h2>
 <h3>Chef de Division, Coordonnateur de la Cellule Technique d'Appui</h3></div>
 
-<!-- DIRECTEUR 13 -->
-<div class="directeur-card">
-<div class="directeur-photo">
-<img src="images/cd3.jpg" alt="Directeur"></div>
+<!-- CD 3 -->
+<div class="cd-card">
+<div class="cd-photo">
+<img src="images/cd3.jpg" alt="Chef de Division"></div>
 
 <h2>...</h2>
 <h3>Chef de Division Capital Humain</h3></div>
 
-<!-- DIRECTEUR 14 -->
-<div class="directeur-card">
-<div class="directeur-photo">
-<img src="images/cd4.jpg" alt="Directeur"></div>
+<!-- CD 4 -->
+<div class="cd-card">
+<div class="cd-photo">
+<img src="images/cd4.jpg" alt="Chef de Division"></div>
 
 <h2>...</h2>
 <h3>Chef de Division Gestion et Développement des Compétences</h3></div>
 
-<!-- DIRECTEUR 15 -->
-<div class="directeur-card">
-<div class="directeur-photo">
-<img src="images/cd5.jpg" alt="Directeur"></div>
+<!-- CD 5 -->
+<div class="cd-card">
+<div class="cd-photo">
+<img src="images/cd5.jpg" alt="Chef de Division"></div>
 
 <h2>...</h2>
 <h3>Chef de Division Actions Sociales</h3></div>
 
-<!-- DIRECTEUR 16 -->
-<div class="directeur-card">
-<div class="directeur-photo">
-<img src="images/cd6.jpg" alt="Directeur"></div>
+<!-- CD 6 -->
+<div class="cd-card">
+<div class="cd-photo">
+<img src="images/cd6.jpg" alt="Chef de Division"></div>
 
 <h2>...</h2>
 <h3>Chef de Division Budget et Finances</h3></div>
 
-<!-- DIRECTEUR 17 -->
-<div class="directeur-card">
-<div class="directeur-photo">
-<img src="images/cd7.jpg" alt="Directeur"></div>
+<!-- CD 7 -->
+<div class="cd-card">
+<div class="cd-photo">
+<img src="images/cd7.jpg" alt="Chef de Division"></div>
 
 <h2>...</h2>
 <h3>Chef de Division Logistique et Intendance</h3></div>
 
-<!-- DIRECTEUR 18 -->
-<div class="directeur-card">
-<div class="directeur-photo">
-<img src="images/cd8.jpg" alt="Directeur"></div>
+<!-- CD 8 -->
+<div class="cd-card">
+<div class="cd-photo">
+<img src="images/cd8.jpg" alt="Chef de Division"></div>
 
 <h2>...</h2>
 <h3>Chef de Division Etude, Documentation et Information</h3></div>
 
-<!-- DIRECTEUR 19 -->
-<div class="directeur-card">
-<div class="directeur-photo">
-<img src="images/cd9.jpg" alt="Directeur"></div>
+<!-- CD 9 -->
+<div class="cd-card">
+<div class="cd-photo">
+<img src="images/cd9.jpg" alt="Chef de Division"></div>
 
 <h2>...</h2>
 <h3>Chef de Division Stratégies et Coopération Internationale</h3></div>
 
-<!-- DIRECTEUR 20 -->
-<div class="directeur-card">
-<div class="directeur-photo">
-<img src="images/cd10.jpg" alt="Directeur"></div>
+<!-- CD 10 -->
+<div class="cd-card">
+<div class="cd-photo">
+<img src="images/cd10.jpg" alt="Chef de Division"></div>
 
 <h2>...</h2>
 <h3>Chef de Division Programme et Suivi</h3></div>
 
-<!-- DIRECTEUR 21 -->
-<div class="directeur-card">
-<div class="directeur-photo">
-<img src="images/cd11.jpg" alt="Directeur"></div>
+<!-- CD 11 -->
+<div class="cd-card">
+<div class="cd-photo">
+<img src="images/cd11.jpg" alt="Chef de Division"></div>
 
 <h2>...</h2>
 <h3>Chef de Division Archives, Bibliothèque et Publication</h3></div>
 
-<!-- DIRECTEUR 22 -->
-<div class="directeur-card">
-<div class="directeur-photo">
-<img src="images/cd12.jpg" alt="Directeur"></div>
+<!-- CD 12 -->
+<div class="cd-card">
+<div class="cd-photo">
+<img src="images/cd12.jpg" alt="Chef de Division"></div>
 
 <h2>...</h2>
 <h3>Chef de Division Nouvelles Technologies de l'Information et de la Communication</h3></div>
 
+<!-- CD 13 -->
+<div class="cd-card">
+<div class="cd-photo">
+<img src="images/cd13.jpg" alt="Chef de Division"></div>
+
+<h2>...</h2>
+<h3>Chef de Division Contrôle Administration Centrale des Services Centraux</h3></div>
+
+<!-- CD 14 -->
+<div class="cd-card">
+<div class="cd-photo">
+<img src="images/cd14.jpg" alt="Chef de Division"></div>
+
+<h2>...</h2>
+<h3>Chef de Division Contrôle Administration Services Déconcentrés</h3></div>
+
+<!-- CD 15 -->
+<div class="cd-card">
+<div class="cd-photo">
+<img src="images/cd15.jpg" alt="Chef de Division"></div>
+
+<h2>...</h2>
+<h3>Chef de Division Contrôle Provinces</h3></div>
+
+<!-- CD 16 -->
+<div class="cd-card">
+<div class="cd-photo">
+<img src="images/cd16.jpg" alt="Chef de Division"></div>
+
+<h2>...</h2>
+<h3>Chef de Division Contrôle Entités Territoriales</h3></div>
+
+<!-- CD 17 -->
+<div class="cd-card">
+<div class="cd-photo">
+<img src="images/cd17.jpg" alt="Chef de Division"></div>
+
+<h2>...</h2>
+<h3>Chef de Division Données Sécuritaires</h3></div>
+
+<!-- CD 18 -->
+<div class="cd-card">
+<div class="cd-photo">
+<img src="images/cd18.jpg" alt="Chef de Division"></div>
+
+<h2>...</h2>
+<h3>Chef de Division Analyse Données Sécuritaires et Prévention des Conflits</h3></div>
+
+<!-- CD 19 -->
+<div class="cd-card">
+<div class="cd-photo">
+<img src="images/cd19.jpg" alt="Chef de Division"></div>
+
+<h2>...</h2>
+<h3>Chef de Division Encadrement Services Centraux</h3></div>
+
+<!-- CD 20 -->
+<div class="cd-card">
+<div class="cd-photo">
+<img src="images/cd20.jpg" alt="Chef de Division"></div>
+
+<h2>...</h2>
+<h3>Chef de Division Encadrement Provinces</h3></div>
+
+<!-- CD 21 -->
+<div class="cd-card">
+<div class="cd-photo">
+<img src="images/cd21.jpg" alt="Chef de Division"></div>
+
+<h2>...</h2>
+<h3>Chef de Division Enacadrement Entités Territoriales</h3></div>
+
+<!-- CD 22 -->
+<div class="cd-card">
+<div class="cd-photo">
+<img src="images/cd22.jpg" alt="Chef de Division"></div>
+
+<h2>...</h2>
+<h3>Chef de Division Suivi et Evaluation des Performances des Services Centraux</h3></div>
+
+<!-- CD 23 -->
+<div class="cd-card">
+<div class="cd-photo">
+<img src="images/cd23.jpg" alt="Chef de Division"></div>
+
+<h2>...</h2>
+<h3>Chef de Division Suivi et Evaluation des Performances des Entités Administratives</h3></div>
+
+<!-- CD 24 -->
+<div class="cd-card">
+<div class="cd-photo">
+<img src="images/cd24.jpg" alt="Chef de Division"></div>
+
+<h2>...</h2>
+<h3>Chef de Division Production des Outils de Communication</h3></div>
+
+<!-- CD 25 -->
+<div class="cd-card">
+<div class="cd-photo">
+<img src="images/cd25.jpg" alt="Chef de Division"></div>
+
+<h2>...</h2>
+<h3>Chef de Division Promotion des Outils de Redevabilité et Sensibilisation</h3></div>
+
 </div>
 
 <!-- BOUTON EN SAVOIR PLUS -->
-<div class="plus-directeurs">
-<a href="directeurs3.html">EN SAVOIR PLUS</a></div>
+<div class="plus-cd">
+<a href="cd2.html">EN SAVOIR PLUS</a></div>
 
 </section>
 
