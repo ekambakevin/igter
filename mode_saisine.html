@@ -571,7 +571,7 @@ FOOTER INSTITUTIONNEL AVANCE
 footer {
   background: #00264d;
   color: white;
-  padding: 20px 7% 15px; /* réduit le padding vertical */
+  padding: 18px 7% 10px; /* réduit le padding vertical */
   font-size: 13px;
 
   /* Ligne tricolore en haut */
@@ -596,7 +596,7 @@ footer {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 25px; /* réduit l'écart entre colonnes */
+  gap: 20px; /* réduit l'écart entre colonnes */
   text-align: center;
 }
 
@@ -700,6 +700,54 @@ color:#f1c40f;
 
 .footer-col a[href*="wa.me"]:hover {
     color:#25d366; /* vert WhatsApp */
+}
+
+/* Colonne réseaux sociaux */
+.footer-col:first-child {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Icônes réseaux sociaux */
+.social-icons {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 22px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  color: #00bfff;
+}
+
+/* Section localisation */
+.location-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 0px;
+}
+
+/* Lien localisation */
+.location-text a {
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* Icône localisation */
+.location-text i {
+  color: #00bfff;
+  margin-right: 8px;
 }
 
 /* CARTE */
@@ -809,6 +857,40 @@ html{
 scroll-behavior:smooth;
 }
 
+/* Colonne Contact */
+.footer-col {
+  text-align: center;
+}
+
+/* Bloc contact */
+.contact-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+/* Paragraphes */
+.contact-info p {
+  margin: 0;
+}
+
+/* Liens */
+.contact-info a {
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+/* Icônes */
+.contact-info i {
+  color: #00bfff;
+  margin-right: 6px;
+}
+
 /* ======================= */
 /* FORMULAIRE FOOTER */
 /* ======================= */
@@ -841,37 +923,71 @@ font-size:12px;
 background:#e0a800;
 }
 
-.newsletter-form input{
-width:100%;
-padding:8px;
-border:none;
-border-radius:4px;
-margin-bottom:8px;
-font-size:12px;
+/* Titre newsletter */
+.newsletter-title {
+  margin-top: 25px;
+  margin-bottom: 10px;
 }
 
-.newsletter-form button{
-width:100%;
-padding:8px;
-background:#f2b705;
-border:none;
-border-radius:4px;
-color:#003366;
-font-weight:bold;
-cursor:pointer;
-}
-
-.newsletter-form button:hover{
-background:#e0a800;
-}
-
+/* Texte newsletter */
 .newsletter-text {
-  font-size: 13px;
-  color: #ccc;
-  margin: 5px 0 12px;
-  line-height: 1.4;
+  margin-bottom: 15px;
+  line-height: 1.6;
 }
 
+/* Formulaire newsletter */
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Champ email */
+.newsletter-form input {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+/* Bouton */
+.newsletter-form button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background: #00bfff;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.newsletter-form button:hover {
+  background: #009acd;
+}
+
+/* Colonne liens institutionnels */
+.institutional-links {
+  text-align: center;
+}
+
+/* Liens */
+.institutional-links a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+
+  color: white;
+  text-decoration: none;
+
+  margin-bottom: 5px;
+  font-size: 15px;
+}
+
+/* Icônes */
+.institutional-links a i {
+  color: #00bfff;
+}
 .toast {
   position: fixed;
   bottom: 20px;
@@ -1044,65 +1160,6 @@ background:#e0a800;
   transform: translateX(20px);
 }
 
-/* ======================= */
-/* FORMULAIRE FOOTER */
-/* ======================= */
-
-.footer-form textarea{
-width:100%;
-height:70px;
-padding:8px;
-border-radius:4px;
-border:none;
-font-size:12px;
-font-family:"Yu Gothic UI";
-resize:none;
-margin-bottom:8px;
-}
-
-.footer-form button{
-width:100%;
-padding:8px;
-background:#f2b705;
-border:none;
-color:#003366;
-font-weight:bold;
-border-radius:4px;
-cursor:pointer;
-font-size:12px;
-}
-
-.footer-form button:hover{
-background:#e0a800;
-}
-
-.newsletter-form input{
-width:100%;
-padding:8px;
-border:none;
-border-radius:4px;
-margin-bottom:8px;
-font-size:12px;
-}
-
-.newsletter-form button{
-width:100%;
-padding:8px;
-background:#f2b705;
-border:none;
-border-radius:4px;
-color:#003366;
-font-weight:bold;
-cursor:pointer;
-}
-
-.newsletter-form button:hover{
-background:#e0a800;
-}
-
-html{
-scroll-behavior:smooth;
-}
 </style>
 
 </head>
@@ -1133,7 +1190,7 @@ scroll-behavior:smooth;
   <div class="contact-item">
     <i class="fas fa-envelope"></i>
     <span>
-      <a href="mailto:contact@igter.cd">contact@igter.cd</a>
+      <a href="mailto:contact@igter.cd">contact@igter.gouv.cd</a>
     </span>
   </div>
 
@@ -1151,9 +1208,7 @@ scroll-behavior:smooth;
   <div class="menu-right">
     <a href="index.html">Accueil</a>
     <a href="document.html">Documents</a>
-    <a href="#">Missions</a>
-    <a href="#">Rapports</a>
-    <a href="#contact">Contacts</a>
+    <a href="mission.html">Missions Réalisées</a>
   </div>
 
   <!-- MENU MOBILE -->
@@ -1197,7 +1252,7 @@ scroll-behavior:smooth;
     <a href="pdf/DECRET.pdf" target="_blank" download>
       <i class="fa-solid fa-file-pdf"></i> Décret de création
     </a>
-     <a href="pdf/CADRE ORGANIQUE.pdf" target="_blank" download>
+     <a href="document.html" target="_blank" download>
       <i class="fa-solid fa-file-pdf"></i> Cadre organique
     </a>
     </div></div></div>
@@ -1251,112 +1306,122 @@ Nous travaillons pour vous proposer prochainement un contenu complet et exhausti
 
 <!-- Colonne 1 : Réseaux sociaux -->
 <div class="footer-col">
+
   <h3>Réseaux sociaux</h3>
 
-  <a href="https://web.facebook.com/groups/544962343127299/user/61584911503215" target="_blank">
-    <i class="fa-brands fa-facebook-f"></i> Facebook
-  </a>
+  <div class="social-icons">
 
-  <a href="https://x.com/nomducompte" target="_blank">
-    <i class="fa-brands fa-x-twitter"></i> Twitter
-  </a>
+    <a href="https://web.facebook.com/groups/544962343127299/user/61584911503215" target="_blank">
+      <i class="fa-brands fa-facebook-f"></i>
+    </a>
 
-  <a href="https://youtube.com/nomducompte" target="_blank">
-    <i class="fa-brands fa-youtube"></i> Youtube
-  </a>
+    <a href="https://x.com/nomducompte" target="_blank">
+      <i class="fa-brands fa-x-twitter"></i>
+    </a>
 
-  <a href="https://instagram.com/nomducompte" target="_blank">
-    <i class="fa-brands fa-instagram"></i> Instagram
-  </a>
+    <a href="https://youtube.com/nomducompte" target="_blank">
+      <i class="fa-brands fa-youtube"></i>
+    </a>
 
-  <a href="https://wa.me/00243822080469" target="_blank">
-    <i class="fa-brands fa-whatsapp"></i> Whatsapp
-  </a>
+    <a href="https://instagram.com/nomducompte" target="_blank">
+      <i class="fa-brands fa-instagram"></i>
+    </a>
+
+    <a href="https://wa.me/00243822080469" target="_blank">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+  </div>
+
+  <!-- Localisation -->
+  <h3>Localisation</h3>
+  <div class="location-text">
+  <a href="https://www.google.com/maps/search/?api=1&query=Immeuble+Semois+Royal+Kinshasa+Gombe" target="_blank">
+
+  <i class="fa-solid fa-location-dot"></i>6è niveau Immeuble Semois<br>Place Royal/Kinshasa-Gombe</a>
+</div>
 </div>
 
 <!-- Colonne 2 : Contact -->
 <div class="footer-col">
 
-<h3>Contact</h3>
+  <h3>Contact</h3>
 
-<p>
-<a href="https://www.google.com/maps/search/?api=1&query=Immeuble+Semois+Royal+Kinshasa+Gombe" target="_blank">
-<i class="fa-solid fa-location-dot"></i>
-Immeuble Semois<br>
-Royal / Kinshasa-Gombe
-</a>
-</p>
+ <div class="contact-info">
 
-<p>
-<a href="mailto:contact@igter.cd">
-<i class="fa-solid fa-envelope"></i>
-contact@igter.cd
-</a>
-</p>
+  <p>
+    <a href="mailto:contact@igter.cd">
+      <i class="fa-solid fa-envelope"></i>
+      contact@igter.gouv.cd
+    </a>
+  </p>
 
-<p>
-<a href="tel:+243822080469">
-<i class="fa-solid fa-phone"></i>
-+243 822 080 469
-</a>
-</p>
+  <p>
+    <a href="tel:+243822080469">
+      <i class="fa-solid fa-phone"></i>
+      +243 822 080 469
+    </a>
+  </p>
 
 </div>
 
-<!-- Colonne 3 : Liens institutionnels -->
-<div class="footer-col">
-
-<h3>Liens institutionnels</h3>
-
-<a href="https://presidence.cd" target="_blank">
-<i class="fa-solid fa-landmark"></i>
-Présidence de la République
-</a>
-
-<a href="https://primature.cd" target="_blank">
-<i class="fa-solid fa-building"></i>
-Primature
-</a>
-
-<a href="https://interieur.gouv.cd" target="_blank">
-<i class="fa-solid fa-shield-halved"></i>
-Ministère de l'Intérieur
-</a>
-
-</div>
-
-<!-- Colonne 5 : Newsletter -->
-<div class="footer-col">
-
-  <h3>Newsletter</h3>
+  <!-- Newsletter -->
+  <h3 class="newsletter-title">Newsletter</h3>
 
   <p class="newsletter-text">
     Inscrivez-vous pour ne rien rater de nos nouvelles.
-  </p><br>
+  </p>
 
   <form id="newsletterForm" class="newsletter-form">
+
     <input type="email" placeholder="Votre adresse email">
-    <button type="submit">S'abonner</button>
+
+    <button type="submit">
+      S'abonner
+    </button>
+
   </form>
 
-</div></div>
-
+</div>
 <div id="toast" class="toast">
   <div class="toast-content">
     <span id="toast-icon">⚠️</span>
     <span id="toast-message"></span>
   </div>
+
   <div class="toast-progress"></div>
 </div>
+
+<!-- Colonne 3 : Liens institutionnels -->
+<div class="footer-col institutional-links">
+
+  <h3>Liens institutionnels</h3>
+
+  <a href="https://presidence.cd" target="_blank">
+    <i class="fa-solid fa-landmark"></i>
+    Présidence de la République
+  </a>
+
+  <a href="https://primature.cd" target="_blank">
+    <i class="fa-solid fa-building"></i>
+    Primature
+  </a>
+
+  <a href="https://interieur.gouv.cd" target="_blank">
+    <i class="fa-solid fa-shield-halved"></i>
+    Ministère de l'Intérieur
+  </a>
+
+</div></div>
 
 <!-- NAVIGATION FOOTER -->
 
 <div class="footer-nav">
 
 <a href="index.html">Accueil</a>
-<a href="#missions">Missions</a>
-<a href="actualite.html">Actualités</a>
+<a href="#actualite">Actualités</a>
 <a href="document.html">Documents</a>
+<a href="#missions">Missions</a>
 <a href="#top-contact">Contact</a>
 
 </div>
