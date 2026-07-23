@@ -684,6 +684,67 @@ left:0;
 top:8px;
 }
 
+/* =========================================
+CARTE SERVICES RATTACHÉS À L'INSPECTEUR GÉNÉRAL
+========================================= */
+
+.services-rattaches .service-principal{
+font-size:14px;
+color:#555;
+margin:7px 0;
+line-height:1.5;
+padding-left:15px;
+position:relative;
+}
+
+/* POINT JAUNE POUR LES SERVICES PRINCIPAUX */
+.services-rattaches .service-principal::before{
+content:"";
+width:6px;
+height:6px;
+background:#f2b705;
+border-radius:50%;
+position:absolute;
+left:0;
+top:8px;
+}
+
+/* LISTE NUMÉROTÉE */
+.services-rattaches .liste-services{
+margin:5px 0 0 20px;
+padding-left:20px;
+color:#555;
+font-size:14px;
+line-height:1.7;
+}
+
+/* PAS DE POINT JAUNE POUR LA LISTE NUMÉROTÉE */
+.services-rattaches .liste-services li::before{
+display:none;
+}
+
+/* ESPACEMENT ENTRE LES ÉLÉMENTS */
+.services-rattaches .liste-services li{
+padding-left:5px;
+}
+
+/* RESPONSIVE MOBILE */
+@media (max-width:600px){
+
+```
+.services-rattaches .service-principal{
+    font-size:13px;
+}
+
+.services-rattaches .liste-services{
+    font-size:13px;
+    line-height:1.6;
+    margin-left:15px;
+}
+```
+
+}
+
 /* RESPONSIVE TABLETTE */
 
 @media (max-width:900px){
@@ -1353,7 +1414,7 @@ background:#e0a800;
   <div class="contact-item">
     <i class="fas fa-envelope"></i>
     <span>
-      <a href="mailto:contact@igter.cd">contact@igter.cd</a>
+      <a href="mailto:contact@igter.cd">contact@igter.gouv.cd</a>
     </span>
   </div>
 
@@ -1476,20 +1537,22 @@ background:#e0a800;
     <div class="admin-card">
       <i class="fa-solid fa-user-tie"></i>
       <h3>Administration de l'Inspecteur Général</h3>
-      <p>Bureau de l'Inspecteur Général de la Territoriale</p>
-      <p>Bureau de l'Inspecteur Général Adjoint de la Territoriale</p>
+      <p>Inspecteur Général de la Territoriale</p>
+      <p>Inspecteur Général Adjoint de la Territoriale</p>
       <p>Secrétariat Administratif</p>
-      <p>Secrétariat Technique</p>
+
     </div>
 
-    <div class="admin-card">
-      <i class="fa-solid fa-sitemap"></i>
-      <h3>Services Rattachés à l'Inspecteur Général</h3>
-      <p>Cellule Technique d'Appui</p>
-      <p>Pool Juridique et Contentieux</p>
-      <p>Pool Communication Interne et Externe</p>
-      <p>Pool Audit Interne</p>
-      <p>Point Focal Ethique</p>
+    <div class="admin-card services-rattaches">
+    <i class="fa-solid fa-sitemap"></i><h3>Services Rattachés à l'Inspecteur Général</h3>
+    <p class="service-principal">Secrétariat Technique</p>
+    <p class="service-principal">Cellule Technique d'Appui :</p>
+    <ol class="liste-services">
+    <li>Pool Juridique et Contentieux</li>
+    <li>Pool Communication Interne et Externe</li>
+    <li>Pool Audit Interne</li>
+    <li>Point Focal Ethique</li>
+    </ol>
     </div>
 
     <div class="admin-card">
@@ -1569,7 +1632,7 @@ background:#e0a800;
   <p>
     <a href="mailto:contact@igter.cd">
       <i class="fa-solid fa-envelope"></i>
-      contact@igter.cd
+      contact@igter.gouv.cd
     </a>
   </p>
 
