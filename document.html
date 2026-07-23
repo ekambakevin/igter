@@ -497,70 +497,595 @@ font-weight:bold;
 height:28px;
 }
 
-/* =========================
-PAGE EN CONSTRUCTION
-========================= */
+/* =========================================
+   DOCUMENTS OFFICIELS
+========================================= */
 
-.construction-section{
-display:flex;
-justify-content:center;
-align-items:center;
-min-height:60vh;
-background:#f4f6f9;
-padding:40px 20px;
+.documents-section {
+
+    padding: 80px 20px;
+
+    background: #F4F7F5;
+
+    min-height: 100vh;
+
 }
 
-.construction-box{
-background:white;
-padding:40px;
-text-align:center;
-border-radius:10px;
-max-width:500px;
-box-shadow:0 8px 25px rgba(0,0,0,0.1);
+
+.documents-container {
+
+    max-width: 1200px;
+
+    margin: auto;
+
 }
 
-.construction-icon{
-font-size:50px;
-color:#f2b705;
-margin-bottom:15px;
+
+/* EN-TÊTE */
+
+.documents-header {
+
+    text-align: center;
+
+    max-width: 850px;
+
+    margin: 0 auto 45px;
+
 }
 
-.construction-box h1{
-font-size:26px;
-color:#003366;
-margin-bottom:10px;
+
+.documents-label {
+
+    display: inline-block;
+
+    color: #0F5D3F;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 12px;
+
 }
 
-.construction-box h2{
-font-size:26px;
-color:#003366;
-margin-bottom:10px;
+
+.documents-header h1 {
+
+    color: #0B4A32;
+
+    font-size: 38px;
+
+    margin: 0 0 18px;
+
 }
 
-.construction-box p{
-font-size:15px;
-color:#555;
-margin-bottom:25px;
-line-height:1.6;
+
+.documents-header p {
+
+    color: #555;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    margin: 0;
+
 }
 
-/* bouton retour */
 
-.btn-retour{
-display:inline-block;
-padding:10px 20px;
-background:#003366;
-color:white;
-text-decoration:none;
-border-radius:6px;
-font-size:14px;
-font-weight:600;
-transition:0.3s;
+/* RECHERCHE */
+
+.documents-search {
+
+    max-width: 700px;
+
+    margin: 0 auto 30px;
+
+    background: #ffffff;
+
+    border: 1px solid #ddd;
+
+    border-radius: 8px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 0 18px;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+
 }
 
-.btn-retour:hover{
-background:#0052a3;
-transform:translateY(-2px);
+
+.documents-search i {
+
+    color: #0F5D3F;
+
+    font-size: 18px;
+
+}
+
+
+.documents-search input {
+
+    width: 100%;
+
+    border: none;
+
+    outline: none;
+
+    padding: 16px;
+
+    font-size: 15px;
+
+    background: transparent;
+
+}
+
+
+/* FILTRES */
+
+.documents-filters {
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-bottom: 40px;
+
+}
+
+
+.filter-btn {
+
+    border: 1px solid #0F5D3F;
+
+    background: #ffffff;
+
+    color: #0F5D3F;
+
+    padding: 10px 18px;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition: all 0.3s ease;
+
+}
+
+
+.filter-btn:hover,
+
+.filter-btn.active {
+
+    background: #0F5D3F;
+
+    color: #ffffff;
+
+}
+
+
+/* LISTE */
+
+.documents-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+
+}
+
+
+/* CARTE DOCUMENT */
+
+.document-card {
+
+    background: #ffffff;
+
+    border-radius: 10px;
+
+    padding: 24px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 22px;
+
+    border-left: 5px solid #0F5D3F;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+
+}
+
+
+.document-card:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.10);
+
+}
+
+
+/* ICÔNE PDF */
+
+.document-icon {
+
+    width: 65px;
+
+    height: 65px;
+
+    min-width: 65px;
+
+    background: #F4F7F5;
+
+    border-radius: 8px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+.document-icon i {
+
+    font-size: 30px;
+
+    color: #C62828;
+
+}
+
+
+/* INFORMATIONS */
+
+.document-info {
+
+    flex: 1;
+
+}
+
+
+.document-type {
+
+    color: #0F5D3F;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+}
+
+
+.document-info h3 {
+
+    color: #222;
+
+    font-size: 18px;
+
+    margin: 7px 0;
+
+}
+
+
+.document-info p {
+
+    color: #666;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    margin: 0 0 10px;
+
+}
+
+
+.document-date {
+
+    color: #777;
+
+    font-size: 13px;
+
+}
+
+
+.document-date i {
+
+    color: #0F5D3F;
+
+    margin-right: 5px;
+
+}
+
+
+/* BOUTONS */
+
+.document-actions {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    min-width: 140px;
+
+}
+
+
+.document-actions a {
+
+    text-decoration: none;
+
+    text-align: center;
+
+    padding: 10px 14px;
+
+    border-radius: 5px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    transition: all 0.3s ease;
+
+}
+
+
+.btn-consulter {
+
+    background: #0F5D3F;
+
+    color: #ffffff;
+
+}
+
+
+.btn-consulter:hover {
+
+    background: #0B4A32;
+
+}
+
+
+.btn-telecharger {
+
+    background: #F4F7F5;
+
+    color: #0F5D3F;
+
+    border: 1px solid #0F5D3F;
+
+}
+
+
+.btn-telecharger:hover {
+
+    background: #0F5D3F;
+
+    color: #ffffff;
+
+}
+
+
+/* AUCUN DOCUMENT */
+
+.no-document {
+
+    display: none;
+
+    text-align: center;
+
+    padding: 50px 20px;
+
+}
+
+
+.no-document i {
+
+    font-size: 50px;
+
+    color: #0F5D3F;
+
+    margin-bottom: 15px;
+
+}
+
+
+.no-document h3 {
+
+    color: #333;
+
+    margin-bottom: 8px;
+
+}
+
+
+.no-document p {
+
+    color: #777;
+
+}
+
+
+/* RETOUR */
+
+.documents-footer {
+
+    text-align: center;
+
+    margin-top: 50px;
+
+}
+
+
+.btn-retour {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 12px 22px;
+
+    background: #0F5D3F;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    border-radius: 5px;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+
+}
+
+
+.btn-retour:hover {
+
+    background: #0B4A32;
+
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .documents-section {
+
+        padding: 60px 15px;
+
+    }
+
+
+    .documents-header h1 {
+
+        font-size: 30px;
+
+    }
+
+
+    .document-card {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding: 20px;
+
+    }
+
+
+    .document-icon {
+
+        width: 55px;
+
+        height: 55px;
+
+        min-width: 55px;
+
+    }
+
+
+    .document-info h3 {
+
+        font-size: 17px;
+
+    }
+
+
+    .document-actions {
+
+        width: 100%;
+
+        flex-direction: row;
+
+    }
+
+
+    .document-actions a {
+
+        flex: 1;
+
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .documents-header h1 {
+
+        font-size: 26px;
+
+    }
+
+
+    .documents-header p {
+
+        font-size: 14px;
+
+    }
+
+
+    .documents-filters {
+
+        flex-direction: column;
+
+    }
+
+
+    .filter-btn {
+
+        width: 100%;
+
+    }
+
+
+    .document-actions {
+
+        flex-direction: column;
+
+    }
+
+
+    .document-actions a {
+
+        width: 100%;
+
+    }
+
 }
 
 /* =========================
@@ -1418,26 +1943,151 @@ background:#e0a800;
 
 </div></div>
 
-<!-- PAGE EN CONSTRUCTION -->
-<section class="construction-section">
+<!-- =========================================
+     SECTION DOCUMENTS OFFICIELS
+========================================= -->
 
-<div class="construction-box">
+<section class="documents-section" id="documents">
+    <div class="documents-container">
 
-<div class="construction-icon">
-<i class="fa-solid fa-person-digging"></i>
-</div>
-  
-<h1> Page en conception<h1>
-<p>
-Cette page est actuellement en cours de développement.  
-Nous travaillons pour vous proposer prochainement un contenu complet et exhaustif. 
-</p>
+        <!-- EN-TÊTE -->
+        <div class="documents-header">
+            <h1>Documents officiels de l'IGTER</h1>
+            <p>
+                Retrouvez ici nos documents tels que les communiqués, les notes circulaires, les notes de service, les décisions, les rapports et les autres documents officiels publiés.
+            </p>
+        </div>
 
-<a href="index.html" class="btn-retour">
-<i class="fa-solid fa-arrow-left"></i> Retour à l'accueil
-</a>
+        <!-- RECHERCHE -->
+        <div class="documents-search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="documentSearch" placeholder="Rechercher un document..."></div>
 
-</div>
+        <!-- FILTRES -->
+        <div class="documents-filters">
+            <button class="filter-btn active" data-filter="tous">Tous</button>
+            <button class="filter-btn" data-filter="communique">Communiqués</button>
+            <button class="filter-btn" data-filter="note-circulaire">Notes circulaires</button>
+            <button class="filter-btn" data-filter="note-service">Notes de service</button>
+            <button class="filter-btn" data-filter="decision">Décisions</button>
+            <button class="filter-btn" data-filter="rapport">Rapports</button></div>
+
+        <!-- LISTE DES DOCUMENTS -->
+        <div class="documents-list" id="documentsList">
+
+            <!-- COMMUNIQUE 1 -->
+            <article class="document-card" data-category="communique">
+                <div class="document-icon"><i class="fa-solid fa-file-pdf"></i></div>
+
+                <div class="document-info"><span class="document-type">Communiqué</span>
+                  <h3> N° </h3>
+                    <p>
+                        Communiqué sur 
+                    </p>
+
+                <div class="document-date"><i class="fa-regular fa-calendar"></i>
+                  Publié le </div>
+                </div>
+
+                <div class="document-actions">
+                    <a href="pdf/documents/communiques/2026" target="_blank" class="btn-consulter">
+                    <i class="fa-solid fa-eye"></i>Consulter</a>
+
+                    <a href="pdf/documents/communiques/2026/" download class="btn-telecharger">
+                    <i class="fa-solid fa-download"></i>Télécharger</a>
+                </div>
+
+            </article>
+
+            <!-- NOTE CIRCULAIRE 1 -->
+            <article class="document-card"data-category="note-circulaire">
+              <div class="document-icon"><i class="fa-solid fa-file-pdf"></i></div>
+                <div class="document-info"><span class="document-type">Note circulaire</span>
+                  <h3>N° 723/MISDAC/IGTER/IG-CC/MKD/2026</h3>
+                    <p>
+                        Note circulaire relative à la suspension d'exécution des actes administratifs irréguliers.
+                    </p>
+
+                    <div class="document-date"><i class="fa-regular fa-calendar"></i>
+                      Publiée le 12 juin 2026
+                    </div>
+                </div>
+
+                <div class="document-actions">
+                  <a href="pdf/documents/notes circulaires/2026/Note circulaire suspension d'exécution des actes administratifs irréguliers.pdf" target="_blank" class="btn-consulter"><i class="fa-solid fa-eye"></i>Consulter</a>
+
+                  <a href="pdf/documents/notes circulaires/2026/Note circulaire suspension d'exécution des actes administratifs irréguliers.pdf"download class="btn-telecharger"><i class="fa-solid fa-download"></i>Télécharger</a>
+                </div>
+
+            </article>
+
+            <!-- NOTE DE SERVICE 1 -->
+            <article class="document-card" data-category="note-service">
+              <div class="document-icon"><i class="fa-solid fa-file-pdf"></i></div>
+                <div class="document-info"><span class="document-type">Note de service</span>
+                    <h3>N° </h3>
+                    <p>
+                        Note de service portant 
+                    </p>
+
+                <div class="document-date"><i class="fa-regular fa-calendar"></i>
+                      Publiée le 
+                </div>
+                </div>
+
+              <div class="document-actions"><a href="pdf/documents/notes de service/2026/" target="_blank" class="btn-consulter"><i class="fa-solid fa-eye"></i>Consulter</a>
+                    <a href="pdf/documents/notes de service/2026/"download class="btn-telecharger"><i class="fa-solid fa-download"></i>Télécharger</a>
+              </div>
+            </article>
+
+            <!-- DECISION 1 -->
+            <article class="document-card" data-category="decision"><div class="document-icon"><i class="fa-solid fa-file-pdf"></i></div>
+              <div class="document-info"><span class="document-type">Décision</span>
+                    <h3>N° </h3>
+                    <p>
+                        Décision portant 
+                    </p>
+
+                <div class="document-date"><i class="fa-regular fa-calendar"></i>
+                        Publié le 
+                    </div>
+                </div>
+
+                <div class="document-actions"><a href="pdf/documents/decisions/2026/" target="_blank" class="btn-consulter"><i class="fa-solid fa-eye"></i>Consulter</a>
+                    <a href="pdf/documents/decisions/2026/" download class="btn-telecharger"><i class="fa-solid fa-download"></i>Télécharger</a>
+                </div>
+            </article>
+
+            <!-- RAPPORT 1 -->
+            <article class="document-card" data-category="rapport">
+                <div class="document-icon"><i class="fa-solid fa-file-pdf"></i></div>
+                  <div class="document-info"><span class="document-type">Rapport</span>
+                    <h3>N° </h3>
+                    <p>
+                        Rapport de mission effectuée à 
+                    </p>
+
+                    <div class="document-date"><i class="fa-regular fa-calendar"></i>
+                        Publié le 
+                    </div>
+                </div>
+
+                <div class="document-actions"><a href="pdf/documents/rapports/2026/" target="_blank" class="btn-consulter"><i class="fa-solid fa-eye"></i>Consulter</a>
+                    <a href="pdf/documents/rapports/2026/" download class=" btn-telecharger"><i class="fa-solid fa-download"></i>Télécharger</a>
+                </div>
+            </article>
+
+        </div>
+
+        <!-- MESSAGE AUCUN RESULTAT -->
+        <div class="no-document" id="noDocument"><i class="fa-solid fa-folder-open"></i>
+            <h3>Aucun document trouvé</h3>
+            <p>Aucun document ne correspond à votre recherche.</p>
+
+        </div>
+
+    </div>
+
 </section>
 
 <!-- FOOTER -->
@@ -1688,23 +2338,121 @@ document.getElementById("newsletterForm").addEventListener("submit", function(e)
     );
 });
 </script>
-
 <script>
-const revealElements = document.querySelectorAll('.reveal-on-scroll');
 
-function revealOnScroll() {
-  const windowHeight = window.innerHeight;
+/* =========================================
+   RECHERCHE ET FILTRES DOCUMENTS
+========================================= */
 
-  revealElements.forEach(el => {
-    const elementTop = el.getBoundingClientRect().top;
+const searchInput =
+    document.getElementById("documentSearch");
 
-    if (elementTop < windowHeight - 100) {
-      el.classList.add('active');
+const filterButtons =
+    document.querySelectorAll(".filter-btn");
+
+const documentCards =
+    document.querySelectorAll(".document-card");
+
+const noDocument =
+    document.getElementById("noDocument");
+
+
+let currentFilter = "tous";
+
+
+/* FILTRAGE */
+
+function filterDocuments() {
+
+    const searchValue =
+        searchInput.value.toLowerCase().trim();
+
+    let visibleDocuments = 0;
+
+
+    documentCards.forEach(card => {
+
+        const category =
+            card.dataset.category;
+
+        const content =
+            card.textContent.toLowerCase();
+
+
+        const matchesCategory =
+            currentFilter === "tous" ||
+            category === currentFilter;
+
+
+        const matchesSearch =
+            content.includes(searchValue);
+
+
+        if (matchesCategory && matchesSearch) {
+
+            card.style.display = "flex";
+
+            visibleDocuments++;
+
+        } else {
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+
+    /* AFFICHER MESSAGE SI AUCUN RÉSULTAT */
+
+    if (visibleDocuments === 0) {
+
+        noDocument.style.display = "block";
+
+    } else {
+
+        noDocument.style.display = "none";
+
     }
-  });
+
 }
 
-window.addEventListener('scroll', revealOnScroll);
+
+/* CLIQUE SUR LES FILTRES */
+
+filterButtons.forEach(button => {
+
+    button.addEventListener("click", function() {
+
+        filterButtons.forEach(btn => {
+
+            btn.classList.remove("active");
+
+        });
+
+
+        this.classList.add("active");
+
+
+        currentFilter =
+            this.dataset.filter;
+
+
+        filterDocuments();
+
+    });
+
+});
+
+
+/* RECHERCHE EN TEMPS RÉEL */
+
+searchInput.addEventListener(
+    "input",
+    filterDocuments
+);
+
+
 </script>
 </body>
 </html>
