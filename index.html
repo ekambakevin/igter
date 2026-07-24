@@ -2575,8 +2575,8 @@ overflow:hidden;
     width: 48px;
     height: 100%;
     border: none;
-    background: #0F5D3F;
-    color: #ffffff;
+    background: green;
+    color: white;
     cursor: pointer;
     transition: background 0.3s ease;
 }
@@ -2593,18 +2593,55 @@ overflow:hidden;
 
 @media (max-width: 768px) {
 
+    /* =========================
+       ZONE DE RECHERCHE MOBILE
+    ========================= */
+
     .search-box {
-        width: 100%;
-        max-width: 280px;
-        height: 40px;
+        width: 180px;
+        max-width: 180px;
+        height: 34px;
     }
 
     .search-box input {
-        font-size: 14px;
+        font-size: 12px;
+        padding: 0 10px;
+    }
+
+    .search-box input::placeholder {
+        font-size: 12px;
     }
 
     .search-box button {
-        width: 45px;
+        width: 38px;
+    }
+
+    .search-box button i {
+        font-size: 14px;
+    }
+
+
+    /* =========================
+       BARRE MENU MOBILE
+    ========================= */
+
+    .mobile-menu-bar {
+        display: flex;
+        background: #003366;
+        padding: 8px 5px 8px 10px;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    /* Icône Menu */
+
+    .mobile-menu-bar .menu-icon {
+        font-size: 32px;
+        line-height: 1;
+        color: white;
+        cursor: pointer;
+        padding: 0;
+        margin: 0;
     }
 }
 </style>
