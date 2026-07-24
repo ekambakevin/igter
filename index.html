@@ -2525,6 +2525,88 @@ overflow:hidden;
 .side-menu .submenu-btn i{
     color:#003366 !important;
 }
+
+/* =========================================
+   ZONE DE RECHERCHE - DESKTOP & MOBILE
+========================================= */
+
+.search-box {
+    display: flex;
+    align-items: center;
+    width: 280px;
+    height: 42px;
+    background: #ffffff;
+    border: 1px solid #d9e2dc;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+/* Effet lorsque la zone est sélectionnée */
+.search-box:focus-within {
+    border-color: #0F5D3F;
+    box-shadow: 0 0 0 3px rgba(15, 93, 63, 0.12);
+}
+
+/* Champ de recherche */
+.search-box input {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    padding: 0 15px;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #333333;
+    font-size: 14px;
+}
+
+/* Placeholder */
+.search-box input::placeholder {
+    color: #888888;
+}
+
+/* Bouton recherche */
+.search-box button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 100%;
+    border: none;
+    background: #0F5D3F;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+/* Survol du bouton */
+.search-box button:hover {
+    background: #0B4A32;
+}
+
+/* Icône */
+.search-box button i {
+    font-size: 16px;
+}
+
+@media (max-width: 768px) {
+
+    .search-box {
+        width: 100%;
+        max-width: 280px;
+        height: 40px;
+    }
+
+    .search-box input {
+        font-size: 14px;
+    }
+
+    .search-box button {
+        width: 45px;
+    }
+}
 </style>
 
 </head>
@@ -2566,12 +2648,22 @@ overflow:hidden;
 <nav class="navbar" id="main-menu"> 
 
   <div class="menu-left">
-    <a href="apercu general.html">Qu'est-ce que l'IGTER ?</a>
-  </div>
+    <form class="search-box" action="recherche.html" method="GET">
+        <input 
+            type="search" 
+            name="q" 
+            placeholder="Rechercher..." 
+            aria-label="Rechercher sur le site"
+        >
+        <button type="submit" aria-label="Lancer la recherche">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+    </form>
+</div>
 
   <!-- MENU DESKTOP -->
 <div class="menu-right">
-  <a href="#actualite">Actualités</a>
+  <a href="apercu general.html">Historique</a>
   <div class="dropdown">
   <a href="javascript:void(0)">Dirigeants <i class="fa-solid fa-caret-down"></i></a>
 
@@ -2605,7 +2697,7 @@ overflow:hidden;
 
   <!-- LIENS PRINCIPAUX -->
   <a href="index.html"><i class="fa-solid fa-building-columns"></i> Accueil</a>
-  <a href="#actualite"> 📰 Actualités</a>
+  <a href="apercu general.html"> 📰 Historique</a>
  <div class="submenu-container">
   <button class="submenu-btn">
     👔 Dirigeants
