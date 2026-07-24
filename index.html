@@ -2766,7 +2766,7 @@ overflow:hidden;
 <nav class="navbar" id="main-menu"> 
 
   <div class="menu-left">
-    <form class="search-box" action="recherche.html" method="GET">
+    <form class="search-box" action="index.html" method="GET">
         <input type="search" name="q" placeholder="Rechercher..." aria-label="Rechercher sur le site">
         <button type="submit" aria-label="Lancer la recherche"><i class="fa-solid fa-magnifying-glass"></i></button>
     </form>
@@ -3163,7 +3163,7 @@ overflow:hidden;
  <div class="contact-info">
 
   <p>
-    <a href="mailto:contact@igter.cd">
+    <a href="mailto:contact@igter.gouv.cd">
       <i class="fa-solid fa-envelope"></i>
       contact@igter.gouv.cd
     </a>
@@ -3514,6 +3514,54 @@ function revealOnScroll() {
 }
 
 window.addEventListener('scroll', revealOnScroll);
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    // Récupérer le terme recherché dans l'URL
+    const params = new URLSearchParams(window.location.search);
+    const recherche = params.get("q");
+
+    // S'il n'y a aucune recherche, on ne fait rien
+    if (!recherche) {
+        return;
+    }
+
+    // Nettoyer et normaliser le terme recherché
+    const terme = recherche
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .trim();
+
+    // =========================================
+    // RECHERCHE : ACTUALITÉS
+    // =========================================
+
+    if (
+        terme.includes("actualite") ||
+        terme.includes("actualites") ||
+        terme.includes("news")
+    ) {
+
+        // Trouver la section Actualités
+        const sectionActualite = document.getElementById("actualite");
+
+        if (sectionActualite) {
+
+            // Faire défiler la page jusqu'à la section
+            setTimeout(function () {
+
+                sectionActualite.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+
+            }, 100);
+        }
+    }
+
+});
 </script>
 </body>
 </html>
