@@ -975,9 +975,8 @@ height:28px;
 
 }
 
-
 /* =========================================
-   RESPONSIVE
+   RESPONSIVE MOBILE
 ========================================= */
 
 @media (max-width: 768px) {
@@ -1025,18 +1024,35 @@ height:28px;
     }
 
 
-    .document-actions {
+    /* CACHER "CONSULTER" SUR MOBILE */
 
-        width: 100%;
+    .document-actions .btn-consulter {
 
-        flex-direction: row;
+        display: none;
 
     }
 
 
-    .document-actions a {
+    /* TÉLÉCHARGER PREND TOUTE LA LARGEUR */
 
-        flex: 1;
+    .document-actions {
+
+        width: 100%;
+
+        display: block;
+
+    }
+
+
+    .document-actions .btn-telecharger {
+
+        display: block;
+
+        width: 100%;
+
+        box-sizing: border-box;
+
+        text-align: center;
 
     }
 
@@ -1073,20 +1089,38 @@ height:28px;
     }
 
 
-    .document-actions {
+    /* CONSULTER RESTE CACHÉ */
 
-        flex-direction: column;
+    .document-actions .btn-consulter {
+
+        display: none;
 
     }
 
 
-    .document-actions a {
+    /* TÉLÉCHARGER RESTE SEUL */
+
+    .document-actions {
 
         width: 100%;
+
+        display: block;
+
+    }
+
+
+    .document-actions .btn-telecharger {
+
+        display: block;
+
+        width: 100%;
+
+        box-sizing: border-box;
 
     }
 
 }
+
 
 /* =========================
 FOOTER INSTITUTIONNEL AVANCE
@@ -2003,7 +2037,7 @@ background:#e0a800;
             <article class="document-card"data-category="note-circulaire">
               <div class="document-icon"><i class="fa-solid fa-file-pdf"></i></div>
                 <div class="document-info"><span class="document-type">Note circulaire</span>
-                  <h3>N° 723/MISDAC/IGTER/IG-CC/MKD/2026</h3>
+                  <h3>N° 035/MISDAC/IGTER/IG-CC/MKD/2026</h3>
                     <p>
                         Note circulaire relative à la suspension d'exécution des actes administratifs irréguliers.
                     </p>
@@ -2082,7 +2116,7 @@ background:#e0a800;
         <!-- MESSAGE AUCUN RESULTAT -->
         <div class="no-document" id="noDocument"><i class="fa-solid fa-folder-open"></i>
             <h3>Aucun document trouvé</h3>
-            <p>Aucun document ne correspond à votre recherche.</p>
+            <p>Saisissez un mot clé pour réussir votre recherche.</p>
 
         </div>
 
