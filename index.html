@@ -2559,7 +2559,7 @@ overflow:hidden;
     outline: none;
     background: transparent;
     color: #333333;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 /* Placeholder */
@@ -2567,23 +2567,31 @@ overflow:hidden;
     color: #888888;
 }
 
-/* Bouton recherche */
+
+/* =========================
+   BOUTON RECHERCHE
+========================= */
+
 .search-box button {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 48px;
     height: 100%;
+    
+    /* Séparateur noir */
     border: none;
-    background: green;
-    color: white;
+    border-left: 2px solid #000000;
+    
+    background: white;
+    color: black;
     cursor: pointer;
     transition: background 0.3s ease;
 }
 
 /* Survol du bouton */
 .search-box button:hover {
-    background: #0B4A32;
+    background: #ffcc00;
 }
 
 /* Icône */
@@ -2686,17 +2694,10 @@ overflow:hidden;
 
   <div class="menu-left">
     <form class="search-box" action="recherche.html" method="GET">
-        <input 
-            type="search" 
-            name="q" 
-            placeholder="Rechercher..." 
-            aria-label="Rechercher sur le site"
-        >
-        <button type="submit" aria-label="Lancer la recherche">
-            <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
+        <input type="search" name="q" placeholder="Rechercher..." aria-label="Rechercher sur le site">
+        <button type="submit" aria-label="Lancer la recherche"><i class="fa-solid fa-magnifying-glass"></i></button>
     </form>
-</div>
+  </div>
 
   <!-- MENU DESKTOP -->
 <div class="menu-right">
