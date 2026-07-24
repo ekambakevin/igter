@@ -2533,8 +2533,8 @@ overflow:hidden;
 .search-box {
     display: flex;
     align-items: center;
-    width: 280px;
-    height: 42px;
+    width: 250px;
+    height: 30px;
     background: #ffffff;
     border: 1px solid #d9e2dc;
     border-radius: 25px;
@@ -2652,6 +2652,79 @@ overflow:hidden;
         margin: 0;
     }
 }
+
+/* =====================================================
+   MENU DESKTOP
+   APERÇU GÉNÉRAL > STRUCTURES ORGANIQUES
+===================================================== */
+
+/* Conteneur de Structures Organiques */
+.desktop-submenu {
+  position: relative;
+  width: 100%;
+}
+
+/* Bouton Structures Organiques */
+.desktop-submenu-btn {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 12px 15px !important;
+  color: #333 !important;
+  background: #fff;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* Icônes */
+.desktop-submenu-btn i {
+  color: #003366;
+}
+
+/* Sous-menu caché */
+.desktop-submenu-content {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  min-width: 280px;
+  background: #fff;
+  box-shadow: 4px 4px 12px rgba(0,0,0,0.15);
+  border-radius: 6px;
+  overflow: hidden;
+  z-index: 2000;
+}
+
+/* Afficher le sous-menu au survol */
+.desktop-submenu:hover > .desktop-submenu-content {
+  display: block;
+}
+
+/* Liens du sous-menu */
+.desktop-submenu-content a {
+  display: flex !important;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 12px 15px !important;
+  color: #333 !important;
+  background: #fff;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* Survol des liens */
+.desktop-submenu-content a:hover {
+  background: #f3f3f3 !important;
+  color: #003366 !important;
+}
+
+/* Icônes des éléments */
+.desktop-submenu-content a i {
+  width: 20px;
+  color: #003366;
+}
 </style>
 
 </head>
@@ -2682,7 +2755,7 @@ overflow:hidden;
   <div class="contact-item">
     <i class="fas fa-envelope"></i>
     <span>
-      <a href="mailto:contact@igter.cd">contact@igter.gouv.cd</a>
+      <a href="mailto:contact@igter.gouv.cd">contact@igter.gouv.cd</a>
     </span>
   </div>
 
@@ -2701,9 +2774,36 @@ overflow:hidden;
 
   <!-- MENU DESKTOP -->
 <div class="menu-right">
-  <a href="apercu general.html">Historique</a>
+
+<!-- MENU AVEC SOUS-MENU -->
+<div class="dropdown">
+  <a href="javascript:void(0)"> Aperçu Général</a>
+  <div class="dropdown-content">
+    <!-- Historique -->
+    <a href="apercu general.html"><i class="fa-solid fa-satellite-dish"></i> Historique</a>
+    <!-- STRUCTURES ORGANIQUES -->
+  <div class="desktop-submenu">
+  <a href="javascript:void(0)" class="desktop-submenu-btn">
+    <span><i class="fa-solid fa-building"></i>
+      Structures Organiques</span><i class="fa-solid fa-caret-right"></i></a>
+
+  <div class="desktop-submenu-content">
+    <a href="administration_centrale.html">
+      <i class="fa-solid fa-building"></i>
+      Administration Centrale (1)</a>
+    <a href="pool.html"><i class="fa-solid fa-layer-group"></i>
+      Pool (8)</a>
+    <a href="inspection_provinciale.html"><i class="fa-solid fa-map-location-dot"></i>
+      Inspections Provinciales (26)</a>
+    <a href="inspection_provinciale.html"><i class="fa-solid fa-satellite-dish"></i>
+      ± 2 Antennes/IPTER</a>
+  </div>
+</div>
+</div>
+</div>
+
   <div class="dropdown">
-  <a href="javascript:void(0)">Dirigeants <i class="fa-solid fa-caret-down"></i></a>
+  <a href="javascript:void(0)">Dirigeants</a>
 
   <div class="dropdown-content">
     <a href="ig_iga.html">I.G et I.G.A</a>
