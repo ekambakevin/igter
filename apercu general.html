@@ -560,6 +560,228 @@ height:28px;
 
 }
 
+/* =========================================
+   ZONE DE RECHERCHE - DESKTOP & MOBILE
+========================================= */
+
+.search-box {
+    display: flex;
+    align-items: center;
+    width: 250px;
+    height: 30px;
+    background: #ffffff;
+    border: 1px solid #d9e2dc;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+/* Effet lorsque la zone est sélectionnée */
+.search-box:focus-within {
+    border-color: #0F5D3F;
+    box-shadow: 0 0 0 3px rgba(15, 93, 63, 0.12);
+}
+
+/* Champ de recherche */
+.search-box input {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    padding: 0 15px;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #333333;
+    font-size: 16px;
+}
+
+/* Placeholder */
+.search-box input::placeholder {
+    color: #888888;
+}
+
+
+/* =========================
+   BOUTON RECHERCHE
+========================= */
+
+.search-box button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 100%;
+    
+    /* Séparateur noir */
+    border: none;
+    border-left: 2px solid #000000;
+    
+    background: white;
+    color: black;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+/* Survol du bouton */
+.search-box button:hover {
+    background: #ffcc00;
+}
+
+/* Icône */
+.search-box button i {
+    font-size: 16px;
+}
+
+/* =========================================
+   BOÎTE DE DIALOGUE - RECHERCHE ÉCHOUÉE
+========================================= */
+
+/* Fond sombre derrière la boîte */
+.search-dialog-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.45);
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+}
+
+/* Boîte de dialogue */
+.search-dialog {
+    width: 90%;
+    max-width: 400px;
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    animation: searchDialogShow 0.25s ease;
+}
+
+/* Animation d'ouverture */
+@keyframes searchDialogShow {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* En-tête */
+.search-dialog-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 20px;
+    background: #0F5D3F;
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+/* Icône */
+.search-dialog-header i {
+    font-size: 20px;
+}
+
+/* Corps */
+.search-dialog-body {
+    padding: 25px 20px 15px;
+    text-align: center;
+}
+
+.search-dialog-body p {
+    margin: 0;
+    color: #333333;
+    font-size: 15px;
+}
+
+/* Pied de la boîte */
+.search-dialog-footer {
+    display: flex;
+    justify-content: center;
+    padding: 10px 20px 20px;
+}
+
+/* Bouton Ok */
+#search-dialog-ok {
+    min-width: 80px;
+    padding: 9px 20px;
+    border: none;
+    border-radius: 5px;
+    background: #0F5D3F;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+#search-dialog-ok:hover {
+    background: #0B4A32;
+}
+
+@media (max-width: 768px) {
+
+    /* =========================
+       ZONE DE RECHERCHE MOBILE
+    ========================= */
+
+    .search-box {
+        width: 180px;
+        max-width: 180px;
+        height: 34px;
+    }
+
+    .search-box input {
+        font-size: 12px;
+        padding: 0 10px;
+    }
+
+    .search-box input::placeholder {
+        font-size: 12px;
+    }
+
+    .search-box button {
+        width: 38px;
+    }
+
+    .search-box button i {
+        font-size: 14px;
+    }
+
+
+    /* =========================
+       BARRE MENU MOBILE
+    ========================= */
+
+    .mobile-menu-bar {
+        display: flex;
+        background: #003366;
+        padding: 8px 5px 8px 10px;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    /* Icône Menu */
+
+    .mobile-menu-bar .menu-icon {
+        font-size: 32px;
+        line-height: 1;
+        color: white;
+        cursor: pointer;
+        padding: 0;
+        margin: 0;
+    }
+}
+
 /* SECTION PRÉSENTATION IGTER */
 .presentation-igter{
 padding:50px 8%;          /* espace vertical + horizontal */
@@ -1487,7 +1709,7 @@ background:#e0a800;
 <nav class="navbar" id="main-menu"> 
 
   <div class="menu-left">
-    <form class="search-box" action="index.html" method="GET">
+    <form class="search-box" action="apercu general.html" method="GET">
     <input 
         type="search" 
         name="q" 
@@ -1597,7 +1819,7 @@ background:#e0a800;
 <!-- ZONE DE PRÉSENTATION DE L'IGTER -->
 <section class="presentation-igter">
   <div class="container">
-  	<h2 class="titre-centre">Aperçu général et historique</h2>
+  	<h2 class="titre-centre">Historique de l'IGTER</h2>
     <center>
     <p>
     Le sigle "IGTER" veut dire : "INSPECTION GENERALE DE LA TERRITORIALE.</p><br>
@@ -2037,7 +2259,7 @@ document.addEventListener("DOMContentLoaded", function () {
             searchDialog.style.display = "none";
 
             // Actualiser directement index.html
-            window.location.href = "index.html";
+            window.location.href = "apercu general.html";
 
         });
 
