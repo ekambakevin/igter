@@ -772,6 +772,9 @@ footer {
   color: white;
   padding: 18px 7% 10px; /* réduit le padding vertical */
   font-size: 13px;
+  font-family: "Segoe UI", Arial, sans-serif;
+  text-align:center;
+}
 
   /* Ligne tricolore en haut */
   border-top: 5px solid;
@@ -1010,9 +1013,6 @@ transition:0.3s;
 background:white;
 }
 
-footer{
-text-align:center;
-}
 
 .footer-container{
 display:flex;
@@ -1101,7 +1101,7 @@ padding:8px;
 border-radius:4px;
 border:none;
 font-size:12px;
-font-family:"Yu Gothic UI";
+font-family: "Segoe UI", Arial, sans-serif;
 resize:none;
 margin-bottom:8px;
 }
@@ -2599,6 +2599,101 @@ overflow:hidden;
     font-size: 16px;
 }
 
+/* =========================================
+   BOÎTE DE DIALOGUE - RECHERCHE ÉCHOUÉE
+========================================= */
+
+/* Fond sombre derrière la boîte */
+.search-dialog-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.45);
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+}
+
+/* Boîte de dialogue */
+.search-dialog {
+    width: 90%;
+    max-width: 400px;
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    animation: searchDialogShow 0.25s ease;
+}
+
+/* Animation d'ouverture */
+@keyframes searchDialogShow {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* En-tête */
+.search-dialog-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 20px;
+    background: #0F5D3F;
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+/* Icône */
+.search-dialog-header i {
+    font-size: 20px;
+}
+
+/* Corps */
+.search-dialog-body {
+    padding: 25px 20px 15px;
+    text-align: center;
+}
+
+.search-dialog-body p {
+    margin: 0;
+    color: #333333;
+    font-size: 15px;
+}
+
+/* Pied de la boîte */
+.search-dialog-footer {
+    display: flex;
+    justify-content: center;
+    padding: 10px 20px 20px;
+}
+
+/* Bouton Ok */
+#search-dialog-ok {
+    min-width: 80px;
+    padding: 9px 20px;
+    border: none;
+    border-radius: 5px;
+    background: #0F5D3F;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+#search-dialog-ok:hover {
+    background: #0B4A32;
+}
+
 @media (max-width: 768px) {
 
     /* =========================
@@ -2767,11 +2862,19 @@ overflow:hidden;
 
   <div class="menu-left">
     <form class="search-box" action="index.html" method="GET">
-        <input type="search" name="q" placeholder="Rechercher..." aria-label="Rechercher sur le site">
-        <button type="submit" aria-label="Lancer la recherche"><i class="fa-solid fa-magnifying-glass"></i></button>
-    </form>
-  </div>
+    <input 
+        type="search" 
+        name="q" 
+        placeholder="Saisissez un mot clé" 
+        aria-label="Rechercher sur le site"
+    >
 
+    <button type="submit" aria-label="Lancer la recherche">
+        <i class="fa-solid fa-magnifying-glass"></i>
+    </button>
+</form>
+
+</div>
   <!-- MENU DESKTOP -->
 <div class="menu-right">
 
@@ -3149,9 +3252,7 @@ overflow:hidden;
   <!-- Localisation -->
   <h3>Localisation</h3>
   <div class="location-text">
-  <a href="https://www.google.com/maps/search/?api=1&query=Immeuble+Semois+Royal+Kinshasa+Gombe" target="_blank">
-
-  <i class="fa-solid fa-location-dot"></i>6è niveau Immeuble Semois<br>Place Royal/Kinshasa-Gombe</a>
+  <a href="https://www.google.com/maps/search/?api=1&query=Immeuble+Semois+Royal+Kinshasa+Gombe" target="_blank"><i class="fa-solid fa-location-dot"></i>6è niveau Immeuble Semois<br>Avenue Kauka Place Royal<br>Kinshasa-Gombe</a>
 </div>
 </div>
 
@@ -3222,7 +3323,7 @@ overflow:hidden;
 
   <a href="https://interieur.gouv.cd" target="_blank">
     <i class="fa-solid fa-shield-halved"></i>
-    Ministère de l'Intérieur, Sécurité, Décentralisation & Affaires Coutumières
+    Ministère de l'Intérieur
   </a>
 
 </div></div>
@@ -3240,7 +3341,6 @@ overflow:hidden;
 </div>
 
 <!-- BAS DU FOOTER -->
-
 <div class="footer-bottom">
 <p>© <span id="year"></span> Inspection Générale de la Territoriale — Tous droits réservés</p>
 </div>
@@ -3518,21 +3618,50 @@ window.addEventListener('scroll', revealOnScroll);
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
-    // Récupérer le terme recherché dans l'URL
+    // =========================================
+    // RÉCUPÉRER LE TERME RECHERCHÉ
+    // =========================================
+
     const params = new URLSearchParams(window.location.search);
     const recherche = params.get("q");
 
-    // S'il n'y a aucune recherche, on ne fait rien
+    // =========================================
+    // RÉCUPÉRER LA BOÎTE DE DIALOGUE
+    // =========================================
+
+    const searchDialog = document.getElementById("search-dialog");
+    const searchDialogOk = document.getElementById("search-dialog-ok");
+
+    // =========================================
+    // S'IL N'Y A AUCUNE RECHERCHE
+    // ON NE FAIT RIEN
+    // =========================================
+
     if (!recherche) {
         return;
     }
 
-    // Nettoyer et normaliser le terme recherché
+    // =========================================
+    // NETTOYER ET NORMALISER LA RECHERCHE
+    // =========================================
+
     const terme = recherche
         .toLowerCase()
         .normalize("NFD")
         .replace(/[\u0300-\u036f]/g, "")
         .trim();
+
+    // Si le champ contient seulement des espaces
+    if (!terme) {
+        return;
+    }
+
+    // =========================================
+    // VARIABLE POUR SAVOIR SI UN RÉSULTAT EXISTE
+    // =========================================
+
+    let resultatTrouve = false;
+
 
     // =========================================
     // RECHERCHE : ACTUALITÉS
@@ -3544,12 +3673,12 @@ document.addEventListener("DOMContentLoaded", function () {
         terme.includes("news")
     ) {
 
-        // Trouver la section Actualités
         const sectionActualite = document.getElementById("actualite");
 
         if (sectionActualite) {
 
-            // Faire défiler la page jusqu'à la section
+            resultatTrouve = true;
+
             setTimeout(function () {
 
                 sectionActualite.scrollIntoView({
@@ -3561,7 +3690,64 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+
+    // =========================================
+    // AUCUN ÉLÉMENT TROUVÉ
+    // =========================================
+
+    if (!resultatTrouve && searchDialog) {
+
+        searchDialog.style.display = "flex";
+
+    }
+
+
+    // =========================================
+    // BOUTON OK
+    // FERME LA BOÎTE ET ACTUALISE LA PAGE
+    // =========================================
+
+    if (searchDialogOk) {
+
+        searchDialogOk.addEventListener("click", function () {
+
+            // Fermer la boîte de dialogue
+            searchDialog.style.display = "none";
+
+            // Actualiser directement index.html
+            window.location.href = "index.html";
+
+        });
+
+    }
+
 });
 </script>
+
+<!-- =========================
+     BOÎTE DE DIALOGUE RECHERCHE
+========================= -->
+<div id="search-dialog" class="search-dialog-overlay">
+
+    <div class="search-dialog">
+
+        <div class="search-dialog-header">
+            <i class="fa-solid fa-circle-exclamation"></i>
+            <span>Recherche échouée</span>
+        </div>
+
+        <div class="search-dialog-body">
+            <p>Aucun élément trouvé. Veuillez taper un mot clé correspondant à votre élément de recherche.</p>
+        </div>
+
+        <div class="search-dialog-footer">
+            <button type="button" id="search-dialog-ok">
+                Ok
+            </button>
+        </div>
+
+    </div>
+
+</div>
 </body>
 </html>
