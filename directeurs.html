@@ -572,6 +572,7 @@ footer {
   color: white;
   padding: 18px 7% 10px; /* réduit le padding vertical */
   font-size: 13px;
+   font-family: "Segoe UI", Arial, sans-serif;
 
   /* Ligne tricolore en haut */
   border-top: 5px solid;
@@ -1209,6 +1210,228 @@ background:#e0a800;
     color:#003366 !important;
 }
 
+/* =========================================
+   ZONE DE RECHERCHE - DESKTOP & MOBILE
+========================================= */
+
+.search-box {
+    display: flex;
+    align-items: center;
+    width: 250px;
+    height: 30px;
+    background: #ffffff;
+    border: 1px solid #d9e2dc;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+/* Effet lorsque la zone est sélectionnée */
+.search-box:focus-within {
+    border-color: #0F5D3F;
+    box-shadow: 0 0 0 3px rgba(15, 93, 63, 0.12);
+}
+
+/* Champ de recherche */
+.search-box input {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    padding: 0 15px;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #333333;
+    font-size: 16px;
+}
+
+/* Placeholder */
+.search-box input::placeholder {
+    color: #888888;
+}
+
+
+/* =========================
+   BOUTON RECHERCHE
+========================= */
+
+.search-box button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 100%;
+    
+    /* Séparateur noir */
+    border: none;
+    border-left: 2px solid #000000;
+    
+    background: white;
+    color: black;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+/* Survol du bouton */
+.search-box button:hover {
+    background: #ffcc00;
+}
+
+/* Icône */
+.search-box button i {
+    font-size: 16px;
+}
+
+/* =========================================
+   BOÎTE DE DIALOGUE - RECHERCHE ÉCHOUÉE
+========================================= */
+
+/* Fond sombre derrière la boîte */
+.search-dialog-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.45);
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+}
+
+/* Boîte de dialogue */
+.search-dialog {
+    width: 90%;
+    max-width: 400px;
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    animation: searchDialogShow 0.25s ease;
+}
+
+/* Animation d'ouverture */
+@keyframes searchDialogShow {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* En-tête */
+.search-dialog-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 20px;
+    background: #0F5D3F;
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+/* Icône */
+.search-dialog-header i {
+    font-size: 20px;
+}
+
+/* Corps */
+.search-dialog-body {
+    padding: 25px 20px 15px;
+    text-align: center;
+}
+
+.search-dialog-body p {
+    margin: 0;
+    color: #333333;
+    font-size: 15px;
+}
+
+/* Pied de la boîte */
+.search-dialog-footer {
+    display: flex;
+    justify-content: center;
+    padding: 10px 20px 20px;
+}
+
+/* Bouton Ok */
+#search-dialog-ok {
+    min-width: 80px;
+    padding: 9px 20px;
+    border: none;
+    border-radius: 5px;
+    background: #0F5D3F;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+#search-dialog-ok:hover {
+    background: #0B4A32;
+}
+
+@media (max-width: 768px) {
+
+    /* =========================
+       ZONE DE RECHERCHE MOBILE
+    ========================= */
+
+    .search-box {
+        width: 180px;
+        max-width: 180px;
+        height: 34px;
+    }
+
+    .search-box input {
+        font-size: 12px;
+        padding: 0 10px;
+    }
+
+    .search-box input::placeholder {
+        font-size: 12px;
+    }
+
+    .search-box button {
+        width: 38px;
+    }
+
+    .search-box button i {
+        font-size: 14px;
+    }
+
+
+    /* =========================
+       BARRE MENU MOBILE
+    ========================= */
+
+    .mobile-menu-bar {
+        display: flex;
+        background: #003366;
+        padding: 8px 5px 8px 10px;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    /* Icône Menu */
+
+    .mobile-menu-bar .menu-icon {
+        font-size: 32px;
+        line-height: 1;
+        color: white;
+        cursor: pointer;
+        padding: 0;
+        margin: 0;
+    }
+}
+
 /* SECTION DIRECTEURS */
 .directeurs-section{
 padding:50px 8%;
@@ -1339,7 +1562,7 @@ grid-template-columns:1fr;
   <div class="contact-item">
     <i class="fas fa-envelope"></i>
     <span>
-      <a href="mailto:contact@igter.cd">contact@igter.cd</a>
+      <a href="mailto:contact@igter.gouv.cd">contact@igter.gouv.cd</a>
     </span>
   </div>
 
@@ -1350,8 +1573,21 @@ grid-template-columns:1fr;
 <nav class="navbar" id="main-menu"> 
 
   <div class="menu-left">
-    <a href="apercu general.html">Qu'est-ce que l'IGTER ?</a>
-  </div>
+    <form class="search-box" action="directeurs.html" method="GET">
+    <input 
+        type="search" 
+        name="q" 
+        placeholder="Saisissez un mot clé" 
+        aria-label="Rechercher sur le site"
+    >
+
+    <button type="submit" aria-label="Lancer la recherche">
+        <i class="fa-solid fa-magnifying-glass"></i>
+    </button>
+</form>
+
+</div>
+
 
  <!-- MENU DESKTOP -->
 <div class="menu-right">
@@ -1581,7 +1817,7 @@ grid-template-columns:1fr;
   <div class="location-text">
   <a href="https://www.google.com/maps/search/?api=1&query=Immeuble+Semois+Royal+Kinshasa+Gombe" target="_blank">
 
-  <i class="fa-solid fa-location-dot"></i>6è niveau Immeuble Semois<br>Place Royal/Kinshasa-Gombe</a>
+  <i class="fa-solid fa-location-dot"></i>6è niveau Immeuble Semois<br>Avenue Kauka Place Royal<br>Kinshasa-Gombe</a>
 </div>
 </div>
 
@@ -1593,9 +1829,9 @@ grid-template-columns:1fr;
  <div class="contact-info">
 
   <p>
-    <a href="mailto:contact@igter.cd">
+    <a href="mailto:contact@igter.gouv.cd">
       <i class="fa-solid fa-envelope"></i>
-      contact@igter.cd
+      contact@igter.gouv.cd
     </a>
   </p>
 
@@ -1808,5 +2044,136 @@ function revealOnScroll() {
 
 window.addEventListener('scroll', revealOnScroll);
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    // =========================================
+    // RÉCUPÉRER LE TERME RECHERCHÉ
+    // =========================================
+
+    const params = new URLSearchParams(window.location.search);
+    const recherche = params.get("q");
+
+    // =========================================
+    // RÉCUPÉRER LA BOÎTE DE DIALOGUE
+    // =========================================
+
+    const searchDialog = document.getElementById("search-dialog");
+    const searchDialogOk = document.getElementById("search-dialog-ok");
+
+    // =========================================
+    // S'IL N'Y A AUCUNE RECHERCHE
+    // ON NE FAIT RIEN
+    // =========================================
+
+    if (!recherche) {
+        return;
+    }
+
+    // =========================================
+    // NETTOYER ET NORMALISER LA RECHERCHE
+    // =========================================
+
+    const terme = recherche
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .trim();
+
+    // Si le champ contient seulement des espaces
+    if (!terme) {
+        return;
+    }
+
+    // =========================================
+    // VARIABLE POUR SAVOIR SI UN RÉSULTAT EXISTE
+    // =========================================
+
+    let resultatTrouve = false;
+
+
+    // =========================================
+    // RECHERCHE : ACTUALITÉS
+    // =========================================
+
+    if (
+        terme.includes("actualite") ||
+        terme.includes("actualites") ||
+        terme.includes("news")
+    ) {
+
+        const sectionActualite = document.getElementById("actualite");
+
+        if (sectionActualite) {
+
+            resultatTrouve = true;
+
+            setTimeout(function () {
+
+                sectionActualite.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+
+            }, 100);
+        }
+    }
+
+
+    // =========================================
+    // AUCUN ÉLÉMENT TROUVÉ
+    // =========================================
+
+    if (!resultatTrouve && searchDialog) {
+
+        searchDialog.style.display = "flex";
+
+    }
+
+
+    // =========================================
+    // BOUTON OK
+    // FERME LA BOÎTE ET ACTUALISE LA PAGE
+    // =========================================
+
+    if (searchDialogOk) {
+
+        searchDialogOk.addEventListener("click", function () {
+
+            // Fermer la boîte de dialogue
+            searchDialog.style.display = "none";
+        });
+
+    }
+
+});
+</script>
+
+<!-- =========================
+     BOÎTE DE DIALOGUE RECHERCHE
+========================= -->
+<div id="search-dialog" class="search-dialog-overlay">
+
+    <div class="search-dialog">
+
+        <div class="search-dialog-header">
+            <i class="fa-solid fa-circle-exclamation"></i>
+            <span>Recherche échouée</span>
+        </div>
+
+        <div class="search-dialog-body">
+            <p>Aucun élément trouvé. Veuillez taper un mot clé correspondant à votre élément de recherche.</p>
+        </div>
+
+        <div class="search-dialog-footer">
+            <button type="button" id="search-dialog-ok">
+                Ok
+            </button>
+        </div>
+
+    </div>
+
+</div>
+<script src="recherche.js"></script>
 </body>
 </html>
