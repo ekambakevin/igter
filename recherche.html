@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Recherche - IGTER</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f7f5;
+      color: #333;
+    }
+
+    .search-page {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 30px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    h1 {
+      color: #0F5D3F;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    .search-term {
+      text-align: center;
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .result-message {
+      text-align: center;
+      font-size: 17px;
+      padding: 20px;
+    }
+
+    .result-link {
+      display: block;
+      max-width: 500px;
+      margin: 20px auto;
+      padding: 15px 20px;
+      background: #0F5D3F;
+      color: white;
+      text-decoration: none;
+      text-align: center;
+      border-radius: 6px;
+      transition: 0.3s;
+    }
+
+    .result-link:hover {
+      background: #0B4A32;
+    }
+
+    .back-home {
+      display: block;
+      width: fit-content;
+      margin: 30px auto 0;
+      color: #0F5D3F;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .back-home:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="search-page">
+
+    <h1>Résultats de recherche</h1>
+
+    <div class="search-term" id="searchTerm"></div>
+
+    <div class="result-message" id="searchResults">
+      Recherche en cours...
+    </div>
+
+    <a href="index.html" class="back-home">
+      ← Retour à l'accueil
+    </a>
+
+  </main>
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+      // Récupérer le terme recherché dans l'URL
+      const params = new URLSearchParams(window.location.search);
+      const recherche = params.get("q");
+
+      const searchTerm = document.getElementById("searchTerm");
+      const searchResults = document.getElementById("searchResults");
+
+
+      // Si aucun terme n'a été saisi
+      if (!recherche || recherche.trim() === "") {
+
+        searchTerm.textContent = "Aucun terme de recherche.";
+
+        searchResults.innerHTML = `
+          <p>Veuillez saisir un mot ou une expression dans la barre de recherche.</p>
+        `;
+
+        return;
+      }
+
+
+      // Afficher le terme recherché
+      searchTerm.innerHTML = `
+        Vous avez recherché : 
+        <strong>"${recherche}"</strong>
+      `;
+
+
+      // Normaliser le terme
+      const terme = recherche
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .trim();
+
+
+      // =========================================
+      // RECHERCHE : ACTUALITÉS
+      // =========================================
+
+      if (
+        terme.includes("actualite") ||
+        terme.includes("actualites") ||
+        terme.includes("news")
+      ) {
+
+        searchResults.innerHTML = `
+
+          <p>
+            Une section correspondant à votre recherche a été trouvée :
+          </p>
+
+          <a 
+            href="index.html#actualite" 
+            class="result-link"
+          >
+            📰 Voir les Actualités IGTER
+          </a>
+
+        `;
+
+        return;
+      }
+
+
+      // =========================================
+      // AUCUN RÉSULTAT
+      // =========================================
+
+      searchResults.innerHTML = `
+
+        <p>
+          Aucun résultat correspondant à 
+          <strong>"${recherche}"</strong>
+          n'a été trouvé.
+        </p>
+
+      `;
+
+    });
+  </script>
+
+</body>
+
+</html>
