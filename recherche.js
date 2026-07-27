@@ -195,6 +195,17 @@ document.addEventListener("DOMContentLoaded", function () {
             page: "cd.html",
             cible: "#cd"
         },
+
+         {
+            mots: [
+                "cb",
+                "chef de bureau",
+                "chef bureau"
+            ],
+            page: "cb.html",
+            cible: "#cb"
+        },
+        
         // =============================================
         // STRUCTURES ORGANIQUES
         // =============================================
