@@ -1,5 +1,4 @@
 
-
 document.addEventListener("DOMContentLoaded", function () {
 
     // =====================================================
@@ -13,7 +12,6 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
     }
 
-
     // =====================================================
     // NORMALISER LE TEXTE
     // =====================================================
@@ -23,7 +21,6 @@ document.addEventListener("DOMContentLoaded", function () {
         .normalize("NFD")
         .replace(/[\u0300-\u036f]/g, "")
         .trim();
-
 
     // =====================================================
     // DÉFINIR LES DESTINATIONS
@@ -37,6 +34,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
         {
             mots: [
+                "attribution",
+                "attributions"
+            ],
+            page: "index.html",
+            cible: "#attributions"
+        },
+
+        {
+            mots: [
                 "actualite",
                 "actualites",
                 "news"
@@ -47,25 +53,85 @@ document.addEventListener("DOMContentLoaded", function () {
 
         {
             mots: [
-                "mission",
-                "missions"
+                "video",
+                "videos"
             ],
             page: "index.html",
-            cible: "#missions"
+            cible: "#videos"
         },
 
         {
             mots: [
-                "attribution",
-                "attributions"
+                "contact",
+                "adresse",
+                "telephone",
+                "email"
             ],
             page: "index.html",
-            cible: "#attributions"
+            cible: "#contact"
         },
 
+        // ==================================================
+        // PAGES APERCU GENERAL.HTML 
+        // ==================================================
+
+        {
+            mots: [
+                "histoire",
+                "historique"
+            ],
+            page: "apercu general.html",
+            cible: "#apercu"
+        },
+
+        // ==================================================
+        // PAGES DOCUMENT, MISSION ET MODE DE SAISINE
+        // ==================================================
+
+        {
+            mots: [
+                "decret",
+                "organigramme",
+                "communique",
+                "note",
+                "note de service",
+                "note circulaire",
+                "message officiel",
+                "message",
+                "decision",
+                "rapport"
+            ],
+            page: "document.html",
+            cible: "#documents"
+        },
+
+        {
+            mots: [
+                "mission",
+                "mision",
+                "missions"
+            ],
+            page: "mission.html",
+            cible: "#mission"
+        },
+
+        {
+            mots: [
+                "vous saisir",
+                "formulaire de saisine",
+                "saisir",
+                "formulaire",
+                "mode de saisine",
+                "saisine",
+                "vous ecrire",
+                "ecrire"
+            ],
+            page: "mode_saisine.html",
+            cible: "#saisine"
+        },
 
         // =============================================
-        // PAGE IG ET IGA
+        // PAGES DES DIRIGEANTS IGTER
         // =============================================
 
         {
@@ -77,33 +143,72 @@ document.addEventListener("DOMContentLoaded", function () {
             ],
 
             page: "ig_iga.html",
-            cible: "#dirigeants"
+            cible: "#ig_iga"
         },
 
-// =============================================
-        // PAGE DIRECTEURS
-        // =============================================
         {
             mots: [
                 "directeur",
                 "directeurs",
-                "dirigeant",
-                "dirigeants"
+                "direction standard",
+                "direction metier"
             ],
             page: "directeurs.html",
-            cible: "#dirigeants"
+            cible: "#directeurs"
         },
 
+        {
+            mots: [
+                "chef de pool",
+                "chef pool"
+            ],
+            page: "directeurs2.html",
+            cible: "#directeurs2"
+        },
+
+        {
+            mots: [
+                "inspecteur provincial",
+                "inspro"
+            ],
+            page: "directeurs3.html",
+            cible: "#directeurs3"
+        },
+
+        {
+            mots: [
+                "expert inspecteur",
+                "expert-inspecteur",
+                "expert"
+            ],
+            page: "directeurs4.html",
+            cible: "#directeurs4"
+        },
+
+
+        {
+            mots: [
+                "cd",
+                "chef de division",
+                "chef division"
+            ],
+            page: "cd.html",
+            cible: "#cd"
+        },
         // =============================================
         // STRUCTURES ORGANIQUES
         // =============================================
 
         {
             mots: [
-                "administration centrale"
+                "administration centrale",
+                "centrale",
+                "administration",
+                "services",
+                "service"
             ],
             page: "administration_centrale.html",
-            cible: ""
+            cible: "#administration"
         },
 
         {
@@ -111,16 +216,18 @@ document.addEventListener("DOMContentLoaded", function () {
                 "pool"
             ],
             page: "pool.html",
-            cible: ""
+            cible: "#pool"
         },
 
         {
             mots: [
+                "inspection",
+                "provinciale",
                 "inspection provinciale",
                 "inspections provinciales"
             ],
             page: "inspection_provinciale.html",
-            cible: ""
+            cible: "#ipter"
         }
 
     ];
