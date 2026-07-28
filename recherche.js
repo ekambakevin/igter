@@ -92,6 +92,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         {
             mots: [
+                "document",
                 "decret",
                 "organigramme",
                 "communique",
