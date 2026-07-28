@@ -1573,6 +1573,57 @@ overflow:hidden;
   opacity: 0.95;
 }
 
+/* =========================================
+SLIDE VISION - MOBILE UNIQUEMENT
+========================================= */
+
+/* Masqué par défaut : Desktop et grands écrans */
+.slide-mobile-vision {
+display: none;
+}
+
+/* =========================================
+AFFICHAGE UNIQUEMENT SUR MOBILE
+========================================= */
+@media (max-width: 768px) {
+
+/* Afficher le slide Vision sur mobile */
+.slide-mobile-vision {
+display: flex;
+width: 100%;
+min-height: 100%;
+align-items: center;
+justify-content: center;
+box-sizing: border-box;
+}
+
+/* Contenu du slide */
+.slide-mobile-vision .hero-text {
+width: 100%;
+max-width: 100%;
+padding: 30px 20px;
+box-sizing: border-box;
+text-align: left;
+}
+
+/* Titre */
+.slide-mobile-vision .hero-text h1 {
+margin-bottom: 20px;
+font-size: 25px;
+line-height: 1.3;
+text-align: center;
+}
+
+/* Texte */
+.slide-mobile-vision .hero-text p {
+margin: 0;
+font-size: 15px;
+line-height: 1.7;
+text-align: justify;
+}
+
+}
+
 /* =========================
    BARRE DE DÉFILEMENT MISSIONS
 ========================= */
@@ -3044,6 +3095,22 @@ overflow:hidden;
   </div>
 </div>
 
+<!-- SLIDE MOBILE UNIQUEMENT : VISION DE L'INSPECTEUR GÉNÉRAL -->
+
+<div class="hero-slide slide-mobile-vision">
+  <div class="hero-text">
+     <!-- Texte -->
+<h1>Vision de l'Inspecteur Général de la Territoriale</h1>
+<p>
+  Mon Adjoint et moi, nous avons été nommés par ordonnance du Président de la République n° .............. du ................, sur proposition du Vice-Premier Ministre en charge de l'Intérieur, Sécurité, Décentralisation & Affaires Coutumières, avec mission de restructurer le Service qu'est l'Inspection Générale de la Territoriale, en sigle "IGTER". Ma vision précise est de :
+  <br>
+  - faire respecter les lois et règlements de la République en matière d'administration territoriale, ainsi que les instructions de la hiérarchie;
+  <br>
+  - professionnaliser les missions dévolues à un Inspecteur de la Territoriale.
+</p>
+```
+  </div>
+</div>
 </div></div>
 
 <!-- BARRE DES MISSIONS EN COURS -->
@@ -3460,52 +3527,149 @@ document.getElementById("newsletterForm").addEventListener("submit", function(e)
 });
 
 </script>
-
 <script>
-let slides = document.querySelectorAll(".hero-slide");
-let dots = document.querySelectorAll(".dot");
-let index = 0;
-let interval;
+document.addEventListener("DOMContentLoaded", function () {
+  const hero = document.querySelector(".hero-expert");
+  if (!hero) return;
+  let allSlides = Array.from(
+    hero.querySelectorAll(".hero-slide")
+  );
 
-/* afficher slide */
+  let allDots = Array.from(
+    hero.querySelectorAll(".dot")
+  );
 
-function showSlide(i){
+  let slides = [];
+  let dots = [];
+  let index = 0;
+  let interval;
 
-slides.forEach(s => s.classList.remove("active"));
-dots.forEach(d => d.classList.remove("active"));
+  /*DÉTECTER LE MODE Mobile : largeur <= 768px*/
+  function isMobile() {
+    return window.innerWidth <= 768;
+  }
 
-slides[i].classList.add("active");
-dots[i].classList.add("active");
+  /*RÉCUPÉRER LES SLIDES ACTIFS Desktop : Le slide .slide-mobile-vision est ignoré. Mobile : Tous les slides sont utilisés.*/
+  function updateSlides() {
+    if (isMobile()) {
+      // MOBILE :
+      // Inclure le nouveau slide réservé au mobile
+      slides = allSlides;
+    } else {
+      // DESKTOP :
+      // Exclure le slide réservé uniquement au mobile
+      slides = allSlides.filter(function (slide) {
+        return !slide.classList.contains("slide-mobile-vision");
+      });
+    }
 
-index = i;
-}
+    /*Les points de navigation correspondent uniquement aux slides classiques. Le slide mobile supplémentaire n'a pas besoin d'avoir un point supplémentaire.*/
+    dots = allDots;
+  }
 
-/* auto */
+  /*AFFICHER UN SLIDE*/
+  function showSlide(i) {
+    if (slides.length === 0) return;
+    /*Vérifier que l'index reste valide*/
+    if (i >= slides.length) {
+      i = 0;
+    }
 
-function startAuto(){
-interval = setInterval(() => {
-index++;
-if(index >= slides.length){ index = 0; }
-showSlide(index);
-}, 15000);
-}
+    if (i < 0) {
+      i = slides.length - 1;
+    }
 
-/* pause au survol */
+    /*Masquer tous les slides*/
+    allSlides.forEach(function (slide) {
+      slide.classList.remove("active");
+    });
 
-let hero = document.querySelector(".hero-expert");
+    /*Désactiver tous les points*/
+    allDots.forEach(function (dot) {
+      dot.classList.remove("active");
+    });
 
-hero.addEventListener("mouseenter", () => clearInterval(interval));
-hero.addEventListener("mouseleave", startAuto);
+    /*Afficher le slide demandé*/
+    slides[i].classList.add("active");
 
-/* dots clic */
+    /*Activer le point correspondant Si le slide mobile supplémentaire est affiché, aucun point supplémentaire n'est activé.*/
+    if (dots[i]) {
+      dots[i].classList.add("active");
+    }
 
-dots.forEach((dot, i) => {
-dot.addEventListener("click", () => showSlide(i));
+    /*Enregistrer l'index actuel*/
+    index = i;
+  }
+
+  /*DÉMARRER LE SLIDER AUTOMATIQUE*/
+  function startAuto() {
+    clearInterval(interval);
+    interval = setInterval(function () {
+      index++;
+
+      if (index >= slides.length) {
+        index = 0;
+      }
+
+      showSlide(index);
+    }, 15000);
+  }
+
+  /*PAUSE AU SURVOL Desktop uniquement*/
+  hero.addEventListener("mouseenter", function () {
+    clearInterval(interval);
+  });
+
+  /*REPRENDRE APRÈS LE SURVOL*/
+  hero.addEventListener("mouseleave", function () {
+    startAuto();
+  });
+
+  /*CLIC SUR LES DOTS*/
+  allDots.forEach(function (dot, i) {
+    dot.addEventListener("click", function () {
+
+      /*Sur Desktop : les 2 dots correspondent aux 2 slides Desktop.*/
+      if (!isMobile()) {
+        showSlide(i);
+      } else {
+
+        /*Sur Mobile : les dots existants permettent toujours d'accéder aux slides classiques.*/
+        if (i < slides.length) {
+          showSlide(i);
+        }
+      }
+
+      /*Réinitialiser le compteur automatique*/
+      startAuto();
+    });
+  });
+
+  /*INITIALISATION*/
+  updateSlides();
+  showSlide(0);
+  startAuto();
+
+  /*GESTION DU PASSAGE DESKTOP ↔ MOBILE*/
+  let previousMobileState = isMobile();
+
+  window.addEventListener("resize", function () {
+  const currentMobileState = isMobile();
+
+    /*Si on passe de Desktop à Mobile ou de Mobile à Desktop*/
+    if (currentMobileState !== previousMobileState) {
+      previousMobileState = currentMobileState;
+      /*Recalculer les slides disponibles*/
+      updateSlides();
+      /*Revenir au premier slide*/
+      index = 0;
+      /*Afficher le premier slide*/
+      showSlide(index);
+      /*Redémarrer l'auto-slider*/
+      startAuto();
+    }
+  });
 });
-
-/* lancer */
-
-startAuto();
 </script>
 <script>
 const cards = document.querySelectorAll('.attribution-card');
