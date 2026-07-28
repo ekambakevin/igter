@@ -78,7 +78,9 @@ document.addEventListener("DOMContentLoaded", function () {
         {
             mots: [
                 "histoire",
-                "historique"
+                "historique",
+                "apercu general",
+                "apercu"
             ],
             page: "apercu general.html",
             cible: "#apercu"
@@ -139,7 +141,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 "ig",
                 "iga",
                 "i.g",
-                "i.g.a"
+                "i.g.a",
+                "inspeceteur general",
+                "inspeceteur general adjoint"
             ],
 
             page: "ig_iga.html",
