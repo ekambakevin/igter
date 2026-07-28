@@ -3532,11 +3532,8 @@ document.getElementById("newsletterForm").addEventListener("submit", function(e)
 </script>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-
   const hero = document.querySelector(".hero-expert");
-
   if (!hero) return;
-
   let allSlides = Array.from(
     hero.querySelectorAll(".hero-slide")
   );
@@ -3547,60 +3544,36 @@ document.addEventListener("DOMContentLoaded", function () {
 
   let slides = [];
   let dots = [];
-
   let index = 0;
   let interval;
 
-  /*
-   * DÉTECTER LE MODE
-   * Mobile : largeur <= 768px
-   */
+  /*DÉTECTER LE MODE Mobile : largeur <= 768px*/
   function isMobile() {
     return window.innerWidth <= 768;
   }
 
-
-  /*
-   * RÉCUPÉRER LES SLIDES
-   *
-   * Desktop :
-   * Le slide .slide-mobile-vision est ignoré.
-   *
-   * Mobile :
-   * Tous les slides sont utilisés.
-   */
+  /*RÉCUPÉRER LES SLIDES ACTIFS Desktop : Le slide .slide-mobile-vision est ignoré. Mobile : Tous les slides sont utilisés.*/
   function updateSlides() {
-
     if (isMobile()) {
-
       // MOBILE :
-      // Inclure le slide réservé au mobile
+      // Inclure le nouveau slide réservé au mobile
       slides = allSlides;
-
     } else {
-
       // DESKTOP :
-      // Exclure le slide réservé au mobile
+      // Exclure le slide réservé uniquement au mobile
       slides = allSlides.filter(function (slide) {
         return !slide.classList.contains("slide-mobile-vision");
       });
-
     }
 
+    /*Les points de navigation correspondent uniquement aux slides classiques. Le slide mobile supplémentaire n'a pas besoin d'avoir un point supplémentaire.*/
     dots = allDots;
   }
 
-
-  /*
-   * AFFICHER UN SLIDE
-   */
+  /*AFFICHER UN SLIDE*/
   function showSlide(i) {
-
     if (slides.length === 0) return;
-
-    /*
-     * Vérifier que l'index reste valide
-     */
+    /*Vérifier que l'index reste valide*/
     if (i >= slides.length) {
       i = 0;
     }
@@ -3609,239 +3582,98 @@ document.addEventListener("DOMContentLoaded", function () {
       i = slides.length - 1;
     }
 
-
-    /*
-     * Masquer tous les slides
-     */
+    /*Masquer tous les slides*/
     allSlides.forEach(function (slide) {
       slide.classList.remove("active");
     });
 
-
-    /*
-     * Désactiver tous les points
-     */
+    /*Désactiver tous les points*/
     allDots.forEach(function (dot) {
       dot.classList.remove("active");
     });
 
-
-    /*
-     * Afficher le slide sélectionné
-     */
+    /*Afficher le slide demandé*/
     slides[i].classList.add("active");
 
-
-    /*
-     * Activer le point correspondant
-     */
+    /*Activer le point correspondant Si le slide mobile supplémentaire est affiché, aucun point supplémentaire n'est activé.*/
     if (dots[i]) {
       dots[i].classList.add("active");
     }
 
-
-    /*
-     * Enregistrer l'index actuel
-     */
+    /*Enregistrer l'index actuel*/
     index = i;
-
   }
 
-
-  /*
-   * PASSER AU SLIDE SUIVANT
-   */
-  function nextSlide() {
-
-    /*
-     * Annuler le précédent timer
-     */
-    clearTimeout(interval);
-
-
-    /*
-     * Passer au slide suivant
-     */
-    index++;
-
-    /*
-     * Si on arrive à la fin,
-     * revenir au premier slide
-     */
-    if (index >= slides.length) {
-      index = 0;
-    }
-
-
-    /*
-     * Afficher le nouveau slide
-     */
-    showSlide(index);
-
-
-    /*
-     * DURÉE D'AFFICHAGE
-     *
-     * Sur mobile :
-     * Le slide 3 (.slide-mobile-vision)
-     * reste affiché pendant 5 secondes.
-     *
-     * Les autres slides restent affichés
-     * pendant 15 secondes.
-     *
-     * Sur Desktop :
-     * Tous les slides restent affichés 15 secondes.
-     */
-    let duration = 15000;
-
-    if (
-      isMobile() &&
-      slides[index].classList.contains("slide-mobile-vision")
-    ) {
-      duration = 5000;
-    }
-
-
-    /*
-     * Programmer le prochain changement
-     */
-    interval = setTimeout(nextSlide, duration);
-
-  }
-
-
-  /*
-   * DÉMARRER LE SLIDER AUTOMATIQUE
-   */
+  /*DÉMARRER LE SLIDER AUTOMATIQUE*/
   function startAuto() {
+    clearInterval(interval);
+    interval = setInterval(function () {
+      index++;
 
-    clearTimeout(interval);
+      if (index >= slides.length) {
+        index = 0;
+      }
 
-    /*
-     * Le slide actuellement affiché
-     * détermine la durée avant le prochain.
-     *
-     * Mobile :
-     * Slide 3 = 5 secondes
-     * Autres slides = 15 secondes
-     *
-     * Desktop :
-     * Tous les slides = 15 secondes
-     */
-    let duration = 15000;
-
-    if (
-      isMobile() &&
-      slides[index].classList.contains("slide-mobile-vision")
-    ) {
-      duration = 5000;
-    }
-
-    interval = setTimeout(nextSlide, duration);
-
+      showSlide(index);
+    }, 5000);
   }
 
-
-  /*
-   * PAUSE AU SURVOL
-   * Desktop principalement
-   */
+  /*PAUSE AU SURVOL Desktop uniquement*/
   hero.addEventListener("mouseenter", function () {
-    clearTimeout(interval);
+    clearInterval(interval);
   });
 
-
-  /*
-   * REPRENDRE APRÈS LE SURVOL
-   */
+  /*REPRENDRE APRÈS LE SURVOL*/
   hero.addEventListener("mouseleave", function () {
     startAuto();
   });
 
-
-  /*
-   * CLIC SUR LES DOTS
-   */
+  /*CLIC SUR LES DOTS*/
   allDots.forEach(function (dot, i) {
-
     dot.addEventListener("click", function () {
 
-      if (i < slides.length) {
-
+      /*Sur Desktop : les 2 dots correspondent aux 2 slides Desktop.*/
+      if (!isMobile()) {
         showSlide(i);
+      } else {
 
-        /*
-         * Redémarrer le timer
-         */
-        startAuto();
-
+        /*Sur Mobile : les dots existants permettent toujours d'accéder aux slides classiques.*/
+        if (i < slides.length) {
+          showSlide(i);
+        }
       }
 
+      /*Réinitialiser le compteur automatique*/
+      startAuto();
     });
-
   });
 
-
-  /*
-   * INITIALISATION
-   */
+  /*INITIALISATION*/
   updateSlides();
-
   showSlide(0);
-
   startAuto();
 
-
-  /*
-   * GESTION DU PASSAGE DESKTOP ↔ MOBILE
-   */
+  /*GESTION DU PASSAGE DESKTOP ↔ MOBILE*/
   let previousMobileState = isMobile();
 
-
   window.addEventListener("resize", function () {
+  const currentMobileState = isMobile();
 
-    const currentMobileState = isMobile();
-
-
-    /*
-     * Si on passe de Desktop à Mobile
-     * ou de Mobile à Desktop
-     */
+    /*Si on passe de Desktop à Mobile ou de Mobile à Desktop*/
     if (currentMobileState !== previousMobileState) {
-
       previousMobileState = currentMobileState;
-
-
-      /*
-       * Recalculer les slides disponibles
-       */
+      /*Recalculer les slides disponibles*/
       updateSlides();
-
-
-      /*
-       * Revenir au premier slide
-       */
+      /*Revenir au premier slide*/
       index = 0;
-
-
-      /*
-       * Afficher le premier slide
-       */
+      /*Afficher le premier slide*/
       showSlide(index);
-
-
-      /*
-       * Redémarrer le timer
-       */
+      /*Redémarrer l'auto-slider*/
       startAuto();
-
     }
-
   });
-
 });
 </script>
-
 <script>
 const cards = document.querySelectorAll('.attribution-card');
 
