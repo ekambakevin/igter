@@ -232,6 +232,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
         {
             mots: [
+                "antenne territoriale",
+                "antenne",
+                "territoriale",
+                "territoire",
                 "inspection",
                 "provinciale",
                 "inspection provinciale",
@@ -262,9 +266,9 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!destination) {
 
         alert(
-            'Aucun résultat trouvé pour : "' +
+            'Aucun résultat trouvé pour : "' + 
             recherche +
-            '"'
+            '" Veuillez bien saisir votre mot clé.'
         );
 
         return;
