@@ -497,6 +497,71 @@ font-weight:bold;
 height:28px;
 }
 
+/* =========================
+PAGE EN CONSTRUCTION
+========================= */
+
+.construction-section{
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:60vh;
+background:#f4f6f9;
+padding:40px 20px;
+}
+
+.construction-box{
+background:white;
+padding:40px;
+text-align:center;
+border-radius:10px;
+max-width:500px;
+box-shadow:0 8px 25px rgba(0,0,0,0.1);
+}
+
+.construction-icon{
+font-size:50px;
+color:#f2b705;
+margin-bottom:15px;
+}
+
+.construction-box h1{
+font-size:26px;
+color:#003366;
+margin-bottom:10px;
+}
+
+.construction-box h2{
+font-size:26px;
+color:#003366;
+margin-bottom:10px;
+}
+
+.construction-box p{
+font-size:15px;
+color:#555;
+margin-bottom:25px;
+line-height:1.6;
+}
+
+/* bouton retour */
+
+.btn-retour{
+display:inline-block;
+padding:10px 20px;
+background:#003366;
+color:white;
+text-decoration:none;
+border-radius:6px;
+font-size:14px;
+font-weight:600;
+transition:0.3s;
+}
+
+.btn-retour:hover{
+background:#0052a3;
+transform:translateY(-2px);
+}
 
 /* =========================
 FOOTER INSTITUTIONNEL AVANCE
@@ -507,7 +572,7 @@ footer {
   color: white;
   padding: 18px 7% 10px; /* réduit le padding vertical */
   font-size: 13px;
-  font-family: "Segoe UI", Arial, sans-serif;
+   font-family: "Segoe UI", Arial, sans-serif;
 
   /* Ligne tricolore en haut */
   border-top: 5px solid;
@@ -1367,8 +1432,8 @@ background:#e0a800;
     }
 }
 
-/* SECTION CHEFS DE DIVISIONS*/
-.cd-section{
+/* SECTION DIRECTEURS */
+.directeurs-section{
 padding:50px 8%;
 background:#F4F7F5;
 }
@@ -1387,15 +1452,15 @@ margin-bottom:40px;
 font-size: 25px;
 }
 
-/* GRILLE DES CHEFS DE DIVISIONS */
-.cd-grid{
+/* GRILLE DES DIRECTEURS */
+.directeurs-grid{
 display:grid;
 grid-template-columns:repeat(4, 1fr);
 gap:30px;
 }
 
-/* CARTE CHEF DE DIVISION */
-.cd-card{
+/* CARTE DIRECTEUR */
+.directeur-card{
 background:white;
 border-radius:15px;
 padding:25px;
@@ -1404,12 +1469,12 @@ box-shadow:0 5px 15px rgba(0,0,0,0.12);
 transition:0.3s;
 }
 
-.cd-card:hover{
+.directeur-card:hover{
 transform:translateY(-8px);
 }
 
 /* PHOTO */
-.cd-photo img{
+.directeur-photo img{
 width:150px;
 height:150px;
 object-fit:cover;
@@ -1419,26 +1484,26 @@ margin-bottom:15px;
 }
 
 /* NOM */
-.cd-card h2{
+.directeur-card h2{
 font-size:18px;
 color:#0F5D3F;
 margin:10px 0;
 }
 
-/* DIVISION */
-.cd-card h3{
+/* DIRECTION */
+.directeur-card h3{
 font-size:14px;
 font-weight:600;
 color:#444;
 line-height: 1.2;
 }
 
-.plus-cd{
+.plus-directeurs{
 text-align:center;
 margin-top:40px;
 }
 
-.plus-cd a{
+.plus-directeurs a{
 display:inline-block;
 padding:14px 35px;
 background:#0F5D3F;
@@ -1450,7 +1515,7 @@ text-decoration:none;
 transition:0.3s;
 }
 
-.plus-cd a:hover{
+.plus-directeurs a:hover{
 background:#198754;
 box-shadow:0 5px 15px rgba(0,0,0,0.2);
 transform:translateY(-3px);
@@ -1458,13 +1523,13 @@ transform:translateY(-3px);
 
 /* RESPONSIVE */
 @media(max-width:900px){
-.cd-grid{
+.directeurs-grid{
 grid-template-columns:repeat(2,1fr);
   }
 }
 
 @media(max-width:600px){
-.cd-grid{
+.directeurs-grid{
 grid-template-columns:1fr;
   }
 }
@@ -1508,7 +1573,7 @@ grid-template-columns:1fr;
 <nav class="navbar" id="main-menu"> 
 
   <div class="menu-left">
-    <form class="search-box" action="cd3.html" method="GET">
+    <form class="search-box" action="directeurs.html" method="GET">
     <input 
         type="search" 
         name="q" 
@@ -1616,972 +1681,101 @@ grid-template-columns:1fr;
 
 </div></div>
 
-<!-- SECTION CHEFS DE DIVISIONS -->
+<!-- SECTION DIRECTEURS -->
 
-<section class="cd-section">
+<section class="directeurs-section" id="directeurs">
+<h1 class="titre-section">INSPECTEURS PRINCIPAUX, DIRECTEURS CHEFS DE SERVICES DE L'ADMINISTRATION CENTRALE</h1>
+<h1 class="sous-titre-section">DIRECTIONS STANDARDS</h1>
+<div class="directeurs-grid">
 
-<h1 class="titre-section">CHEFS DE DIVISIONS, COORDONNATEURS DE DIVISIONS DES INSPECTIONS PROVINCIALES</h1>
-<h1 class="sous-titre-section">Inspection Provinciale de Kinshasa</h1>
-<div class="cd-grid">
+<!-- DRH -->
+<div class="directeur-card">
+<div class="directeur-photo">
+<img src="images/drh.jpg" alt="Directeur"></div>
 
-<!-- CD IPTER KIN 1 -->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdipterkin1.jpeg" alt="Chef de Division"></div>
+<h2>KIMBANDA LIMBANA Roger</h2>
+<h3>Directeur des Ressources Humaines a.i</h3></div>
 
-<h2>...</h2>
-<h3>Chef de Division Contrôle Entités Administratives</h3></div>
+<!-- DAF -->
+<div class="directeur-card">
+<div class="directeur-photo">
+<img src="images/daf.jpg" alt="Directeur"></div>
 
-<!-- CD IPTER KIN 2 -->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdipterkin2.jpg" alt="Chef de Division"></div>
+<h2>KILAYI Jules</h2>
+<h3>Directeur Administratif et Financier</h3></div>
 
-<h2>...</h2>
-<h3>Chef de Division Encadrement Province</h3></div>
+<!-- DEP -->
+<div class="directeur-card">
+<div class="directeur-photo">
+<img src="images/dep.jpg" alt="Directeur"></div>
 
-<!-- CD IPTER KIN 3-->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdipterkin3.jpg" alt="Chef de Division"></div>
+<h2>IBANGU Germaine</h2>
+<h3>Directrice en charge d'Études et Planification a.i</h3></div>
 
-<h2>...</h2>
-<h3>Chef de Division Données Sécuritaires</h3></div>
+<!-- DANTIC -->
+<div class="directeur-card">
+<div class="directeur-photo">
+<img src="images/dantic.jpg" alt="Directeur"></div>
 
-<!-- CD IPTER KIN 4-->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdipterkin4.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Suivi et Evaluation des Performances des Entités Administratives</h3></div>
-</div>
+<h2>KIMBANDA LIMBANA Roger</h2>
+<h3>Directeur en charge des Archives et Nouvelles Technologies de l'Information et de la Communication</h3></div>
 </div><br>
 
-<h1 class="sous-titre-section">Inspection Provinciale du Kongo-Central</h1>
-<div class="cd-grid">
+<h1 class="sous-titre-section">DIRECTIONS METIERS</h1>
+<div class="directeurs-grid">
+<!-- DCSC -->
+<div class="directeur-card">
+<div class="directeur-photo">
+<img src="images/dcsc.jpg" alt="Directeur"></div>
 
-<!-- CD IPTER KC 1 -->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdipterkc1.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Contrôle Entités Administratives</h3></div>
-
-<!-- CD IPTER KC 2 -->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdipterkc2.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Encadrement Province</h3></div>
-
-<!-- CD IPTER KC 3-->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdipterkc3.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Données Sécuritaires</h3></div>
-
-<!-- CD IPTER KC 4-->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdipterkc4.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Suivi et Evaluation des Performances des Entités Administratives</h3></div>
-</div>
-</div><br>
-
-<h1 class="sous-titre-section">Inspection Provinciale du Kwango</h1>
-<div class="cd-grid">
-
-<!-- CD IPTER KG 1 -->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdipterkg1.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Contrôle Entités Administratives</h3></div>
-
-<!-- CD IPTER KG 2 -->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdipterkg2.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Encadrement Province</h3></div>
-
-<!-- CD IPTER KG 3-->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdipterkg3.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Données Sécuritaires</h3></div>
-
-<!-- CD IPTER KG 4-->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdipterkg4.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Suivi et Evaluation des Performances des Entités Administratives</h3></div>
-</div>
-</div><br>
-
-<h1 class="sous-titre-section">Inspection Provinciale du Kwilu</h1>
-<div class="cd-grid">
-
-<!-- CD IPTER KW 1 -->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdipterkw1.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Contrôle Entités Administratives</h3></div>
-
-<!-- CD IPTER KW 2 -->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdipterkw2.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Encadrement Province</h3></div>
-
-<!-- CD IPTER KW 3-->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdipterkw3.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Données Sécuritaires</h3></div>
-
-<!-- CD IPTER KW 4-->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdipterkw4.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Suivi et Evaluation des Performances des Entités Administratives</h3></div>
-</div>
-</div><br>
-
-<h1 class="sous-titre-section">Inspection Provinciale de Maï-Ndombe</h1>
-<div class="cd-grid">
-
-<!-- CD IPTER MD 1 -->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdiptermd1.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Contrôle Entités Administratives</h3></div>
-
-<!-- CD IPTER MD 2 -->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdiptermd2.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Encadrement Province</h3></div>
-
-<!-- CD IPTER MD 3-->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdiptermd3.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Données Sécuritaires</h3></div>
-
-<!-- CD IPTER MD 4-->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdiptermd4.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Suivi et Evaluation des Performances des Entités Administratives</h3></div>
-</div>
-</div><br>
-
-<h1 class="sous-titre-section">Inspection Provinciale de l'Equateur</h1>
-<div class="cd-grid">
-
-<!-- CD IPTER EQ 1 -->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdiptereq1.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Contrôle Entités Administratives</h3></div>
-
-<!-- CD IPTER EQ 2 -->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdiptereq2.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Encadrement Province</h3></div>
-
-<!-- CD IPTER EQ 3-->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdiptereq3.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Données Sécuritaires</h3></div>
-
-<!-- CD IPTER EQ 4-->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdiptereq4.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Suivi et Evaluation des Performances des Entités Administratives</h3></div>
-</div>
-</div><br>
-
-<h1 class="sous-titre-section">Inspection Provinciale de la Mongala</h1>
-<div class="cd-grid">
-
-<!-- CD IPTER MG 1 -->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdiptermg1.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Contrôle Entités Administratives</h3></div>
-
-<!-- CD IPTER MG 2 -->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdiptermg2.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Encadrement Province</h3></div>
-
-<!-- CD IPTER MG 3-->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdiptermg3.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Données Sécuritaires</h3></div>
-
-<!-- CD IPTER MG 4-->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdiptermg4.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Suivi et Evaluation des Performances des Entités Administratives</h3></div>
-</div>
-</div><br>
-
-<h1 class="sous-titre-section">Inspection Provinciale du Nord-Ubangi</h1>
-<div class="cd-grid">
-
-<!-- CD IPTER NDUB 1 -->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdipterndub1.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Contrôle Entités Administratives</h3></div>
-
-<!-- CD IPTER NDUB 2 -->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdipterndub2.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Encadrement Province</h3></div>
-
-<!-- CD IPTER NDUB 3-->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdipterndub3.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Données Sécuritaires</h3></div>
-
-<!-- CD IPTER NDUB 4-->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdipterndub4.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Suivi et Evaluation des Performances des Entités Administratives</h3></div>
-</div><br>
-
-<h1 class="sous-titre-section">Inspection Provinciale du Sud-Ubangi</h1>
-<div class="cd-grid">
-
-<!-- CD IPTER SDUB 1 -->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdiptersdub1.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Contrôle Entités Administratives</h3></div>
-
-<!-- CD IPTER SDUB 2 -->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdiptersdub2.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Encadrement Province</h3></div>
-
-<!-- CD IPTER SDUB 3-->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdiptersdub3.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Données Sécuritaires</h3></div>
-
-<!-- CD IPTER SDUB 4-->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdiptersdub4.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Suivi et Evaluation des Performances des Entités Administratives</h3></div>
-</div>
-</div><br>
-
-<h1 class="sous-titre-section">Inspection Provinciale de la Tshuapa</h1>
-<div class="cd-grid">
-
-<!-- CD IPTER TPA 1 -->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdiptertpa1.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Contrôle Entités Administratives</h3></div>
-
-<!-- CD IPTER TPA 2 -->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdiptertpa2.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Encadrement Province</h3></div>
-
-<!-- CD IPTER TPA 3-->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdiptertpa3.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Données Sécuritaires</h3></div>
-
-<!-- CD IPTER TPA 4-->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdiptertpa4.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Suivi et Evaluation des Performances des Entités Administratives</h3></div>
-</div>
-</div><br>
-
-<h1 class="sous-titre-section">Inspection Provinciale du Kasaï</h1>
-<div class="cd-grid">
-
-<!-- CD IPTER KS 1 -->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdipterks1.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Contrôle Entités Administratives</h3></div>
-
-<!-- CD IPTER KS 2 -->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdipterks2.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Encadrement Province</h3></div>
-
-<!-- CD IPTER KS 3-->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdipterks3.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Données Sécuritaires</h3></div>
-
-<!-- CD IPTER KS 4-->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdipterks4.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Suivi et Evaluation des Performances des Entités Administratives</h3></div>
-</div>
-</div><br>
-
-<h1 class="sous-titre-section">Inspection Provinciale du Kasaï-Central</h1>
-<div class="cd-grid">
-
-<!-- CD IPTER KSC 1 -->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdipterksc1.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Contrôle Entités Administratives</h3></div>
-
-<!-- CD IPTER KSC 2 -->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdipterksc2.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Encadrement Province</h3></div>
-
-<!-- CD IPTER KSC 3-->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdipterksc3.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Données Sécuritaires</h3></div>
-
-<!-- CD IPTER KSC 4-->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdipterksc4.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Suivi et Evaluation des Performances des Entités Administratives</h3></div>
-</div>
-</div><br>
-
-<h1 class="sous-titre-section">Inspection Provinciale du Kasaï-Oriental</h1>
-<div class="cd-grid">
-
-<!-- CD IPTER KSO 1 -->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdipterkso1.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Contrôle Entités Administratives</h3></div>
-
-<!-- CD IPTER KSO 2 -->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdipterkso2.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Encadrement Province</h3></div>
-
-<!-- CD IPTER KSO 3-->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdipterkso3.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Données Sécuritaires</h3></div>
-
-<!-- CD IPTER KSO 4-->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdipterkso4.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Suivi et Evaluation des Performances des Entités Administratives</h3></div>
-</div>
-</div><br>
-
-<h1 class="sous-titre-section">Inspection Provinciale de Lomami</h1>
-<div class="cd-grid">
-
-<!-- CD IPTER LM 1 -->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdipterlm1.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Contrôle Entités Administratives</h3></div>
-
-<!-- CD IPTER LM 2 -->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdipterlm2.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Encadrement Province</h3></div>
-
-<!-- CD IPTER LM 3-->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdipterlm3.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Données Sécuritaires</h3></div>
-
-<!-- CD IPTER LM 4-->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdipterlm4.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Suivi et Evaluation des Performances des Entités Administratives</h3></div>
-</div>
-</div><br>
-
-<h1 class="sous-titre-section">Inspection Provinciale du Sankuru</h1>
-<div class="cd-grid">
-
-<!-- CD IPTER SK 1 -->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdiptersk1.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Contrôle Entités Administratives</h3></div>
-
-<!-- CD IPTER SK 2 -->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdiptersk2.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Encadrement Province</h3></div>
-
-<!-- CD IPTER SK 3-->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdiptersk3.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Données Sécuritaires</h3></div>
-
-<!-- CD IPTER SK 4-->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdiptersk4.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Suivi et Evaluation des Performances des Entités Administratives</h3></div>
-</div>
-</div><br>
-
-<h1 class="sous-titre-section">Inspection Provinciale du Haut-Katanga</h1>
-<div class="cd-grid">
-
-<!-- CD IPTER HKT 1 -->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdipterhkt1.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Contrôle Entités Administratives</h3></div>
-
-<!-- CD IPTER HKT 2 -->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdipterhkt2.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Encadrement Province</h3></div>
-
-<!-- CD IPTER HKT 3-->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdipterhkt3.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Données Sécuritaires</h3></div>
-
-<!-- CD IPTER HKT 4-->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdipterhkt4.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Suivi et Evaluation des Performances des Entités Administratives</h3></div>
-</div>
-</div><br>
-
-<h1 class="sous-titre-section">Inspection Provinciale du Haut-Lomami</h1>
-<div class="cd-grid">
-
-<!-- CD IPTER HLM 1 -->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdipterhlm1.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Contrôle Entités Administratives</h3></div>
-
-<!-- CD IPTER HLM 2 -->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdipterhlm2.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Encadrement Province</h3></div>
-
-<!-- CD IPTER HLM 3-->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdipterhlm3.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Données Sécuritaires</h3></div>
-
-<!-- CD IPTER HLM 4-->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdipterhlm4.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Suivi et Evaluation des Performances des Entités Administratives</h3></div>
-</div>
-</div><br>
-
-<h1 class="sous-titre-section">Inspection Provinciale du Lualaba</h1>
-<div class="cd-grid">
-
-<!-- CD IPTER LB 1 -->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdipterlb1.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Contrôle Entités Administratives</h3></div>
-
-<!-- CD IPTER LB 2 -->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdipterlb2.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Encadrement Province</h3></div>
-
-<!-- CD IPTER LB 3-->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdipterlb3.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Données Sécuritaires</h3></div>
-
-<!-- CD IPTER LB 4-->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdipterlb4.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Suivi et Evaluation des Performances des Entités Administratives</h3></div>
-</div>
-</div><br>
-
-<h1 class="sous-titre-section">Inspection Provinciale de Tanganyika</h1>
-<div class="cd-grid">
-
-<!-- CD IPTER TG 1 -->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdiptertg1.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Contrôle Entités Administratives</h3></div>
-
-<!-- CD IPTER TG 2 -->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdiptertg2.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Encadrement Province</h3></div>
-
-<!-- CD IPTER TG 3-->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdiptertg3.jpg" alt="Chef de Division"></div>
-
 <h2>...</h2>
-<h3>Chef de Division Données Sécuritaires</h3></div>
+<h3>Directeur en charge de Controle des Services Centraux</h3></div>
 
-<!-- CD IPTER TG 4-->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdiptertg4.jpg" alt="Chef de Division"></div>
+<!-- DCPET -->
+<div class="directeur-card">
+<div class="directeur-photo">
+<img src="images/dcpet.jpg" alt="Directeur"></div>
 
 <h2>...</h2>
-<h3>Chef de Division Suivi et Evaluation des Performances des Entités Administratives</h3></div>
-</div>
-</div><br>
+<h3>Directeur en charge de Controle des Provinces et Entités Territoriales</h3></div>
 
-<h1 class="sous-titre-section">Inspection Provinciale du Bas-Uélé</h1>
-<div class="cd-grid">
+<!-- DQS -->
+<div class="directeur-card">
+<div class="directeur-photo">
+<img src="images/dqs.jpg" alt="Directeur"></div>
 
-<!-- CD IPTER BU 1 -->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdipterbu1.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Contrôle Entités Administratives</h3></div>
-
-<!-- CD IPTER BU 2 -->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdipterbu2.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Encadrement Province</h3></div>
-
-<!-- CD IPTER BU 3-->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdipterbu3.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Données Sécuritaires</h3></div>
-
-<!-- CD IPTER BU 4-->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdipterbu4.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Suivi et Evaluation des Performances des Entités Administratives</h3></div>
-</div>
-</div><br>
-
-<h1 class="sous-titre-section">Inspection Provinciale du Haut-Uélé</h1>
-<div class="cd-grid">
-
-<!-- CD IPTER HU 1 -->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdipterhu1.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Contrôle Entités Administratives</h3></div>
-
-<!-- CD IPTER HU 2 -->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdipterhu2.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Encadrement Province</h3></div>
-
-<!-- CD IPTER HU 3-->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdipterhu3.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Données Sécuritaires</h3></div>
-
-<!-- CD IPTER HU 4-->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdipterhu4.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Suivi et Evaluation des Performances des Entités Administratives</h3></div>
-</div>
-</div><br>
-
-<h1 class="sous-titre-section">Inspection Provinciale de l'Ituri</h1>
-<div class="cd-grid">
-
-<!-- CD IPTER IT 1 -->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdipterit1.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Contrôle Entités Administratives</h3></div>
-
-<!-- CD IPTER IT 2 -->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdipterit2.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Encadrement Province</h3></div>
-
-<!-- CD IPTER IT 3-->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdipterit3.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Données Sécuritaires</h3></div>
-
-<!-- CD IPTER IT 4-->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdipterit4.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Suivi et Evaluation des Performances des Entités Administratives</h3></div>
-</div>
-</div><br>
-
-<h1 class="sous-titre-section">Inspection Provinciale de la Tshopo</h1>
-<div class="cd-grid">
-
-<!-- CD IPTER TPO 1 -->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdiptertpo1.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Contrôle Entités Administratives</h3></div>
-
-<!-- CD IPTER TPO 2 -->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdiptertpo2.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Encadrement Province</h3></div>
-
-<!-- CD IPTER TPO 3-->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdiptertpo3.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Données Sécuritaires</h3></div>
-
-<!-- CD IPTER TPO 4-->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdiptertpo4.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Suivi et Evaluation des Performances des Entités Administratives</h3></div>
-</div>
-</div><br>
-
-<h1 class="sous-titre-section">Inspection Provinciale du Maniema</h1>
-<div class="cd-grid">
-
-<!-- CD IPTER MN 1 -->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdiptermn1.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Contrôle Entités Administratives</h3></div>
-
-<!-- CD IPTER MN 2 -->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdiptermn2.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Encadrement Province</h3></div>
-
-<!-- CD IPTER MN 3-->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdiptermn3.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Données Sécuritaires</h3></div>
-
-<!-- CD IPTER MN 4-->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdiptermn4.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Suivi et Evaluation des Performances des Entités Administratives</h3></div>
-</div>
-</div><br>
-
-<h1 class="sous-titre-section">Inspection Provinciale du Nord-Kivu</h1>
-<div class="cd-grid">
-
-<!-- CD IPTER NDKV 1 -->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdipterndkv1.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Contrôle Entités Administratives</h3></div>
-
-<!-- CD IPTER NDKV 2 -->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdipterndkv2.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Encadrement Province</h3></div>
-
-<!-- CD IPTER NDKV 3-->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdipterndkv3.jpg" alt="Chef de Division"></div>
-
 <h2>...</h2>
-<h3>Chef de Division Données Sécuritaires</h3></div>
+<h3>Directeur en charge des Questions Sécuritaires</h3></div>
 
-<!-- CD IPTER NDKV 4-->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdipterndkv4.jpg" alt="Chef de Division"></div>
+<!-- DESCEA -->
+<div class="directeur-card">
+<div class="directeur-photo">
+<img src="images/descea.jpg" alt="Directeur"></div>
 
 <h2>...</h2>
-<h3>Chef de Division Suivi et Evaluation des Performances des Entités Administratives</h3></div>
-</div>
-</div><br>
+<h3>Directeur d'Encadrement des Services Centraux et Entités Administratives</h3></div>
 
-<h1 class="sous-titre-section">Inspection Provinciale du Sud-Kivu</h1>
-<div class="cd-grid">
+<!-- DSEPSCEA -->
+<div class="directeur-card">
+<div class="directeur-photo">
+<img src="images/dsepscea.jpg" alt="Directeur"></div>
 
-<!-- CD IPTER SDKV 1 -->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdiptersdkv1.jpg" alt="Chef de Division"></div>
-
-<h2>...</h2>
-<h3>Chef de Division Contrôle Entités Administratives</h3></div>
-
-<!-- CD IPTER SDKV 2 -->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdiptersdkv2.jpg" alt="Chef de Division"></div>
-
 <h2>...</h2>
-<h3>Chef de Division Encadrement Province</h3></div>
+<h3>Directeur de Suivi et Evaluation des Performances des Services Centraux et Entités Administratives</h3></div>
 
-<!-- CD IPTER SDKV 3-->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdiptersdkv3.jpg" alt="Chef de Division"></div>
+<!-- DPGT -->
+<div class="directeur-card">
+<div class="directeur-photo">
+<img src="images/dpgt.jpg" alt="Directeur"></div>
 
 <h2>...</h2>
-<h3>Chef de Division Données Sécuritaires</h3></div>
+<h3>Directeur en charge de Promotion de la Gouvernance Territoriale</h3></div>
+</div></div>
 
-<!-- CD IPTER SDKV 4-->
-<div class="cd-card">
-<div class="cd-photo">
-<img src="images/cdiptersdkv4.jpg" alt="Chef de Division"></div>
+<!-- BOUTON EN SAVOIR PLUS -->
+<div class="plus-directeurs">
+<a href="directeurs4.html">EN SAVOIR PLUS</a></div>
 
-<h2>...</h2>
-<h3>Chef de Division Suivi et Evaluation des Performances des Entités Administratives</h3></div>
-</div>
-</div><br>
-</div>
 </section>
 
 <!-- FOOTER -->
@@ -2850,136 +2044,7 @@ function revealOnScroll() {
 
 window.addEventListener('scroll', revealOnScroll);
 </script>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
 
-    // =========================================
-    // RÉCUPÉRER LE TERME RECHERCHÉ
-    // =========================================
-
-    const params = new URLSearchParams(window.location.search);
-    const recherche = params.get("q");
-
-    // =========================================
-    // RÉCUPÉRER LA BOÎTE DE DIALOGUE
-    // =========================================
-
-    const searchDialog = document.getElementById("search-dialog");
-    const searchDialogOk = document.getElementById("search-dialog-ok");
-
-    // =========================================
-    // S'IL N'Y A AUCUNE RECHERCHE
-    // ON NE FAIT RIEN
-    // =========================================
-
-    if (!recherche) {
-        return;
-    }
-
-    // =========================================
-    // NETTOYER ET NORMALISER LA RECHERCHE
-    // =========================================
-
-    const terme = recherche
-        .toLowerCase()
-        .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, "")
-        .trim();
-
-    // Si le champ contient seulement des espaces
-    if (!terme) {
-        return;
-    }
-
-    // =========================================
-    // VARIABLE POUR SAVOIR SI UN RÉSULTAT EXISTE
-    // =========================================
-
-    let resultatTrouve = false;
-
-
-    // =========================================
-    // RECHERCHE : ACTUALITÉS
-    // =========================================
-
-    if (
-        terme.includes("actualite") ||
-        terme.includes("actualites") ||
-        terme.includes("news")
-    ) {
-
-        const sectionActualite = document.getElementById("actualite");
-
-        if (sectionActualite) {
-
-            resultatTrouve = true;
-
-            setTimeout(function () {
-
-                sectionActualite.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start"
-                });
-
-            }, 100);
-        }
-    }
-
-
-    // =========================================
-    // AUCUN ÉLÉMENT TROUVÉ
-    // =========================================
-
-    if (!resultatTrouve && searchDialog) {
-
-        searchDialog.style.display = "flex";
-
-    }
-
-
-    // =========================================
-    // BOUTON OK
-    // FERME LA BOÎTE ET ACTUALISE LA PAGE
-    // =========================================
-
-    if (searchDialogOk) {
-
-        searchDialogOk.addEventListener("click", function () {
-
-            // Fermer la boîte de dialogue
-            searchDialog.style.display = "none";
-        });
-
-    }
-
-});
-</script>
-
-<!-- =========================
-     BOÎTE DE DIALOGUE RECHERCHE
-========================= -->
-<div id="search-dialog" class="search-dialog-overlay">
-
-    <div class="search-dialog">
-
-        <div class="search-dialog-header">
-            <i class="fa-solid fa-circle-exclamation"></i>
-            <span>Recherche échouée</span>
-        </div>
-
-        <div class="search-dialog-body">
-            <p>Mot mal saisi ou ne correspondant pas à votre élément de recherche. Veuillez réessayer !!</p>
-        </div>
-
-        <div class="search-dialog-footer">
-            <button type="button" id="search-dialog-ok">
-                Ok
-            </button>
-        </div>
-
-    </div>
-
-</div>
 <script src="recherche.js"></script>
 </body>
 </html>
