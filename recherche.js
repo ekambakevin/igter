@@ -164,7 +164,8 @@ document.addEventListener("DOMContentLoaded", function () {
         {
             mots: [
                 "chef de pool",
-                "chef pool"
+                "chef pool",
+                "inspool"
             ],
             page: "directeurs2.html",
             cible: "#directeurs2"
