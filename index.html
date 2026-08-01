@@ -2746,34 +2746,62 @@ color:black;
     background: #0B4A32;
 }
 
-@media (max-width: 768px) {
+@media (max-width:768px){
 
-    /* =========================
-       ZONE DE RECHERCHE MOBILE
-    ========================= */
+    /* Formulaire fermé */
+    .search-box{
 
-    .search-box {
-        width: 180px;
-        max-width: 180px;
-        height: 34px;
+        width:38px;
+        height:34px;
+
+        display:flex;
+        align-items:center;
+
+        overflow:hidden;
+
+        transition:.35s;
+
+        border-radius:20px;
     }
 
-    .search-box input {
-        font-size: 12px;
-        padding: 0 10px;
+    /* Champ caché */
+
+    .search-box input{
+
+        width:0;
+        padding:0;
+
+        opacity:0;
+
+        border:none;
+
+        transition:.35s;
     }
 
-    .search-box input::placeholder {
-        font-size: 12px;
+    /* Lorsque la recherche est ouverte */
+
+    .search-box.active{
+
+        width:180px;
+
+        background:#fff;
     }
 
-    .search-box button {
-        width: 38px;
+    .search-box.active input{
+
+        width:100%;
+        opacity:1;
+
+        padding:0 10px;
     }
 
-    .search-box button i {
-        font-size: 14px;
+    .search-box button{
+
+        width:38px;
+        min-width:38px;
     }
+
+}
 
 
     /* =========================
@@ -2913,19 +2941,21 @@ color:black;
 <nav class="navbar" id="main-menu"> 
 
   <div class="menu-left">
-    <form class="search-box" action="index.html" method="GET">
-    <input 
-        type="search" 
-        name="q" 
-        placeholder="Saisissez un mot clé" 
-        aria-label="Rechercher sur le site"
-    >
+    <form class="search-box" id="searchBox" action="index.html" method="GET">
 
-    <button type="submit" aria-label="Lancer la recherche">
+    <input
+        id="searchInput"
+        type="search"
+        name="q"
+        placeholder="Saisissez un mot clé">
+
+    <button id="searchBtn" type="button">
+
         <i class="fa-solid fa-magnifying-glass"></i>
-    </button>
-</form>
 
+    </button>
+
+</form>
 </div>
 
   <!-- MENU DESKTOP -->
@@ -3775,7 +3805,35 @@ function revealOnScroll() {
 
 window.addEventListener('scroll', revealOnScroll);
 </script>
+<script>
+  const searchBox = document.getElementById("searchBox");
+const searchBtn = document.getElementById("searchBtn");
+const searchInput = document.getElementById("searchInput");
 
+if(window.innerWidth <= 768){
+
+    searchBtn.addEventListener("click",function(){
+
+        if(!searchBox.classList.contains("active")){
+
+            searchBox.classList.add("active");
+
+            searchInput.focus();
+
+            return;
+
+        }
+
+        if(searchInput.value.trim()!==""){
+
+            searchBox.submit();
+
+        }
+
+    });
+
+}
+</script>
 <script src="recherche.js"></script>
 </body>
 </html>
