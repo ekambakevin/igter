@@ -2746,50 +2746,34 @@ color:black;
     background: #0B4A32;
 }
 
-@media (max-width: 768px) {
+@media (max-width:768px){
 
-    /* =========================
-       ZONE DE RECHERCHE MOBILE
-    ========================= */
+    .search-box{
+        display:flex;
+        align-items:center;
+        justify-content:flex-end;
+    }
 
-.search-box{
-    width:40px;
-    height:34px;
-    display:flex;
-    align-items:center;
-    justify-content:flex-end;
-    overflow:hidden;
-    border-radius:20px;
-    transition:.35s;
-}
+    /* Champ caché au départ */
+    .search-box input{
+        display:none;
+        width:130px;
+        height:34px;
+        padding:0 10px;
+        font-size:12px;
+    }
 
-/* Champ caché */
+    /* Lorsque le formulaire est ouvert */
+    .search-box.open input{
+        display:block;
+    }
 
-.search-box input{
-    width:0;
-    opacity:0;
-    padding:0;
-    border:none;
-    transition:.35s;
-}
+    .search-box button{
+        width:38px;
+        height:34px;
+        cursor:pointer;
+    }
 
-/* Recherche ouverte */
-
-.search-box.open{
-    width:180px;
-    border:1px solid #ccc;
-    background:#fff;
-}
-
-.search-box.open input{
-    width:100%;
-    opacity:1;
-    padding:0 10px;
-}
-
-.search-box button{
-    width:38px;
-    flex-shrink:0;
 }
 
     /* =========================
@@ -3797,41 +3781,34 @@ function revealOnScroll() {
 
 window.addEventListener('scroll', revealOnScroll);
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", function(){
 
-<script src="recherche.js">
-
-document.addEventListener("DOMContentLoaded", () => {
-
-    if (window.innerWidth > 768) return;
+    if(window.innerWidth > 768) return;
 
     const form = document.getElementById("searchForm");
     const input = document.getElementById("searchInput");
-    const button = document.getElementById("searchToggle");
+    const btn = document.getElementById("searchBtn");
 
-    button.addEventListener("click", function () {
+    btn.addEventListener("click", function(){
 
-        // Première ouverture
-        if (!form.classList.contains("open")) {
+        // Première pression : on affiche le champ
+        if(!form.classList.contains("open")){
 
             form.classList.add("open");
             input.focus();
-
             return;
         }
 
-        // Champ vide
-        if (input.value.trim() === "") {
-
-            input.focus();
-            return;
+        // Deuxième pression : lancer la recherche
+        if(input.value.trim() !== ""){
+            form.submit();
         }
-
-        // Lancer la recherche
-        form.submit();
 
     });
 
 });
 </script>
+<script src="recherche.js"></script>
 </body>
 </html>
