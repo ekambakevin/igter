@@ -2746,35 +2746,35 @@ color:black;
     background: #0B4A32;
 }
 
-@media (max-width:768px){
+@media (max-width: 768px) {
 
-    .search-box{
-        display:flex;
-        align-items:center;
-        justify-content:flex-end;
+    /* =========================
+       ZONE DE RECHERCHE MOBILE
+    ========================= */
+
+    .search-box {
+        width: 180px;
+        max-width: 180px;
+        height: 34px;
     }
 
-    /* Champ caché au départ */
-    .search-box input{
-        display:none;
-        width:130px;
-        height:34px;
-        padding:0 10px;
-        font-size:12px;
+    .search-box input {
+        font-size: 12px;
+        padding: 0 10px;
     }
 
-    /* Lorsque le formulaire est ouvert */
-    .search-box.open input{
-        display:block;
+    .search-box input::placeholder {
+        font-size: 12px;
     }
 
-    .search-box button{
-        width:38px;
-        height:34px;
-        cursor:pointer;
+    .search-box button {
+        width: 38px;
     }
 
-}
+    .search-box button i {
+        font-size: 14px;
+    }
+
 
     /* =========================
        BARRE MENU MOBILE
@@ -2913,25 +2913,19 @@ color:black;
 <nav class="navbar" id="main-menu"> 
 
   <div class="menu-left">
-    <form id="searchForm" class="search-box" action="index.html" method="GET">
+    <form class="search-box" action="index.html" method="GET">
+    <input 
+        type="search" 
+        name="q" 
+        placeholder="Saisissez un mot clé" 
+        aria-label="Rechercher sur le site"
+    >
 
-        <input
-            id="searchInput"
-            type="search"
-            name="q"
-            placeholder="Saisissez un mot clé"
-            aria-label="Rechercher sur le site"
-        >
+    <button type="submit" aria-label="Lancer la recherche">
+        <i class="fa-solid fa-magnifying-glass"></i>
+    </button>
+</form>
 
-        <button
-            type="button"
-            id="searchToggle"
-            aria-label="Rechercher"
-        >
-            <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
-
-    </form>
 </div>
 
   <!-- MENU DESKTOP -->
@@ -3781,34 +3775,7 @@ function revealOnScroll() {
 
 window.addEventListener('scroll', revealOnScroll);
 </script>
-<script>
-document.addEventListener("DOMContentLoaded", function(){
 
-    if(window.innerWidth > 768) return;
-
-    const form = document.getElementById("searchForm");
-    const input = document.getElementById("searchInput");
-    const btn = document.getElementById("searchBtn");
-
-    btn.addEventListener("click", function(){
-
-        // Première pression : on affiche le champ
-        if(!form.classList.contains("open")){
-
-            form.classList.add("open");
-            input.focus();
-            return;
-        }
-
-        // Deuxième pression : lancer la recherche
-        if(input.value.trim() !== ""){
-            form.submit();
-        }
-
-    });
-
-});
-</script>
 <script src="recherche.js"></script>
 </body>
 </html>
