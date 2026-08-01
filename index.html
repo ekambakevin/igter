@@ -1710,26 +1710,26 @@ color:black;
   animation-play-state: paused;
 }
 
-/*==========================
-      STATISTIQUES
-===========================*/
-.stats-section{
-padding:80px 20px;
-background:#f5f8fb;
-text-align:center;
+/*=============================
+      STATISTIQUES SLIDER
+==============================*/
+
+.stats-slider-section{
+    padding:10px 8px;
+    background:linear-gradient(135deg,#0F5D3F,#198754,#0B4A32);
+    text-align:center;
+    overflow:hidden;
 }
 
-.stats-section h2{
-text-align: center;
-  font-size: 26px;
-  color: #003366;
-  margin-bottom: 35px;
-  font-weight: 700;
-  border-left: none;
-  padding-left: 0;
+.stats-slider-section h2{
+    color:#ffffff;
+    font-size:26px;
+    margin-bottom:20px;
+    margin-top: 20px;
+    border-left: none;
 }
 
-.stats-section h2::after {
+.stats-slider-section h2::after {
   content: "";
   display: block;
   width: 70px;
@@ -1747,86 +1747,165 @@ text-align: center;
   );
 }
 
-/* GRILLE 4 PAR LIGNE */
-.stats-container {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 15px; /* réduit l’espace entre les cartes */
-  justify-items: stretch; /* cartes prennent la largeur de la colonne */
-  max-width:1300px;
+.stats-slider{
+
+max-width:1200px;
+
 margin:auto;
-}
 
-.stat-card{
-background:white;
-padding:35px 20px;
-border-radius:15px;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
-transition:.4s;
-}
+position:relative;
 
-.stat-card:hover{
-transform:translateY(-8px);
-}
-
-.stat-card i{
-font-size:35px;
-color:#0F5D3F;
-margin-bottom:20px;
-}
-
-.stat-card h3{
-font-size:32px;
-color:#003366;
-margin:10px 0;
-}
-
-.stat-card p{
-font-size:16px;
-font-weight:600;
-color:#444;
-line-height: 1.2;
-}
-
-/* ===========================
-   STATISTIQUES - MOBILE
-=========================== */
-@media (max-width: 768px) {
-
-    .stats-section{
-        padding:50px 15px;
-    }
-
-    .stats-section h2{
-        font-size:28px;
-        margin-bottom:30px;
-    }
-
-    .stats-container{
-        grid-template-columns:repeat(2,1fr); /* Deux cartes par ligne */
-        gap:15px;
-    }
-
-    .stat-card{
-        padding:20px 10px;
-    }
-
-    .stat-card i{
-        font-size:32px;
-        margin-bottom:12px;
-    }
-
-    .stat-card h3{
-        font-size:28px;
-    }
-
-    .stat-card p{
-        font-size:14px;
-        line-height:1.4;
-    }
+height:420px;
 
 }
 
+.stats-slide{
+
+position:absolute;
+
+width:100%;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:40px;
+
+opacity:0;
+
+visibility:hidden;
+
+transition:opacity .8s ease;
+
+}
+
+.stats-slide.active{
+
+opacity:1;
+
+visibility:visible;
+
+}
+
+.stats-image{
+
+flex:1;
+
+}
+
+.stats-image img{
+
+width:100%;
+
+max-width:450px;
+
+height:320px;
+
+object-fit:cover;
+
+border-radius:20px;
+
+box-shadow:0 15px 35px rgba(0,0,0,.25);
+
+}
+
+.stats-content{
+
+    flex:1;
+
+    text-align:left;
+
+    background:rgba(255,255,255,0.12);
+
+    backdrop-filter:blur(10px);
+
+    border:1px solid rgba(255,255,255,0.25);
+
+    border-radius:20px;
+
+    padding:35px;
+
+    color:#fff;
+
+}
+
+.stats-content i{
+
+    font-size:60px;
+
+    color:#FFD700; /* Jaune doré */
+
+    margin-bottom:20px;
+
+}
+
+.stats-content h3{
+
+    font-size:60px;
+
+    color:#ffffff;
+
+    margin-bottom:15px;
+
+}
+
+.stats-content p{
+
+    font-size:24px;
+
+    font-weight:600;
+
+    color:#ffffff;
+
+    line-height:1.5;
+
+}
+
+@media(max-width:768px){
+
+.stats-slider{
+
+height:620px;
+
+}
+
+.stats-slide{
+
+flex-direction:column;
+
+gap:20px;
+
+}
+
+.stats-image img{
+
+width:100%;
+
+height:220px;
+
+}
+
+.stats-content{
+
+text-align:center;
+
+}
+
+.stats-content h3{
+
+font-size:42px;
+
+}
+
+.stats-content p{
+
+font-size:18px;
+
+}
+
+}
 /* =========================
    SECTION ATTRIBUTIONS GLASS TRICOLORE PREMIUM
 ========================= */
@@ -2196,7 +2275,6 @@ line-height: 1.2;
               url("images/IG&IGA2.png");
   background-size: cover;
   background-position: center;
-
   color: white;
 }
 
@@ -3274,44 +3352,96 @@ line-height: 1.2;
 <!-- =========================
      STATISTIQUES
 ========================= -->
-<section class="stats-section" id="statistiques">
+<section class="stats-slider-section" id="statistiques">
 
     <h2>Nos Statistiques</h2>
 
-    <div class="stats-container">
+    <div class="stats-slider">
 
-        <div class="stat-card">
-            <i class="fas fa-users"></i>
-            <h3 id="nbInspecteurs">1500</h3>
-            <p>Inspecteurs de la Territoriale</p>
+        <!-- Slide 1 -->
+        <div class="stats-slide active">
+            <div class="stats-image">
+                <img src="images/inspecteurs.png" alt="Inspecteurs">
+            </div>
+
+            <div class="stats-content">
+                <i class="fas fa-users"></i>
+                <h3 id="nbInspecteurs">0</h3>
+                <p>Inspecteurs de la Territoriale</p>
+            </div>
         </div>
 
-        <div class="stat-card">
-            <i class="fas fa-clipboard-list"></i>
-            <h3 id="nbMissions">0</h3>
-            <p>Toutes les Missions réalisées</p>
+        <!-- Slide 2 -->
+        <div class="stats-slide">
+            <div class="stats-image">
+                <img src="images/missions.png" alt="Missions">
+            </div>
+
+            <div class="stats-content">
+                <i class="fas fa-clipboard-list"></i>
+                <h3 id="nbMissions">0</h3>
+                <p>Toutes les Missions réalisées</p>
+            </div>
         </div>
 
-        <div class="stat-card">
-            <i class="fas fa-search"></i>
-            <h3 id="nbControle">0</h3>
-            <p>Missions de contrôle</p>
+        <!-- Slide 3 -->
+        <div class="stats-slide">
+            <div class="stats-image">
+                <img src="images/controle.png" alt="Contrôle">
+            </div>
+
+            <div class="stats-content">
+                <i class="fas fa-search"></i>
+                <h3 id="nbControle">0</h3>
+                <p>Missions de contrôle</p>
+            </div>
         </div>
 
-        <div class="stat-card">
-            <i class="fas fa-chalkboard-teacher"></i>
-            <h3 id="nbEncadrement">0</h3>
-            <p>Missions d'encadrement</p>
+        <!-- Slide 4 -->
+        <div class="stats-slide">
+            <div class="stats-image">
+                <img src="images/encadrement.png" alt="Encadrement">
+            </div>
+
+            <div class="stats-content">
+                <i class="fas fa-chalkboard-teacher"></i>
+                <h3 id="nbEncadrement">0</h3>
+                <p>Missions d'encadrement</p>
+            </div>
         </div>
 
-        <div class="stat-card">
-            <i class="fas fa-chart-line"></i>
-            <h3 id="nbSuivi">0</h3>
-            <p>Suivi & Évaluation</p>
+        <!-- Slide 5 -->
+        <div class="stats-slide">
+            <div class="stats-image">
+                <img src="images/suivi.png" alt="Suivi">
+            </div>
+
+            <div class="stats-content">
+                <i class="fas fa-chart-line"></i>
+                <h3 id="nbSuivi">0</h3>
+                <p>Missions de Suivi & d'Évaluation</p>
+            </div>
         </div>
 
+        <!-- Slide 6 -->
+        <div class="stats-slide">
+            <div class="stats-image">
+                <img src="images/appui.png" alt="Gouvernance">
+            </div>
+
+            <div class="stats-content">
+                <i class="fas fa-landmark"></i>
+                <h3 id="nbGouvernance">0</h3>
+                <p>Missions d'Appui à la bonne gouvernance territoriale et sécuritaire</p>
+            </div>
+        </div>
     </div>
-
+<!-- NOUVEAU BOUTON -->
+<div class="saisine-bar reveal-on-scroll" id="saisine">
+  <a href="mission.html" class="saisine-btn secondary-btn" id="missions">
+  <i class="fas fa-chart-bar"></i>
+  Voir nos missions
+</a></div>
 </section>
 
 <!-- =========================
@@ -3360,24 +3490,14 @@ line-height: 1.2;
     </div>
 
   </div>
-
 </section>
 
 <div class="saisine-bar reveal-on-scroll" id="saisine">
-
-  <a href="mode_saisine.html" class="saisine-btn">
+<a href="mode_saisine.html" class="saisine-btn">
     <i class="fas fa-paper-plane"></i>
-    Saisissez l’IGTER pour toute question en Administration Territoriale en RDC.
+    Saisissez-nous pour toute question en Administration Territoriale en RDC.
   </a>
-
-  <!-- NOUVEAU BOUTON -->
-  <a href="mission.html" class="saisine-btn secondary-btn" id="missions">
-  <i class="fas fa-chart-bar"></i>
-  Voir nos missions récentes
-</a>
-
 </div>
-
 <!-- =========================
    ACTUALITÉS IGTER
 ========================= -->
@@ -3993,6 +4113,39 @@ if(window.innerWidth <= 768){
     });
 
 }
+</script>
+<script>
+/*============================
+     SLIDER STATISTIQUES
+=============================*/
+
+const statSlides = document.querySelectorAll(".stats-slide");
+
+let statIndex = 0;
+
+function afficherStat(){
+
+    statSlides.forEach(slide=>{
+
+        slide.classList.remove("active");
+
+    });
+
+    statSlides[statIndex].classList.add("active");
+
+    statIndex++;
+
+    if(statIndex>=statSlides.length){
+
+        statIndex=0;
+
+    }
+
+}
+
+setInterval(afficherStat,4000);
+
+afficherStat();
 </script>
 <script src="recherche.js"></script>
 </body>
