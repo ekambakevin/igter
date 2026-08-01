@@ -1710,6 +1710,84 @@ color:black;
   animation-play-state: paused;
 }
 
+/*==========================
+      STATISTIQUES
+===========================*/
+.stats-section{
+padding:80px 20px;
+background:#f5f8fb;
+text-align:center;
+}
+
+.stats-section h2{
+text-align: center;
+  font-size: 26px;
+  color: #003366;
+  margin-bottom: 35px;
+  font-weight: 700;
+  border-left: none;
+  padding-left: 0;
+}
+
+.stats-section h2::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 4px;
+  margin: 10px auto 0;
+  border-radius: 2px;
+  background: linear-gradient(
+    to right,
+    #007fff 0%,
+    #007fff 33%,
+    #ffcc00 33%,
+    #ffcc00 66%,
+    #ce1126 66%,
+    #ce1126 100%
+  );
+}
+
+/* GRILLE 4 PAR LIGNE */
+.stats-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px; /* réduit l’espace entre les cartes */
+  justify-items: stretch; /* cartes prennent la largeur de la colonne */
+  max-width:1300px;
+margin:auto;
+}
+
+.stat-card{
+background:white;
+padding:35px 20px;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+transition:.4s;
+}
+
+.stat-card:hover{
+transform:translateY(-8px);
+}
+
+.stat-card i{
+font-size:35px;
+color:#0F5D3F;
+margin-bottom:20px;
+}
+
+.stat-card h3{
+font-size:32px;
+color:#003366;
+margin:10px 0;
+}
+
+.stat-card p{
+font-size:16px;
+font-weight:600;
+color:#444;
+line-height: 1.2;
+}
+
 /* =========================
    SECTION ATTRIBUTIONS GLASS TRICOLORE PREMIUM
 ========================= */
@@ -3153,6 +3231,49 @@ color:black;
     <span>🟡 Promotion de la Gouvernance Territoriale</span>
   </div>
 </div>
+
+<!-- =========================
+     STATISTIQUES
+========================= -->
+<section class="stats-section" id="statistiques">
+
+    <h2>Nos Statistiques</h2>
+
+    <div class="stats-container">
+
+        <div class="stat-card">
+            <i class="fas fa-users"></i>
+            <h3 id="nbInspecteurs">1500</h3>
+            <p>Inspecteurs de la Territoriale</p>
+        </div>
+
+        <div class="stat-card">
+            <i class="fas fa-clipboard-list"></i>
+            <h3 id="nbMissions">0</h3>
+            <p>Toutes les Missions réalisées</p>
+        </div>
+
+        <div class="stat-card">
+            <i class="fas fa-search"></i>
+            <h3 id="nbControle">0</h3>
+            <p>Missions de contrôle</p>
+        </div>
+
+        <div class="stat-card">
+            <i class="fas fa-chalkboard-teacher"></i>
+            <h3 id="nbEncadrement">0</h3>
+            <p>Missions d'encadrement</p>
+        </div>
+
+        <div class="stat-card">
+            <i class="fas fa-chart-line"></i>
+            <h3 id="nbSuivi">0</h3>
+            <p>Suivi & Évaluation</p>
+        </div>
+
+    </div>
+
+</section>
 
 <!-- =========================
    NOS ATTRIBUTIONS (VERSION GLASS TRICOLORE)
