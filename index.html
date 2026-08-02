@@ -2888,12 +2888,25 @@ font-size:18px;
         width:100%;
         display:flex;
         align-items:center;
-        gap:5px;
     }
 
-    /* Loupe */
+    /* =========================
+       CACHER LES RÉSEAUX SOCIAUX
+    ========================= */
+
+    .menu-icons a{
+        display:none;
+    }
+
+    /* =========================
+       LOUPE SEULE
+    ========================= */
+
     .search-icon{
-        font-size:14px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        font-size:22px;
         color:#ffffff;
         background:none;
         border:none;
@@ -2903,39 +2916,33 @@ font-size:18px;
         cursor:pointer;
     }
 
-    /* Icônes des réseaux sociaux */
-    .menu-icons a{
-        color:#ffffff;
-        font-size:16px;
-    }
+    /* =========================
+       BARRE DE RECHERCHE
+    ========================= */
 
-    /* Barre de recherche cachée */
     .search-panel{
         display:none;
         width:100%;
-        margin-top:0px;
+        margin-top:12px;
         background:#ffffff;
         border:1px solid #d9d9d9;
         border-radius:25px;
         overflow:hidden;
     }
 
-    /* Barre ouverte */
     .search-panel.active{
         display:flex;
         align-items:center;
     }
 
-    /* Champ */
     .search-panel input{
         flex:1;
         border:none;
         outline:none;
         padding:10px 15px;
-        font-size:13px;
+        font-size:14px;
     }
 
-    /* Bouton */
     .search-panel button{
         width:45px;
         border:none;
@@ -3332,7 +3339,7 @@ font-size:18px;
 <!-- =========================
      STATISTIQUES
 ========================= -->
-<section class="stats-slider-section" id="statistiques">
+<section class="stats-slider-section" id="statistique">
 
     <h2>Nos Statistiques</h2>
 
