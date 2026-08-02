@@ -53,11 +53,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
         {
             mots: [
-                "video",
-                "videos"
+                "statistique",
+                "statistiques",
+                "stat",
+                "stats"
             ],
             page: "index.html",
-            cible: "#videos"
+            cible: "#statistique"
         },
 
         {
@@ -272,14 +274,16 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!destination) {
 
         alert(
-            'Aucun résultat trouvé pour : "' + 
+            'Aucun résultat trouvé pour : "' +
             recherche +
-            '" Veuillez bien saisir votre mot clé.'
-        );
+            '"\nVeuillez bien saisir votre mot clé.'
+            );
 
-        return;
+        // Supprimer ?q=... de l'URL
+        window.history.replaceState({}, document.title, window.location.pathname);
+
+    return;
     }
-
 
     // =====================================================
     // DÉTERMINER LA PAGE ACTUELLE
@@ -307,16 +311,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
             setTimeout(function () {
 
-                element.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start"
-                });
+            element.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
 
-            }, 100);
+        // Supprimer ?q=... de l'URL
+        window.history.replaceState(
+            {},
+            document.title,
+            window.location.pathname + destination.cible
+        );
 
-        }
+    }, 100);
 
-        return;
+}
+
+    return;
+
     }
 
 
@@ -333,5 +345,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     window.location.href = url;
+    window.history.replaceState({}, document.title, nouvelleURL);
 
 });
