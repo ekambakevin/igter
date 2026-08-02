@@ -4049,31 +4049,55 @@ function revealOnScroll() {
 window.addEventListener('scroll', revealOnScroll);
 </script>
 <script>
-  document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener("DOMContentLoaded", function () {
 
-    const btn=document.getElementById("searchBtn");
-    const panel=document.getElementById("searchBox");
-    const input=document.getElementById("searchInput");
+    const btn = document.getElementById("searchBtn");
+    const panel = document.getElementById("searchBox");
+    const input = document.getElementById("searchInput");
 
-    btn.addEventListener("click",function(){
+    // Ouvrir la recherche
+    btn.addEventListener("click", function () {
 
-        if(panel.classList.contains("active")){
-        if(input.value.trim()!==""){
-        panel.submit();
-      }
-        }else{
-          panel.classList.add("active");
-          input.focus();
-      }
+        if (!panel.classList.contains("active")) {
+
+            panel.classList.add("active");
+
+            setTimeout(function () {
+                input.focus();
+            }, 100);
+
+            return;
+        }
+
+        // Si la recherche est vide
+        if (input.value.trim() === "") {
+            input.focus();
+            return;
+        }
+
+        // Soumettre le formulaire normalement
+        panel.requestSubmit();
 
     });
 
-    document.addEventListener("click",function(e){
+    // L'utilisateur appuie sur Entrée ou "Rechercher" du clavier
+    panel.addEventListener("submit", function (e) {
 
-        if(!panel.contains(e.target) && !btn.contains(e.target)){
+        if (input.value.trim() === "") {
+            e.preventDefault();
+            input.focus();
+        }
 
+    });
+
+    // Fermer la recherche lorsqu'on clique ailleurs
+    document.addEventListener("click", function (e) {
+
+        if (
+            !panel.contains(e.target) &&
+            !btn.contains(e.target)
+        ) {
             panel.classList.remove("active");
-
         }
 
     });
