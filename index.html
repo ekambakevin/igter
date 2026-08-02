@@ -2886,59 +2886,84 @@ font-size:18px;
 
 }
 
+/* =========================================
+   VERSION MOBILE
+========================================= */
+
 @media (max-width:768px){
 
-    /* Formulaire fermé */
-    .search-box{
+    /* Menu gauche */
+    .menu-left{
+        width:100%;
+        display:flex;
+        flex-direction:column;
+        align-items:flex-start;
+    }
 
-        width:38px;
-        height:34px;
-
+    /* Ligne des icônes */
+    .menu-icons{
+        width:100%;
         display:flex;
         align-items:center;
-
-        overflow:hidden;
-
-        transition:.35s;
-
-        border-radius:20px;
+        gap:15px;
     }
 
-    /* Champ caché */
-
-    .search-box input{
-
-        width:0;
-        padding:0;
-
-        opacity:0;
-
+    /* Loupe */
+    .search-icon{
+        font-size:20px;
+        color:#ffffff;
+        background:none;
         border:none;
-
-        transition:.35s;
+        box-shadow:none;
+        padding:0;
+        margin:0;
+        cursor:pointer;
     }
 
-    /* Lorsque la recherche est ouverte */
-
-    .search-box.active{
-
-        width:180px;
-
-        background:#fff;
+    /* Icônes des réseaux sociaux */
+    .menu-icons a{
+        color:#ffffff;
+        font-size:20px;
     }
 
-    .search-box.active input{
-
+    /* Barre de recherche cachée */
+    .search-panel{
+        display:none;
         width:100%;
-        opacity:1;
-
-        padding:0 10px;
+        margin-top:12px;
+        background:#ffffff;
+        border:1px solid #d9d9d9;
+        border-radius:25px;
+        overflow:hidden;
     }
 
-    .search-box button{
+    /* Barre ouverte */
+    .search-panel.active{
+        display:flex;
+        align-items:center;
+    }
 
-        width:38px;
-        min-width:38px;
+    /* Champ */
+    .search-panel input{
+        flex:1;
+        border:none;
+        outline:none;
+        padding:10px 15px;
+        font-size:14px;
+    }
+
+    /* Bouton */
+    .search-panel button{
+        width:45px;
+        border:none;
+        border-left:1px solid #cccccc;
+        background:#ffffff;
+        cursor:pointer;
+    }
+
+    .search-panel button i{
+        font-size:16px;
+        color:#000000;
     }
 
 }
