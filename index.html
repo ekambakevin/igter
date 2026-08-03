@@ -2285,221 +2285,197 @@ font-size:18px;
 .news-item {
   transform: translateX(20px);
 }
-/* =========================
-   SECTION ACTUALITÉS
-========================= */
-.news-section {
-  padding: 18px 8%;
-  text-align: center;
 
-/* 🔥 FOND BLEU PRO */
-  background: linear-gradient(rgba(0,51,102,0.92), rgba(0,51,102,0.92)),
-              url("images/IG&IGA2.png");
-  background-size: cover;
-  background-position: center;
-  color: white;
+/*====================================
+SECTION ACTUALITÉ & RÉSEAUX SOCIAUX
+====================================*/
+
+.news-section{
+    padding:35px 6%;
+    background:#f7f9fc;
 }
 
-.news-section h2 {
-  font-size: 24px;
-  color: white;
-  margin-bottom: 30px;
-  border-left: none;
-  padding-left: 0;
+.news-grid{
+    display:grid;
+    grid-template-columns:1.8fr 1fr;
+    gap:18px;
+    align-items:start;
 }
 
-.news-section h2::after {
-  content: "";
-  display: block;
-  width: 70px;
-  height: 4px;
-  margin: 10px auto 0;
-  border-radius: 2px;
+/*=========================
+Cartes
+=========================*/
 
-  background: linear-gradient(
-    to right,
-    #007fff 0%,
-    #007fff 33%,
-    #ffcc00 33%,
-    #ffcc00 66%,
-    #ce1126 66%,
-    #ce1126 100%
-  );
+.news-card,
+.social-card{
+    background:#fff;
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.35s;
+    height:100%;
+    padding-bottom:12px;
 }
 
-/* CONTENEUR */
-.news-display {
-  overflow: hidden;
-  position: relative;
+.news-card:hover,
+.social-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 15px 35px rgba(0,0,0,.12);
 }
 
-/* SLIDER */
-.news-slider {
-  display: flex;
-  transition: transform 1.9s ease;
+/*=========================
+Titres
+=========================*/
+
+.news-card h3,
+.social-card h3{
+    margin:0;
+    background:#0F5D3F;
+    color:#fff;
+    font-size:22px;
+    padding:12px 18px;
+    font-size:19px;
 }
 
-/* ITEM */
-.news-item {
-  min-width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 30px;
-}
+/*=========================
+Image
+=========================*/
 
-/* TEXTE */
-.news-left {
-  flex: 2;
-}
-
-.news-left h3 {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-.news-date {
-  font-size: 20px;
-  opacity: 0.8;
-  display: block;
-  margin-bottom: 15px;
-}
-
-.news-left p {
-  line-height: 1;
-  font-size: 16px;
-}
-
-/* IMAGE */
-.news-right {
-  flex: 1;
-  text-align: right;
-}
-
-.news-right img {
-  width: 100%;
-  max-width: 400px;
-  border-radius: 5px;
-  border: 4px solid white;
-}
-
-.news-container {
-  position: relative; /* 🔥 indispensable */
-}
-
-/* BOUTONS VISIBLES */
-.news-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  
-  background: rgba(0,0,0,0.6);
-  border: none;
-  color: white;
-  font-size: 24px;
-  padding: 12px 16px;
-  cursor: pointer;
-
-  z-index: 1000; /* 🔥 très important */
-}
-
-/* Position corrigée */
-.prev-news {
-  left: -100px;
-}
-
-.next-news {
-  right: -100px;
-}
-
-/* =========================
-   MASQUER BOUTONS SUR MOBILE
-========================= */
-@media (max-width: 768px) {
-
-  .news-btn {
-    display: none !important;
-  }
-
-}
-/* =========================
-   LIEN BAS ACTUALITÉS
-========================= */
-.news-more-link {
-  margin-top: 30px;
-  text-align: center;
-}
-
-.news-more-link a {
-  color: white;
-  font-size: 18px;
-  text-decoration: none;
-  font-weight: 500;
-  position: relative;
-  padding-bottom: 4px;
-  transition: 0.3s;
-}
-
-/* Ligne animée élégante */
-.news-more-link a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0%;
-  height: 2px;
-
-  background: linear-gradient(
-    to right,
-    #007fff,
-    #ffcc00,
-    #ce1126
-  );
-
-  transition: width 0.3s ease;
-}
-
-/* Hover */
-.news-more-link a:hover::after {
-  width: 100%;
-}
-
-.news-more-link a:hover {
-  opacity: 0.85;
-}
-
-/* =========================
-   MOBILE
-========================= */
-@media (max-width: 768px) {
-
-  .news-item {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .news-right {
-    text-align: center;
-  }
-
-  .news-right img {
-    max-width: 220px;
-  }
+.news-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
 
 }
 
-/* =========================
-   ANIMATION SCROLL (WOW)
-========================= */
-.reveal-on-scroll {
-  opacity: 0;
-  transform: translateY(40px) scale(0.95);
-  transition: all 0.8s ease;
+/*=========================
+Texte
+=========================*/
+
+.news-content{
+    padding:15px 18px;
 }
 
-.reveal-on-scroll.active {
-  opacity: 1;
-  transform: translateY(0) scale(1);
+.news-content h4{
+
+    color:#003366;
+    font-size:17px;
+    margin-bottom:8px;
+}
+
+.news-content p{
+    color:#555;
+    text-align:justify;
+    font-size:14px;
+    line-height:1.5;
+}
+
+/*=========================
+Bouton
+=========================*/
+
+.news-link{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+    width:85%;
+    margin:12px auto;
+    padding:11px;
+    font-size:15px;
+    background:#0F5D3F;
+    color:#fff;
+    text-decoration:none;
+    border-radius:8px;
+    transition:.3s;
+    font-weight:600;
+}
+
+.news-link:hover{
+    background:#0b4a32;
+}
+
+/*=========================
+Réseaux sociaux
+=========================*/
+
+.social-card ul{
+
+    list-style:none;
+    padding:15px;
+    margin:0;
+
+}
+
+.social-card li{
+
+    margin:12px 0;
+
+}
+
+.social-card a{
+
+    display:flex;
+    align-items:center;
+    gap:18px;
+
+    text-decoration:none;
+
+    color:#333;
+
+    padding:15px;
+
+    border-radius:8px;
+
+    transition:.3s;
+
+    font-size:17px;
+
+}
+
+.social-card a:hover{
+
+    background:#eef5ef;
+
+}
+
+.social-card i{
+
+    width:45px;
+    height:45px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border-radius:50%;
+
+    background:#0F5D3F;
+
+    color:#fff;
+
+    font-size:18px;
+
+}
+
+/*=========================
+Responsive
+=========================*/
+
+@media(max-width:900px){
+
+.news-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.news-card img{
+
+height:250px;
+
+}
+
 }
 
 /* =========================
@@ -3462,64 +3438,44 @@ font-size:18px;
 </section>
 
 <!-- =========================
-   ACTUALITÉS IGTER
+     ACTUALITÉ RÉCENTE & NOUS SUIVRE
 ========================= -->
 <section class="news-section" id="actualite">
 
-  <h2>Nos Actualités</h2>
+    <div class="news-grid">
 
-  <div class="news-container">
+        <!-- Carte Actualité -->
+        <div class="news-card">
 
-    <!-- Bouton gauche -->
-    <button class="news-btn prev-news">❮</button>
+            <h3>Actualités</h3>
+            <img src="images/IG&IGA2.png" alt="Actualité récente">
+            <div class="news-content">
 
-    <!-- Zone affichage -->
-   <div class="news-display">
+                <h4>Prestation de serment</h4>
+                <p>
+                    Prestation de serment de Monsieur l'Inspecteur Général de la Territoriale, MULOLO KANYMBU Didier, et de Monsieur l'Inspecteur Général Adjoint de la Territoriale, SHOMBA WA SHOMBA Désiré. 
+                </p>
+            </div>
+            <a href="actualite.html" class="news-link">Lire toutes les actualités<i class="fas fa-arrow-right"></i></a>
+        </div>
 
-  <div class="news-slider">
+        <!-- Carte Réseaux sociaux -->
+        <div class="social-card">
 
-    <!-- ACTUALITÉ 1 -->
-    <div class="news-item active">
-      <div class="news-left">
-        <h3>Lecture de l'ordonnance présidentielle n° ....... du ......</h3>
-        <span class="news-date">03 JUIN 2026</span>
-        <p>
-          Nomination de nouveaux Animateurs de l'Inspection Générale de la Territoriale, au grade de Secrétaire Général et aux fonctions respectives de l'Inspecteur Général et de l'Inspecteur Général Adjoint de la Territoriale. 
-        </p>
+            <h3>Nous suivre</h3>
+            <ul>
+                <li><a href="https://facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i><span>Facebook</span></a></li>
+
+                <li><a href="https://x.com/" target="_blank"><i class="fab fa-x-twitter"></i><span>X (Twitter)</span></a></li>
+
+                <li><a href="https://youtube.com/" target="_blank"><i class="fab fa-youtube"></i><span>YouTube</span></a></li>
+
+                <li><a href="https://instagram.com/" target="_blank"><i class="fab fa-instagram"></i><span>Instagram</span></a></li>
+
+                <li><a href="https://linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"></i><span>LinkedIn</span></a></li>
+            </ul>
+        </div>
       </div>
-
-      <div class="news-right">
-        <img src="images/tinasalama.png" alt="Actualité">
-      </div>
-    </div>
-
-    <!-- ACTUALITÉ 2 -->
-    <div class="news-item">
-      <div class="news-left">
-        <h3>Inspecteur Général et Inspecteur Général Adjoint de la Territoriale</h3>
-        <span class="news-date">10 JUIN 2026</span>
-        <p>
-         Nommés par ordonnance présidentielle n° ...... du ........, Monsieur MULOLO KANYIMBU Didier, Inspecteur Général, Chef de Corps des Inspecteurs de la Territoriale, et Monsieur SHOMBA WA SHOMBA, Inspeteur Général Adjoint de la Territoriale, ont preté serment mercredi 10 Juin 2026 en présénce et dans l'enceinte du Cabinet du Vice-Premier Ministre en charge de l'Intérieur, Sécurité, Décentralisation & Affaires Coutumières. 
-        </p>
-      </div>
-
-      <div class="news-right">
-        <img src="images/IG&IGA2.png" alt="Actualité">
-      </div>
-    </div>
-  </div>
-</div>
-
-    <!-- Bouton droite -->
-    <button class="news-btn next-news">❯</button>
-
-  </div>
-
-<div class="news-more-link">
-  <a href="https://web.facebook.com/groups/544962343127299/user/61584911503215" target="_blank">
-    Lire toutes les actualités
-  </a>
-</div>
 </section>
 
 <!-- VIDEOS -->
@@ -3962,75 +3918,7 @@ function animateCards() {
 window.addEventListener('scroll', animateCards);
 window.addEventListener('load', animateCards);
 </script>
-<script>
-document.addEventListener("DOMContentLoaded", function(){
 
-const slider = document.querySelector('.news-slider');
-const items = document.querySelectorAll('.news-item');
-const nextBtn = document.querySelector('.next-news');
-const prevBtn = document.querySelector('.prev-news');
-
-let index = 0;
-let autoSlide;
-
-/* AFFICHAGE */
-function updateSlider() {
-  slider.style.transform = "translateX(-" + (index * 100) + "%)";
-}
-
-/* NEXT */
-function nextSlide() {
-  index = (index + 1) % items.length;
-  updateSlider();
-}
-
-/* PREV */
-function prevSlide() {
-  index = (index - 1 + items.length) % items.length;
-  updateSlider();
-}
-
-/* BOUTONS */
-nextBtn.addEventListener("click", () => {
-  nextSlide();
-  resetAuto();
-});
-
-prevBtn.addEventListener("click", () => {
-  prevSlide();
-  resetAuto();
-});
-
-/* AUTO */
-function startAuto() {
-  autoSlide = setInterval(nextSlide, 4000);
-}
-
-function resetAuto() {
-  clearInterval(autoSlide);
-  startAuto();
-}
-
-startAuto();
-
-/* SWIPE */
-let startX = 0;
-
-slider.addEventListener('touchstart', e => {
-  startX = e.touches[0].clientX;
-});
-
-slider.addEventListener('touchend', e => {
-  let endX = e.changedTouches[0].clientX;
-
-  if (startX - endX > 50) nextSlide();
-  if (endX - startX > 50) prevSlide();
-
-  resetAuto();
-});
-
-});
-</script>
 <script>
 const revealElements = document.querySelectorAll('.reveal-on-scroll');
 
