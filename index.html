@@ -666,100 +666,7 @@ padding-left:10px;
   display: block;
   margin-bottom: 10px;
 }
-  
-/* =========================
-SECTION VIDEOS - STYLE PROFESSIONNEL
-========================= */
 
-.videos-section{
-padding:30px 8%;
-background:#f9f9f9; /* fond légèrement plus clair pour professionnalisme */
-}
-
-.videos-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-margin-bottom:30px;
-}
-
-.videos-header h2{
-color:#003366;
-font-size:22px;
-font-weight:700;
-margin:0;
-}
-
-.videos-header .voir-tout{
-text-decoration:none;
-color:#1d4ed8;
-font-weight:600;
-font-size:14px;
-transition:0.3s;
-}
-
-.videos-header .voir-tout:hover{
-text-decoration:underline;
-color:#003366;
-}
-
-/* GRID VIDEOS */
-
-.videos-grid{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* avant 280px → maintenant 220px */
-  gap: 18px;
-}
-
-/* CARTE VIDEO */
-
-.video-card{
-background:white;
-border-radius:10px;
-overflow:hidden;
-box-shadow:0 6px 18px rgba(0,0,0,0.08);
-transition:0.3s, transform 0.3s;
-border-top:4px solid #003366; /* accent officiel */
-position:relative;
-display:flex;
-flex-direction:column;
-}
-
-.video-card:hover{
-transform:translateY(-5px);
-box-shadow:0 12px 25px rgba(0,0,0,0.12);
-}
-
-/* IFRAME RESPONSIVE - 16:9 */
-.video-card iframe{
-  width: 100%;
-  max-width: 100%;
-  aspect-ratio: 16/9;
-  height: 160px; /* avant auto → maintenant fixe plus petit */
-  border: none;
-  transition: 0.3s;
-}
-
-.video-card:hover iframe{
-  transform: scale(1.01);
-}
-
-/* TITRE VIDEO */
-
-.video-title{
-padding:12px 15px;
-font-size:14px;
-color:#003366;
-font-weight:600;
-line-height:1.4;
-background:#f4f6f9;
-border-top:1px solid #eee;
-transition:0.3s;
-}
-
-.video-card:hover .video-title{
-background:#e5ecf8;
-}
 
 /* =========================
 FOOTER INSTITUTIONNEL AVANCE
@@ -2291,14 +2198,17 @@ SECTION ACTUALITÉ & RÉSEAUX SOCIAUX
 ====================================*/
 
 .news-section{
-    padding:35px 6%;
-    background:#f7f9fc;
+    padding:150px;
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(10px);
+    padding-bottom: 50px;
+    padding-top: 15px;
 }
 
 .news-grid{
     display:grid;
     grid-template-columns:1.8fr 1fr;
-    gap:18px;
+    gap:100px;
     align-items:start;
 }
 
@@ -2308,13 +2218,19 @@ Cartes
 
 .news-card,
 .social-card{
-    background:#fff;
-    border-radius:14px;
+    position:relative;
     overflow:hidden;
-    box-shadow:0 10px 25px rgba(0,0,0,.08);
     transition:.35s;
     height:100%;
     padding-bottom:12px;
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,.25);
+    border-radius:18px;
+    box-shadow:0 8px 25px rgba(0,0,0,.12);
+    overflow:hidden;
+    transition:.35s;
 }
 
 .news-card:hover,
@@ -2330,9 +2246,9 @@ Titres
 .news-card h3,
 .social-card h3{
     margin:0;
-    background:#0F5D3F;
-    color:#fff;
-    font-size:22px;
+    background:red;
+    backdrop-filter:blur(10px);
+    color:white;
     padding:12px 18px;
     font-size:19px;
 }
@@ -2342,10 +2258,11 @@ Image
 =========================*/
 
 .news-card img{
+    padding : 1200 × 700px;
     width:100%;
     height:220px;
-    object-fit:cover;
-
+    object-fit:contain;
+    background:#f3f3f3;
 }
 
 /*=========================
@@ -2361,6 +2278,7 @@ Texte
     color:#003366;
     font-size:17px;
     margin-bottom:8px;
+    text-align: center;
 }
 
 .news-content p{
@@ -2383,7 +2301,7 @@ Bouton
     margin:12px auto;
     padding:11px;
     font-size:15px;
-    background:#0F5D3F;
+    background:linear-gradient(135deg, #003366, #0055aa);
     color:#fff;
     text-decoration:none;
     border-radius:8px;
@@ -2392,77 +2310,64 @@ Bouton
 }
 
 .news-link:hover{
-    background:#0b4a32;
+    background:blue;
 }
 
 /*=========================
 Réseaux sociaux
 =========================*/
+.social-card h3{
+    margin:0;
+    background:rgba(15,93,63,.90);
+    backdrop-filter:blur(10px);
+    color:white;
+    padding:12px 18px;
+    font-size:19px;
+}
 
 .social-card ul{
-
     list-style:none;
     padding:15px;
     margin:0;
-
 }
 
 .social-card li{
-
     margin:12px 0;
-
 }
 
 .social-card a{
-
     display:flex;
     align-items:center;
     gap:18px;
-
     text-decoration:none;
-
     color:#333;
-
-    padding:15px;
-
+    padding:10px 14px;
+    font-size:15px;
     border-radius:8px;
-
     transition:.3s;
-
-    font-size:17px;
-
 }
 
 .social-card a:hover{
-
     background:#eef5ef;
-
 }
 
 .social-card i{
-
-    width:45px;
-    height:45px;
-
+    width:36px;
+    height:36px;
+    font-size:15px;
     display:flex;
     justify-content:center;
     align-items:center;
-
     border-radius:50%;
-
     background:#0F5D3F;
-
     color:#fff;
-
-    font-size:18px;
-
 }
 
 /*=========================
 Responsive
 =========================*/
 
-@media(max-width:900px){
+@media(max-width:768px){
 
 .news-grid{
 
@@ -3382,12 +3287,6 @@ height:250px;
 <a href="mission.html">Voir nos missions réalisées</a></div>
 </section>
 
-<div class="saisine-bar reveal-on-scroll" id="saisine">
-<a href="mode_saisine.html" class="saisine-btn">
-    <i class="fas fa-paper-plane"></i>
-    Saisissez-nous pour toute question en Administration Territoriale en RDC.
-  </a>
-</div>
 
 <!-- =========================
    NOS ATTRIBUTIONS (VERSION GLASS TRICOLORE)
@@ -3437,6 +3336,13 @@ height:250px;
   </div>
 </section>
 
+<div class="saisine-bar reveal-on-scroll" id="saisine">
+<a href="mode_saisine.html" class="saisine-btn">
+    <i class="fas fa-paper-plane"></i>
+    Saisissez-nous pour toute question en Administration Territoriale en RDC.
+  </a>
+</div>
+
 <!-- =========================
      ACTUALITÉ RÉCENTE & NOUS SUIVRE
 ========================= -->
@@ -3464,49 +3370,22 @@ height:250px;
 
             <h3>Nous suivre</h3>
             <ul>
-                <li><a href="https://facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i><span>Facebook</span></a></li>
+                <li><a href="https://web.facebook.com/groups/544962343127299/user/61584911503215" target="_blank"><i class="fab fa-facebook-f"></i><span>Facebook</span></a></li>
 
-                <li><a href="https://x.com/" target="_blank"><i class="fab fa-x-twitter"></i><span>X (Twitter)</span></a></li>
+                <li><a href="https://x.com/nomducompte" target="_blank"><i class="fab fa-x-twitter"></i><span>X (Twitter)</span></a></li>
 
-                <li><a href="https://youtube.com/" target="_blank"><i class="fab fa-youtube"></i><span>YouTube</span></a></li>
+                <li><a href="https://youtube.com/nomducompte" target="_blank"><i class="fab fa-youtube"></i><span>YouTube</span></a></li>
 
-                <li><a href="https://instagram.com/" target="_blank"><i class="fab fa-instagram"></i><span>Instagram</span></a></li>
+                <li><a href="https://instagram.com/nomducompte" target="_blank"><i class="fab fa-instagram"></i><span>Instagram</span></a></li>
 
                 <li><a href="https://linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"></i><span>LinkedIn</span></a></li>
+
+                <li><a href="https://wa.me/00243822080469" target="_blank"><i class="fa-brands fa-whatsapp"></i><span>WhatsApp</span></a></li>
             </ul>
         </div>
       </div>
 </section>
 
-<!-- VIDEOS -->
-<section class="videos-section" id="videos">
-  <div class="videos-header">
-    <h2>Vidéos d'actualités</h2>
-    <a href="videos.html" class="voir-tout">Voir tout</a>
-  </div>
-
-  <div class="videos-grid">
-<div class="video-card">
-      <iframe width="761" height="428" src="https://www.youtube.com/embed/FZ1cwV1t3zQ" title="Propos de l&#39;I.G/Prestation de serment" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      <div class="video-title">Vidéo similaire à la cérémonie de prestation de serment des Animateurs de l'IGTER et propos d'interview de Monsieur l'Inspecteur Général.</div>
-    </div>
-
-    <div class="video-card">
-      <iframe width="744" height="428" src="https://www.youtube.com/embed/Q29PfGlMih4" title="Prestation de serment IG MULOLO" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      <div class="video-title">Cérémonie de prestation de serment de l'Inspecteur Général, Chef de Corps des Inspecteurs de la Territoriale, Monsieur MULOLO KANYIMBU Didier, et de son Adjoint, Monsieur SHOMBA WA SHOMBA Désiré, Inspecteur Général Adjoint de la Territoriale.</div>
-    </div>
-
-    <div class="video-card">
-      <iframe width="744" height="428" src="https://www.youtube.com/embed/YHPH0mTFLuc" title="Remise-reprise IG MULOLO" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      <div class="video-title">Cérémonie de remise et reprise entre l'Inspecteur Général de la Territoriale a.i sortant, Monsieur LUMBILA FEKEY Roger, et l'Inspecteur Général de la Territoriale entrant, nommé par ordonnance présidentielle, Monsieur MULOLO KANYIMBU Didier.</div>
-    </div>
-
-    <div class="video-card">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/pRgTeC9DVVw?si=JR5bk75cZh2KBiNC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen title="Vidéo IGTER 3" frameborder="0" allowfullscreen></iframe>
-      <div class="video-title">(Archive 2014) Cérémonie de prestation de serment de l'Inspecteur Général de la Territoriale Honoraire, MUSASA KAZEZ Mike Odon Bernard, de son Adjoint MUKIND KAKEZ Joseph et des Inspecteurs Principaux Chefs de Pools.</div>
-    </div>
-  </div>
-</section>
 </div>
 
 <!-- FOOTER -->
@@ -3516,32 +3395,6 @@ height:250px;
 
 <!-- Colonne 1 : Réseaux sociaux -->
 <div class="footer-col">
-
-  <h3>Réseaux sociaux</h3>
-
-  <div class="social-icons">
-
-    <a href="https://web.facebook.com/groups/544962343127299/user/61584911503215" target="_blank">
-      <i class="fa-brands fa-facebook-f"></i>
-    </a>
-
-    <a href="https://x.com/nomducompte" target="_blank">
-      <i class="fa-brands fa-x-twitter"></i>
-    </a>
-
-    <a href="https://youtube.com/nomducompte" target="_blank">
-      <i class="fa-brands fa-youtube"></i>
-    </a>
-
-    <a href="https://instagram.com/nomducompte" target="_blank">
-      <i class="fa-brands fa-instagram"></i>
-    </a>
-
-    <a href="https://wa.me/00243822080469" target="_blank">
-      <i class="fa-brands fa-whatsapp"></i>
-    </a>
-
-  </div>
 
   <!-- Localisation -->
   <h3>Localisation</h3>
