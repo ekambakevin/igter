@@ -1620,43 +1620,28 @@ color:black;
 /*====================================
         STATISTIQUES
 ====================================*/
-
 .stats-section{
-
-    padding:40px 5%;
-
+    padding:10px 5% 20px;
     background:none;
-
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 .stats-section h2{
-
     text-align:center;
-
-    font-size:34px;
-
-    color:#0F5D3F;
-
-    margin-bottom:45px;
-
+    font-size:26px;
+    color: #003366;
+    margin-bottom:25px;
     border:none;
-
 }
 
 .stats-section h2::after{
-
     content:"";
-
     display:block;
-
     width:75px;
-
     height:4px;
-
     margin:12px auto;
-
     border-radius:5px;
-
     background:linear-gradient(
     to right,
     #007FFF 33%,
@@ -1664,55 +1649,35 @@ color:black;
     #FFD700 66%,
     #CE1126 66%
     );
-
 }
 
 .stats-wrapper{
-
     display:flex;
-
     align-items:center;
-
     justify-content:space-between;
-
-    gap:60px;
-
+    gap:35px;
 }
 
 /*==========================
         Galerie
 ===========================*/
-
 .stats-gallery{
-
     flex:1;
-
     display:grid;
-
     grid-template-columns:repeat(2,1fr);
-
     gap:15px;
-
 }
 
 .stats-gallery img{
-
     width:100%;
-
-    height:170px;
-
+    height:145px;
     object-fit:cover;
-
     border-radius:12px;
-
     transition:.4s;
-
 }
 
 .stats-gallery img:hover{
-
     transform:scale(1.04);
-
 }
 
 /*=========================
@@ -1721,7 +1686,7 @@ color:black;
 .stats-slider{
     flex:1;
     position:relative;
-    min-height:280px;
+    min-height:220px;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -1790,52 +1755,68 @@ color:black;
     color:#198754;
 }
 
-/*=========================
-        Mobile
+/*==========================
+    STATISTIQUES MOBILE
 ==========================*/
-
 @media(max-width:768px){
 
+/* Empilement */
 .stats-wrapper{
-
-flex-direction:column;
-
+    flex-direction:column;
+    gap:25px;
 }
 
+/*==========================
+      Galerie mobile
+==========================*/
 .stats-gallery{
-
-grid-template-columns:1fr;
-
+    display:block;
 }
 
+/* Une seule image */
 .stats-gallery img{
-
-height:220px;
-
+    display:none;
+    width:100%;
+    height:230px;
+    object-fit:cover;
+    border-radius:12px;
 }
 
+/* On affiche uniquement la première */
+.stats-gallery img:first-child{
+    display:block;
+}
+
+/* Lien */
+.gallery-link{
+    margin-top:15px;
+}
+
+/*==========================
+     Statistiques
+==========================*/
 .stats-slider{
+    width:100%;
+    min-height:180px;
+    text-align:center;
+}
 
-width:100%;
+.stats-slide{
+    text-align:center;
+}
 
-min-height:240px;
-
-text-align:center;
-
+.stats-slide i{
+    font-size:50px;
 }
 
 .stats-slide h3{
-
-font-size:50px;
-
+    font-size:45px;
 }
 
 .stats-slide p{
-
-font-size:20px;
-
-}
-
+    font-size:19px;
+    line-height:1.4;
+  }
 }
 
 /* =========================
@@ -3364,7 +3345,7 @@ Responsive
     <!-- =========================
          GALERIE (DROITE)
     ========================== -->
-
+    
     <div class="gallery-container">
         <div class="stats-gallery">
             <img src="images/inspecteurs.png" alt="">
@@ -3376,7 +3357,7 @@ Responsive
         </div>
 
         <div class="gallery-link">
-            <a href="galerie.html">Voir toute la galerie de missions réalisées<i class="fas fa-arrow-right"></i></a>
+            <a href="mission.html">Voir toute la galerie de missions réalisées<i class="fas fa-arrow-right"></i></a>
         </div>
     </div>
 </div>
