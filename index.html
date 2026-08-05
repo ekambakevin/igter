@@ -1617,224 +1617,227 @@ color:black;
   animation-play-state: paused;
 }
 
-/*=============================
-      STATISTIQUES SLIDER
-==============================*/
+/*====================================
+        STATISTIQUES
+====================================*/
 
-.stats-slider-section{
-    padding:8px 4px;
-    background:linear-gradient(135deg,#0F5D3F,#198754,#0B4A32);
+.stats-section{
+
+    padding:40px 5%;
+
+    background:none;
+
+}
+
+.stats-section h2{
+
     text-align:center;
-    overflow:hidden;
+
+    font-size:34px;
+
+    color:#0F5D3F;
+
+    margin-bottom:45px;
+
+    border:none;
+
 }
 
-.stats-slider-section h2{
-    color:#ffffff;
-    font-size:26px;
-    margin-bottom:20px;
-    margin-top: 20px;
-    border-left: none;
-}
+.stats-section h2::after{
 
-.stats-slider-section h2::after {
-  content: "";
-  display: block;
-  width: 70px;
-  height: 4px;
-  margin: 10px auto 0;
-  border-radius: 2px;
-  background: linear-gradient(
+    content:"";
+
+    display:block;
+
+    width:75px;
+
+    height:4px;
+
+    margin:12px auto;
+
+    border-radius:5px;
+
+    background:linear-gradient(
     to right,
-    #007fff 0%,
-    #007fff 33%,
-    #ffcc00 33%,
-    #ffcc00 66%,
-    #ce1126 66%,
-    #ce1126 100%
-  );
-}
-
-.stats-slider{
-
-max-width:1200px;
-
-margin:auto;
-
-position:relative;
-
-height:420px;
+    #007FFF 33%,
+    #FFD700 33%,
+    #FFD700 66%,
+    #CE1126 66%
+    );
 
 }
 
-.stats-slide{
+.stats-wrapper{
 
-position:absolute;
+    display:flex;
 
-width:100%;
+    align-items:center;
 
-display:flex;
+    justify-content:space-between;
 
-align-items:center;
-
-justify-content:center;
-
-gap:40px;
-
-opacity:0;
-
-visibility:hidden;
-
-transition:opacity .8s ease;
+    gap:60px;
 
 }
 
-.stats-slide.active{
+/*==========================
+        Galerie
+===========================*/
 
-opacity:1;
-
-visibility:visible;
-
-}
-
-.stats-image{
-
-flex:1;
-
-}
-
-.stats-image img{
-
-width:100%;
-
-max-width:450px;
-
-height:320px;
-
-object-fit:cover;
-
-border-radius:20px;
-
-box-shadow:0 15px 35px rgba(0,0,0,.25);
-
-}
-
-.stats-content{
+.stats-gallery{
 
     flex:1;
 
-    text-align:left;
+    display:grid;
 
-    background:rgba(255,255,255,0.12);
+    grid-template-columns:repeat(2,1fr);
 
-    backdrop-filter:blur(10px);
-
-    border:1px solid rgba(255,255,255,0.25);
-
-    border-radius:20px;
-
-    padding:35px;
-
-    color:#fff;
+    gap:15px;
 
 }
 
-.stats-content i{
+.stats-gallery img{
 
-    font-size:60px;
+    width:100%;
 
-    color:#FFD700; /* Jaune doré */
+    height:170px;
 
-    margin-bottom:20px;
+    object-fit:cover;
 
-}
+    border-radius:12px;
 
-.stats-content h3{
-
-    font-size:60px;
-
-    color:#ffffff;
-
-    margin-bottom:15px;
+    transition:.4s;
 
 }
 
-.stats-content p{
+.stats-gallery img:hover{
 
-    font-size:24px;
+    transform:scale(1.04);
 
-    font-weight:600;
-
-    color:#ffffff;
-
-    line-height:1.2;
 }
 
-.voir-missions{
-text-align:center;
-margin-top:40px;
-}
-
-.voir-missions a{
-display:inline-block;
-padding:14px 35px;
-background:red;
-color:white;
-font-size:16px;
-font-weight:700;
-border-radius:30px;
-text-decoration:none;
-transition:0.3s;
-}
-
-.voir-missions a:hover{
-background:#198754;
-box-shadow:0 5px 15px rgba(0,0,0,0.2);
-transform:translateY(-3px);
-}
-
-@media(max-width:768px){
-
+/*=========================
+      Statistiques
+==========================*/
 .stats-slider{
-
-height:620px;
-
+    flex:1;
+    position:relative;
+    min-height:280px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
 }
 
 .stats-slide{
+    position:absolute;
+    width:100%;
+    opacity:0;
+    visibility:hidden;
+    transition:.8s;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.stats-slide.active{
+    opacity:1;
+    visibility:visible;
+}
+
+.stats-slide i{
+    font-size:60px;
+    color:#FFD700;
+    margin-bottom:20px;
+}
+
+.stats-slide h3{
+    font-size:70px;
+    color:#0F5D3F;
+    margin-bottom:15px;
+}
+
+.stats-slide p{
+    font-size:28px;
+    font-weight:600;
+    color:#333;
+    line-height:1.4;
+}
+
+.gallery-container{
+    flex:1;
+}
+
+.gallery-link{
+    text-align:center;
+    margin-top:20px;
+}
+
+.gallery-link a{
+    color:#0F5D3F;
+    text-decoration:none;
+    font-weight:700;
+    font-size:18px;
+    transition:.3s;
+}
+
+.gallery-link a i{
+    margin-left:8px;
+}
+
+.gallery-link a:hover{
+    color:#198754;
+}
+
+/*=========================
+        Mobile
+==========================*/
+
+@media(max-width:768px){
+
+.stats-wrapper{
 
 flex-direction:column;
 
-gap:20px;
+}
+
+.stats-gallery{
+
+grid-template-columns:1fr;
 
 }
 
-.stats-image img{
-
-width:100%;
+.stats-gallery img{
 
 height:220px;
 
 }
 
-.stats-content{
+.stats-slider{
+
+width:100%;
+
+min-height:240px;
 
 text-align:center;
 
 }
 
-.stats-content h3{
+.stats-slide h3{
 
-font-size:42px;
-
-}
-
-.stats-content p{
-
-font-size:18px;
+font-size:50px;
 
 }
 
+.stats-slide p{
+
+font-size:20px;
+
 }
+
+}
+
 /* =========================
    SECTION ATTRIBUTIONS GLASS TRICOLORE PREMIUM
 ========================= */
@@ -3319,95 +3322,65 @@ Responsive
 <!-- =========================
      STATISTIQUES
 ========================= -->
-<section class="stats-slider-section" id="statistique">
 
+<section class="stats-section" id="statistique">
     <h2>Statistiques</h2>
-
+    <div class="stats-wrapper">
+    <!-- =========================
+         STATISTIQUES (GAUCHE)
+    ========================== -->
     <div class="stats-slider">
-
-        <!-- Slide 1 -->
-        <div class="stats-slide active">
-            <div class="stats-image">
-                <img src="images/inspecteurs.png" alt="Inspecteurs">
-            </div>
-
-            <div class="stats-content">
-                <i class="fas fa-users"></i>
-                <h3 id="nbInspecteurs">137</h3>
-                <p>Inspecteurs de la Territoriale</p>
-            </div>
+        <div class="stats-slide active"><i class="fas fa-users"></i>
+            <h3 id="nbInspecteurs">137</h3>
+            <p>Inspecteurs de la Territoriale</p>
         </div>
 
-        <!-- Slide 2 -->
-        <div class="stats-slide">
-            <div class="stats-image">
-                <img src="images/missions.png" alt="Missions">
-            </div>
-
-            <div class="stats-content">
-                <i class="fas fa-clipboard-list"></i>
-                <h3 id="nbMissions">0</h3>
-                <p>Missions réalisées (2026 à ce jour)</p>
-            </div>
+        <div class="stats-slide"><i class="fas fa-clipboard-list"></i>
+            <h3 id="nbMissions">0</h3>
+            <p>Missions réalisées (2026 à ce jour)</p>
         </div>
 
-        <!-- Slide 3 -->
-        <div class="stats-slide">
-            <div class="stats-image">
-                <img src="images/controle.png" alt="Contrôle">
-            </div>
-
-            <div class="stats-content">
-                <i class="fas fa-search"></i>
-                <h3 id="nbControle">0</h3>
-                <p>Missions de contrôle</p>
-            </div>
+        <div class="stats-slide"><i class="fas fa-search"></i>
+            <h3 id="nbControle">0</h3>
+            <p>Missions de contrôle</p>
         </div>
 
-        <!-- Slide 4 -->
-        <div class="stats-slide">
-            <div class="stats-image">
-                <img src="images/encadrement.png" alt="Encadrement">
-            </div>
-
-            <div class="stats-content">
-                <i class="fas fa-chalkboard-teacher"></i>
-                <h3 id="nbEncadrement">0</h3>
-                <p>Missions d'encadrement</p>
-            </div>
+        <div class="stats-slide"><i class="fas fa-chalkboard-teacher"></i>
+            <h3 id="nbEncadrement">0</h3>
+            <p>Missions d'encadrement</p>
         </div>
 
-        <!-- Slide 5 -->
-        <div class="stats-slide">
-            <div class="stats-image">
-                <img src="images/suivi.png" alt="Suivi">
-            </div>
-
-            <div class="stats-content">
-                <i class="fas fa-chart-line"></i>
-                <h3 id="nbSuivi">0</h3>
-                <p>Missions de suivi et d'évaluation</p>
-            </div>
+        <div class="stats-slide"><i class="fas fa-chart-line"></i>
+            <h3 id="nbSuivi">0</h3>
+            <p>Missions de suivi et d'évaluation</p>
         </div>
 
-        <!-- Slide 6 -->
-        <div class="stats-slide">
-            <div class="stats-image">
-                <img src="images/appui.png" alt="Gouvernance">
-            </div>
-
-            <div class="stats-content">
-                <i class="fas fa-landmark"></i>
-                <h3 id="nbGouvernance">0</h3>
-                <p>Missions d'Appui à la bonne gouvernance territoriale et sécuritaire</p>
-            </div>
+        <div class="stats-slide"><i class="fas fa-landmark"></i>
+            <h3 id="nbGouvernance">0</h3>
+            <p>Appui à la bonne gouvernance territoriale et sécuritaire</p>
         </div>
     </div>
-<!-- BOUTON EN SAVOIR PLUS -->
-<div class="voir-missions">
-<a href="mission.html">Voir nos missions réalisées</a></div>
-</section>
 
+    <!-- =========================
+         GALERIE (DROITE)
+    ========================== -->
+
+    <div class="gallery-container">
+        <div class="stats-gallery">
+            <img src="images/inspecteurs.png" alt="">
+            <img src="images/missions.png" alt="">
+            <img src="images/controle.png" alt="">
+            <img src="images/encadrement.png" alt="">
+            <img src="images/suivi.png" alt="">
+            <img src="images/appui.png" alt="">
+        </div>
+
+        <div class="gallery-link">
+            <a href="galerie.html">Voir toute la galerie de missions réalisées<i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+</div>
+</section>
 
 <!-- =========================
    NOS ATTRIBUTIONS (VERSION GLASS TRICOLORE)
@@ -3458,10 +3431,11 @@ Responsive
 </section>
 
 <div class="saisine-bar reveal-on-scroll" id="saisine">
-<a href="mode_saisine.html" class="saisine-btn">
-    <i class="fas fa-paper-plane"></i>
-    Saisissez-nous pour toute question en Administration Territoriale en RDC.
-  </a>
+  <a href="mode_saisine.html" class="saisine-btn">
+    <i class="fas fa-paper-plane"></i>Saisissez l’IGTER pour toute question en Administration Territoriale en RDC.</a>
+
+  <!-- NOUVEAU BOUTON -->
+  <a href="mission.html" class="saisine-btn secondary-btn" id="missions"><i class="fas fa-chart-bar"></i>Voir nos missions récentes</a>
 </div>
 
 <!-- =========================
