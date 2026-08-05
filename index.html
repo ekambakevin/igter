@@ -2198,36 +2198,105 @@ SECTION ACTUALITÉ & RÉSEAUX SOCIAUX
 Cartes Actualités uniquement 
 =========================*/
 
+/*=========================
+Carte Actualités Premium
+=========================*/
+
 .news-card{
+
+    position:relative;
+
     background:rgba(255,255,255,.12);
+
     backdrop-filter:blur(15px);
     -webkit-backdrop-filter:blur(15px);
-    border:1px solid rgba(255,255,255,.25);
+
     border-radius:18px;
-    box-shadow:0 8px 20px rgba(0,0,0,.10);
-    padding:18px;
-    transition:.3s;
+
+    padding:20px;
+
+    overflow:hidden;
+
+    border-left:8px solid transparent;
+
+    border-image:linear-gradient(
+        to bottom,
+        #007FFF 0%,
+        #007FFF 33%,
+        #FFD700 33%,
+        #FFD700 66%,
+        #CE1126 66%,
+        #CE1126 100%
+    ) 1;
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.10),
+        0 0 15px rgba(0,127,255,.10);
+
+    transition:all .35s ease;
+
 }
 
 .news-card:hover{
-    transform:translateY(-4px);
-    box-shadow:0 12px 25px rgba(0,0,0,.12);
+
+    transform:translateY(-6px);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.18),
+        0 0 18px rgba(0,127,255,.30),
+        0 0 28px rgba(255,215,0,.20);
+
+}
+
+.news-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-120%;
+
+    width:70%;
+    height:100%;
+
+    background:linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,.30),
+        transparent
+    );
+
+    transition:.8s;
+
+}
+
+.news-card:hover::before{
+
+    left:150%;
+
 }
 
 /*=========================
 Titres
 =========================*/
 
-.news-card h3,
-.social-card h3{
-    background:none;
+.news-card h3{
+
     color:#003366;
+
     font-size:28px;
+
     font-weight:700;
-    margin-bottom:20px;
-    padding:0;
-    border-left:6px solid #0F5D3F;
+
+    margin-bottom:18px;
+
     padding-left:15px;
+
+    border-left:none;
+
+    text-shadow:0 1px 2px rgba(0,0,0,.08);
+
 }
 
 /*=========================
@@ -2281,7 +2350,12 @@ Bouton
     margin:12px auto;
     padding:11px;
     font-size:15px;
-    background:linear-gradient(135deg, #003366, #0055aa);
+background:linear-gradient(
+        135deg,
+        #003366,
+        #0055aa
+    );
+box-shadow:0 5px 15px rgba(0,85,170,.25);
     color:#fff;
     text-decoration:none;
     border-radius:8px;
@@ -2291,6 +2365,10 @@ Bouton
 
 .news-link:hover{
     background:;
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(0,85,170,.35);
 }
 
 /*=========================
