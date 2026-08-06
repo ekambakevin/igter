@@ -1659,103 +1659,142 @@ background:#e0a800;
    ZONE DE RECHERCHE - DESKTOP & MOBILE
 ========================================= */
 
-.search-box {
-    display: flex;
-    align-items: center;
-    width: 250px;
-    height: 30px;
-    background: #ffffff;
-    border: 1px solid #d9e2dc;
-    border-radius: 25px;
-    overflow: hidden;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
+.menu-left{
+    display:flex;
+    flex-direction:column;
+    position:relative;
 }
 
-/* Effet lorsque la zone est sélectionnée */
-.search-box:focus-within {
-    border-color: #0F5D3F;
-    box-shadow: 0 0 0 3px rgba(15, 93, 63, 0.12);
+.menu-icons{
+    display:flex;
+    align-items:center;
+    gap:10px;
 }
 
-/* Champ de recherche */
-.search-box input {
-    flex: 1;
-    width: 100%;
-    height: 100%;
-    padding: 0 15px;
-    border: none;
-    outline: none;
-    background: transparent;
-    color: #333333;
-    font-size: 16px;
+/* Loupe seule */
+
+.search-icon{
+    background:none;
+    border:none;
+    box-shadow:none;
+    padding:0;
+    cursor:pointer;
+    color:#fff;
+    font-size:16px;
 }
 
-/* Placeholder */
-.search-box input::placeholder {
-    color: #888888;
+/* Icônes sociales */
+
+.menu-icons a{
+    color:#fff;
+    font-size:16px;
 }
 
+/* Barre de recherche */
 
-/* =========================
-   BOUTON RECHERCHE
-========================= */
+.search-panel{
+    display:none;
+    margin-top:0px;
+    width:250px;
+    height: auto;
+    align-items:center;
+    border:1px solid #ccc;
+    border-radius:25px;
+    overflow:hidden;
+    background:#fff;
+}
 
-.search-box button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 48px;
-    height: 100%;
+.search-panel.active{
+    display:flex;
+}
+
+.search-panel input{
+    flex:1;
+    border:none;
+    outline:none;
+    padding:8px 10px;
+    font-size:14px;
+
+}
+
+.search-panel button{
+    width:45px;
+    border:none;
     
-    /* Séparateur noir */
-    border: none;
-    border-left: 2px solid #000000;
-    
-    background: white;
-    color: black;
-    cursor: pointer;
-    transition: background 0.3s ease;
+    background:#fff;
+
+    border-left:1px solid #ccc;
+
+    cursor:pointer;
+
 }
 
-/* Survol du bouton */
-.search-box button:hover {
-    background: #ffcc00;
+/* =========================================
+   VERSION MOBILE
+========================================= */
+
+@media (max-width:768px){
+
+    .menu-left{
+        display:flex;
+        align-items:center;
+        width:100%;
+    }
+
+    /* Les réseaux sociaux restent cachés */
+    .menu-icons a{
+        display:none;
+    }
+
+    /* Ligne loupe + recherche */
+    .menu-icons{
+        display:flex;
+        align-items:center;
+        width:100%;
+        gap:10px;
+    }
+
+    /* Loupe */
+    .search-icon{
+        background:none;
+        border:none;
+        color:#fff;
+        font-size:22px;
+        cursor:pointer;
+        flex-shrink:0;
+        margin-left:20px;
+    }
+
+    /* Formulaire */
+    .search-panel{
+        display:none;
+        flex:1;
+        align-items:center;
+        background:#fff;
+        border-radius:25px;
+        overflow:hidden;
+        border:1px solid #d9d9d9;
+    }
+
+    .search-panel.active{
+        display:flex;
+    }
+
+    .search-panel input{
+        flex:1;
+        border:none;
+        outline:none;
+        padding:9px 12px;
+        font-size:14px;
+    }
+
+    .search-panel button{
+        width:42px;
+        border:none;
+        border-left:1px solid #ccc;
+        background:#fff;
+    }
 }
-
-/* Icône */
-.search-box button i {
-    font-size: 16px;
-}
-
-@media (max-width: 768px) {
-
-    /* =========================
-       ZONE DE RECHERCHE MOBILE
-    ========================= */
-
-    .search-box {
-        width: 180px;
-        max-width: 180px;
-        height: 34px;
-    }
-
-    .search-box input {
-        font-size: 12px;
-        padding: 0 10px;
-    }
-
-    .search-box input::placeholder {
-        font-size: 12px;
-    }
-
-    .search-box button {
-        width: 38px;
-    }
-
-    .search-box button i {
-        font-size: 14px;
-    }
 
 
     /* =========================
@@ -1763,7 +1802,7 @@ background:#e0a800;
     ========================= */
 
     .mobile-menu-bar {
-        display: flex;
+        display: none;
         background: #003366;
         padding: 8px 5px 8px 10px;
         justify-content: flex-end;
@@ -1778,7 +1817,7 @@ background:#e0a800;
         color: white;
         cursor: pointer;
         padding: 0;
-        margin: 0;
+        margin: 20;
     }
 }
 
@@ -1907,18 +1946,48 @@ background:#e0a800;
 <nav class="navbar" id="main-menu"> 
 
   <div class="menu-left">
-    <form class="search-box" action="administration_centrale.html" method="GET">
-    <input 
-        type="search" 
-        name="q" 
-        placeholder="Saisissez un mot clé" 
-        aria-label="Rechercher sur le site"
-    >
 
-    <button type="submit" aria-label="Lancer la recherche">
-        <i class="fa-solid fa-magnifying-glass"></i>
-    </button>
-</form>
+    <div class="menu-icons">
+
+        <button id="searchBtn" class="search-icon" type="button">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+
+        <a href="https://web.facebook.com/groups/544962343127299/user/61584911503215" target="_blank">
+            <i class="fa-brands fa-facebook-f"></i>
+        </a>
+
+        <a href="https://x.com/nomducompte" target="_blank">
+            <i class="fa-brands fa-x-twitter"></i>
+        </a>
+
+        <a href="https://youtube.com/nomducompte" target="_blank">
+            <i class="fa-brands fa-youtube"></i>
+        </a>
+
+        <a href="https://instagram.com/nomducompte" target="_blank">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+
+        <a href="https://wa.me/00243822080469" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+
+    </div>
+
+    <form id="searchBox" class="search-panel" action="index.html" method="GET">
+
+        <input
+            id="searchInput"
+            type="search"
+            name="q"
+            placeholder="Tapez le mot clé">
+
+        <button type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+
+    </form>
 
 </div>
 
@@ -1926,7 +1995,7 @@ background:#e0a800;
   <div class="menu-right">
   <a href="index.html">Accueil</a>
   <div class="dropdown">
-  <a href="javascript:void(0)">Dirigeants <i class="fa-solid fa-caret-down"></i></a>
+  <a href="javascript:void(0)">Dirigeants</a>
 
   <div class="dropdown-content">
     <a href="ig_iga.html">I.G et I.G.A</a>
@@ -2063,38 +2132,12 @@ background:#e0a800;
 <!-- Colonne 1 : Réseaux sociaux -->
 <div class="footer-col">
 
-  <h3>Réseaux sociaux</h3>
-
-  <div class="social-icons">
-
-    <a href="https://web.facebook.com/groups/544962343127299/user/61584911503215" target="_blank">
-      <i class="fa-brands fa-facebook-f"></i>
-    </a>
-
-    <a href="https://x.com/nomducompte" target="_blank">
-      <i class="fa-brands fa-x-twitter"></i>
-    </a>
-
-    <a href="https://youtube.com/nomducompte" target="_blank">
-      <i class="fa-brands fa-youtube"></i>
-    </a>
-
-    <a href="https://instagram.com/nomducompte" target="_blank">
-      <i class="fa-brands fa-instagram"></i>
-    </a>
-
-    <a href="https://wa.me/00243822080469" target="_blank">
-      <i class="fa-brands fa-whatsapp"></i>
-    </a>
-
-  </div>
-
   <!-- Localisation -->
   <h3>Localisation</h3>
   <div class="location-text">
   <a href="https://www.google.com/maps/search/?api=1&query=Immeuble+Semois+Royal+Kinshasa+Gombe" target="_blank">
 
-  <i class="fa-solid fa-location-dot"></i>6è niveau Immeuble Semois<br>Avenue Kauka Place Royal<br>Kinshasa-Gombe</a>
+  <i class="fa-solid fa-location-dot"></i>6è niveau Immeuble Semois Aile 2<br>Avenue Kauka Place Royal<br>Kinshasa-Gombe</a>
 </div>
 </div>
 
@@ -2376,7 +2419,62 @@ document.addEventListener("click", function(e) {
 
 });
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
 
+    const btn = document.getElementById("searchBtn");
+    const panel = document.getElementById("searchBox");
+    const input = document.getElementById("searchInput");
+
+    // Ouvrir la recherche
+    btn.addEventListener("click", function () {
+
+        if (!panel.classList.contains("active")) {
+
+            panel.classList.add("active");
+
+            setTimeout(function () {
+                input.focus();
+            }, 100);
+
+            return;
+        }
+
+        // Si la recherche est vide
+        if (input.value.trim() === "") {
+            input.focus();
+            return;
+        }
+
+        // Soumettre le formulaire normalement
+        panel.requestSubmit();
+
+    });
+
+    // L'utilisateur appuie sur Entrée ou "Rechercher" du clavier
+    panel.addEventListener("submit", function (e) {
+
+        if (input.value.trim() === "") {
+            e.preventDefault();
+            input.focus();
+        }
+
+    });
+
+    // Fermer la recherche lorsqu'on clique ailleurs
+    document.addEventListener("click", function (e) {
+
+        if (
+            !panel.contains(e.target) &&
+            !btn.contains(e.target)
+        ) {
+            panel.classList.remove("active");
+        }
+
+    });
+
+});
+</script>
 <script src="recherche.js"></script>
 </body>
 </html>
