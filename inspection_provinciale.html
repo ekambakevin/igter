@@ -275,6 +275,33 @@ height:auto;
   }
 }
 
+/* ==========================
+   AFFICHAGE HEADER LEFT DESKTOP / MOBILE
+========================== */
+
+/* Desktop par défaut */
+.desktop-header{
+    display:flex;
+}
+
+.mobile-header{
+    display:none;
+}
+
+/* Mobile */
+@media (max-width:768px){
+
+    .desktop-header{
+        display:none;
+    }
+
+    .mobile-header{
+        display:flex;
+        align-items:center;
+    }
+
+}
+
 /* ------------------ MENU LATERAL ------------------ */
 .side-menu{
 height:100%;
@@ -1868,32 +1895,7 @@ background:#e0a800;
         margin: 20;
     }
 }
-/* ==========================
-   AFFICHAGE HEADER LEFT DESKTOP / MOBILE
-========================== */
 
-/* Desktop par défaut */
-.desktop-header{
-    display:flex;
-}
-
-.mobile-header{
-    display:none;
-}
-
-/* Mobile */
-@media (max-width:768px){
-
-    .desktop-header{
-        display:none;
-    }
-
-    .mobile-header{
-        display:flex;
-        align-items:center;
-    }
-
-}
 </style>
 
 </head>
