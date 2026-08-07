@@ -215,7 +215,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         
         // =============================================
-        // SPROVINCES, ETDS ET SERVICES CENTRAUX DU MINISTERE DE L'INTERIEUR
+        // PROVINCES, ETDS ET SERVICES CENTRAUX DU MINISTERE DE L'INTERIEUR
         // =============================================
 
         {
@@ -239,9 +239,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
         {
             mots: [
-                "Ministère de l'Intérieur",
+                "ministère de l'Intérieur",
                 "interieur",
-                "Services Intérieur"
+                "service Intérieur"
             ],
             page: "scdmisdac.html",
             cible: "#scdmisdac"
