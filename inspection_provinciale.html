@@ -154,6 +154,32 @@ height:auto;
   margin-top: 3px;
 }
 
+/* ==========================
+   AFFICHAGE HEADER LEFT DESKTOP / MOBILE
+========================== */
+
+/* Desktop par défaut */
+.desktop-header{
+    display:flex;
+}
+
+.mobile-header{
+    display:none;
+}
+
+/* Mobile */
+@media (max-width:768px){
+
+    .desktop-header{
+        display:none;
+    }
+
+    .mobile-header{
+        display:flex;
+        align-items:center;
+    }
+
+}
 
 /* =========================
    HEADER TEXTE STYLE OFFICIEL
@@ -273,33 +299,6 @@ height:auto;
   .header-right {
     display: none;
   }
-}
-
-/* ==========================
-   AFFICHAGE HEADER LEFT DESKTOP / MOBILE
-========================== */
-
-/* Desktop par défaut */
-.desktop-header{
-    display:flex;
-}
-
-.mobile-header{
-    display:none;
-}
-
-/* Mobile */
-@media (max-width:768px){
-
-    .desktop-header{
-        display:none;
-    }
-
-    .mobile-header{
-        display:flex;
-        align-items:center;
-    }
-
 }
 
 /* ------------------ MENU LATERAL ------------------ */
