@@ -215,6 +215,55 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         
         // =============================================
+        // SPROVINCES, ETDS ET SERVICES CENTRAUX DU MINISTERE DE L'INTERIEUR
+        // =============================================
+
+        {
+            mots: [
+                "province",
+                "province de la RDC"
+            ],
+            page: "province.html",
+            cible: "#province"
+        },
+
+        {
+            mots: [
+                "entite territoriale",
+                "entite",
+                "etd"
+            ],
+            page: "etd1.html",
+            cible: "#etd1"
+        },
+
+        {
+            mots: [
+                "Ministère de l'Intérieur",
+                "interieur",
+                "Services Intérieur"
+            ],
+            page: "scdmisdac.html",
+            cible: "#scdmisdac"
+        },
+
+        // =============================================
+        // GALERIE DES PHOTOS MISSIONS REALISEES
+        // =============================================
+
+        {
+            mots: [
+                "galerie",
+                "photo",
+                "galerie photo",
+                "galerie des photos",
+                "image"
+            ],
+            page: "galerie.html",
+            cible: "#galerie"
+        },
+
+        // =============================================
         // STRUCTURES ORGANIQUES
         // =============================================
 
