@@ -3237,6 +3237,7 @@ Responsive
         </button>
 
     </form>
+
 </div>
 
   <!-- MENU DESKTOP -->
@@ -3674,13 +3675,17 @@ Responsive
     Inscrivez-vous pour ne rien rater de nos nouvelles.
   </p>
 
- <form id="newsletterForm" class="newsletter-form">
-    <input type="email" id="email" name="email" placeholder="Votre adresse email" required>
-    <button type="submit">S'abonner</button>
+  <form id="newsletterForm" class="newsletter-form">
 
-</form>
+    <input type="email" placeholder="Votre adresse email">
+
+    <button type="submit">
+      S'abonner
+    </button>
+
+  </form>
+
 </div>
-
 <div id="toast" class="toast">
   <div class="toast-content">
     <span id="toast-icon">⚠️</span>
@@ -3833,53 +3838,16 @@ function showToast(message, type = "info") {
 }
 
 // Newsletter
-document.getElementById("newsletterForm")
-.addEventListener("submit", function(e){
-
+document.getElementById("newsletterForm").addEventListener("submit", function(e){
     e.preventDefault();
 
-    let email=document.getElementById("email").value.trim();;
-
-    // Vérification du format de l'adresse email
-const regexEmail = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
-
-if (!regexEmail.test(email)) {
     showToast(
-        "Veuillez saisir une adresse email valide comme ekambakevin@gmail.com.",
-        "error"
+        "Désolé ! Vous ne pouvez pas vous abonner pour le moment. Prochainement !",
+        "info"
     );
-    return;
-}
-
-    fetch("newsletter.php",{
-
-        method:"POST",
-
-        headers:{
-            "Content-Type":"application/x-www-form-urlencoded"
-        },
-
-        body:"email="+encodeURIComponent(email)
-
-    })
-
-    .then(r=>r.json())
-
-    .then(data=>{
-
-        showToast(data.message,data.type);
-
-        if(data.type==="success"){
-
-            document.getElementById("newsletterForm").reset();
-
-        }
-
-    });
-
 });
-</script>
 
+</script>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   const hero = document.querySelector(".hero-expert");
