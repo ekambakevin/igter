@@ -1374,6 +1374,33 @@ background:#e0a800;
         margin: 20;
     }
 }
+
+/* ==========================
+   AFFICHAGE HEADER LEFT DESKTOP / MOBILE
+========================== */
+
+/* Desktop par défaut */
+.desktop-header{
+    display:flex;
+}
+
+.mobile-header{
+    display:none;
+}
+
+/* Mobile */
+@media (max-width:768px){
+
+    .desktop-header{
+        display:none;
+    }
+
+    .mobile-header{
+        display:flex;
+        align-items:center;
+    }
+
+}
 </style>
 
 </head>
@@ -1381,16 +1408,36 @@ background:#e0a800;
 <body>
 
 <header class="top-header" id="actualite">
-   <div class="header-left">
+    <div class="header-left desktop-header">
     <img src="images/logo.png" alt="Logo IGTER" class="logo">
 
     <!-- BARRE TRICOLORE -->
     <div class="flag-bar"></div>
 
     <div class="header-text">
-      <div class="title">INSPECTION GENERALE DE LA TERRITORIALE</div>
+        <div class="ministry">
+            MINISTERE DE L'INTERIEUR, SECURITE,<br>
+            DECENTRALISATION & AFFAIRES COUTUMIERES
+        </div>
+
+        <div class="title">
+            INSPECTION GENERALE DE LA TERRITORIALE
+        </div>
     </div>
+</div>
+
+<div class="header-left mobile-header">
+    <img src="images/logo.png" alt="Logo IGTER" class="logo">
+
+    <!-- BARRE TRICOLORE -->
+    <div class="flag-bar"></div>
+
+    <div class="header-text">
+        <div class="title">
+            INSPECTION GENERALE DE LA TERRITORIALE - RDC
+        </div>
     </div>
+</div>
     
 <div class="header-right">
 
