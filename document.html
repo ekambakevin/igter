@@ -1943,8 +1943,8 @@ background:#e0a800;
     <a href="cb.html">Chefs de Bureau</a>
   </div>
 </div>
-  <a href="mission.html">Missions</a>
-  <a href="mode_saisine.html">Saisissez-nous</a>
+  <a href="mission.php">Missions</a>
+  <a href="mode_saisine.php">Saisissez-nous</a>
 </div>
   <!-- MENU MOBILE -->
   <div class="mobile-menu-bar">
@@ -2017,7 +2017,7 @@ background:#e0a800;
 
   <a href="https://interieur.gouv.cd/services/details/IGTER"><i class="fa-solid fa-shield"></i> Ministère de tutelle</a>
 
-  <a href="mode_saisine.html">📝 Saisissez-nous</a>
+  <a href="mode_saisine.php">📝 Saisissez-nous</a>
   <a href="#contact">☎️ Nos contacts</a>
 
 </div></div>
@@ -2092,47 +2092,6 @@ background:#e0a800;
                     <a href="pdf/documents/decret/organigramme.pdf" target="_blank" class="btn-consulter"><i class="fa-solid fa-eye"></i>Consulter</a>
 
                     <a href="pdf/documents/decret/organigramme.pdf" download class="btn-telecharger">
-                    <i class="fa-solid fa-download"></i>Télécharger</a>
-                </div>
-            </article>
-
-<!-- COMMUNIQUE 3 -->
-            <article class="document-card" data-category="communique">
-                <div class="document-icon"><i class="fa-solid fa-file-pdf"></i></div>
-
-                <div class="document-info"><span class="document-type">Communiqué de service</span>
-                  <h3> N° 039/MISDAC/IGTER/IG-CC/MKD/2026</h3>
-                    <p>
-                        Communiqué de service sur le traitement et l'affichage des listings de paiement des Cadres et Agents au 3è Trimestre.
-                    </p>
-
-                <div class="document-date"><i class="fa-regular fa-calendar"></i>
-                  Publié le 07 Aout 2026.</div>
-                </div>
-
-                <div class="document-actions">
-                    <a href="pdf/documents/communiqués/2026/ScanneurDoc_0908222818.pdf" target="_blank" class="btn-consulter"><i class="fa-solid fa-eye"></i>Consulter</a>
-                    <a href="pdf/documents/communiqués/2026/ScanneurDoc_0908222818.pdf" download class="btn-telecharger">
-                    <i class="fa-solid fa-download"></i>Télécharger</a>
-                </div>
-            </article>
-<!-- COMMUNIQUE 2 -->
-            <article class="document-card" data-category="communique">
-                <div class="document-icon"><i class="fa-solid fa-file-pdf"></i></div>
-
-                <div class="document-info"><span class="document-type">Communiqué de service</span>
-                  <h3> N° 038/MISDAC/IGTER/IG-CC/MKD/2026</h3>
-                    <p>
-                        Communiqué de service sur le lancement des sessions de formation des Inspecteurs de la Territoriale en date du 20 Aout 2026.
-                    </p>
-
-                <div class="document-date"><i class="fa-regular fa-calendar"></i>
-                  Publié le 07 Aout 2026.</div>
-                </div>
-
-                <div class="document-actions">
-                    <a href="pdf/documents/communiqués/2026/COMMUNIQUE DE SERVICE N 038 FORMATION DES INSPECTEURS.pdf" target="_blank" class="btn-consulter"><i class="fa-solid fa-eye"></i>Consulter</a>
-                    <a href="pdf/documents/communiqués/2026/COMMUNIQUE DE SERVICE N 038 FORMATION DES INSPECTEURS.pdf" download class="btn-telecharger">
                     <i class="fa-solid fa-download"></i>Télécharger</a>
                 </div>
             </article>
@@ -2522,11 +2481,26 @@ const documentCards =
 const noDocument =
     document.getElementById("noDocument");
 
-
 let currentFilter = "tous";
 
 
-/* FILTRAGE */
+/* =========================================
+   ÉTAT INITIAL
+   TOUS LES DOCUMENTS SONT CACHÉS
+========================================= */
+
+documentCards.forEach(card => {
+
+    card.style.display = "none";
+
+});
+
+noDocument.style.display = "none";
+
+
+/* =========================================
+   FILTRAGE
+========================================= */
 
 function filterDocuments() {
 
@@ -2539,22 +2513,38 @@ function filterDocuments() {
     documentCards.forEach(card => {
 
         const category =
-            card.dataset.category;
+            card.dataset.category.toLowerCase();
 
         const content =
             card.textContent.toLowerCase();
 
+
+        /* ================================
+           CONDITION CATÉGORIE
+        ================================= */
 
         const matchesCategory =
             currentFilter === "tous" ||
             category === currentFilter;
 
 
+        /* ================================
+           CONDITION RECHERCHE
+        ================================= */
+
         const matchesSearch =
+            searchValue === "" ||
             content.includes(searchValue);
 
 
-        if (matchesCategory && matchesSearch) {
+        /* ================================
+           AFFICHAGE
+        ================================= */
+
+        if (
+            matchesCategory &&
+            matchesSearch
+        ) {
 
             card.style.display = "flex";
 
@@ -2569,7 +2559,9 @@ function filterDocuments() {
     });
 
 
-    /* AFFICHER MESSAGE SI AUCUN RÉSULTAT */
+    /* =================================
+       MESSAGE AUCUN RÉSULTAT
+    ================================= */
 
     if (visibleDocuments === 0) {
 
@@ -2584,38 +2576,57 @@ function filterDocuments() {
 }
 
 
-/* CLIQUE SUR LES FILTRES */
+/* =========================================
+   CLIQUE SUR LES FILTRES
+========================================= */
 
 filterButtons.forEach(button => {
 
-    button.addEventListener("click", function() {
+    button.addEventListener(
+        "click",
+        function() {
 
-        filterButtons.forEach(btn => {
+            /* Retirer active de tous les boutons */
 
-            btn.classList.remove("active");
+            filterButtons.forEach(btn => {
 
-        });
+                btn.classList.remove("active");
 
-
-        this.classList.add("active");
-
-
-        currentFilter =
-            this.dataset.filter;
+            });
 
 
-        filterDocuments();
+            /* Activer le bouton sélectionné */
 
-    });
+            this.classList.add("active");
+
+
+            /* Récupérer la catégorie */
+
+            currentFilter =
+                this.dataset.filter.toLowerCase();
+
+
+            /* Appliquer le filtre */
+
+            filterDocuments();
+
+        }
+    );
 
 });
 
 
-/* RECHERCHE EN TEMPS RÉEL */
+/* =========================================
+   RECHERCHE EN TEMPS RÉEL
+========================================= */
 
 searchInput.addEventListener(
     "input",
-    filterDocuments
+    function() {
+
+        filterDocuments();
+
+    }
 );
 
 
