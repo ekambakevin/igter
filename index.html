@@ -3522,14 +3522,9 @@ Responsive
             <i class="fa-brands fa-whatsapp"></i>
         </a>
 
-        <a href="admin/connexion_admin.php"
-   class="admin-icon"
-   title="Administrateur"
-   aria-label="Administrateur">
-
-    <i class="fa-solid fa-user-shield"></i>
-
-</a>
+        <a href="admin/connexion_admin.php" class="admin-icon" title="Administrateur" aria-label="Administrateur">
+          <i class="fa-solid fa-user-shield"></i> 
+        </a>
     </div>
 
     <form id="searchBox" class="search-panel" action="index.html" method="GET">
@@ -3629,6 +3624,7 @@ Responsive
 
   <!-- LIENS PRINCIPAUX -->
   <a href="index.html"><i class="fa-solid fa-building-columns"></i> Accueil</a>
+  <a href="admin/connexion_admin.php" class="admin-icon" title="Administrateur" aria-label="Administrateur"><i class="fa-solid fa-user-shield"></i>Administrateur</a>
   <a href="apercu general.html"> 📰 Historique</a>
  <div class="submenu-container">
   <button class="submenu-btn">
@@ -3643,38 +3639,25 @@ Responsive
     <a href="cb.html"><i class="fa-solid fa-users-gear"></i>Chefs de Bureau</a>
   </div>
 </div>
-  <a href="mission.php">🎯 Missions</a>
-  <a href="document.html">🗂️ Documents officiels</a>
+  <a href="mission.php">🎯 Missions réalisées</a>
+  <a href="document.php">🗂️ Documents officiels</a>
+
     <div class="submenu-container">
-    <button class="submenu-btn">📖 Présentation de l'IGTER<i class="fa-solid fa-caret-down"></i></button>
-    <div class="submenu-content">
-     <a href="apercu general.html">👁️ Aperçu Général</a>
-    <div class="submenu-container">
-    <button class="submenu-btn">🧩 Organisation<i class="fa-solid fa-caret-down"></i></button>
+    <button class="submenu-btn">🧩 Structures organiques<i class="fa-solid fa-caret-down"></i></button>
     <div class="submenu-content">
       <a href="administration_centrale.html"><i class="fa-solid fa-building"></i> Administration Centrale (1)</a>
      <a href="pool.html"><i class="fa-solid fa-layer-group"></i> Pool (8)</a>
      <a href="inspection_provinciale.html"><i class="fa-solid fa-map-location-dot"></i> Inspections Provinciales (26)</a>
-      <a href="inspection_provinciale.html"><i class="fa-solid fa-satellite-dish"></i> ± 2 Antennes/IPTER</a></div>
-    <div class="submenu-container">
-    <button class="submenu-btn">⚖️ Création<i class="fa-solid fa-caret-down"></i></button>
-    <div class="submenu-content">
-    <a href="pdf/DECRET.pdf" target="_blank" download>
-      <i class="fa-solid fa-file-pdf"></i> Décret N° 19/13 DU 16 MAI 2019
-    </a>
-     <a href="index.html">
-      <i class="fa-solid fa-file-pdf"></i> Cadre organique
-    </a>
-    </div></div></div>
-</div>
-
+      <a href="inspection_provinciale.html"><i class="fa-solid fa-satellite-dish"></i> ± 2 Antennes/IPTER</a>
+    </div>
+    </div>
   <!-- Sous-menu Provinces / ETDs -->
   <div class="submenu-container">
     <button class="submenu-btn">🌍 Provinces/ETDs<i class="fa-solid fa-caret-down"></i></button>
     <div class="submenu-content">
       <a href="province.html"><i class="fa-solid fa-layer-group"></i> Liste des Provinces</a>
-      <a href="etd.html"><i class="fa-solid fa-satellite-dish"></i> Liste des Entités Territoriales</a>
-       <a href="scd.html"><i class="fa-solid fa-satellite-dish"></i> Liste des Services Centraux et Déconcentrés/MISDAC</a>
+      <a href="etd1.html"><i class="fa-solid fa-satellite-dish"></i> Liste des Entités Territoriales</a>
+       <a href="scdmisdac.html"><i class="fa-solid fa-satellite-dish"></i> Liste des Services Centraux et Déconcentrés du Ministère de l'Intérieur, Sécurité, Décentralisation & Affaires Coutumières</a>
     </div>
   </div>
 
@@ -3884,39 +3867,31 @@ Responsive
 
     <div class="news-grid">
 
-        <!-- Carte Actualité -->
+        <!-- =========================
+             CARTE ACTUALITÉ
+        ========================== -->
+
         <div class="news-card">
 
-    <h3>Actualités</h3>
+            <h3>Actualités</h3>
 
-    <div class="news-body">
+            <div class="news-body" id="actualiteRecente">
+            <!-- Chargement automatique -->
+                <div class="news-image">
+                  <div class="news-loading"><i class="fa-solid fa-spinner fa-spin"></i></div>
+                </div>
 
-        <div class="news-image"><img src="images/IG&IGA2.png" alt="Actualité"></div>
-
-        <div class="news-info">
-
-            <h4>Prestation de serment</h4>
-
-            <span class="news-date"><i class="fas fa-calendar-alt"></i>10 Juin 2026</span>
-            <p>
-                Prestation de serment de Monsieur l'Inspecteur Général de la Territoriale,
-                <strong style="color:#CE1126;">MULOLO KANYMBU Didier</strong>,
-                et de Monsieur l'Inspecteur Général Adjoint de la Territoriale,
-                <strong style="color:#0F8B44;">SHOMBA WA SHOMBA Désiré</strong>.
-            </p>
-
-            <a href="actualite.html" class="news-link">
-                Lire toutes les actualités
-                <i class="fas fa-arrow-right"></i>
-            </a>
-
+                <div class="news-info">
+                  <h4>Chargement...</h4>
+                    <span class="news-date"><i class="fas fa-calendar-alt"></i>...</span>
+                  <p>Chargement de la dernière actualité...</p>
+                </div>
+            </div>
         </div>
 
-    </div>
-
-</div>
-
-        <!-- Carte Réseaux sociaux -->
+         <!-- =========================
+             CARTE RESEAUX SOCIAUX
+        ========================== -->
         <div class="social-card">
 
             <h3>Nous suivre</h3>
@@ -4688,5 +4663,239 @@ document.addEventListener('keydown', function(event) {
 
     </div>
 </div>
+<script>
+
+document.addEventListener(
+    'DOMContentLoaded',
+    function () {
+
+        const actualiteContainer =
+            document.getElementById(
+                'actualiteRecente'
+            );
+
+
+        if (!actualiteContainer) {
+
+            return;
+
+        }
+
+
+        /*
+        |--------------------------------------------------------------------------
+        | RÉCUPÉRATION DE LA DERNIÈRE ACTUALITÉ
+        |--------------------------------------------------------------------------
+        */
+
+        fetch('actualite_recente.php', {
+            method: 'GET',
+            cache: 'no-store'
+        })
+
+        .then(function (response) {
+
+            if (!response.ok) {
+
+                throw new Error(
+                    'Erreur serveur'
+                );
+
+            }
+
+            return response.json();
+
+        })
+
+        .then(function (data) {
+
+
+            /*
+            |--------------------------------------------------------------------------
+            | AUCUNE ACTUALITÉ
+            |--------------------------------------------------------------------------
+            */
+
+            if (
+                !data.success ||
+                !data.actualite
+            ) {
+
+                actualiteContainer.innerHTML = `
+
+                    <div class="news-image">
+
+                        <img
+                            src="images/IG&IGA2.png"
+                            alt="Actualités">
+
+                    </div>
+
+                    <div class="news-info">
+
+                        <h4>
+                            Aucune actualité publiée
+                        </h4>
+
+                        <p>
+                            Aucune actualité n'est actuellement
+                            disponible.
+                        </p>
+
+                        <a
+                            href="actualite.php"
+                            class="news-link">
+
+                            Voir les actualités
+
+                            <i class="fas fa-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+                `;
+
+                return;
+
+            }
+
+
+            /*
+            |--------------------------------------------------------------------------
+            | DONNÉES
+            |--------------------------------------------------------------------------
+            */
+
+            const actualite =
+                data.actualite;
+
+
+            /*
+            |--------------------------------------------------------------------------
+            | AFFICHAGE
+            |--------------------------------------------------------------------------
+            */
+
+            actualiteContainer.innerHTML = `
+
+                <div class="news-image">
+
+                    <img
+                        src="${escapeHtml(actualite.image)}"
+                        alt="${escapeHtml(actualite.titre)}">
+
+                </div>
+
+
+                <div class="news-info">
+
+                    <h4>
+
+                        ${escapeHtml(actualite.titre)}
+
+                    </h4>
+
+
+                    <span class="news-date">
+
+                        <i class="fas fa-calendar-alt"></i>
+
+                        ${escapeHtml(actualite.date)}
+
+                    </span>
+
+
+                    <p>
+
+                        ${escapeHtml(actualite.contenu)}
+
+                    </p>
+
+
+                    <a
+                        href="actualite.php?id=${actualite.id}"
+                        class="news-link">
+
+                        Lire cette actualité
+
+                        <i class="fas fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            `;
+
+        })
+
+        .catch(function (error) {
+
+            console.error(
+                'Erreur actualité :',
+                error
+            );
+
+
+            actualiteContainer.innerHTML = `
+
+                <div class="news-image">
+
+                    <img
+                        src="images/IG&IGA2.png"
+                        alt="Actualités">
+
+                </div>
+
+
+                <div class="news-info">
+
+                    <h4>
+                        Actualités
+                    </h4>
+
+                    <p>
+                        Impossible de charger les actualités
+                        pour le moment.
+                    </p>
+
+                    <a
+                        href="actualite.php"
+                        class="news-link">
+
+                        Voir toutes les actualités
+
+                        <i class="fas fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            `;
+
+        });
+
+
+        /*
+        |--------------------------------------------------------------------------
+        | PROTECTION CONTRE L'INJECTION HTML
+        |--------------------------------------------------------------------------
+        */
+
+        function escapeHtml(value) {
+
+            const div =
+                document.createElement('div');
+
+            div.textContent =
+                value ?? '';
+
+            return div.innerHTML;
+
+        }
+
+    });
+
+</script>
 </body>
 </html>
