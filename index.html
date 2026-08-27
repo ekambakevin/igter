@@ -3135,306 +3135,6 @@ Responsive
     }
 
 }
-
-/* =================================
-   FENÊTRE CHOIX SAISINE
-================================= */
-
-.saisine-modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    z-index: 99999;
-
-    background: rgba(0, 0, 0, 0.65);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-
-    align-items: center;
-    justify-content: center;
-
-    padding: 20px;
-}
-
-.saisine-modal.active {
-    display: flex;
-}
-
-.saisine-modal-content {
-    position: relative;
-
-    width: 100%;
-    max-width: 560px;
-
-    background: #ffffff;
-    border-radius: 18px;
-
-    padding: 35px 30px;
-
-    text-align: center;
-
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.30);
-
-    animation: saisineModalIn 0.3s ease;
-}
-
-@keyframes saisineModalIn {
-    from {
-        opacity: 0;
-        transform: translateY(-20px) scale(0.96);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-}
-
-/* Bouton fermer */
-
-.saisine-close {
-    position: absolute;
-    top: 12px;
-    right: 15px;
-
-    width: 38px;
-    height: 38px;
-
-    border: none;
-    border-radius: 50%;
-
-    background: transparent;
-
-    font-size: 28px;
-    line-height: 1;
-
-    color: #555;
-
-    cursor: pointer;
-
-    transition: 0.3s;
-}
-
-.saisine-close:hover {
-    background: #f1f1f1;
-    color: #c62828;
-}
-
-/* Icône */
-
-.saisine-icon {
-    width: 65px;
-    height: 65px;
-
-    margin: 0 auto 18px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 50%;
-
-    background: #0F5D3F;
-    color: #ffffff;
-
-    font-size: 28px;
-}
-
-/* =================================
-   LOGO
-================================= */
-
-.saisine-logo {
-    text-align: center;
-    margin-bottom: 12px;
-}
-
-.saisine-logo img {
-    width: 90px;
-    height: 90px;
-    object-fit: contain;
-    display: block;
-    margin: 0 auto;
-}
-
-
-/* =================================
-   TITRE MODE DE SAISINE
-================================= */
-
-.saisine-modal-content h2 {
-    position: relative;
-
-    margin: 0;
-    padding: 0 0 14px;
-
-    color: #0F5D3F;
-    font-size: 25px;
-    font-weight: 700;
-
-    /* Suppression de la ligne jaune */
-    border: none !important;
-    border-left: none !important;
-}
-
-
-/* =================================
-   BARRE TRICOLORE RDC
-================================= */
-
-.saisine-modal-content h2::after {
-    content: "";
-
-    display: block;
-
-    width: 100%;
-    max-width: 330px;
-    height: 5px;
-
-    margin: 10px auto 0;
-
-    background: linear-gradient(
-        to right,
-        #007FFF 0%,
-        #007FFF 33.33%,
-
-        #F7D618 33.33%,
-        #F7D618 66.66%,
-
-        #CE1021 66.66%,
-        #CE1021 100%
-    );
-
-    border-radius: 3px;
-}
-
-.saisine-modal-content p {
-    margin: 8px 0;
-
-    color: #444;
-
-    font-size: 16px;
-    line-height: 1.6;
-}
-
-.saisine-question {
-    margin-top: 20px !important;
-    color: #222 !important;
-}
-
-/* Options */
-
-.saisine-options {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-
-    gap: 18px;
-
-    margin-top: 25px;
-}
-
-.saisine-option {
-    border: 2px solid #ddd;
-
-    border-radius: 12px;
-
-    padding: 20px 15px;
-
-    background: #ffffff;
-
-    cursor: pointer;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-
-    font-size: 16px;
-    font-weight: 600;
-
-    transition: all 0.3s ease;
-}
-
-.saisine-option i {
-    font-size: 30px;
-}
-
-.personne-morale {
-    color: #0F5D3F;
-}
-
-.personne-physique {
-    color: #003366;
-}
-
-.personne-morale:hover {
-    background: #0F5D3F;
-    border-color: #0F5D3F;
-    color: #ffffff;
-    transform: translateY(-3px);
-}
-
-.personne-physique:hover {
-    background: #003366;
-    border-color: #003366;
-    color: #ffffff;
-    transform: translateY(-3px);
-}
-
-/* =================================
-   MOBILE
-================================= */
-@media (max-width: 600px) {
-
-    .saisine-modal {
-        padding: 15px;
-    }
-
-    .saisine-modal-content {
-        padding: 30px 20px;
-        border-radius: 15px;
-    }
-
-    .saisine-logo {
-        margin-bottom: 10px;
-    }
-
-    .saisine-logo img {
-        width: 75px;
-        height: 75px;
-    }
-
-    .saisine-modal-content h2 {
-        font-size: 21px;
-        padding-bottom: 12px;
-    }
-
-    .saisine-modal-content h2::after {
-        width: 85%;
-        max-width: 280px;
-        height: 4px;
-        margin-top: 8px;
-    }
-
-    .saisine-modal-content p {
-        font-size: 14px;
-    }
-
-    .saisine-options {
-        grid-template-columns: 1fr;
-        gap: 12px;
-    }
-
-    .saisine-option {
-        padding: 15px;
-        flex-direction: row;
-        justify-content: center;
-    }
-
-    .saisine-option i {
-        font-size: 24px;
-    }
-}
 </style>
 
 </head>
@@ -3498,33 +3198,30 @@ Responsive
 
     <div class="menu-icons">
 
-        <button id="searchBtn" class="search-icon" type="button" title="Barre de recherche">
+        <button id="searchBtn" class="search-icon" type="button">
             <i class="fa-solid fa-magnifying-glass"></i>
         </button>
 
-        <a href="https://web.facebook.com/groups/544962343127299/user/61584911503215" target="_blank" title="Facebook">
+        <a href="https://web.facebook.com/groups/544962343127299/user/61584911503215" target="_blank">
             <i class="fa-brands fa-facebook-f"></i>
         </a>
 
-        <a href="https://x.com/nomducompte" target="_blank" title="X (Twitter">
+        <a href="https://x.com/nomducompte" target="_blank">
             <i class="fa-brands fa-x-twitter"></i>
         </a>
 
-        <a href="https://youtube.com/nomducompte" target="_blank" title="YouTube">
+        <a href="https://youtube.com/nomducompte" target="_blank">
             <i class="fa-brands fa-youtube"></i>
         </a>
 
-        <a href="https://instagram.com/nomducompte" target="_blank" title="Instagram">
+        <a href="https://instagram.com/nomducompte" target="_blank">
             <i class="fa-brands fa-instagram"></i>
         </a>
 
-        <a href="https://wa.me/00243822080469" target="_blank" title="WhatsApp">
+        <a href="https://wa.me/00243822080469" target="_blank">
             <i class="fa-brands fa-whatsapp"></i>
         </a>
 
-        <a href="admin/connexion_admin.php" class="admin-icon" title="Administrateur" aria-label="Administrateur">
-          <i class="fa-solid fa-user-shield"></i> 
-        </a>
     </div>
 
     <form id="searchBox" class="search-panel" action="index.html" method="GET">
@@ -3602,7 +3299,7 @@ Responsive
   </div>
 </div>
   <a href="document.html">Documents officiels</a>
-  <a href="#" onclick="ouvrirChoixSaisine(event)">Saisissez-nous</a>
+  <a href="mode_saisine.html">Saisissez-nous</a>
 </div>
   <!-- MENU MOBILE -->
   <div class="mobile-menu-bar">
@@ -3624,7 +3321,6 @@ Responsive
 
   <!-- LIENS PRINCIPAUX -->
   <a href="index.html"><i class="fa-solid fa-building-columns"></i> Accueil</a>
-  <a href="admin/connexion_admin.php" class="admin-icon" title="Administrateur" aria-label="Administrateur"><i class="fa-solid fa-user-shield"></i>Administrateur</a>
   <a href="apercu general.html"> 📰 Historique</a>
  <div class="submenu-container">
   <button class="submenu-btn">
@@ -3639,31 +3335,44 @@ Responsive
     <a href="cb.html"><i class="fa-solid fa-users-gear"></i>Chefs de Bureau</a>
   </div>
 </div>
-  <a href="mission.php">🎯 Missions réalisées</a>
-  <a href="document.php">🗂️ Documents officiels</a>
-
+  <a href="mission.html">🎯 Missions</a>
+  <a href="document.html">🗂️ Documents officiels</a>
     <div class="submenu-container">
-    <button class="submenu-btn">🧩 Structures organiques<i class="fa-solid fa-caret-down"></i></button>
+    <button class="submenu-btn">📖 Présentation de l'IGTER<i class="fa-solid fa-caret-down"></i></button>
+    <div class="submenu-content">
+     <a href="apercu general.html">👁️ Aperçu Général</a>
+    <div class="submenu-container">
+    <button class="submenu-btn">🧩 Organisation<i class="fa-solid fa-caret-down"></i></button>
     <div class="submenu-content">
       <a href="administration_centrale.html"><i class="fa-solid fa-building"></i> Administration Centrale (1)</a>
      <a href="pool.html"><i class="fa-solid fa-layer-group"></i> Pool (8)</a>
      <a href="inspection_provinciale.html"><i class="fa-solid fa-map-location-dot"></i> Inspections Provinciales (26)</a>
-      <a href="inspection_provinciale.html"><i class="fa-solid fa-satellite-dish"></i> ± 2 Antennes/IPTER</a>
-    </div>
-    </div>
+      <a href="inspection_provinciale.html"><i class="fa-solid fa-satellite-dish"></i> ± 2 Antennes/IPTER</a></div>
+    <div class="submenu-container">
+    <button class="submenu-btn">⚖️ Création<i class="fa-solid fa-caret-down"></i></button>
+    <div class="submenu-content">
+    <a href="pdf/DECRET.pdf" target="_blank" download>
+      <i class="fa-solid fa-file-pdf"></i> Décret N° 19/13 DU 16 MAI 2019
+    </a>
+     <a href="index.html">
+      <i class="fa-solid fa-file-pdf"></i> Cadre organique
+    </a>
+    </div></div></div>
+</div>
+
   <!-- Sous-menu Provinces / ETDs -->
   <div class="submenu-container">
     <button class="submenu-btn">🌍 Provinces/ETDs<i class="fa-solid fa-caret-down"></i></button>
     <div class="submenu-content">
       <a href="province.html"><i class="fa-solid fa-layer-group"></i> Liste des Provinces</a>
-      <a href="etd1.html"><i class="fa-solid fa-satellite-dish"></i> Liste des Entités Territoriales</a>
-       <a href="scdmisdac.html"><i class="fa-solid fa-satellite-dish"></i> Liste des Services Centraux et Déconcentrés du Ministère de l'Intérieur, Sécurité, Décentralisation & Affaires Coutumières</a>
+      <a href="etd.html"><i class="fa-solid fa-satellite-dish"></i> Liste des Entités Territoriales</a>
+       <a href="scd.html"><i class="fa-solid fa-satellite-dish"></i> Liste des Services Centraux et Déconcentrés/MISDAC</a>
     </div>
   </div>
 
   <a href="https://interieur.gouv.cd/services/details/IGTER"><i class="fa-solid fa-shield"></i> Ministère de tutelle</a>
-  
-  <a href="#" onclick="ouvrirChoixSaisine(event)">📝 Saisissez-nous</a>
+
+  <a href="mode_saisine.html">📝 Saisissez-nous</a>
   <a href="#contact">☎️ Nos contacts</a>
 
 </div></div>
@@ -3753,13 +3462,13 @@ Responsive
     ========================== -->
     <div class="stats-slider">
         <div class="stats-slide active"><i class="fas fa-users"></i>
-            <h3 id="nbInspecteurs">± 500</h3>
+            <h3 id="nbInspecteurs">0</h3>
             <p>Inspecteurs de la Territoriale</p>
         </div>
 
         <div class="stats-slide"><i class="fas fa-clipboard-list"></i>
             <h3 id="nbMissions">0</h3>
-            <p>Missions réalisées (Janvier 2026 à ce jour)</p>
+            <p>Missions réalisées (2026 à ce jour)</p>
         </div>
 
         <div class="stats-slide"><i class="fas fa-search"></i>
@@ -3798,7 +3507,7 @@ Responsive
         </div>
 
         <div class="gallery-link">
-            <a href="mission.php">Voir toute la galerie de missions réalisées<i class="fas fa-arrow-right"></i></a>
+            <a href="galerie.html">Voir toute la galerie de missions réalisées<i class="fas fa-arrow-right"></i></a>
         </div>
     </div>
 </div>
@@ -3853,11 +3562,11 @@ Responsive
 </section>
 
 <div class="saisine-bar reveal-on-scroll" id="saisine">
-  <a href="mode_saisine.php" class="saisine-btn">
+  <a href="mode_saisine.html" class="saisine-btn">
     <i class="fas fa-paper-plane"></i>Saisissez l’IGTER pour toute question en Administration Territoriale en RDC.</a>
 
   <!-- NOUVEAU BOUTON -->
-  <a href="mission.php" class="saisine-btn secondary-btn" id="missions"><i class="fas fa-chart-bar"></i>Voir nos missions récentes</a>
+  <a href="mission.html" class="saisine-btn secondary-btn" id="missions"><i class="fas fa-chart-bar"></i>Voir nos missions récentes</a>
 </div>
 
 <!-- =========================
@@ -3867,31 +3576,39 @@ Responsive
 
     <div class="news-grid">
 
-        <!-- =========================
-             CARTE ACTUALITÉ
-        ========================== -->
-
+        <!-- Carte Actualité -->
         <div class="news-card">
 
-            <h3>Actualités</h3>
+    <h3>Actualités</h3>
 
-            <div class="news-body" id="actualiteRecente">
-            <!-- Chargement automatique -->
-                <div class="news-image">
-                  <div class="news-loading"><i class="fa-solid fa-spinner fa-spin"></i></div>
-                </div>
+    <div class="news-body">
 
-                <div class="news-info">
-                  <h4>Chargement...</h4>
-                    <span class="news-date"><i class="fas fa-calendar-alt"></i>...</span>
-                  <p>Chargement de la dernière actualité...</p>
-                </div>
-            </div>
+        <div class="news-image"><img src="images/IG&IGA2.png" alt="Actualité"></div>
+
+        <div class="news-info">
+
+            <h4>Prestation de serment</h4>
+
+            <span class="news-date"><i class="fas fa-calendar-alt"></i>10 Juin 2026</span>
+            <p>
+                Prestation de serment de Monsieur l'Inspecteur Général de la Territoriale,
+                <strong style="color:#CE1126;">MULOLO KANYMBU Didier</strong>,
+                et de Monsieur l'Inspecteur Général Adjoint de la Territoriale,
+                <strong style="color:#0F8B44;">SHOMBA WA SHOMBA Désiré</strong>.
+            </p>
+
+            <a href="actualite.html" class="news-link">
+                Lire toutes les actualités
+                <i class="fas fa-arrow-right"></i>
+            </a>
+
         </div>
 
-         <!-- =========================
-             CARTE RESEAUX SOCIAUX
-        ========================== -->
+    </div>
+
+</div>
+
+        <!-- Carte Réseaux sociaux -->
         <div class="social-card">
 
             <h3>Nous suivre</h3>
@@ -3960,11 +3677,15 @@ Responsive
 
   <form id="newsletterForm" class="newsletter-form">
 
-    <input type="email" id="email" name="email" placeholder="Votre adresse email" required>
-    <button type="submit">S'abonner</button>
-</form>
-</div>
+    <input type="email" placeholder="Votre adresse email">
 
+    <button type="submit">
+      S'abonner
+    </button>
+
+  </form>
+
+</div>
 <div id="toast" class="toast">
   <div class="toast-content">
     <span id="toast-icon">⚠️</span>
@@ -4117,50 +3838,13 @@ function showToast(message, type = "info") {
 }
 
 // Newsletter
-document.getElementById("newsletterForm")
-.addEventListener("submit", function(e){
-
+document.getElementById("newsletterForm").addEventListener("submit", function(e){
     e.preventDefault();
 
-    let email=document.getElementById("email").value.trim();;
-
-    // Vérification du format de l'adresse email
-const regexEmail = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
-
-if (!regexEmail.test(email)) {
     showToast(
-        "Veuillez saisir une adresse email valide comme ekambakevin@gmail.com.",
-        "error"
+        "Désolé ! Vous ne pouvez pas vous abonner pour le moment. Prochainement !",
+        "info"
     );
-    return;
-}
-
-    fetch("newsletter.php",{
-
-        method:"POST",
-
-        headers:{
-            "Content-Type":"application/x-www-form-urlencoded"
-        },
-
-        body:"email="+encodeURIComponent(email)
-
-    })
-
-    .then(r=>r.json())
-
-    .then(data=>{
-
-        showToast(data.message,data.type);
-
-        if(data.type==="success"){
-
-            document.getElementById("newsletterForm").reset();
-
-        }
-
-    });
-
 });
 
 </script>
@@ -4404,135 +4088,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 <script>
-/* =========================================
-   STATISTIQUES IGTER
-========================================= */
-
-document.addEventListener("DOMContentLoaded", function () {
-
-    const nbInspecteurs =
-        document.getElementById("nbInspecteurs");
-
-    const nbMissions =
-        document.getElementById("nbMissions");
-
-    const nbControle =
-        document.getElementById("nbControle");
-
-    const nbEncadrement =
-        document.getElementById("nbEncadrement");
-
-    const nbSuivi =
-        document.getElementById("nbSuivi");
-
-    const nbGouvernance =
-        document.getElementById("nbGouvernance");
-
-    /*
-    |--------------------------------------------------------------------------
-    | Vérifier que la section existe
-    |--------------------------------------------------------------------------
-    */
-
-    if (!nbMissions) {
-        return;
-    }
-
-
-    /*
-    |--------------------------------------------------------------------------
-    | Récupération des statistiques
-    |--------------------------------------------------------------------------
-    */
-
-    fetch("statistiques.php")
-
-        .then(response => {
-
-            if (!response.ok) {
-                throw new Error(
-                    "Erreur lors de la récupération des statistiques."
-                );
-            }
-
-            return response.json();
-
-        })
-
-        .then(data => {
-
-            /*
-            |--------------------------------------------------------------------------
-            | Inspecteurs
-            |--------------------------------------------------------------------------
-            */
-
-            nbInspecteurs.textContent =
-                Number(data.inspecteurs).toLocaleString("fr-FR");
-
-
-            /*
-            |--------------------------------------------------------------------------
-            | Missions
-            |--------------------------------------------------------------------------
-            */
-
-            nbMissions.textContent =
-                Number(data.missions).toLocaleString("fr-FR");
-
-
-            /*
-            |--------------------------------------------------------------------------
-            | Contrôle
-            |--------------------------------------------------------------------------
-            */
-
-            nbControle.textContent =
-                Number(data.controle).toLocaleString("fr-FR");
-
-
-            /*
-            |--------------------------------------------------------------------------
-            | Encadrement
-            |--------------------------------------------------------------------------
-            */
-
-            nbEncadrement.textContent =
-                Number(data.encadrement).toLocaleString("fr-FR");
-
-
-            /*
-            |--------------------------------------------------------------------------
-            | Suivi
-            |--------------------------------------------------------------------------
-            */
-
-            nbSuivi.textContent =
-                Number(data.suivi).toLocaleString("fr-FR");
-
-
-          /*
-            |--------------------------------------------------------------------------
-            | Gouvernance 
-            |--------------------------------------------------------------------------
-            */
-
-            nbGouvernance.textContent =
-                Number(data.gouvernance).toLocaleString("fr-FR");
-
-        })
-
-        .catch(error => {
-
-            console.error(
-                "Statistiques IGTER :",
-                error
-            );
-
-        });
-
-})
-
 /*============================
      SLIDER STATISTIQUES
 =============================*/
@@ -4564,338 +4119,7 @@ function afficherStat(){
 setInterval(afficherStat,3000);
 
 afficherStat();
-
-function ouvrirChoixSaisine(event) {
-    event.preventDefault();
-
-    const modal = document.getElementById('saisineModal');
-
-    if (modal) {
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    }
-}
-
-function fermerChoixSaisine() {
-    const modal = document.getElementById('saisineModal');
-
-    if (modal) {
-        modal.classList.remove('active');
-        document.body.style.overflow = '';
-    }
-}
-
-function choisirSaisine(type) {
-
-    if (type === 'morale') {
-        window.location.href = 'mode_saisine1.php';
-    }
-
-    else if (type === 'physique') {
-        window.location.href = 'mode_saisine2.php';
-    }
-}
-
-/* Fermer en cliquant en dehors de la fenêtre */
-
-document.addEventListener('click', function(event) {
-
-    const modal = document.getElementById('saisineModal');
-
-    if (event.target === modal) {
-        fermerChoixSaisine();
-    }
-
-});
-
-/* Fermer avec la touche Échap */
-
-document.addEventListener('keydown', function(event) {
-
-    if (event.key === 'Escape') {
-        fermerChoixSaisine();
-    }
-
-});
 </script>
 <script src="recherche.js"></script>
-<!-- ================================
-     FENÊTRE DE CHOIX DU REQUÉRANT
-================================= -->
-<div id="saisineModal" class="saisine-modal">
-
-    <div class="saisine-modal-content">
-
-        <button class="saisine-close" onclick="fermerChoixSaisine()">
-            &times;
-        </button>
-
-        <div class="saisine-logo"><img src="images/logo.png" alt="Logo IGTER"></div>
-
-        <h2>MODE DE SAISINE</h2>
-
-        <p>
-            Vous êtes sur le point de vouloir déposer votre requête
-            à l'Inspection Générale de la Territoriale de la République Démocratique du Congo.
-        </p>
-
-        <p class="saisine-question">
-            <strong>Dites-nous : Qui êtes-vous ?</strong>
-        </p>
-
-        <div class="saisine-options">
-
-            <button type="button"
-                    class="saisine-option personne-morale"
-                    onclick="choisirSaisine('morale')">
-                <i class="fa-solid fa-building"></i>
-                <span>Personne morale</span>
-            </button>
-
-            <button type="button"
-                    class="saisine-option personne-physique"
-                    onclick="choisirSaisine('physique')">
-                <i class="fa-solid fa-user"></i>
-                <span>Personne physique</span>
-            </button>
-
-        </div>
-
-    </div>
-</div>
-<script>
-
-document.addEventListener(
-    'DOMContentLoaded',
-    function () {
-
-        const actualiteContainer =
-            document.getElementById(
-                'actualiteRecente'
-            );
-
-
-        if (!actualiteContainer) {
-
-            return;
-
-        }
-
-
-        /*
-        |--------------------------------------------------------------------------
-        | RÉCUPÉRATION DE LA DERNIÈRE ACTUALITÉ
-        |--------------------------------------------------------------------------
-        */
-
-        fetch('actualite_recente.php', {
-            method: 'GET',
-            cache: 'no-store'
-        })
-
-        .then(function (response) {
-
-            if (!response.ok) {
-
-                throw new Error(
-                    'Erreur serveur'
-                );
-
-            }
-
-            return response.json();
-
-        })
-
-        .then(function (data) {
-
-
-            /*
-            |--------------------------------------------------------------------------
-            | AUCUNE ACTUALITÉ
-            |--------------------------------------------------------------------------
-            */
-
-            if (
-                !data.success ||
-                !data.actualite
-            ) {
-
-                actualiteContainer.innerHTML = `
-
-                    <div class="news-image">
-
-                        <img
-                            src="images/IG&IGA2.png"
-                            alt="Actualités">
-
-                    </div>
-
-                    <div class="news-info">
-
-                        <h4>
-                            Aucune actualité publiée
-                        </h4>
-
-                        <p>
-                            Aucune actualité n'est actuellement
-                            disponible.
-                        </p>
-
-                        <a
-                            href="actualite.php"
-                            class="news-link">
-
-                            Voir les actualités
-
-                            <i class="fas fa-arrow-right"></i>
-
-                        </a>
-
-                    </div>
-
-                `;
-
-                return;
-
-            }
-
-
-            /*
-            |--------------------------------------------------------------------------
-            | DONNÉES
-            |--------------------------------------------------------------------------
-            */
-
-            const actualite =
-                data.actualite;
-
-
-            /*
-            |--------------------------------------------------------------------------
-            | AFFICHAGE
-            |--------------------------------------------------------------------------
-            */
-
-            actualiteContainer.innerHTML = `
-
-                <div class="news-image">
-
-                    <img
-                        src="${escapeHtml(actualite.image)}"
-                        alt="${escapeHtml(actualite.titre)}">
-
-                </div>
-
-
-                <div class="news-info">
-
-                    <h4>
-
-                        ${escapeHtml(actualite.titre)}
-
-                    </h4>
-
-
-                    <span class="news-date">
-
-                        <i class="fas fa-calendar-alt"></i>
-
-                        ${escapeHtml(actualite.date)}
-
-                    </span>
-
-
-                    <p>
-
-                        ${escapeHtml(actualite.contenu)}
-
-                    </p>
-
-
-                    <a
-                        href="actualite.php?id=${actualite.id}"
-                        class="news-link">
-
-                        Lire cette actualité
-
-                        <i class="fas fa-arrow-right"></i>
-
-                    </a>
-
-                </div>
-
-            `;
-
-        })
-
-        .catch(function (error) {
-
-            console.error(
-                'Erreur actualité :',
-                error
-            );
-
-
-            actualiteContainer.innerHTML = `
-
-                <div class="news-image">
-
-                    <img
-                        src="images/IG&IGA2.png"
-                        alt="Actualités">
-
-                </div>
-
-
-                <div class="news-info">
-
-                    <h4>
-                        Actualités
-                    </h4>
-
-                    <p>
-                        Impossible de charger les actualités
-                        pour le moment.
-                    </p>
-
-                    <a
-                        href="actualite.php"
-                        class="news-link">
-
-                        Voir toutes les actualités
-
-                        <i class="fas fa-arrow-right"></i>
-
-                    </a>
-
-                </div>
-
-            `;
-
-        });
-
-
-        /*
-        |--------------------------------------------------------------------------
-        | PROTECTION CONTRE L'INJECTION HTML
-        |--------------------------------------------------------------------------
-        */
-
-        function escapeHtml(value) {
-
-            const div =
-                document.createElement('div');
-
-            div.textContent =
-                value ?? '';
-
-            return div.innerHTML;
-
-        }
-
-    });
-
-</script>
 </body>
 </html>
