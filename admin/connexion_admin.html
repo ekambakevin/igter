@@ -498,514 +498,69 @@ height:28px;
 }
 
 /* =========================
-   SOUS-MENU DESKTOP
-========================= */
-@media (min-width: 769px) {
-
-  .menu-item-with-submenu {
-    position: relative;
-  }
-
-  .menu-item-with-submenu a {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-  }
-
-  /* SOUS-MENU */
-  .submenu-content {
-    position: absolute;
-    top: 100%;
-    left: 0;
-
-    background: white;
-    min-width: 260px;
-
-    border-radius: 6px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
-
-    display: none;
-    flex-direction: column;
-
-    padding: 10px 0;
-    z-index: 999;
-  }
-
-  /* liens */
-  .menu-item-with-submenu .submenu-content a {
-  color: #222;
-}
-  .submenu-content a {
-  padding: 10px 15px;
-
-  text-decoration: none;
-  font-size: 14px;
-
-  display: flex;
-  align-items: center;
-  gap: 10px;
-
-  transition: 0.3s;
-}
-
-  .submenu-content a:hover {
-    background: #f4f6f9;
-    padding-left: 20px;
-  }
-
-  /* ACTIF */
-  .submenu-content.show {
-    display: flex;
-  }
-
-}
-
-/* =========================================
-   ZONE DE RECHERCHE - DESKTOP & MOBILE
-========================================= */
-
-.search-box {
-    display: flex;
-    align-items: center;
-    width: 250px;
-    height: 30px;
-    background: #ffffff;
-    border: 1px solid #d9e2dc;
-    border-radius: 25px;
-    overflow: hidden;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
-}
-
-/* Effet lorsque la zone est sélectionnée */
-.search-box:focus-within {
-    border-color: #0F5D3F;
-    box-shadow: 0 0 0 3px rgba(15, 93, 63, 0.12);
-}
-
-/* Champ de recherche */
-.search-box input {
-    flex: 1;
-    width: 100%;
-    height: 100%;
-    padding: 0 15px;
-    border: none;
-    outline: none;
-    background: transparent;
-    color: #333333;
-    font-size: 16px;
-}
-
-/* Placeholder */
-.search-box input::placeholder {
-    color: #888888;
-}
-
-
-/* =========================
-   BOUTON RECHERCHE
+PAGE EN CONSTRUCTION
 ========================= */
 
-.search-box button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 48px;
-    height: 100%;
-    
-    /* Séparateur noir */
-    border: none;
-    border-left: 2px solid #000000;
-    
-    background: white;
-    color: black;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-/* Survol du bouton */
-.search-box button:hover {
-    background: #ffcc00;
-}
-
-/* Icône */
-.search-box button i {
-    font-size: 16px;
-}
-
-/* =========================================
-   BOÎTE DE DIALOGUE - RECHERCHE ÉCHOUÉE
-========================================= */
-
-/* Fond sombre derrière la boîte */
-.search-dialog-overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.45);
-    align-items: center;
-    justify-content: center;
-    z-index: 99999;
-}
-
-/* Boîte de dialogue */
-.search-dialog {
-    width: 90%;
-    max-width: 400px;
-    background: #ffffff;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-    animation: searchDialogShow 0.25s ease;
-}
-
-/* Animation d'ouverture */
-@keyframes searchDialogShow {
-    from {
-        opacity: 0;
-        transform: scale(0.9);
-    }
-
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-/* En-tête */
-.search-dialog-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 15px 20px;
-    background: #0F5D3F;
-    color: #ffffff;
-    font-size: 17px;
-    font-weight: 600;
-}
-
-/* Icône */
-.search-dialog-header i {
-    font-size: 20px;
-}
-
-/* Corps */
-.search-dialog-body {
-    padding: 25px 20px 15px;
-    text-align: center;
-}
-
-.search-dialog-body p {
-    margin: 0;
-    color: #333333;
-    font-size: 15px;
-}
-
-/* Pied de la boîte */
-.search-dialog-footer {
-    display: flex;
-    justify-content: center;
-    padding: 10px 20px 20px;
-}
-
-/* Bouton Ok */
-#search-dialog-ok {
-    min-width: 80px;
-    padding: 9px 20px;
-    border: none;
-    border-radius: 5px;
-    background: #0F5D3F;
-    color: #ffffff;
-    font-size: 15px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.2s ease;
-}
-
-#search-dialog-ok:hover {
-    background: #0B4A32;
-}
-
-@media (max-width: 768px) {
-
-    /* =========================
-       ZONE DE RECHERCHE MOBILE
-    ========================= */
-
-    .search-box {
-        width: 180px;
-        max-width: 180px;
-        height: 34px;
-    }
-
-    .search-box input {
-        font-size: 12px;
-        padding: 0 10px;
-    }
-
-    .search-box input::placeholder {
-        font-size: 12px;
-    }
-
-    .search-box button {
-        width: 38px;
-    }
-
-    .search-box button i {
-        font-size: 14px;
-    }
-
-
-    /* =========================
-       BARRE MENU MOBILE
-    ========================= */
-
-    .mobile-menu-bar {
-        display: flex;
-        background: #003366;
-        padding: 8px 5px 8px 10px;
-        justify-content: flex-end;
-        align-items: center;
-    }
-
-    /* Icône Menu */
-
-    .mobile-menu-bar .menu-icon {
-        font-size: 32px;
-        line-height: 1;
-        color: white;
-        cursor: pointer;
-        padding: 0;
-        margin: 0;
-    }
-}
-
-/* =========================
-SECTION STRUCTURE ADMINISTRATIVE - VERSION MODERNE
-========================= */
-
-.structure-admin{
-padding:70px 8%;
-background:linear-gradient(to bottom,#f8fafc,#eef3f8);
-}
-
-/* TITRE SECTION */
-
-.titre-section{
-text-align:center;
-font-size:28px;
-font-weight:700;
-color:#003366;
-margin-bottom:50px;
-letter-spacing:1px;
-position:relative;
-}
-
-.titre-section::after{
-content:"";
-width:90px;
-height:4px;
-background:#f2b705;
-display:block;
-margin:15px auto 0;
-border-radius:4px;
-}
-
-/* GRILLE */
-
-.admin-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:30px;
-}
-
-/* CARTE */
-
-.admin-card{
-background:white;
-padding:30px 25px;
-border-radius:12px;
-box-shadow:0 8px 22px rgba(0,0,0,0.08);
-transition:all 0.35s ease;
-position:relative;
-overflow:hidden;
-border-top:5px solid #003366;
-}
-
-/* EFFET LUMIERE AU HOVER */
-
-.admin-card::before{
-content:"";
-position:absolute;
-top:0;
-left:-100%;
-width:100%;
-height:100%;
-background:linear-gradient(120deg,transparent,rgba(255,255,255,0.4),transparent);
-transition:0.5s;
-}
-
-.admin-card:hover::before{
-left:100%;
-}
-
-/* ANIMATION HOVER */
-
-.admin-card:hover{
-transform:translateY(-8px);
-box-shadow:0 15px 35px rgba(0,0,0,0.15);
-}
-
-/* ICONE */
-
-.admin-card i{
-font-size:30px;
-color:white;
-background:#003366;
-width:60px;
-height:60px;
+.construction-section{
 display:flex;
-align-items:center;
 justify-content:center;
-border-radius:50%;
-margin-bottom:18px;
-box-shadow:0 5px 12px rgba(0,0,0,0.2);
+align-items:center;
+min-height:60vh;
+background:#f4f6f9;
+padding:40px 20px;
 }
 
-/* TITRE */
+.construction-box{
+background:white;
+padding:40px;
+text-align:center;
+border-radius:10px;
+max-width:500px;
+box-shadow:0 8px 25px rgba(0,0,0,0.1);
+}
 
-.admin-card h3{
-font-size:18px;
-color:#003366;
+.construction-icon{
+font-size:50px;
+color:#f2b705;
 margin-bottom:15px;
+}
+
+.construction-box h1{
+font-size:26px;
+color:#003366;
+margin-bottom:10px;
+}
+
+.construction-box h2{
+font-size:26px;
+color:#003366;
+margin-bottom:10px;
+}
+
+.construction-box p{
+font-size:15px;
+color:#555;
+margin-bottom:25px;
+line-height:1.6;
+}
+
+/* bouton retour */
+
+.btn-retour{
+display:inline-block;
+padding:10px 20px;
+background:#003366;
+color:white;
+text-decoration:none;
+border-radius:6px;
+font-size:14px;
 font-weight:600;
+transition:0.3s;
 }
 
-/* LISTE */
-
-.admin-card p{
-font-size:14px;
-color:#555;
-margin:7px 0;
-line-height:1.5;
-padding-left:15px;
-position:relative;
-}
-
-/* BULLET STYLE */
-
-.admin-card p::before{
-content:"";
-width:6px;
-height:6px;
-background:#f2b705;
-border-radius:50%;
-position:absolute;
-left:0;
-top:8px;
-}
-
-/* =========================================
-CARTE SERVICES RATTACHÉS À L'INSPECTEUR GÉNÉRAL
-========================================= */
-
-.services-rattaches .service-principal{
-font-size:14px;
-color:#555;
-margin:7px 0;
-line-height:1.5;
-padding-left:15px;
-position:relative;
-}
-
-/* POINT JAUNE POUR LES SERVICES PRINCIPAUX */
-.services-rattaches .service-principal::before{
-content:"";
-width:6px;
-height:6px;
-background:#f2b705;
-border-radius:50%;
-position:absolute;
-left:0;
-top:8px;
-}
-
-/* LISTE NUMÉROTÉE */
-.services-rattaches .liste-services{
-margin:5px 0 0 20px;
-padding-left:20px;
-color:#555;
-font-size:14px;
-line-height:1.7;
-}
-
-/* PAS DE POINT JAUNE POUR LA LISTE NUMÉROTÉE */
-.services-rattaches .liste-services li::before{
-display:none;
-}
-
-/* ESPACEMENT ENTRE LES ÉLÉMENTS */
-.services-rattaches .liste-services li{
-padding-left:5px;
-}
-
-/* RESPONSIVE MOBILE */
-@media (max-width:600px){
-
-```
-.services-rattaches .service-principal{
-    font-size:13px;
-}
-
-.services-rattaches .liste-services{
-    font-size:13px;
-    line-height:1.6;
-    margin-left:15px;
-}
-```
-
-}
-
-/* RESPONSIVE TABLETTE */
-
-@media (max-width:900px){
-
-.admin-grid{
-grid-template-columns:repeat(2,1fr);
-}
-
-}
-
-/* RESPONSIVE MOBILE */
-
-@media (max-width:600px){
-
-.structure-admin{
-padding:50px 6%;
-}
-
-.titre-section{
-font-size:22px;
-}
-
-.admin-grid{
-grid-template-columns:1fr;
-}
-
-.admin-card{
-padding:22px;
-}
-
-.admin-card h3{
-font-size:16px;
-}
-
-.admin-card p{
-font-size:13px;
-}
-
+.btn-retour:hover{
+background:#0052a3;
+transform:translateY(-2px);
 }
 
 /* =========================
@@ -1720,7 +1275,7 @@ background:#e0a800;
 .search-panel button{
     width:45px;
     border:none;
-    
+
     background:#fff;
 
     border-left:1px solid #ccc;
@@ -1796,7 +1351,6 @@ background:#e0a800;
     }
 }
 
-
     /* =========================
        BARRE MENU MOBILE
     ========================= */
@@ -1819,91 +1373,6 @@ background:#e0a800;
         padding: 0;
         margin: 20;
     }
-}
-
-/* SECTION PRINCIPALE */
-.dirigeants-section{
-  width:100%;
-  padding:60px 8%;
-  background:#f5f7f6;
-  display:flex;
-  flex-direction:column;
-  gap:50px;
-}
-
-/* BOÎTE DIRIGEANT */
-.dirigeant-box{
-  display:flex;
-  gap:40px;
-  background:#fff;
-  padding:35px;
-  border-radius:15px;
-  box-shadow:0 5px 15px rgba(0,0,0,0.08);
-  align-items:flex-start;
-}
-
-/* PHOTO */
-.dirigeant-photo{
-  flex:0 0 200px;
-}
-
-.dirigeant-photo img{
-  width:100%;
-  border-radius:12px;
-  object-fit:cover;
-  border:4px solid #0F5D3F;
-}
-
-/* CONTENU */
-.dirigeant-content{
-  flex:1;
-  margin-top: 0;
-  padding-top: 0;
-}
-
-.dirigeant-content h1{
-  color:#0F5D3F;
-  margin-bottom:3px;
-  font-size:28px;
-  margin-top: 0;
-}
-
-.dirigeant-content h3{
-  color:#198754;
-  margin-bottom:5px;
-  font-size:20px;
-}
-
-.dirigeant-content p{
-  font-size:15px;
-  line-height:1.5;
-  color:#333;
-  text-align:justify;
-  margin-bottom:15px;
-}
-
-/* RESPONSIVE */
-@media(max-width:500px){
-
-  .dirigeant-box{
-    flex-direction: column;
-    gap: 0;
-  }
-
-  .dirigeant-photo{
-    width: 100%;
-  }
-
-  .dirigeant-content{
-    padding-top: 0px; /* ou 0 */
-    margin-top: 0;
-  }
-
-  .dirigeant-content h1{
-    font-size: 20px;
-    margin-top: 0px; /* ou 0 */
-  }
-
 }
 /* ==========================
    AFFICHAGE HEADER LEFT DESKTOP / MOBILE
@@ -1937,8 +1406,8 @@ background:#e0a800;
 
 <body>
 
-<header class="top-header">
-   <div class="header-left desktop-header">
+<header class="top-header" id="mission">
+    <div class="header-left desktop-header">
     <img src="images/logo.png" alt="Logo IGTER" class="logo">
 
     <!-- BARRE TRICOLORE -->
@@ -1968,6 +1437,7 @@ background:#e0a800;
         </div>
     </div>
 </div>
+    
 <div class="header-right">
 
   <div class="contact-item" id="top-contact">
@@ -2036,11 +1506,11 @@ background:#e0a800;
 
 </div>
 
- <!-- MENU DESKTOP -->
-  <div class="menu-right">
+  <!-- MENU DESKTOP -->
+<div class="menu-right">
   <a href="index.html">Accueil</a>
   <div class="dropdown">
-  <a href="javascript:void(0)">Dirigeants</a>
+  <a href="javascript:void(0)">Dirigeants</i></a>
 
   <div class="dropdown-content">
     <a href="ig_iga.html">I.G et I.G.A</a>
@@ -2052,7 +1522,6 @@ background:#e0a800;
   <a href="document.html">Documents</a>
   <a href="mode_saisine.html">Saisissez-nous</a>
 </div>
-
   <!-- MENU MOBILE -->
   <div class="mobile-menu-bar">
     <div class="menu-icon" onclick="openMenu()">☰</div>
@@ -2073,9 +1542,10 @@ background:#e0a800;
 
   <!-- LIENS PRINCIPAUX -->
   <a href="index.html"><i class="fa-solid fa-building-columns"></i> Accueil</a>
-  <a href="index.html"> 📰 Actualités</a>
+  <a href="#actualite"> 📰 Actualités</a>
   <a href="document.html">🗂️ Documents officiels</a>
-  <a href="#missions">🎯 Missions</a>
+  <a href="mission.html">🎯 Missions</a>
+  <a href="rapport.html">📊 Rapports</a>
   <div class="submenu-container">
     <button class="submenu-btn">📖 Présentation de l'IGTER<i class="fa-solid fa-caret-down"></i></button>
     <div class="submenu-content">
@@ -2088,15 +1558,17 @@ background:#e0a800;
      <a href="inspection_provinciale.html"><i class="fa-solid fa-map-location-dot"></i> Inspections Provinciales (26)</a>
       <a href="inspection_provinciale.html"><i class="fa-solid fa-satellite-dish"></i> ± 2 Antennes/IPTER</a></div>
     <div class="submenu-container">
-    <button class="submenu-btn">⚖️ Création<i class="fa-solid fa-caret-down"></i></button>
+    <button class="submenu-btn">⚖️ Cadre légal<i class="fa-solid fa-caret-down"></i></button>
     <div class="submenu-content">
     <a href="pdf/DECRET.pdf" target="_blank" download>
       <i class="fa-solid fa-file-pdf"></i> Décret de création
     </a>
-     <a href="administration_centrale.html">
+     <a href="pdf/CADRE ORGANIQUE.pdf" target="_blank" download>
       <i class="fa-solid fa-file-pdf"></i> Cadre organique
     </a>
     </div></div></div>
+
+    <a href="personnel.html">👥 Personnel</a>
 </div>
 
   <!-- Sous-menu Provinces / ETDs -->
@@ -2116,57 +1588,26 @@ background:#e0a800;
 
 </div></div>
 
-<!-- SECTION STRUCTURE ADMINISTRATIVE -->
+<!-- PAGE EN CONSTRUCTION -->
+<section class="construction-section">
 
-<section class="structure-admin" id="administration">
+<div class="construction-box">
 
-  <h2 class="titre-section">STRUCTURES ADMINISTRATION CENTRALE</h2>
+<div class="construction-icon">
+<i class="fa-solid fa-person-digging"></i>
+</div>
+  
+<h1> Page en conception conçue et développée en format php.<h1>
+<p>
+Veuillez attendre la mise en ligne officielle du site web de l'Inspection Générale de la Territoriale 
+à l'adresse "www.igter.gouv.cd", afin de voir le contenu de la page de connexion de l'Administrateur du Site Web. 
+</p>
 
-  <div class="admin-grid">
+<a href="index.html" class="btn-retour">
+<i class="fa-solid fa-arrow-left"></i> Retour à l'accueil
+</a>
 
-    <div class="admin-card">
-      <i class="fa-solid fa-user-tie"></i>
-      <h3>Administration de l'Inspecteur Général</h3>
-      <p>Inspecteur Général de la Territoriale</p>
-      <p>Inspecteur Général Adjoint de la Territoriale</p>
-      <p>Secrétariat Administratif</p>
-
-    </div>
-
-    <div class="admin-card services-rattaches">
-    <i class="fa-solid fa-sitemap"></i><h3>Services Rattachés à l'Inspecteur Général</h3>
-    <p class="service-principal">Secrétariat Technique</p>
-    <p class="service-principal">Cellule Technique d'Appui :</p>
-    <ol class="liste-services">
-    <li>Pool Juridique et Contentieux</li>
-    <li>Pool Communication Interne et Externe</li>
-    <li>Pool Audit Interne</li>
-    <li>Point Focal Ethique</li>
-    </ol>
-    </div>
-
-    <div class="admin-card">
-      <i class="fa-solid fa-building"></i>
-      <h3>Directions Standards</h3>
-      <p>Direction des Ressources Humaines</p>
-      <p>Direction Administrative et Financière</p>
-      <p>Direction d'Etudes et Planification</p>
-      <p>Direction des Archives et NTIC</p>
-    </div>
-
-    <div class="admin-card">
-      <i class="fa-solid fa-briefcase"></i>
-      <h3>Directions Métiers</h3>
-      <p>Direction Controle Services Centraux</p>
-      <p>Direction Controle Provinces et Entités Territoriales</p>
-      <p>Direction Questions Sécuritaires</p>
-      <p>Direction Encadrement Services Centraux et Entités Administratives</p>
-      <p>Direction Suivi et Evaluation des Performances des Services Centraux et Entités Administratives</p>
-      <p>Direction Promotion Gouvernance Territoriale</p>   
-    </div>
-
-  </div>
-
+</div>
 </section>
 
 <!-- FOOTER -->
@@ -2176,8 +1617,7 @@ background:#e0a800;
 
 <!-- Colonne 1 : Réseaux sociaux -->
 <div class="footer-col">
-
-  <!-- Localisation -->
+<!-- Localisation -->
   <h3>Localisation</h3>
   <div class="location-text">
   <a href="https://www.google.com/maps/search/?api=1&query=Immeuble+Semois+Royal+Kinshasa+Gombe" target="_blank">
@@ -2283,14 +1723,6 @@ background:#e0a800;
 </footer>
 
 <script>
-const submenuBtns = document.querySelectorAll(".submenu-btn");
-
-submenuBtns.forEach(btn => {
-  btn.addEventListener("click", function () {
-    this.parentElement.classList.toggle("active");
-  });
-});
-
 function openMenu(){
   document.getElementById("sideMenu").style.width="280px";
 }
@@ -2344,13 +1776,6 @@ submenu.classList.toggle("show");
 
 });
 
-document.querySelectorAll('.submenu-btn').forEach(button => {
-  button.addEventListener('click', () => {
-    button.nextElementSibling.classList.toggle('show');
-  });
-});
-
-
 function showToast(message, type = "info") {
     const toast = document.getElementById("toast");
     const msg = document.getElementById("toast-message");
@@ -2390,8 +1815,8 @@ document.getElementById("newsletterForm").addEventListener("submit", function(e)
         "info"
     );
 });
-</script>
 
+</script>
 <script>
 const revealElements = document.querySelectorAll('.reveal-on-scroll');
 
@@ -2408,61 +1833,6 @@ function revealOnScroll() {
 }
 
 window.addEventListener('scroll', revealOnScroll);
-</script>
-<script>
-function toggleSubmenu() {
-  const menu = document.getElementById("submenuOrg");
-  menu.classList.toggle("show");
-}
-
-/* fermer si on clique ailleurs */
-document.addEventListener("click", function(e) {
-  const submenu = document.getElementById("submenuOrg");
-  const trigger = document.querySelector(".menu-item-with-submenu");
-
-  if (!trigger.contains(e.target)) {
-    submenu.classList.remove("show");
-  }
-});
-
-function toggleSubmenu() {
-  const menu = document.getElementById("submenuOrg");
-  menu.classList.toggle("show");
-
-  // fermer l'autre
-  document.getElementById("submenuLegal").classList.remove("show");
-}
-
-function toggleSubmenuLegal() {
-  const menu = document.getElementById("submenuLegal");
-  menu.classList.toggle("show");
-
-  // fermer l'autre
-  document.getElementById("submenuOrg").classList.remove("show");
-}
-
-/* fermer si clic ailleurs */
-document.addEventListener("click", function(e) {
-
-  const org = document.getElementById("submenuOrg");
-  const legal = document.getElementById("submenuLegal");
-
-  const triggers = document.querySelectorAll(".menu-item-with-submenu");
-
-  let clickedInside = false;
-
-  triggers.forEach(trigger => {
-    if (trigger.contains(e.target)) {
-      clickedInside = true;
-    }
-  });
-
-  if (!clickedInside) {
-    org.classList.remove("show");
-    legal.classList.remove("show");
-  }
-
-});
 </script>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
