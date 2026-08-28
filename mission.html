@@ -1400,306 +1400,6 @@ background:#e0a800;
     }
 
 }
-
-/* =================================
-   FENÊTRE CHOIX SAISINE
-================================= */
-
-.saisine-modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    z-index: 99999;
-
-    background: rgba(0, 0, 0, 0.65);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-
-    align-items: center;
-    justify-content: center;
-
-    padding: 20px;
-}
-
-.saisine-modal.active {
-    display: flex;
-}
-
-.saisine-modal-content {
-    position: relative;
-
-    width: 100%;
-    max-width: 560px;
-
-    background: #ffffff;
-    border-radius: 18px;
-
-    padding: 35px 30px;
-
-    text-align: center;
-
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.30);
-
-    animation: saisineModalIn 0.3s ease;
-}
-
-@keyframes saisineModalIn {
-    from {
-        opacity: 0;
-        transform: translateY(-20px) scale(0.96);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-}
-
-/* Bouton fermer */
-
-.saisine-close {
-    position: absolute;
-    top: 12px;
-    right: 15px;
-
-    width: 38px;
-    height: 38px;
-
-    border: none;
-    border-radius: 50%;
-
-    background: transparent;
-
-    font-size: 28px;
-    line-height: 1;
-
-    color: #555;
-
-    cursor: pointer;
-
-    transition: 0.3s;
-}
-
-.saisine-close:hover {
-    background: #f1f1f1;
-    color: #c62828;
-}
-
-/* Icône */
-
-.saisine-icon {
-    width: 65px;
-    height: 65px;
-
-    margin: 0 auto 18px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 50%;
-
-    background: #0F5D3F;
-    color: #ffffff;
-
-    font-size: 28px;
-}
-
-/* =================================
-   LOGO
-================================= */
-
-.saisine-logo {
-    text-align: center;
-    margin-bottom: 12px;
-}
-
-.saisine-logo img {
-    width: 90px;
-    height: 90px;
-    object-fit: contain;
-    display: block;
-    margin: 0 auto;
-}
-
-
-/* =================================
-   TITRE MODE DE SAISINE
-================================= */
-
-.saisine-modal-content h2 {
-    position: relative;
-
-    margin: 0;
-    padding: 0 0 14px;
-
-    color: #0F5D3F;
-    font-size: 25px;
-    font-weight: 700;
-
-    /* Suppression de la ligne jaune */
-    border: none !important;
-    border-left: none !important;
-}
-
-
-/* =================================
-   BARRE TRICOLORE RDC
-================================= */
-
-.saisine-modal-content h2::after {
-    content: "";
-
-    display: block;
-
-    width: 100%;
-    max-width: 330px;
-    height: 5px;
-
-    margin: 10px auto 0;
-
-    background: linear-gradient(
-        to right,
-        #007FFF 0%,
-        #007FFF 33.33%,
-
-        #F7D618 33.33%,
-        #F7D618 66.66%,
-
-        #CE1021 66.66%,
-        #CE1021 100%
-    );
-
-    border-radius: 3px;
-}
-
-.saisine-modal-content p {
-    margin: 8px 0;
-
-    color: #444;
-
-    font-size: 16px;
-    line-height: 1.6;
-}
-
-.saisine-question {
-    margin-top: 20px !important;
-    color: #222 !important;
-}
-
-/* Options */
-
-.saisine-options {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-
-    gap: 18px;
-
-    margin-top: 25px;
-}
-
-.saisine-option {
-    border: 2px solid #ddd;
-
-    border-radius: 12px;
-
-    padding: 20px 15px;
-
-    background: #ffffff;
-
-    cursor: pointer;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-
-    font-size: 16px;
-    font-weight: 600;
-
-    transition: all 0.3s ease;
-}
-
-.saisine-option i {
-    font-size: 30px;
-}
-
-.personne-morale {
-    color: #0F5D3F;
-}
-
-.personne-physique {
-    color: #003366;
-}
-
-.personne-morale:hover {
-    background: #0F5D3F;
-    border-color: #0F5D3F;
-    color: #ffffff;
-    transform: translateY(-3px);
-}
-
-.personne-physique:hover {
-    background: #003366;
-    border-color: #003366;
-    color: #ffffff;
-    transform: translateY(-3px);
-}
-
-/* =================================
-   MOBILE
-================================= */
-@media (max-width: 600px) {
-
-    .saisine-modal {
-        padding: 15px;
-    }
-
-    .saisine-modal-content {
-        padding: 30px 20px;
-        border-radius: 15px;
-    }
-
-    .saisine-logo {
-        margin-bottom: 10px;
-    }
-
-    .saisine-logo img {
-        width: 75px;
-        height: 75px;
-    }
-
-    .saisine-modal-content h2 {
-        font-size: 21px;
-        padding-bottom: 12px;
-    }
-
-    .saisine-modal-content h2::after {
-        width: 85%;
-        max-width: 280px;
-        height: 4px;
-        margin-top: 8px;
-    }
-
-    .saisine-modal-content p {
-        font-size: 14px;
-    }
-
-    .saisine-options {
-        grid-template-columns: 1fr;
-        gap: 12px;
-    }
-
-    .saisine-option {
-        padding: 15px;
-        flex-direction: row;
-        justify-content: center;
-    }
-
-    .saisine-option i {
-        font-size: 24px;
-    }
-}
 </style>
 
 </head>
@@ -1707,7 +1407,7 @@ background:#e0a800;
 <body>
 
 <header class="top-header" id="mission">
- <div class="header-left desktop-header">
+    <div class="header-left desktop-header">
     <img src="images/logo.png" alt="Logo IGTER" class="logo">
 
     <!-- BARRE TRICOLORE -->
@@ -1820,7 +1520,7 @@ background:#e0a800;
   </div>
 </div>
   <a href="document.html">Documents</a>
- <a href="#" onclick="ouvrirChoixSaisine(event)">Saisissez-nous</a>
+  <a href="mode_saisine.html">Saisissez-nous</a>
 </div>
   <!-- MENU MOBILE -->
   <div class="mobile-menu-bar">
@@ -1842,538 +1542,73 @@ background:#e0a800;
 
   <!-- LIENS PRINCIPAUX -->
   <a href="index.html"><i class="fa-solid fa-building-columns"></i> Accueil</a>
-  <a href="apercu general.html"> 📰 Historique</a>
+  <a href="#actualite"> 📰 Actualités</a>
   <a href="document.html">🗂️ Documents officiels</a>
-
+  <a href="mission.html">🎯 Missions</a>
+  <a href="rapport.html">📊 Rapports</a>
+  <div class="submenu-container">
+    <button class="submenu-btn">📖 Présentation de l'IGTER<i class="fa-solid fa-caret-down"></i></button>
+    <div class="submenu-content">
+     <a href="apercu general.html">👁️ Aperçu Général</a>
     <div class="submenu-container">
-    <button class="submenu-btn">🧩 Structures organiques<i class="fa-solid fa-caret-down"></i></button>
+    <button class="submenu-btn">🧩 Organisation<i class="fa-solid fa-caret-down"></i></button>
     <div class="submenu-content">
       <a href="administration_centrale.html"><i class="fa-solid fa-building"></i> Administration Centrale (1)</a>
      <a href="pool.html"><i class="fa-solid fa-layer-group"></i> Pool (8)</a>
      <a href="inspection_provinciale.html"><i class="fa-solid fa-map-location-dot"></i> Inspections Provinciales (26)</a>
       <a href="inspection_provinciale.html"><i class="fa-solid fa-satellite-dish"></i> ± 2 Antennes/IPTER</a></div>
- </div>
+    <div class="submenu-container">
+    <button class="submenu-btn">⚖️ Cadre légal<i class="fa-solid fa-caret-down"></i></button>
+    <div class="submenu-content">
+    <a href="pdf/DECRET.pdf" target="_blank" download>
+      <i class="fa-solid fa-file-pdf"></i> Décret de création
+    </a>
+     <a href="pdf/CADRE ORGANIQUE.pdf" target="_blank" download>
+      <i class="fa-solid fa-file-pdf"></i> Cadre organique
+    </a>
+    </div></div></div>
 
-<!-- Sous-menu Provinces / ETDs -->
+    <a href="personnel.html">👥 Personnel</a>
+</div>
+
+  <!-- Sous-menu Provinces / ETDs -->
   <div class="submenu-container">
     <button class="submenu-btn">🌍 Provinces/ETDs<i class="fa-solid fa-caret-down"></i></button>
     <div class="submenu-content">
       <a href="province.html"><i class="fa-solid fa-layer-group"></i> Liste des Provinces</a>
-      <a href="etd1.html"><i class="fa-solid fa-satellite-dish"></i> Liste des Entités Territoriales</a>
-       <a href="scdmisdac.html"><i class="fa-solid fa-satellite-dish"></i> Liste des Services Centraux et Déconcentrés du Ministère de l'Intérieur, Sécurité, Décentralisation & Affaires Coutumières</a>
-
-    <a href="ig_iga.html">👥 Dirigeants</a>
-</div>
-
-  <a href="#" onclick="ouvrirChoixSaisine(event)">📝 Saisissez-nous</a>
-
-  <a href="https://interieur.gouv.cd/services/details/IGTER"><i class="fa-solid fa-shield"></i> Ministère de tutelle</a>
-
-  <a href="#contact">☎️ Nos contacts</a>
+      <a href="etd.html"><i class="fa-solid fa-satellite-dish"></i> Liste des Entités Territoriales</a>
+       <a href="scd.html"><i class="fa-solid fa-satellite-dish"></i> Liste des Services Centraux et Déconcentrés/MISDAC</a>
     </div>
   </div>
 
+  <a href="https://interieur.gouv.cd/services/details/IGTER"><i class="fa-solid fa-shield"></i> Ministère de tutelle</a>
+
+  <a href="#saisine">📝 Saisissez-nous</a>
+  <a href="#contact">☎️ Nos contacts</a>
+
 </div></div>
 
-<?php
-require_once "connexion.php";
-
-/*
-|--------------------------------------------------------------------------
-| Récupération des missions publiées
-|--------------------------------------------------------------------------
-*/
-
-$sql = "SELECT *
-        FROM missions
-        WHERE statut = 'publiee'
-        ORDER BY date_publication DESC";
-
-$stmt = $pdo->prepare($sql);
-$stmt->execute();
-
-$missions = $stmt->fetchAll(PDO::FETCH_ASSOC);
-?>
-
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <title>Missions - IGTER</title>
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-    <!-- Votre CSS principal -->
-    <link rel="stylesheet" href="css/style.css">
-
-    <style>
-
-        /* ================================
-           PAGE MISSIONS
-        ================================= */
-
-        .missions-section {
-
-            padding: 70px 5%;
-
-            min-height: 70vh;
-
-        }
-
-        .missions-section h1 {
-
-            text-align: center;
-
-            color: #003366;
-
-            margin-bottom: 15px;
-
-        }
-
-        .missions-intro {
-
-            text-align: center;
-
-            max-width: 850px;
-
-            margin: 0 auto 45px;
-
-            color: #555;
-
-            line-height: 1.7;
-
-        }
-
-        .missions-container {
-
-            max-width: 1200px;
-
-            margin: auto;
-
-            display: grid;
-
-            grid-template-columns:
-                repeat(auto-fit, minmax(300px, 1fr));
-
-            gap: 25px;
-
-        }
-
-        .mission-card {
-
-            background: rgba(255,255,255,.85);
-
-            border-radius: 16px;
-
-            padding: 25px;
-
-            box-shadow:
-                0 8px 25px rgba(0,0,0,.10);
-
-            border-left: 5px solid #003366;
-
-            transition: .3s ease;
-
-        }
-
-        .mission-card:hover {
-
-            transform: translateY(-6px);
-
-            box-shadow:
-                0 15px 35px rgba(0,0,0,.15);
-
-        }
-
-        .mission-type {
-
-            display: inline-block;
-
-            padding: 6px 12px;
-
-            border-radius: 20px;
-
-            background: #0F5D3F;
-
-            color: white;
-
-            font-size: 13px;
-
-            font-weight: 600;
-
-            margin-bottom: 15px;
-
-        }
-
-        .mission-card h2 {
-
-            color: #003366;
-
-            font-size: 22px;
-
-            margin-bottom: 15px;
-
-        }
-
-        .mission-info {
-
-            margin: 8px 0;
-
-            color: #555;
-
-            font-size: 15px;
-
-        }
-
-        .mission-info i {
-
-            width: 22px;
-
-            color: #0F5D3F;
-
-        }
-
-        .mission-description {
-
-            margin-top: 18px;
-
-            line-height: 1.7;
-
-            color: #444;
-
-        }
-
-        .mission-image {
-
-            width: 100%;
-
-            height: 220px;
-
-            object-fit: cover;
-
-            border-radius: 12px;
-
-            margin-bottom: 20px;
-
-        }
-
-        .no-mission {
-
-            text-align: center;
-
-            max-width: 700px;
-
-            margin: 60px auto;
-
-            padding: 40px 25px;
-
-            background: rgba(255,255,255,.8);
-
-            border-radius: 15px;
-
-            box-shadow: 0 8px 25px rgba(0,0,0,.08);
-
-        }
-
-        .no-mission i {
-
-            font-size: 55px;
-
-            color: #0F5D3F;
-
-            margin-bottom: 20px;
-
-        }
-
-        .btn-retour {
-
-            display: inline-block;
-
-            margin-top: 30px;
-
-            padding: 12px 22px;
-
-            background: #003366;
-
-            color: white;
-
-            text-decoration: none;
-
-            border-radius: 8px;
-
-            transition: .3s;
-
-        }
-
-        .btn-retour:hover {
-
-            background: #0F5D3F;
-
-        }
-
-
-        /* ================================
-           MOBILE
-        ================================= */
-
-        @media(max-width:768px){
-
-            .missions-section {
-
-                padding: 45px 20px;
-
-            }
-
-            .missions-section h1 {
-
-                font-size: 28px;
-
-            }
-
-            .missions-container {
-
-                grid-template-columns: 1fr;
-
-            }
-
-            .mission-card h2 {
-
-                font-size: 19px;
-
-            }
-
-            .mission-image {
-
-                height: 190px;
-
-            }
-
-        }
-
-    </style>
-
-</head>
-
-
-<body>
-
-
-<!-- ==================================================
-     SECTION MISSIONS
-=================================================== -->
-
-<section class="missions-section">
-
-    <h1><i class=""></i>Découvrir nos missions réalisées</h1>
-    <p class="missions-intro">
-      
-    </p>
-
-
-    <div class="missions-container">
-
-
-        <?php if (count($missions) > 0): ?>
-
-            <?php foreach ($missions as $mission): ?>
-
-
-                <article class="mission-card">
-
-
-                    <?php if (!empty($mission['image'])): ?>
-
-                        <img
-                            src="images/missions/<?php echo htmlspecialchars($mission['image']); ?>"
-                            alt="<?php echo htmlspecialchars($mission['titre']); ?>"
-                            class="mission-image">
-
-                    <?php endif; ?>
-
-
-                    <span class="mission-type">
-
-                        <?php
-                        echo htmlspecialchars(
-                            $mission['type_mission']
-                        );
-                        ?>
-
-                    </span>
-
-
-                    <h2>
-
-                        <?php
-                        echo htmlspecialchars(
-                            $mission['titre']
-                        );
-                        ?>
-
-                    </h2>
-
-
-                    <?php if (!empty($mission['province'])): ?>
-
-                        <p class="mission-info">
-
-                            <i class="fa-solid fa-location-dot"></i>
-
-                            <strong>Province :</strong>
-
-                            <?php
-                            echo htmlspecialchars(
-                                $mission['province']
-                            );
-                            ?>
-
-                        </p>
-
-                    <?php endif; ?>
-
-
-                    <?php if (!empty($mission['territoire'])): ?>
-
-                        <p class="mission-info">
-
-                            <i class="fa-solid fa-map"></i>
-
-                            <strong>Territoire :</strong>
-
-                            <?php
-                            echo htmlspecialchars(
-                                $mission['territoire']
-                            );
-                            ?>
-
-                        </p>
-
-                    <?php endif; ?>
-
-
-                    <?php if (!empty($mission['lieu'])): ?>
-
-                        <p class="mission-info">
-
-                            <i class="fa-solid fa-location-crosshairs"></i>
-
-                            <strong>Lieu :</strong>
-
-                            <?php
-                            echo htmlspecialchars(
-                                $mission['lieu']
-                            );
-                            ?>
-
-                        </p>
-
-                    <?php endif; ?>
-
-
-                    <?php if (!empty($mission['date_debut'])): ?>
-
-                        <p class="mission-info">
-
-                            <i class="fa-regular fa-calendar"></i>
-
-                            <strong>Date :</strong>
-
-                            <?php
-                            echo date(
-                                'd/m/Y',
-                                strtotime($mission['date_debut'])
-                            );
-                            ?>
-
-                            <?php if (!empty($mission['date_fin'])): ?>
-
-                                -
-                                <?php
-                                echo date(
-                                    'd/m/Y',
-                                    strtotime($mission['date_fin'])
-                                );
-                                ?>
-
-                            <?php endif; ?>
-
-                        </p>
-
-                    <?php endif; ?>
-
-
-                    <?php if (!empty($mission['description'])): ?>
-
-                        <p class="mission-description">
-
-                            <?php
-                            echo nl2br(
-                                htmlspecialchars(
-                                    $mission['description']
-                                )
-                            );
-                            ?>
-
-                        </p>
-
-                    <?php endif; ?>
-
-
-                </article>
-
-
-            <?php endforeach; ?>
-
-
-        <?php else: ?>
-
-
-            <div class="no-mission">
-
-                <i class="fa-solid fa-person-digging"></i>
-
-                <h2>
-                    Aucune mission publiée
-                </h2>
-
-                <p>
-                    Les missions réalisées par l'Inspection
-                    Générale de la Territoriale seront
-                    publiées prochainement.
-                </p>
-
-                <a
-                    href="index.html"
-                    class="btn-retour">
-
-                    <i class="fa-solid fa-arrow-left"></i>
-
-                    Retour à l'accueil
-
-                </a>
-
-            </div>
-
-
-        <?php endif; ?>
-
-
-    </div>
-
+<!-- PAGE EN CONSTRUCTION -->
+<section class="construction-section">
+
+<div class="construction-box">
+
+<div class="construction-icon">
+<i class="fa-solid fa-person-digging"></i>
+</div>
+  
+<h1> Page conçue et développée en format php.<h1>
+<p>
+Veuillez attendre la mise en ligne officielle du site web de l'Inspection Générale de la Territoriale 
+à l'adresse : "www.igter.gouv.cd" pour voir le vrai contenu de la page de connexion de l'Administrateur du Site Web. 
+</p>
+
+<a href="index.html" class="btn-retour">
+<i class="fa-solid fa-arrow-left"></i> Retour à l'accueil
+</a>
+
+</div>
 </section>
-
-
-</body>
-
-</html>
 
 <!-- FOOTER -->
 <footer id="contact">
@@ -2423,11 +1658,15 @@ $missions = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
   <form id="newsletterForm" class="newsletter-form">
 
-    <input type="email" id="email" name="email" placeholder="Votre adresse email" required>
-    <button type="submit">S'abonner</button>
-</form>
-</div>
+    <input type="email" placeholder="Votre adresse email">
 
+    <button type="submit">
+      S'abonner
+    </button>
+
+  </form>
+
+</div>
 <div id="toast" class="toast">
   <div class="toast-content">
     <span id="toast-icon">⚠️</span>
@@ -2564,54 +1803,17 @@ function showToast(message, type = "info") {
     // Disparition
     setTimeout(() => {
         toast.classList.remove("show");
-    }, 1000);
+    }, 4000);
 }
 
 // Newsletter
-document.getElementById("newsletterForm")
-.addEventListener("submit", function(e){
-
+document.getElementById("newsletterForm").addEventListener("submit", function(e){
     e.preventDefault();
 
-    let email=document.getElementById("email").value.trim();;
-
-    // Vérification du format de l'adresse email
-const regexEmail = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
-
-if (!regexEmail.test(email)) {
     showToast(
-        "Veuillez saisir une adresse email valide comme ekambakevin@gmail.com.",
-        "error"
+        "Désolé ! Vous ne pouvez pas vous abonner pour le moment. Prochainement !",
+        "info"
     );
-    return;
-}
-
-    fetch("newsletter.php",{
-
-        method:"POST",
-
-        headers:{
-            "Content-Type":"application/x-www-form-urlencoded"
-        },
-
-        body:"email="+encodeURIComponent(email)
-
-    })
-
-    .then(r=>r.json())
-
-    .then(data=>{
-
-        showToast(data.message,data.type);
-
-        if(data.type==="success"){
-
-            document.getElementById("newsletterForm").reset();
-
-        }
-
-    });
-
 });
 
 </script>
@@ -2687,104 +1889,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
-
-function ouvrirChoixSaisine(event) {
-    event.preventDefault();
-
-    const modal = document.getElementById('saisineModal');
-
-    if (modal) {
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    }
-}
-
-function fermerChoixSaisine() {
-    const modal = document.getElementById('saisineModal');
-
-    if (modal) {
-        modal.classList.remove('active');
-        document.body.style.overflow = '';
-    }
-}
-
-function choisirSaisine(type) {
-
-    if (type === 'morale') {
-        window.location.href = 'mode_saisine1.php';
-    }
-
-    else if (type === 'physique') {
-        window.location.href = 'mode_saisine2.php';
-    }
-}
-
-/* Fermer en cliquant en dehors de la fenêtre */
-
-document.addEventListener('click', function(event) {
-
-    const modal = document.getElementById('saisineModal');
-
-    if (event.target === modal) {
-        fermerChoixSaisine();
-    }
-
-});
-
-/* Fermer avec la touche Échap */
-
-document.addEventListener('keydown', function(event) {
-
-    if (event.key === 'Escape') {
-        fermerChoixSaisine();
-    }
-
-});
 </script>
 <script src="recherche.js"></script>
-<!-- ================================
-     FENÊTRE DE CHOIX DU REQUÉRANT
-================================= -->
-<div id="saisineModal" class="saisine-modal">
-
-    <div class="saisine-modal-content">
-
-        <button class="saisine-close" onclick="fermerChoixSaisine()">
-            &times;
-        </button>
-
-        <div class="saisine-logo"><img src="../site_web/images/logo.png" alt="Logo IGTER"></div>
-
-        <h2>MODE DE SAISINE</h2>
-
-        <p>
-            Vous êtes sur le point de vouloir déposer votre requête
-            à l'Inspection Générale de la Territoriale de la République Démocratique du Congo.
-        </p>
-
-        <p class="saisine-question">
-            <strong>Dites-nous : Qui êtes-vous ?</strong>
-        </p>
-
-        <div class="saisine-options">
-
-            <button type="button"
-                    class="saisine-option personne-morale"
-                    onclick="choisirSaisine('morale')">
-                <i class="fa-solid fa-building"></i>
-                <span>Personne morale</span>
-            </button>
-
-            <button type="button"
-                    class="saisine-option personne-physique"
-                    onclick="choisirSaisine('physique')">
-                <i class="fa-solid fa-user"></i>
-                <span>Personne physique</span>
-            </button>
-
-        </div>
-
-    </div>
-</div>
 </body>
 </html>
