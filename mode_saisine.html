@@ -497,348 +497,70 @@ font-weight:bold;
 height:28px;
 }
 
-/* =========================================
-   FORMULAIRE DE SAISINE - PERSONNE MORALE
-========================================= */
+/* =========================
+PAGE EN CONSTRUCTION
+========================= */
 
-.saisine-form-section {
-    padding: 50px 5%;
-    background: #f4f7f5;
+.construction-section{
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:60vh;
+background:#f4f6f9;
+padding:40px 20px;
 }
 
-.saisine-form-container {
-    width: 100%;
-    max-width: 1100px;
-    margin: auto;
-    background: #ffffff;
-    border-radius: 15px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-    padding: 35px;
+.construction-box{
+background:white;
+padding:40px;
+text-align:center;
+border-radius:10px;
+max-width:500px;
+box-shadow:0 8px 25px rgba(0,0,0,0.1);
 }
 
-/* EN-TÊTE */
-
-.saisine-form-header {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    padding-bottom: 25px;
-    border-bottom: 3px solid #0F5D3F;
+.construction-icon{
+font-size:50px;
+color:#f2b705;
+margin-bottom:15px;
 }
 
-.saisine-form-icon {
-    width: 65px;
-    height: 65px;
-    flex-shrink: 0;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background: #0F5D3F;
-    color: #ffffff;
-
-    border-radius: 50%;
-    font-size: 28px;
+.construction-box h1{
+font-size:26px;
+color:#003366;
+margin-bottom:10px;
 }
 
-.saisine-form-header h1 {
-    margin: 0 0 5px;
-    color: #0F5D3F;
-    font-size: 28px;
+.construction-box h2{
+font-size:26px;
+color:#003366;
+margin-bottom:10px;
 }
 
-.saisine-form-header p {
-    margin: 0;
-    color: #666;
+.construction-box p{
+font-size:15px;
+color:#555;
+margin-bottom:25px;
+line-height:1.6;
 }
 
-/* INTRODUCTION */
+/* bouton retour */
 
-.saisine-introduction {
-    margin: 25px 0;
-    padding: 20px;
-    background: #f5f8f6;
-    border-left: 4px solid #0F5D3F;
-    border-radius: 6px;
+.btn-retour{
+display:inline-block;
+padding:10px 20px;
+background:#003366;
+color:white;
+text-decoration:none;
+border-radius:6px;
+font-size:14px;
+font-weight:600;
+transition:0.3s;
 }
 
-.saisine-introduction p {
-    margin: 8px 0;
-    line-height: 1.6;
-    color: #444;
-}
-
-.required-info {
-    color: #555 !important;
-    font-size: 14px;
-}
-
-.required-info strong,
-.form-group label span {
-    color: #d62828;
-}
-
-/* TITRES DES SECTIONS */
-
-.form-section-title {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-
-    margin-top: 35px;
-    margin-bottom: 22px;
-
-    padding-bottom: 12px;
-
-    border-bottom: 1px solid #ddd;
-}
-
-.section-number {
-    width: 38px;
-    height: 38px;
-
-    flex-shrink: 0;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background: #0F5D3F;
-    color: #ffffff;
-
-    border-radius: 50%;
-
-    font-weight: bold;
-}
-
-.form-section-title h2 {
-    margin: 0;
-    color: #0F5D3F;
-    font-size: 20px;
-}
-
-.form-section-title p {
-    margin: 3px 0 0;
-    color: #777;
-    font-size: 13px;
-}
-
-/* GRILLE */
-
-.form-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-}
-
-/* CHAMPS */
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.full-width {
-    width: 100%;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 7px;
-
-    font-weight: 600;
-    color: #333;
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-    width: 100%;
-    box-sizing: border-box;
-
-    padding: 12px 14px;
-
-    border: 1px solid #d4d4d4;
-    border-radius: 7px;
-
-    background: #ffffff;
-
-    font-family: inherit;
-    font-size: 15px;
-
-    transition: 0.25s;
-}
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-    outline: none;
-
-    border-color: #0F5D3F;
-
-    box-shadow: 0 0 0 3px rgba(15, 93, 63, 0.10);
-}
-
-.form-group textarea {
-    resize: vertical;
-}
-
-.form-group small {
-    display: block;
-    margin-top: 6px;
-    color: #777;
-    font-size: 12px;
-}
-
-/* DÉCLARATION */
-
-.declaration-box {
-    padding: 18px;
-
-    background: #f7f9f8;
-
-    border: 1px solid #dfe5e1;
-    border-radius: 8px;
-}
-
-.checkbox-label {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-
-    cursor: pointer;
-
-    color: #444;
-    line-height: 1.5;
-}
-
-.checkbox-label input {
-    width: 18px;
-    height: 18px;
-
-    margin-top: 2px;
-
-    accent-color: #0F5D3F;
-}
-
-/* BOUTONS */
-
-.saisine-form-actions {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 12px;
-
-    margin-top: 35px;
-    padding-top: 25px;
-
-    border-top: 1px solid #ddd;
-}
-
-.btn-retour,
-.btn-annuler,
-.btn-envoyer {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-
-    padding: 12px 20px;
-
-    border-radius: 7px;
-
-    text-decoration: none;
-
-    font-size: 14px;
-    font-weight: 600;
-
-    cursor: pointer;
-
-    transition: 0.25s;
-}
-
-.btn-retour {
-    background: #eeeeee;
-    color: #333;
-}
-
-.btn-annuler {
-    border: 1px solid #ccc;
-    background: #ffffff;
-    color: #555;
-}
-
-.btn-envoyer {
-    border: none;
-    background: #0F5D3F;
-    color: #ffffff;
-}
-
-.btn-retour:hover,
-.btn-annuler:hover {
-    background: #e2e2e2;
-}
-
-.btn-envoyer:hover {
-    background: #0B4A32;
-    transform: translateY(-1px);
-}
-
-/* MOBILE */
-
-@media (max-width: 768px) {
-
-    .saisine-form-section {
-        padding: 25px 12px;
-    }
-
-    .saisine-form-container {
-        padding: 22px 15px;
-        border-radius: 10px;
-    }
-
-    .saisine-form-header {
-        align-items: flex-start;
-    }
-
-    .saisine-form-icon {
-        width: 50px;
-        height: 50px;
-        font-size: 22px;
-    }
-
-    .saisine-form-header h1 {
-        font-size: 21px;
-    }
-
-    .saisine-form-header p {
-        font-size: 13px;
-    }
-
-    .form-grid {
-        grid-template-columns: 1fr;
-        gap: 0;
-    }
-
-    .form-section-title h2 {
-        font-size: 17px;
-    }
-
-    .form-section-title p {
-        font-size: 12px;
-    }
-
-    .saisine-form-actions {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .btn-retour,
-    .btn-annuler,
-    .btn-envoyer {
-        width: 100%;
-        box-sizing: border-box;
-    }
+.btn-retour:hover{
+background:#0052a3;
+transform:translateY(-2px);
 }
 
 /* =========================
@@ -1798,7 +1520,7 @@ background:#e0a800;
   </div>
 </div>
   <a href="document.html">Documents</a>
-  <a href="mission.php">Missions réalisées</a>
+  <a href="mode_saisine.html">Saisissez-nous</a>
 </div>
   <!-- MENU MOBILE -->
   <div class="mobile-menu-bar">
@@ -1866,666 +1588,26 @@ background:#e0a800;
 
 </div></div>
 
-<!-- =========================================
-     FORMULAIRE DE SAISINE
-     PERSONNE MORALE
-========================================= -->
-
-<section class="saisine-form-section">
-
-    <div class="saisine-form-container">
-
-        <!-- EN-TÊTE -->
-        <div class="saisine-form-header">
-
-            <div class="saisine-form-icon">
-           <i class="fa-solid fa-pen-to-square"></i>
-            </div>
-
-            <div>
-                <h1>Formulaire de saisine 1</h1>
-
-                <p>
-                    Saisine de l'Inspection Générale de la Territoriale
-                    par une personne morale.
-                </p>
-            </div>
-
-        </div>
-
-
-        <!-- INTRODUCTION -->
-
-        <div class="saisine-introduction">
-
-            <p>
-                Ce formulaire est destiné aux institutions, administrations,
-                entreprises, organisations et autres personnes morales,
-                tant publiques que privées, nationales qu'internationales,
-                souhaitant saisir l'Inspection Générale de la Territoriale.
-            </p>
-
-            <p>
-                Veuillez renseigner avec précision les informations
-                demandées afin de permettre un traitement efficace de
-                votre saisine.
-            </p>
-
-            <p class="required-info">
-                <strong>*</strong> Les champs marqués d'un astérisque sont obligatoires.
-            </p>
-
-        </div>
-
-
-        <!-- FORMULAIRE -->
-
-        <form action="traitement_saisine1.php"
-              method="POST"
-              enctype="multipart/form-data"
-              id="formSaisineMorale">
-
-
-            <!-- =====================================
-                 1. IDENTIFICATION DE L'INSTITUTION
-            ====================================== -->
-
-            <div class="form-section-title">
-
-                <span class="section-number">1</span>
-
-                <div>
-                    <h2>Identification de l'institution</h2>
-                    <p>Informations générales sur l'institution saisissante</p>
-                </div>
-
-            </div>
-
-
-            <div class="form-grid">
-
-                <!-- Nature de l'institution -->
-
-                <div class="form-group">
-
-                    <label for="nature_institution">
-                        Nature de l'institution
-                        <span>*</span>
-                    </label>
-
-                    <select id="nature_institution"
-                            name="nature_institution"
-                            required>
-
-                        <option value="">
-                            -- Sélectionnez --
-                        </option>
-
-                        <option value="publique">
-                            Institution publique
-                        </option>
-
-                        <option value="privee">
-                            Institution privée
-                        </option>
-
-                        <option value="internationale">
-                            Organisation internationale
-                        </option>
-
-                        <option value="ong">
-                            Organisation non gouvernementale
-                        </option>
-
-                        <option value="association">
-                            Association
-                        </option>
-
-                        <option value="etablissement_public">
-                            Établissement public
-                        </option>
-
-                        <option value="entreprise">
-                            Entreprise
-                        </option>
-
-                        <option value="autre">
-                            Autre
-                        </option>
-
-                    </select>
-
-                </div>
-
-
-                <!-- Dénomination -->
-
-                <div class="form-group">
-
-                    <label for="denomination">
-                        Dénomination de l'institution
-                        <span>*</span>
-                    </label>
-
-                    <input type="text"
-                           id="denomination"
-                           name="denomination"
-                           placeholder="Nom officiel de l'institution"
-                           required>
-
-                </div>
-
-
-                <!-- Sigle -->
-
-                <div class="form-group">
-
-                    <label for="sigle">
-                        Sigle / Acronyme
-                    </label>
-
-                    <input type="text"
-                           id="sigle"
-                           name="sigle"
-                           placeholder="Ex. : IGTER">
-
-                </div>
-
-
-                <!-- Pays -->
-
-                <div class="form-group">
-
-                    <label for="pays">
-                        Pays
-                        <span>*</span>
-                    </label>
-
-                    <input type="text"
-                           id="pays"
-                           name="pays"
-                           placeholder="Pays où est établie l'institution"
-                           required>
-
-                </div>
-
-
-                <!-- Province / Région -->
-
-                <div class="form-group">
-
-                    <label for="province_region">
-                        Province / Région
-                    </label>
-
-                    <input type="text"
-                           id="province_region"
-                           name="province_region"
-                           placeholder="Province ou région">
-
-                </div>
-
-
-                <!-- Ville -->
-
-                <div class="form-group">
-
-                    <label for="ville">
-                        Ville
-                        <span>*</span>
-                    </label>
-
-                    <input type="text"
-                           id="ville"
-                           name="ville"
-                           placeholder="Ville"
-                           required>
-
-                </div>
-
-            </div>
-
-
-            <!-- Adresse -->
-
-            <div class="form-group full-width">
-
-                <label for="adresse">
-                    Adresse physique
-                    <span>*</span>
-                </label>
-
-                <textarea id="adresse"
-                          name="adresse"
-                          rows="3"
-                          placeholder="Adresse complète de l'institution"
-                          required></textarea>
-
-            </div>
-
-
-            <!-- =====================================
-                 2. COORDONNÉES
-            ====================================== -->
-
-            <div class="form-section-title">
-
-                <span class="section-number">2</span>
-
-                <div>
-                    <h2>Coordonnées de l'institution</h2>
-                    <p>Comment pouvons-nous vous contacter ?</p>
-                </div>
-
-            </div>
-
-
-            <div class="form-grid">
-
-                <div class="form-group">
-
-                    <label for="telephone">
-                        Téléphone
-                        <span>*</span>
-                    </label>
-
-                    <input type="tel"
-                           id="telephone"
-                           name="telephone"
-                           placeholder="Numéro de téléphone"
-                           required>
-
-                </div>
-
-
-                <div class="form-group">
-
-                    <label for="email">
-                        Adresse e-mail
-                        <span>*</span>
-                    </label>
-
-                    <input type="email"
-                           id="email"
-                           name="email"
-                           placeholder="exemple@institution.org"
-                           required>
-
-                </div>
-
-
-                <div class="form-group">
-
-                    <label for="site_web">
-                        Site web
-                    </label>
-
-                    <input type="url"
-                           id="site_web"
-                           name="site_web"
-                           placeholder="https://www.exemple.org">
-
-                </div>
-
-            </div>
-
-
-            <!-- =====================================
-                 3. REPRÉSENTANT
-            ====================================== -->
-
-            <div class="form-section-title">
-
-                <span class="section-number">3</span>
-
-                <div>
-                    <h2>Représentant de l'institution</h2>
-                    <p>Personne habilitée à introduire la saisine</p>
-                </div>
-
-            </div>
-
-
-            <div class="form-grid">
-
-                <div class="form-group">
-
-                    <label for="civilite">
-                        Civilité
-                    </label>
-
-                    <select id="civilite" name="civilite">
-
-                        <option value="">
-                            -- Sélectionnez --
-                        </option>
-
-                        <option value="monsieur">
-                            Monsieur
-                        </option>
-
-                        <option value="madame">
-                            Madame
-                        </option>
-
-                    </select>
-
-                </div>
-
-
-                <div class="form-group">
-
-                    <label for="nom_representant">
-                        Nom
-                        <span>*</span>
-                    </label>
-
-                    <input type="text"
-                           id="nom_representant"
-                           name="nom_representant"
-                           required>
-
-                </div>
-
-
-                <div class="form-group">
-
-                    <label for="postnom_representant">
-                        Postnom
-                    </label>
-
-                    <input type="text"
-                           id="postnom_representant"
-                           name="postnom_representant">
-
-                </div>
-
-
-                <div class="form-group">
-
-                    <label for="prenom_representant">
-                        Prénom
-                        <span>*</span>
-                    </label>
-
-                    <input type="text"
-                           id="prenom_representant"
-                           name="prenom_representant"
-                           required>
-
-                </div>
-
-
-                <div class="form-group">
-
-                    <label for="fonction_representant">
-                        Fonction
-                        <span>*</span>
-                    </label>
-
-                    <input type="text"
-                           id="fonction_representant"
-                           name="fonction_representant"
-                           placeholder="Ex. : Directeur Général"
-                           required>
-
-                </div>
-
-
-                <div class="form-group">
-
-                    <label for="telephone_representant">
-                        Téléphone du représentant
-                        <span>*</span>
-                    </label>
-
-                    <input type="tel"
-                           id="telephone_representant"
-                           name="telephone_representant"
-                           required>
-
-                </div>
-
-
-                <div class="form-group">
-
-                    <label for="email_representant">
-                        E-mail du représentant
-                        <span>*</span>
-                    </label>
-
-                    <input type="email"
-                           id="email_representant"
-                           name="email_representant"
-                           required>
-
-                </div>
-
-            </div>
-
-
-            <!-- =====================================
-                 4. OBJET DE LA SAISINE
-            ====================================== -->
-
-            <div class="form-section-title">
-
-                <span class="section-number">4</span>
-
-                <div>
-                    <h2>Objet de la saisine</h2>
-                    <p>Précisez le motif de votre démarche</p>
-                </div>
-
-            </div>
-
-
-            <div class="form-group">
-
-                <label for="type_saisine">
-                    Type de saisine
-                    <span>*</span>
-                </label>
-
-                <select id="type_saisine"
-                        name="type_saisine"
-                        required>
-
-                    <option value="">
-                        -- Sélectionnez le type de saisine --
-                    </option>
-
-                    <option value="denonciation">
-                        Dénonciation
-                    </option>
-
-                    <option value="plainte">
-                        Plainte
-                    </option>
-
-                    <option value="reclamation">
-                        Réclamation
-                    </option>
-
-                    <option value="demande_enquete">
-                        Demande d'enquête
-                    </option>
-
-                    <option value="demande_controle">
-                        Demande de contrôle ou d'inspection
-                    </option>
-
-                    <option value="information">
-                        Demande d'information
-                    </option>
-
-                    <option value="autre">
-                        Autre
-                    </option>
-
-                </select>
-
-            </div>
-
-
-            <div class="form-group">
-
-                <label for="objet">
-                    Objet de la saisine
-                    <span>*</span>
-                </label>
-
-                <input type="text"
-                       id="objet"
-                       name="objet"
-                       placeholder="Indiquez brièvement l'objet de votre saisine"
-                       required>
-
-            </div>
-
-
-            <!-- =====================================
-                 5. DESCRIPTION
-            ====================================== -->
-
-            <div class="form-section-title">
-
-                <span class="section-number">5</span>
-
-                <div>
-                    <h2>Description de la requête</h2>
-                    <p>Exposez les faits et les éléments dont vous souhaitez porter connaissance</p>
-                </div>
-
-            </div>
-
-
-            <div class="form-group">
-
-                <label for="description">
-                    Description détaillée
-                    <span>*</span>
-                </label>
-
-                <textarea id="description"
-                          name="description"
-                          rows="8"
-                          placeholder="Décrivez de manière précise et détaillée les faits, circonstances et éléments motivant votre saisine..."
-                          required></textarea>
-
-            </div>
-
-
-            <!-- =====================================
-                 6. PIÈCES JUSTIFICATIVES
-            ====================================== -->
-
-            <div class="form-section-title">
-
-                <span class="section-number">6</span>
-
-                <div>
-                    <h2>Pièces justificatives</h2>
-                    <p>Joignez les documents utiles à l'examen de votre saisine</p>
-                </div>
-
-            </div>
-
-
-            <div class="form-group">
-
-                <label for="pieces_jointes">
-                    Documents justificatifs
-                </label>
-
-                <input type="file"
-                       id="pieces_jointes"
-                       name="pieces_jointes[]"
-                       multiple
-                       accept=".pdf,.jpg,.jpeg,.png,.doc,.docx">
-
-                <small>
-                    Formats acceptés : PDF, JPG, JPEG, PNG, DOC et DOCX.
-                </small>
-
-            </div>
-
-
-            <!-- =====================================
-                 7. DÉCLARATION
-            ====================================== -->
-
-            <div class="form-section-title">
-
-                <span class="section-number">7</span>
-
-                <div>
-                    <h2>Déclaration</h2>
-                    <p>Validation de la saisine</p>
-                </div>
-
-            </div>
-
-
-            <div class="declaration-box">
-
-                <label class="checkbox-label">
-
-                    <input type="checkbox"
-                           name="declaration"
-                           value="1"
-                           required>
-
-                    <span>
-                        Je certifie que les informations fournies dans
-                        le présent formulaire sont exactes et sincères,
-                        et que les documents transmis sont authentiques.
-                    </span>
-
-                </label>
-
-            </div>
-
-
-            <!-- BOUTONS -->
-
-            <div class="saisine-form-actions">
-
-                <a href="index.html" class="btn-retour">
-
-                    <i class="fa-solid fa-arrow-left"></i>
-
-                    Retour à l'accueil
-
-                </a>
-
-
-                <button type="reset"
-                        class="btn-annuler">
-
-                    <i class="fa-solid fa-rotate-left"></i>
-
-                    Réinitialiser
-
-                </button>
-
-
-                <button type="submit"
-                        class="btn-envoyer">
-
-                    <i class="fa-solid fa-paper-plane"></i>
-
-                    Envoyer 
-
-                </button>
-
-            </div>
-
-
-        </form>
-
-    </div>
-
+<!-- PAGE EN CONSTRUCTION -->
+<section class="construction-section">
+
+<div class="construction-box">
+
+<div class="construction-icon">
+<i class="fa-solid fa-person-digging"></i>
+</div>
+  
+<h1> Page conçue et développée en format php.<h1>
+<p>
+Veuillez attendre la mise en ligne officielle du site web de l'Inspection Générale de la Territoriale 
+à l'adresse : "www.igter.gouv.cd" pour ouvrir ce formulaire de saisine. 
+</p>
+
+<a href="index.html" class="btn-retour">
+<i class="fa-solid fa-arrow-left"></i> Retour à l'accueil
+</a>
+
+</div>
 </section>
 
 <!-- FOOTER -->
@@ -2576,11 +1658,15 @@ background:#e0a800;
 
   <form id="newsletterForm" class="newsletter-form">
 
-    <input type="email" id="email" name="email" placeholder="Votre adresse email" required>
-    <button type="submit">S'abonner</button>
-</form>
-</div>
+    <input type="email" placeholder="Votre adresse email">
 
+    <button type="submit">
+      S'abonner
+    </button>
+
+  </form>
+
+</div>
 <div id="toast" class="toast">
   <div class="toast-content">
     <span id="toast-icon">⚠️</span>
@@ -2717,54 +1803,17 @@ function showToast(message, type = "info") {
     // Disparition
     setTimeout(() => {
         toast.classList.remove("show");
-    }, 1000);
+    }, 4000);
 }
 
 // Newsletter
-document.getElementById("newsletterForm")
-.addEventListener("submit", function(e){
-
+document.getElementById("newsletterForm").addEventListener("submit", function(e){
     e.preventDefault();
 
-    let email=document.getElementById("email").value.trim();;
-
-    // Vérification du format de l'adresse email
-const regexEmail = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
-
-if (!regexEmail.test(email)) {
     showToast(
-        "Veuillez saisir une adresse email valide comme ekambakevin@gmail.com.",
-        "error"
+        "Désolé ! Vous ne pouvez pas vous abonner pour le moment. Prochainement !",
+        "info"
     );
-    return;
-}
-
-    fetch("newsletter.php",{
-
-        method:"POST",
-
-        headers:{
-            "Content-Type":"application/x-www-form-urlencoded"
-        },
-
-        body:"email="+encodeURIComponent(email)
-
-    })
-
-    .then(r=>r.json())
-
-    .then(data=>{
-
-        showToast(data.message,data.type);
-
-        if(data.type==="success"){
-
-            document.getElementById("newsletterForm").reset();
-
-        }
-
-    });
-
 });
 
 </script>
